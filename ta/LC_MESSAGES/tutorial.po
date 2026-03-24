@@ -1,5 +1,5 @@
 msgid "The Python Tutorial"
-msgstr "Python Tutorial"
+msgstr "பைத்தான் பயிற்சி"
 
 msgid "Python is an easy to learn programming language."
-msgstr "Python oru easy-a kathukura programming language."
+msgstr "பைத்தான் சுலபமாக கற்றுக்கொள்ள கூடிய நிரலாக்க மொழி "
