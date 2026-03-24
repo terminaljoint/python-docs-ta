@@ -21,15 +21,15 @@ msgstr ""
 
 #: ../../tutorial/appendix.rst:5
 msgid "Appendix"
-msgstr ""
+msgstr "பின்னினைப்பு"
 
 #: ../../tutorial/appendix.rst:11
 msgid "Interactive Mode"
-msgstr ""
+msgstr "Interactive முறை"
 
 #: ../../tutorial/appendix.rst:16
 msgid "Error Handling"
-msgstr ""
+msgstr "பிழையை கையாளுதல்"
 
 #: ../../tutorial/appendix.rst:18
 msgid ""
