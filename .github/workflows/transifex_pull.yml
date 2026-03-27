@@ -1,41 +1,60 @@
-name: Pull Translations
+name: Test Build Workflow
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - '*'
   workflow_dispatch:
 
 jobs:
-  pull:
+  build-translation:
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ '3.14' ]
+        format: [ html, latex, epub ]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/setup-python@master
+        with:
+          python-version: 3.12  # pinned for Sphinx 3.4.3 to build 3.10
+      - uses: actions/checkout@master
+        with:
+          repository: python/cpython
+          ref: ${{ matrix.version }}
+      - run: make venv
+        working-directory: ./Doc
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ matrix.version }}
+          path: Doc/locales/XX/LC_MESSAGES
+      - run: git pull
+        working-directory: ./Doc/locales/XX/LC_MESSAGES
+      - uses: sphinx-doc/github-problem-matcher@v1.1
+      - run: make -e SPHINXOPTS="--color -D language='XX' -W --keep-going" ${{ matrix.format }}
+        working-directory: ./Doc
+      - uses: actions/upload-artifact@master
+        if: success() || failure()
+        with:
+          name: build-${{ matrix.version }}-${{ matrix.format }}
+          path: Doc/build/${{ matrix.format }}
 
-      - name: Install Transifex client
-        run: |
-          python -m pip install --upgrade pip
-          pip install transifex-client
-
-      - name: Configure Transifex authentication
-        run: |
-          echo "[https://www.transifex.com]" > ~/.transifexrc
-          echo "api_hostname = https://api.transifex.com" >> ~/.transifexrc
-          echo "hostname = https://www.transifex.com" >> ~/.transifexrc
-          echo "username = api" >> ~/.transifexrc
-          echo "password = $TX_TOKEN" >> ~/.transifexrc
-        env:
-          TX_TOKEN: ${{ secrets.TX_TOKEN }}
-
-      - name: Pull translations from Transifex
-        run: |
-          tx pull --all --force
-
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add .
-          git commit -m "Auto pull translations" || echo "No changes"
-          git push
+  output-pdf:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ '3.14' ]
+    needs: [ 'build-translation' ]
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: build-${{ matrix.version }}-latex
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y latexmk texlive-xetex fonts-freefont-otf xindy
+      - run: make
+      - uses: actions/upload-artifact@master
+        with:
+          name: build-${{ matrix.version }}-pdf
+          path: ./*.pdf
