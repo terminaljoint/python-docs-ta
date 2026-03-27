@@ -1,1 +1,8 @@
+[main]
+host = https://www.transifex.com
 
+[o:python-doc:p:python-newest:r:c-api--abstract]
+file_filter = locales/ta/LC_MESSAGES/c-api/abstract.po
+source_file = locales/en/LC_MESSAGES/c-api/abstract.po
+source_lang = en
+type = PO
