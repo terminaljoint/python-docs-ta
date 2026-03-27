@@ -1,176 +1,37 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ":mod:`spwd` --- The shadow password database"
+msgid ":mod:`!spwd` --- The shadow password database"
 msgstr ""
 
 msgid ""
-"The :mod:`spwd` module is deprecated (see :pep:`PEP 594 <594#spwd>` for "
-"details and alternatives)."
+"This module is no longer part of the Python standard library. It was :ref:"
+"`removed in Python 3.13 <whatsnew313-pep594>` after being deprecated in "
+"Python 3.11.  The removal was decided in :pep:`594`."
 msgstr ""
 
 msgid ""
-"This module provides access to the Unix shadow password database. It is "
-"available on various Unix versions."
-msgstr ""
-
-msgid "Availability"
+"A possible replacement is the third-party library :pypi:`python-pam`. This "
+"library is not supported or maintained by the Python core team."
 msgstr ""
 
 msgid ""
-"This module does not work or is not available on WebAssembly platforms "
-"``wasm32-emscripten`` and ``wasm32-wasi``. See :ref:`wasm-availability` for "
-"more information."
-msgstr ""
-
-msgid ""
-"You must have enough privileges to access the shadow password database (this "
-"usually means you have to be root)."
-msgstr ""
-
-msgid ""
-"Shadow password database entries are reported as a tuple-like object, whose "
-"attributes correspond to the members of the ``spwd`` structure (Attribute "
-"field below, see ``<shadow.h>``):"
-msgstr ""
-
-msgid "Index"
-msgstr ""
-
-msgid "Attribute"
-msgstr ""
-
-msgid "Meaning"
-msgstr ""
-
-msgid "0"
-msgstr ""
-
-msgid "``sp_namp``"
-msgstr ""
-
-msgid "Login name"
-msgstr ""
-
-msgid "1"
-msgstr ""
-
-msgid "``sp_pwdp``"
-msgstr ""
-
-msgid "Encrypted password"
-msgstr ""
-
-msgid "2"
-msgstr ""
-
-msgid "``sp_lstchg``"
-msgstr ""
-
-msgid "Date of last change"
-msgstr ""
-
-msgid "3"
-msgstr ""
-
-msgid "``sp_min``"
-msgstr ""
-
-msgid "Minimal number of days between changes"
-msgstr ""
-
-msgid "4"
-msgstr ""
-
-msgid "``sp_max``"
-msgstr ""
-
-msgid "Maximum number of days between changes"
-msgstr ""
-
-msgid "5"
-msgstr ""
-
-msgid "``sp_warn``"
-msgstr ""
-
-msgid "Number of days before password expires to warn user about it"
-msgstr ""
-
-msgid "6"
-msgstr ""
-
-msgid "``sp_inact``"
-msgstr ""
-
-msgid "Number of days after password expires until account is disabled"
-msgstr ""
-
-msgid "7"
-msgstr ""
-
-msgid "``sp_expire``"
-msgstr ""
-
-msgid "Number of days since 1970-01-01 when account expires"
-msgstr ""
-
-msgid "8"
-msgstr ""
-
-msgid "``sp_flag``"
-msgstr ""
-
-msgid "Reserved"
-msgstr ""
-
-msgid ""
-"The sp_namp and sp_pwdp items are strings, all others are integers. :exc:"
-"`KeyError` is raised if the entry asked for cannot be found."
-msgstr ""
-
-msgid "The following functions are defined:"
-msgstr ""
-
-msgid "Return the shadow password database entry for the given user name."
-msgstr ""
-
-msgid ""
-"Raises a :exc:`PermissionError` instead of :exc:`KeyError` if the user "
-"doesn't have privileges."
-msgstr ""
-
-msgid ""
-"Return a list of all available shadow password database entries, in "
-"arbitrary order."
-msgstr ""
-
-msgid "Module :mod:`grp`"
-msgstr ""
-
-msgid "An interface to the group database, similar to this."
-msgstr ""
-
-msgid "Module :mod:`pwd`"
-msgstr ""
-
-msgid "An interface to the normal password database, similar to this."
+"The last version of Python that provided the :mod:`!spwd` module was `Python "
+"3.12 <https://docs.python.org/3.12/library/spwd.html>`_."
 msgstr ""

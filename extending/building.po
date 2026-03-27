@@ -1,79 +1,44 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Building C and C++ Extensions"
 msgstr ""
 
 msgid ""
-"A C extension for CPython is a shared library (e.g. a ``.so`` file on Linux, "
-"``.pyd`` on Windows), which exports an *initialization function*."
+"A C extension for CPython is a shared library (for example, a ``.so`` file "
+"on Linux, ``.pyd`` on Windows), which exports an *initialization function*."
 msgstr ""
 
-msgid ""
-"To be importable, the shared library must be available on :envvar:"
-"`PYTHONPATH`, and must be named after the module name, with an appropriate "
-"extension. When using setuptools, the correct filename is generated "
-"automatically."
-msgstr ""
-
-msgid "The initialization function has the signature:"
-msgstr ""
-
-msgid ""
-"It returns either a fully initialized module, or a :c:type:`PyModuleDef` "
-"instance. See :ref:`initializing-modules` for details."
-msgstr ""
-
-msgid ""
-"For modules with ASCII-only names, the function must be named "
-"``PyInit_<modulename>``, with ``<modulename>`` replaced by the name of the "
-"module. When using :ref:`multi-phase-initialization`, non-ASCII module names "
-"are allowed. In this case, the initialization function name is "
-"``PyInitU_<modulename>``, with ``<modulename>`` encoded using Python's "
-"*punycode* encoding with hyphens replaced by underscores. In Python::"
-msgstr ""
-
-msgid ""
-"def initfunc_name(name):\n"
-"    try:\n"
-"        suffix = b'_' + name.encode('ascii')\n"
-"    except UnicodeEncodeError:\n"
-"        suffix = b'U_' + name.encode('punycode').replace(b'-', b'_')\n"
-"    return b'PyInit' + suffix"
-msgstr ""
-
-msgid ""
-"It is possible to export multiple modules from a single shared library by "
-"defining multiple initialization functions. However, importing them requires "
-"using symbolic links or a custom importer, because by default only the "
-"function corresponding to the filename is found. See the *\"Multiple modules "
-"in one library\"* section in :pep:`489` for details."
+msgid "See :ref:`extension-modules` for details."
 msgstr ""
 
 msgid "Building C and C++ Extensions with setuptools"
 msgstr ""
 
 msgid ""
-"Python 3.12 and newer no longer come with distutils. Please refer to the "
-"``setuptools`` documentation at https://setuptools.readthedocs.io/en/latest/"
-"setuptools.html to learn more about how build and distribute C/C++ "
-"extensions with setuptools."
+"Building, packaging and distributing extension modules is best done with "
+"third-party tools, and is out of scope of this document. One suitable tool "
+"is Setuptools, whose documentation can be found at https://setuptools.pypa."
+"io/en/latest/setuptools.html."
+msgstr ""
+
+msgid ""
+"The :mod:`distutils` module, which was included in the standard library "
+"until Python 3.12, is now maintained as part of Setuptools."
 msgstr ""

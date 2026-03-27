@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "What's New In Python 3.2"
 msgstr ""
@@ -129,7 +127,6 @@ msgstr ""
 msgid "Example of the parser's automatically generated help::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> parser.parse_args('-h'.split())\n"
 "\n"
@@ -212,7 +209,6 @@ msgid ""
 "dictionary::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "{\"version\": 1,\n"
 " \"formatters\": {\"brief\": {\"format\": \"%(levelname)-8s: %(name)-15s: "
@@ -537,10 +533,9 @@ msgid ""
 "class:`~collections.defaultdict`, :class:`~shelve.Shelf`, :class:"
 "`~configparser.ConfigParser`, or :mod:`dbm`.  It is also useful with custom :"
 "class:`dict` subclasses that normalize keys before look-up or that supply a :"
-"meth:`__missing__` method for unknown keys::"
+"meth:`~object.__missing__` method for unknown keys::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import shelve\n"
 ">>> d = shelve.open('tmp.shl')\n"
@@ -784,7 +779,7 @@ msgstr ""
 
 msgid ""
 "The biggest news for Python 3.2 is that the :mod:`email` package, :mod:"
-"`mailbox` module, and :mod:`nntplib` modules now work correctly with the "
+"`mailbox` module, and :mod:`!nntplib` modules now work correctly with the "
 "bytes/text model in Python 3.  For the first time, there is correct handling "
 "of messages with mixed encodings."
 msgstr ""
@@ -1181,15 +1176,14 @@ msgid ""
 "datetime objects::"
 msgstr ""
 
-#, python-format
 msgid ""
-">>> from datetime import datetime, timezone\n"
+">>> import datetime as dt\n"
 "\n"
-">>> datetime.now(timezone.utc)\n"
+">>> dt.datetime.now(dt.timezone.utc)\n"
 "datetime.datetime(2010, 12, 8, 21, 4, 2, 923754, tzinfo=datetime.timezone."
 "utc)\n"
 "\n"
-">>> datetime.strptime(\"01/01/2000 12:00 +0000\", \"%m/%d/%Y %H:%M %z\")\n"
+">>> dt.datetime.strptime(\"01/01/2000 12:00 +0000\", \"%m/%d/%Y %H:%M %z\")\n"
 "datetime.datetime(2000, 1, 1, 12, 0, tzinfo=datetime.timezone.utc)"
 msgstr ""
 
@@ -1409,7 +1403,6 @@ msgid ""
 "These documents are the fastest way to learn about logging."
 msgstr ""
 
-#, python-format
 msgid ""
 "The :func:`logging.basicConfig` set-up function gained a *style* argument to "
 "support three different types of string formatting.  It defaults to \"%\" "
@@ -1419,7 +1412,6 @@ msgid ""
 "are equivalent::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> from logging import basicConfig\n"
 ">>> basicConfig(style='%', format=\"%(name)s -> %(levelname)s: "
@@ -1465,7 +1457,6 @@ msgid ""
 "writeheader` for writing-out an initial row to document the field names::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import csv, sys\n"
 ">>> w = csv.DictWriter(sys.stdout, ['name', 'dept'], dialect='unix')\n"
@@ -1514,7 +1505,6 @@ msgid ""
 "single definition::"
 msgstr ""
 
-#, python-format
 msgid ""
 "from contextlib import contextmanager\n"
 "import logging\n"
@@ -1781,7 +1771,6 @@ msgid ""
 "available on the current implementation::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import hashlib\n"
 "\n"
@@ -1811,7 +1800,6 @@ msgid ""
 "numbers, tuples, lists, dicts, sets, booleans, and ``None``."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> from ast import literal_eval\n"
 "\n"
@@ -2030,15 +2018,15 @@ msgid "nntp"
 msgstr ""
 
 msgid ""
-"The :mod:`nntplib` module has a revamped implementation with better bytes "
+"The :mod:`!nntplib` module has a revamped implementation with better bytes "
 "and text semantics as well as more practical APIs.  These improvements break "
 "compatibility with the nntplib version in Python 3.1, which was partly "
 "dysfunctional in itself."
 msgstr ""
 
 msgid ""
-"Support for secure connections through both implicit (using :class:`nntplib."
-"NNTP_SSL`) and explicit (using :meth:`nntplib.NNTP.starttls`) TLS has also "
+"Support for secure connections through both implicit (using :class:`!nntplib."
+"NNTP_SSL`) and explicit (using :meth:`!nntplib.NNTP.starttls`) TLS has also "
 "been added."
 msgstr ""
 
@@ -2245,7 +2233,6 @@ msgstr ""
 msgid "(Contributed by Ezio Melotti; :issue:`9424`.)"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The :meth:`!assertDictContainsSubset` method was deprecated because it was "
 "misimplemented with the arguments in the wrong order.  This created hard-to-"
@@ -2661,7 +2648,6 @@ msgstr ""
 msgid "Config parsers gained a new API based on the mapping protocol::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> parser = ConfigParser()\n"
 ">>> parser.read_string(\"\"\"\n"
@@ -2706,7 +2692,6 @@ msgid ""
 "interpolation handler :class:`~configparser.ExtendedInterpolation`::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> parser = ConfigParser(interpolation=ExtendedInterpolation())\n"
 ">>> parser.read_dict({'buildout': {'directory': '/home/ambv/zope9'},\n"
@@ -2783,7 +2768,6 @@ msgid ""
 "func:`~urllib.parse.quote_plus` for encoding::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> urllib.parse.urlencode([\n"
 "...      ('type', 'telenovela'),\n"
@@ -2919,7 +2903,6 @@ msgstr ""
 msgid "A number of small performance enhancements have been added:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Python's peephole optimizer now recognizes patterns such ``x in {1, 2, 3}`` "
 "as being a test for membership in a set of constants.  The optimizer recasts "
@@ -2932,7 +2915,6 @@ msgid ""
 "and operationally fast::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "extension = name.rpartition('.')[2]\n"
 "if extension in {'xml', 'html', 'xhtml', 'css'}:\n"
@@ -3298,7 +3280,6 @@ msgid ""
 "number of smaller incompatibilities:"
 msgstr ""
 
-#, python-format
 msgid ""
 "The interpolation syntax is now validated on :meth:`~configparser."
 "ConfigParser.get` and :meth:`~configparser.ConfigParser.set` operations. In "
@@ -3336,7 +3317,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :mod:`nntplib` module was reworked extensively, meaning that its APIs "
+"The :mod:`!nntplib` module was reworked extensively, meaning that its APIs "
 "are often incompatible with the 3.1 APIs."
 msgstr ""
 

@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "More Control Flow Tools"
 msgstr ""
@@ -95,7 +93,6 @@ msgid ""
 "loop over a copy of the collection or to create a new collection::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "# Create a sample collection\n"
 "users = {'Hans': 'active', 'Éléonore': 'inactive', '景太郎': 'active'}\n"
@@ -201,8 +198,8 @@ msgstr ""
 
 msgid ""
 "Later we will see more functions that return iterables and take iterables as "
-"arguments.  In chapter :ref:`tut-structures`, we will discuss in more detail "
-"about :func:`list`."
+"arguments.  In chapter :ref:`tut-structures`, we will discuss :func:`list` "
+"in more detail."
 msgstr ""
 
 msgid ":keyword:`!break` and :keyword:`!continue` Statements"
@@ -213,7 +210,6 @@ msgid ""
 "keyword:`for` or :keyword:`while` loop::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 ">>> for n in range(2, 10):\n"
 "...     for x in range(2, n):\n"
@@ -232,7 +228,6 @@ msgid ""
 "loop::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> for num in range(2, 10):\n"
 "...     if num % 2 == 0:\n"
@@ -282,7 +277,6 @@ msgid ""
 "for prime numbers::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> for n in range(2, 10):\n"
 "...     for x in range(2, n):\n"
@@ -361,6 +355,14 @@ msgid ""
 "..."
 msgstr ""
 
+msgid ""
+"For this last case, many people use the ellipsis literal :code:`...` instead "
+"of :code:`pass`. This use has no special meaning to Python, and is not part "
+"of the language definition (you could use any constant expression here), "
+"but :code:`...` is used conventionally as a placeholder body as well. See :"
+"ref:`bltin-ellipsis-object`."
+msgstr ""
+
 msgid ":keyword:`!match` Statements"
 msgstr ""
 
@@ -371,7 +373,7 @@ msgid ""
 "languages), but it's more similar to pattern matching in languages like Rust "
 "or Haskell. Only the first pattern that matches gets executed and it can "
 "also extract components (sequence elements or object attributes) from the "
-"value into variables."
+"value into variables. If no case matches, none of the branches is executed."
 msgstr ""
 
 msgid ""
@@ -393,7 +395,7 @@ msgstr ""
 
 msgid ""
 "Note the last block: the \"variable name\" ``_`` acts as a *wildcard* and "
-"never fails to match. If no case matches, none of the branches is executed."
+"never fails to match."
 msgstr ""
 
 msgid ""
@@ -410,7 +412,6 @@ msgid ""
 "variables::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "# point is an (x, y) tuple\n"
 "match point:\n"
@@ -441,7 +442,6 @@ msgid ""
 "to capture attributes into variables::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "class Point:\n"
 "    def __init__(self, x, y):\n"
@@ -493,7 +493,6 @@ msgid ""
 "Points, with ``__match_args__`` added, we could match it like this::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "class Point:\n"
 "    __match_args__ = ('x', 'y')\n"
@@ -520,7 +519,6 @@ msgid ""
 "value capture happens before the guard is evaluated::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "match point:\n"
 "    case Point(x, y) if x == y:\n"
@@ -545,7 +543,6 @@ msgid ""
 "without binding the remaining items."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Mapping patterns: ``{\"bandwidth\": b, \"latency\": l}`` captures the "
 "``\"bandwidth\"`` and ``\"latency\"`` values from a dictionary.  Unlike "
@@ -571,7 +568,7 @@ msgstr ""
 
 msgid ""
 "Patterns may use named constants.  These must be dotted names to prevent "
-"them from being interpreted as capture variable::"
+"them from being interpreted as capture variables::"
 msgstr ""
 
 msgid ""
@@ -726,7 +723,7 @@ msgid ""
 "the object's type. Different types define different methods.  Methods of "
 "different types may have the same name without causing ambiguity.  (It is "
 "possible to define your own object types and methods, using *classes*, see :"
-"ref:`tut-classes`) The method :meth:`!append` shown in the example is "
+"ref:`tut-classes`) The method :meth:`~list.append` shown in the example is "
 "defined for list objects; it adds a new element at the end of the list.  In "
 "this example it is equivalent to ``result = result + [a]``, but more "
 "efficient."
@@ -749,7 +746,6 @@ msgid ""
 "than it is defined to allow.  For example::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "def ask_ok(prompt, retries=4, reminder='Please try again!'):\n"
 "    while True:\n"
@@ -1132,7 +1128,6 @@ msgid ""
 "``'name'`` will always bind to the first parameter. For example::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> foo(1, **{'name': 2})\n"
 "Traceback (most recent call last):\n"
@@ -1147,7 +1142,6 @@ msgid ""
 "arguments::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> def foo(name, /, **kwds):\n"
 "...     return 'name' in kwds\n"
@@ -1253,7 +1247,6 @@ msgid ""
 "``**``\\ -operator::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> def parrot(voltage, state='a stiff', action='voom'):\n"
 "...     print(\"-- This parrot wouldn't\", action, end=' ')\n"
@@ -1293,7 +1286,8 @@ msgstr ""
 
 msgid ""
 "The above example uses a lambda expression to return a function.  Another "
-"use is to pass a small function as an argument::"
+"use is to pass a small function as an argument.  For instance, :meth:`list."
+"sort` takes a sorting key function *key* which can be a lambda function::"
 msgstr ""
 
 msgid ""
@@ -1327,17 +1321,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The Python parser does not strip indentation from multi-line string literals "
-"in Python, so tools that process documentation have to strip indentation if "
-"desired.  This is done using the following convention. The first non-blank "
-"line *after* the first line of the string determines the amount of "
-"indentation for the entire documentation string.  (We can't use the first "
-"line since it is generally adjacent to the string's opening quotes so its "
-"indentation is not apparent in the string literal.)  Whitespace "
-"\"equivalent\" to this indentation is then stripped from the start of all "
-"lines of the string.  Lines that are indented less should not occur, but if "
-"they occur all their leading whitespace should be stripped.  Equivalence of "
-"whitespace should be tested after expansion of tabs (to 8 spaces, normally)."
+"The Python parser strips indentation from multi-line string literals when "
+"they serve as module, class, or function docstrings."
 msgstr ""
 
 msgid "Here is an example of a multi-line docstring::"
@@ -1347,14 +1332,20 @@ msgid ""
 ">>> def my_function():\n"
 "...     \"\"\"Do nothing, but document it.\n"
 "...\n"
-"...     No, really, it doesn't do anything.\n"
+"...     No, really, it doesn't do anything:\n"
+"...\n"
+"...         >>> my_function()\n"
+"...         >>>\n"
 "...     \"\"\"\n"
 "...     pass\n"
 "...\n"
 ">>> print(my_function.__doc__)\n"
 "Do nothing, but document it.\n"
 "\n"
-"    No, really, it doesn't do anything."
+"No, really, it doesn't do anything:\n"
+"\n"
+"    >>> my_function()\n"
+"    >>>"
 msgstr ""
 
 msgid "Function Annotations"
@@ -1367,7 +1358,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-":term:`Annotations <function annotation>` are stored in the :attr:`!"
+":term:`Annotations <function annotation>` are stored in the :attr:`~object."
 "__annotations__` attribute of the function as a dictionary and have no "
 "effect on any other part of the function.  Parameter annotations are defined "
 "by a colon after the parameter name, followed by an expression evaluating to "
@@ -1377,7 +1368,6 @@ msgid ""
 "a required argument, an optional argument, and the return value annotated::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> def f(ham: str, eggs: str = 'eggs') -> str:\n"
 "...     print(\"Annotations:\", f.__annotations__)\n"
@@ -1397,9 +1387,9 @@ msgstr ""
 msgid ""
 "Now that you are about to write longer, more complex pieces of Python, it is "
 "a good time to talk about *coding style*.  Most languages can be written (or "
-"more concise, *formatted*) in different styles; some are more readable than "
-"others. Making it easy for others to read your code is always a good idea, "
-"and adopting a nice coding style helps tremendously for that."
+"more concisely, *formatted*) in different styles; some are more readable "
+"than others. Making it easy for others to read your code is always a good "
+"idea, and adopting a nice coding style helps tremendously for that."
 msgstr ""
 
 msgid ""
@@ -1474,6 +1464,12 @@ msgid "statement"
 msgstr ""
 
 msgid "for"
+msgstr ""
+
+msgid "..."
+msgstr ""
+
+msgid "ellipsis literal"
 msgstr ""
 
 msgid "documentation strings"

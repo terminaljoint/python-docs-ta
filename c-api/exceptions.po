@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Exception Handling"
 msgstr ""
@@ -121,6 +119,14 @@ msgid "Print a traceback. Print only traceback if *obj* is ``NULL``."
 msgstr ""
 
 msgid "Use :func:`sys.unraisablehook`."
+msgstr ""
+
+msgid ""
+"Similar to :c:func:`PyErr_WriteUnraisable`, but the *format* and subsequent "
+"parameters help format the warning message; they have the same meaning and "
+"values as in :c:func:`PyUnicode_FromFormat`. ``PyErr_WriteUnraisable(obj)`` "
+"is roughly equivalent to ``PyErr_FormatUnraisable(\"Exception ignored in: "
+"%R\", obj)``. If *format* is ``NULL``, only the traceback is printed."
 msgstr ""
 
 msgid ""
@@ -275,6 +281,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Similar to :c:func:`PyErr_SyntaxLocationObject`, but also sets the "
+"*end_lineno* and *end_col_offset* information for the current exception."
+msgstr ""
+
+msgid ""
 "Like :c:func:`PyErr_SyntaxLocationObject`, but *filename* is a byte string "
 "decoded from the :term:`filesystem encoding and error handler`."
 msgstr ""
@@ -289,6 +300,22 @@ msgid ""
 "where *message* indicates that an internal operation (e.g. a Python/C API "
 "function) was invoked with an illegal argument.  It is mostly for internal "
 "use."
+msgstr ""
+
+msgid ""
+"Get the source line in *filename* at line *lineno*. *filename* should be a "
+"Python :class:`str` object."
+msgstr ""
+
+msgid ""
+"On success, this function returns a Python string object with the found "
+"line. On failure, this function returns ``NULL`` without an exception set."
+msgstr ""
+
+msgid ""
+"Similar to :c:func:`PyErr_ProgramTextObject`, but *filename* is a :c:expr:"
+"`const char *`, which is decoded with the :term:`filesystem encoding and "
+"error handler`, instead of a Python object reference."
 msgstr ""
 
 msgid "Issuing warnings"
@@ -352,6 +379,12 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Similar to :c:func:`PyErr_WarnExplicit`, but uses :c:func:"
+"`PyUnicode_FromFormat` to format the warning message. *format* is an ASCII-"
+"encoded string."
+msgstr ""
+
+msgid ""
 "Function similar to :c:func:`PyErr_WarnFormat`, but *category* is :exc:"
 "`ResourceWarning` and it passes *source* to :class:`!warnings."
 "WarningMessage`."
@@ -368,7 +401,7 @@ msgid ""
 "`Py_DECREF` it."
 msgstr ""
 
-msgid "The caller must hold the GIL."
+msgid "The caller must have an :term:`attached thread state`."
 msgstr ""
 
 msgid ""
@@ -404,7 +437,6 @@ msgstr ""
 msgid "For example::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "{\n"
 "   PyObject *exc = PyErr_GetRaisedException();\n"
@@ -444,7 +476,6 @@ msgid ""
 "exceptions or save and restore the error indicator temporarily."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "{\n"
 "   PyObject *type, *value, *traceback;\n"
@@ -497,7 +528,6 @@ msgid ""
 "appropriately is desired, the following additional snippet is needed::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "if (tb != NULL) {\n"
 "  PyException_SetTraceback(val, tb);\n"
@@ -572,37 +602,64 @@ msgstr ""
 msgid "Signal Handling"
 msgstr ""
 
-msgid "This function interacts with Python's signal handling."
+msgid ""
+"Handle external interruptions, such as signals or activating a debugger, "
+"whose processing has been delayed until it is safe to run Python code and/or "
+"raise exceptions."
 msgstr ""
 
 msgid ""
-"If the function is called from the main thread and under the main Python "
-"interpreter, it checks whether a signal has been sent to the processes and "
-"if so, invokes the corresponding signal handler.  If the :mod:`signal` "
-"module is supported, this can invoke a signal handler written in Python."
+"For example, pressing :kbd:`Ctrl-C` causes a terminal to send the :py:data:"
+"`signal.SIGINT` signal. This function executes the corresponding Python "
+"signal handler, which, by default, raises the :exc:`KeyboardInterrupt` "
+"exception."
 msgstr ""
 
 msgid ""
-"The function attempts to handle all pending signals, and then returns ``0``. "
-"However, if a Python signal handler raises an exception, the error indicator "
-"is set and the function returns ``-1`` immediately (such that other pending "
-"signals may not have been handled yet: they will be on the next :c:func:"
-"`PyErr_CheckSignals()` invocation)."
+":c:func:`!PyErr_CheckSignals` should be called by long-running C code "
+"frequently enough so that the response appears immediate to humans."
+msgstr ""
+
+msgid "Handlers invoked by this function currently include:"
 msgstr ""
 
 msgid ""
-"If the function is called from a non-main thread, or under a non-main Python "
-"interpreter, it does nothing and returns ``0``."
+"Signal handlers, including Python functions registered using the :mod:"
+"`signal` module."
 msgstr ""
 
 msgid ""
-"This function can be called by long-running C code that wants to be "
-"interruptible by user requests (such as by pressing Ctrl-C)."
+"Signal handlers are only run in the main thread of the main interpreter."
 msgstr ""
 
 msgid ""
-"The default Python signal handler for :c:macro:`!SIGINT` raises the :exc:"
-"`KeyboardInterrupt` exception."
+"(This is where the function got the name: originally, signals were the only "
+"way to interrupt the interpreter.)"
+msgstr ""
+
+msgid "Running the garbage collector, if necessary."
+msgstr ""
+
+msgid "Executing a pending :ref:`remote debugger <remote-debugging>` script."
+msgstr ""
+
+msgid ""
+"If any handler raises an exception, immediately return ``-1`` with that "
+"exception set. Any remaining interruptions are left to be processed on the "
+"next :c:func:`PyErr_CheckSignals()` invocation, if appropriate."
+msgstr ""
+
+msgid ""
+"If all handlers finish successfully, or there are no handlers to run, return "
+"``0``."
+msgstr ""
+
+msgid "This function may now invoke the garbage collector."
+msgstr ""
+
+msgid ""
+"This function may now execute a remote debugger script, if remote debugging "
+"is enabled."
 msgstr ""
 
 msgid ""
@@ -611,8 +668,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This function is async-signal-safe.  It can be called without the :term:"
-"`GIL` and from a C signal handler."
+"This function is async-signal-safe.  It can be called without an :term:"
+"`attached thread state` and from a C signal handler."
 msgstr ""
 
 msgid ""
@@ -681,7 +738,23 @@ msgid ""
 "as the docstring for the exception class."
 msgstr ""
 
+msgid ""
+"Return non-zero if *ob* is an exception class, zero otherwise. This function "
+"always succeeds."
+msgstr ""
+
+msgid "Return :c:member:`~PyTypeObject.tp_name` of the exception class *ob*."
+msgstr ""
+
 msgid "Exception Objects"
+msgstr ""
+
+msgid ""
+"Return true if *op* is an instance of :class:`BaseException`, false "
+"otherwise. This function always succeeds."
+msgstr ""
+
+msgid "Equivalent to :c:func:`Py_TYPE(op) <Py_TYPE>`."
 msgstr ""
 
 msgid ""
@@ -770,8 +843,21 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Set the *start* attribute of the given exception object to *start*.  Return "
+"If the :attr:`UnicodeError.object` is an empty sequence, the resulting "
+"*start* is ``0``. Otherwise, it is clipped to ``[0, len(object) - 1]``."
+msgstr ""
+
+msgid ":attr:`UnicodeError.start`"
+msgstr ""
+
+msgid ""
+"Set the *start* attribute of the given exception object to *start*. Return "
 "``0`` on success, ``-1`` on failure."
+msgstr ""
+
+msgid ""
+"While passing a negative *start* does not raise an exception, the "
+"corresponding getters will not consider it as a relative offset."
 msgstr ""
 
 msgid ""
@@ -781,8 +867,16 @@ msgid ""
 msgstr ""
 
 msgid ""
+"If the :attr:`UnicodeError.object` is an empty sequence, the resulting *end* "
+"is ``0``. Otherwise, it is clipped to ``[1, len(object)]``."
+msgstr ""
+
+msgid ""
 "Set the *end* attribute of the given exception object to *end*.  Return "
 "``0`` on success, ``-1`` on failure."
+msgstr ""
+
+msgid ":attr:`UnicodeError.end`"
 msgstr ""
 
 msgid "Return the *reason* attribute of the given exception object."
@@ -809,13 +903,7 @@ msgid "Marks a point where a recursive C-level call is about to be performed."
 msgstr ""
 
 msgid ""
-"If :c:macro:`!USE_STACKCHECK` is defined, this function checks if the OS "
-"stack overflowed using :c:func:`PyOS_CheckStack`.  If this is the case, it "
-"sets a :exc:`MemoryError` and returns a nonzero value."
-msgstr ""
-
-msgid ""
-"The function then checks if the recursion limit is reached.  If this is the "
+"The function then checks if the stack limit is reached.  If this is the "
 "case, a :exc:`RecursionError` is set and a nonzero value is returned. "
 "Otherwise, zero is returned."
 msgstr ""
@@ -824,6 +912,9 @@ msgid ""
 "*where* should be a UTF-8 encoded string such as ``\" in instance check\"`` "
 "to be concatenated to the :exc:`RecursionError` message caused by the "
 "recursion depth limit."
+msgstr ""
+
+msgid "The :c:func:`PyUnstable_ThreadState_SetStackProtection` function."
 msgstr ""
 
 msgid ""
@@ -849,7 +940,6 @@ msgid ""
 "implementation to detect cycles."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "If the object has already been processed, the function returns a positive "
 "integer.  In that case the :c:member:`~PyTypeObject.tp_repr` implementation "
@@ -873,341 +963,207 @@ msgid ""
 "c:func:`Py_ReprEnter` that returns zero."
 msgstr ""
 
-msgid "Standard Exceptions"
+msgid ""
+"Get the recursion limit for the current interpreter. It can be set with :c:"
+"func:`Py_SetRecursionLimit`. The recursion limit prevents the Python "
+"interpreter stack from growing infinitely."
 msgstr ""
 
 msgid ""
-"All standard Python exceptions are available as global variables whose names "
-"are ``PyExc_`` followed by the Python exception name.  These have the type :"
-"c:expr:`PyObject*`; they are all class objects.  For completeness, here are "
-"all the variables:"
+"This function cannot fail, and the caller must hold an :term:`attached "
+"thread state`."
 msgstr ""
 
-msgid "C Name"
+msgid ":py:func:`sys.getrecursionlimit`"
 msgstr ""
 
-msgid "Python Name"
+msgid "Set the recursion limit for the current interpreter."
 msgstr ""
 
-msgid "Notes"
+msgid ":py:func:`sys.setrecursionlimit`"
 msgstr ""
 
-msgid ":c:data:`PyExc_BaseException`"
+msgid "Exception and warning types"
+msgstr ""
+
+msgid ""
+"All standard Python exceptions and warning categories are available as "
+"global variables whose names are ``PyExc_`` followed by the Python exception "
+"name. These have the type :c:expr:`PyObject*`; they are all class objects."
+msgstr ""
+
+msgid "For completeness, here are all the variables:"
+msgstr ""
+
+msgid "Exception types"
+msgstr ""
+
+msgid "C name"
+msgstr ""
+
+msgid "Python name"
 msgstr ""
 
 msgid ":exc:`BaseException`"
 msgstr ""
 
-msgid "[1]_"
-msgstr ""
-
-msgid ":c:data:`PyExc_Exception`"
+msgid ":exc:`BaseExceptionGroup`"
 msgstr ""
 
 msgid ":exc:`Exception`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ArithmeticError`"
-msgstr ""
-
 msgid ":exc:`ArithmeticError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_AssertionError`"
 msgstr ""
 
 msgid ":exc:`AssertionError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_AttributeError`"
-msgstr ""
-
 msgid ":exc:`AttributeError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_BlockingIOError`"
 msgstr ""
 
 msgid ":exc:`BlockingIOError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_BrokenPipeError`"
-msgstr ""
-
 msgid ":exc:`BrokenPipeError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_BufferError`"
 msgstr ""
 
 msgid ":exc:`BufferError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ChildProcessError`"
-msgstr ""
-
 msgid ":exc:`ChildProcessError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_ConnectionAbortedError`"
 msgstr ""
 
 msgid ":exc:`ConnectionAbortedError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ConnectionError`"
-msgstr ""
-
 msgid ":exc:`ConnectionError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_ConnectionRefusedError`"
 msgstr ""
 
 msgid ":exc:`ConnectionRefusedError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ConnectionResetError`"
-msgstr ""
-
 msgid ":exc:`ConnectionResetError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_EOFError`"
 msgstr ""
 
 msgid ":exc:`EOFError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_FileExistsError`"
-msgstr ""
-
 msgid ":exc:`FileExistsError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_FileNotFoundError`"
 msgstr ""
 
 msgid ":exc:`FileNotFoundError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_FloatingPointError`"
-msgstr ""
-
 msgid ":exc:`FloatingPointError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_GeneratorExit`"
 msgstr ""
 
 msgid ":exc:`GeneratorExit`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ImportError`"
-msgstr ""
-
 msgid ":exc:`ImportError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_IndentationError`"
 msgstr ""
 
 msgid ":exc:`IndentationError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_IndexError`"
-msgstr ""
-
 msgid ":exc:`IndexError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_InterruptedError`"
 msgstr ""
 
 msgid ":exc:`InterruptedError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_IsADirectoryError`"
-msgstr ""
-
 msgid ":exc:`IsADirectoryError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_KeyError`"
 msgstr ""
 
 msgid ":exc:`KeyError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_KeyboardInterrupt`"
-msgstr ""
-
 msgid ":exc:`KeyboardInterrupt`"
-msgstr ""
-
-msgid ":c:data:`PyExc_LookupError`"
 msgstr ""
 
 msgid ":exc:`LookupError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_MemoryError`"
-msgstr ""
-
 msgid ":exc:`MemoryError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_ModuleNotFoundError`"
 msgstr ""
 
 msgid ":exc:`ModuleNotFoundError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_NameError`"
-msgstr ""
-
 msgid ":exc:`NameError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_NotADirectoryError`"
 msgstr ""
 
 msgid ":exc:`NotADirectoryError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_NotImplementedError`"
-msgstr ""
-
 msgid ":exc:`NotImplementedError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_OSError`"
 msgstr ""
 
 msgid ":exc:`OSError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_OverflowError`"
-msgstr ""
-
 msgid ":exc:`OverflowError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_PermissionError`"
 msgstr ""
 
 msgid ":exc:`PermissionError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ProcessLookupError`"
-msgstr ""
-
 msgid ":exc:`ProcessLookupError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_RecursionError`"
+msgid ":exc:`PythonFinalizationError`"
 msgstr ""
 
 msgid ":exc:`RecursionError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ReferenceError`"
-msgstr ""
-
 msgid ":exc:`ReferenceError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_RuntimeError`"
 msgstr ""
 
 msgid ":exc:`RuntimeError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_StopAsyncIteration`"
-msgstr ""
-
 msgid ":exc:`StopAsyncIteration`"
-msgstr ""
-
-msgid ":c:data:`PyExc_StopIteration`"
 msgstr ""
 
 msgid ":exc:`StopIteration`"
 msgstr ""
 
-msgid ":c:data:`PyExc_SyntaxError`"
-msgstr ""
-
 msgid ":exc:`SyntaxError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_SystemError`"
 msgstr ""
 
 msgid ":exc:`SystemError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_SystemExit`"
-msgstr ""
-
 msgid ":exc:`SystemExit`"
-msgstr ""
-
-msgid ":c:data:`PyExc_TabError`"
 msgstr ""
 
 msgid ":exc:`TabError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_TimeoutError`"
-msgstr ""
-
 msgid ":exc:`TimeoutError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_TypeError`"
 msgstr ""
 
 msgid ":exc:`TypeError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_UnboundLocalError`"
-msgstr ""
-
 msgid ":exc:`UnboundLocalError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_UnicodeDecodeError`"
 msgstr ""
 
 msgid ":exc:`UnicodeDecodeError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_UnicodeEncodeError`"
-msgstr ""
-
 msgid ":exc:`UnicodeEncodeError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_UnicodeError`"
 msgstr ""
 
 msgid ":exc:`UnicodeError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_UnicodeTranslateError`"
-msgstr ""
-
 msgid ":exc:`UnicodeTranslateError`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ValueError`"
-msgstr ""
-
 msgid ":exc:`ValueError`"
-msgstr ""
-
-msgid ":c:data:`PyExc_ZeroDivisionError`"
 msgstr ""
 
 msgid ":exc:`ZeroDivisionError`"
@@ -1230,109 +1186,66 @@ msgstr ""
 msgid ":c:data:`PyExc_ModuleNotFoundError`."
 msgstr ""
 
-msgid "These are compatibility aliases to :c:data:`PyExc_OSError`:"
+msgid ":c:data:`PyExc_BaseExceptionGroup`."
 msgstr ""
 
-msgid ":c:data:`!PyExc_EnvironmentError`"
+msgid "OSError aliases"
 msgstr ""
 
-msgid ":c:data:`!PyExc_IOError`"
-msgstr ""
-
-msgid ":c:data:`!PyExc_WindowsError`"
-msgstr ""
-
-msgid "[2]_"
+msgid "The following are a compatibility aliases to :c:data:`PyExc_OSError`."
 msgstr ""
 
 msgid "These aliases used to be separate exception types."
 msgstr ""
 
+msgid "Notes"
+msgstr ""
+
+msgid "[win]_"
+msgstr ""
+
 msgid "Notes:"
 msgstr ""
 
-msgid "This is a base class for other standard exceptions."
-msgstr ""
-
 msgid ""
-"Only defined on Windows; protect code that uses this by testing that the "
-"preprocessor macro ``MS_WINDOWS`` is defined."
+":c:var:`!PyExc_WindowsError` is only defined on Windows; protect code that "
+"uses this by testing that the preprocessor macro ``MS_WINDOWS`` is defined."
 msgstr ""
 
-msgid "Standard Warning Categories"
-msgstr ""
-
-msgid ""
-"All standard Python warning categories are available as global variables "
-"whose names are ``PyExc_`` followed by the Python exception name. These have "
-"the type :c:expr:`PyObject*`; they are all class objects. For completeness, "
-"here are all the variables:"
-msgstr ""
-
-msgid ":c:data:`PyExc_Warning`"
+msgid "Warning types"
 msgstr ""
 
 msgid ":exc:`Warning`"
 msgstr ""
 
-msgid "[3]_"
-msgstr ""
-
-msgid ":c:data:`PyExc_BytesWarning`"
-msgstr ""
-
 msgid ":exc:`BytesWarning`"
-msgstr ""
-
-msgid ":c:data:`PyExc_DeprecationWarning`"
 msgstr ""
 
 msgid ":exc:`DeprecationWarning`"
 msgstr ""
 
-msgid ":c:data:`PyExc_FutureWarning`"
+msgid ":exc:`EncodingWarning`"
 msgstr ""
 
 msgid ":exc:`FutureWarning`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ImportWarning`"
-msgstr ""
-
 msgid ":exc:`ImportWarning`"
-msgstr ""
-
-msgid ":c:data:`PyExc_PendingDeprecationWarning`"
 msgstr ""
 
 msgid ":exc:`PendingDeprecationWarning`"
 msgstr ""
 
-msgid ":c:data:`PyExc_ResourceWarning`"
-msgstr ""
-
 msgid ":exc:`ResourceWarning`"
-msgstr ""
-
-msgid ":c:data:`PyExc_RuntimeWarning`"
 msgstr ""
 
 msgid ":exc:`RuntimeWarning`"
 msgstr ""
 
-msgid ":c:data:`PyExc_SyntaxWarning`"
-msgstr ""
-
 msgid ":exc:`SyntaxWarning`"
 msgstr ""
 
-msgid ":c:data:`PyExc_UnicodeWarning`"
-msgstr ""
-
 msgid ":exc:`UnicodeWarning`"
-msgstr ""
-
-msgid ":c:data:`PyExc_UserWarning`"
 msgstr ""
 
 msgid ":exc:`UserWarning`"
@@ -1341,7 +1254,36 @@ msgstr ""
 msgid ":c:data:`PyExc_ResourceWarning`."
 msgstr ""
 
-msgid "This is a base class for other standard warning categories."
+msgid ":c:data:`PyExc_EncodingWarning`."
+msgstr ""
+
+msgid "Tracebacks"
+msgstr ""
+
+msgid ""
+"Type object for traceback objects. This is available as :class:`types."
+"TracebackType` in the Python layer."
+msgstr ""
+
+msgid ""
+"Return true if *op* is a traceback object, false otherwise. This function "
+"does not account for subtypes."
+msgstr ""
+
+msgid ""
+"Replace the :attr:`~BaseException.__traceback__` attribute on the current "
+"exception with a new traceback prepending *f* to the existing chain."
+msgstr ""
+
+msgid "Calling this function without an exception set is undefined behavior."
+msgstr ""
+
+msgid ""
+"This function returns ``0`` on success, and returns ``-1`` with an exception "
+"set on failure."
+msgstr ""
+
+msgid "Write the traceback *tb* into the file *f*."
 msgstr ""
 
 msgid "strerror (C function)"
@@ -1357,205 +1299,4 @@ msgid "SIGINT (C macro)"
 msgstr ""
 
 msgid "KeyboardInterrupt (built-in exception)"
-msgstr ""
-
-msgid "PyExc_BaseException (C var)"
-msgstr ""
-
-msgid "PyExc_Exception (C var)"
-msgstr ""
-
-msgid "PyExc_ArithmeticError (C var)"
-msgstr ""
-
-msgid "PyExc_AssertionError (C var)"
-msgstr ""
-
-msgid "PyExc_AttributeError (C var)"
-msgstr ""
-
-msgid "PyExc_BlockingIOError (C var)"
-msgstr ""
-
-msgid "PyExc_BrokenPipeError (C var)"
-msgstr ""
-
-msgid "PyExc_BufferError (C var)"
-msgstr ""
-
-msgid "PyExc_ChildProcessError (C var)"
-msgstr ""
-
-msgid "PyExc_ConnectionAbortedError (C var)"
-msgstr ""
-
-msgid "PyExc_ConnectionError (C var)"
-msgstr ""
-
-msgid "PyExc_ConnectionRefusedError (C var)"
-msgstr ""
-
-msgid "PyExc_ConnectionResetError (C var)"
-msgstr ""
-
-msgid "PyExc_EOFError (C var)"
-msgstr ""
-
-msgid "PyExc_FileExistsError (C var)"
-msgstr ""
-
-msgid "PyExc_FileNotFoundError (C var)"
-msgstr ""
-
-msgid "PyExc_FloatingPointError (C var)"
-msgstr ""
-
-msgid "PyExc_GeneratorExit (C var)"
-msgstr ""
-
-msgid "PyExc_ImportError (C var)"
-msgstr ""
-
-msgid "PyExc_IndentationError (C var)"
-msgstr ""
-
-msgid "PyExc_IndexError (C var)"
-msgstr ""
-
-msgid "PyExc_InterruptedError (C var)"
-msgstr ""
-
-msgid "PyExc_IsADirectoryError (C var)"
-msgstr ""
-
-msgid "PyExc_KeyError (C var)"
-msgstr ""
-
-msgid "PyExc_KeyboardInterrupt (C var)"
-msgstr ""
-
-msgid "PyExc_LookupError (C var)"
-msgstr ""
-
-msgid "PyExc_MemoryError (C var)"
-msgstr ""
-
-msgid "PyExc_ModuleNotFoundError (C var)"
-msgstr ""
-
-msgid "PyExc_NameError (C var)"
-msgstr ""
-
-msgid "PyExc_NotADirectoryError (C var)"
-msgstr ""
-
-msgid "PyExc_NotImplementedError (C var)"
-msgstr ""
-
-msgid "PyExc_OSError (C var)"
-msgstr ""
-
-msgid "PyExc_OverflowError (C var)"
-msgstr ""
-
-msgid "PyExc_PermissionError (C var)"
-msgstr ""
-
-msgid "PyExc_ProcessLookupError (C var)"
-msgstr ""
-
-msgid "PyExc_RecursionError (C var)"
-msgstr ""
-
-msgid "PyExc_ReferenceError (C var)"
-msgstr ""
-
-msgid "PyExc_RuntimeError (C var)"
-msgstr ""
-
-msgid "PyExc_StopAsyncIteration (C var)"
-msgstr ""
-
-msgid "PyExc_StopIteration (C var)"
-msgstr ""
-
-msgid "PyExc_SyntaxError (C var)"
-msgstr ""
-
-msgid "PyExc_SystemError (C var)"
-msgstr ""
-
-msgid "PyExc_SystemExit (C var)"
-msgstr ""
-
-msgid "PyExc_TabError (C var)"
-msgstr ""
-
-msgid "PyExc_TimeoutError (C var)"
-msgstr ""
-
-msgid "PyExc_TypeError (C var)"
-msgstr ""
-
-msgid "PyExc_UnboundLocalError (C var)"
-msgstr ""
-
-msgid "PyExc_UnicodeDecodeError (C var)"
-msgstr ""
-
-msgid "PyExc_UnicodeEncodeError (C var)"
-msgstr ""
-
-msgid "PyExc_UnicodeError (C var)"
-msgstr ""
-
-msgid "PyExc_UnicodeTranslateError (C var)"
-msgstr ""
-
-msgid "PyExc_ValueError (C var)"
-msgstr ""
-
-msgid "PyExc_ZeroDivisionError (C var)"
-msgstr ""
-
-msgid "PyExc_EnvironmentError (C var)"
-msgstr ""
-
-msgid "PyExc_IOError (C var)"
-msgstr ""
-
-msgid "PyExc_WindowsError (C var)"
-msgstr ""
-
-msgid "PyExc_Warning (C var)"
-msgstr ""
-
-msgid "PyExc_BytesWarning (C var)"
-msgstr ""
-
-msgid "PyExc_DeprecationWarning (C var)"
-msgstr ""
-
-msgid "PyExc_FutureWarning (C var)"
-msgstr ""
-
-msgid "PyExc_ImportWarning (C var)"
-msgstr ""
-
-msgid "PyExc_PendingDeprecationWarning (C var)"
-msgstr ""
-
-msgid "PyExc_ResourceWarning (C var)"
-msgstr ""
-
-msgid "PyExc_RuntimeWarning (C var)"
-msgstr ""
-
-msgid "PyExc_SyntaxWarning (C var)"
-msgstr ""
-
-msgid "PyExc_UnicodeWarning (C var)"
-msgstr ""
-
-msgid "PyExc_UserWarning (C var)"
 msgstr ""

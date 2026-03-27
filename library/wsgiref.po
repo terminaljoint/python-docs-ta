@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!wsgiref` --- WSGI Utilities and Reference Implementation"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/wsgiref`"
 msgstr ""
 
 msgid ""
-":mod:`wsgiref` is a reference implementation and is not recommended for "
+":mod:`!wsgiref` is a reference implementation and is not recommended for "
 "production. The module only implements basic security checks."
 msgstr ""
 
@@ -45,7 +43,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-":mod:`wsgiref` is a reference implementation of the WSGI specification that "
+":mod:`!wsgiref` is a reference implementation of the WSGI specification that "
 "can be used to add WSGI support to a web server or framework.  It provides "
 "utilities for manipulating WSGI environment variables and response headers, "
 "base classes for implementing WSGI servers, a demo HTTP server that serves "
@@ -59,7 +57,7 @@ msgid ""
 "information about WSGI, and links to tutorials and other resources."
 msgstr ""
 
-msgid ":mod:`wsgiref.util` -- WSGI environment utilities"
+msgid ":mod:`!wsgiref.util` -- WSGI environment utilities"
 msgstr ""
 
 msgid ""
@@ -153,7 +151,6 @@ msgid ""
 "example)::"
 msgstr ""
 
-#, python-format
 msgid ""
 "from wsgiref.util import setup_testing_defaults\n"
 "from wsgiref.simple_server import make_server\n"
@@ -178,7 +175,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"In addition to the environment functions above, the :mod:`wsgiref.util` "
+"In addition to the environment functions above, the :mod:`!wsgiref.util` "
 "module also provides these miscellaneous utilities:"
 msgstr ""
 
@@ -220,7 +217,7 @@ msgstr ""
 msgid "Support for :meth:`~object.__getitem__` method has been removed."
 msgstr ""
 
-msgid ":mod:`wsgiref.headers` -- WSGI response header tools"
+msgid ":mod:`!wsgiref.headers` -- WSGI response header tools"
 msgstr ""
 
 msgid ""
@@ -315,7 +312,7 @@ msgstr ""
 msgid "*headers* parameter is optional."
 msgstr ""
 
-msgid ":mod:`wsgiref.simple_server` -- a simple WSGI HTTP server"
+msgid ":mod:`!wsgiref.simple_server` -- a simple WSGI HTTP server"
 msgstr ""
 
 msgid ""
@@ -353,7 +350,7 @@ msgid ""
 "This function is a small but complete WSGI application that returns a text "
 "page containing the message \"Hello world!\" and a list of the key/value "
 "pairs provided in the *environ* parameter.  It's useful for verifying that a "
-"WSGI server (such as :mod:`wsgiref.simple_server`) is able to run a simple "
+"WSGI server (such as :mod:`!wsgiref.simple_server`) is able to run a simple "
 "WSGI application correctly."
 msgstr ""
 
@@ -427,25 +424,24 @@ msgid ""
 "application interface."
 msgstr ""
 
-msgid ":mod:`wsgiref.validate` --- WSGI conformance checker"
+msgid ":mod:`!wsgiref.validate` --- WSGI conformance checker"
 msgstr ""
 
 msgid ""
 "When creating new WSGI application objects, frameworks, servers, or "
 "middleware, it can be useful to validate the new code's conformance using :"
-"mod:`wsgiref.validate`.  This module provides a function that creates WSGI "
+"mod:`!wsgiref.validate`.  This module provides a function that creates WSGI "
 "application objects that validate communications between a WSGI server or "
 "gateway and a WSGI application object, to check both sides for protocol "
 "conformance."
 msgstr ""
 
-#, python-format
 msgid ""
 "Note that this utility does not guarantee complete :pep:`3333` compliance; "
 "an absence of errors from this module does not necessarily mean that errors "
 "do not exist.  However, if this module does produce an error, then it is "
-"virtually certain that either the server or application is not "
-"100% compliant."
+"virtually certain that either the server or application is not 100% "
+"compliant."
 msgstr ""
 
 msgid ""
@@ -502,7 +498,7 @@ msgid ""
 "    httpd.serve_forever()"
 msgstr ""
 
-msgid ":mod:`wsgiref.handlers` -- server/gateway base classes"
+msgid ":mod:`!wsgiref.handlers` -- server/gateway base classes"
 msgstr ""
 
 msgid ""
@@ -676,7 +672,7 @@ msgstr ""
 msgid ""
 "The default environment variables to be included in every request's WSGI "
 "environment.  By default, this is a copy of ``os.environ`` at the time that :"
-"mod:`wsgiref.handlers` was imported, but subclasses can either create their "
+"mod:`!wsgiref.handlers` was imported, but subclasses can either create their "
 "own at the class or instance level.  Note that the dictionary should be "
 "considered read-only, since the default value is shared between multiple "
 "classes and instances."
@@ -828,7 +824,7 @@ msgid ""
 "directly."
 msgstr ""
 
-msgid ":mod:`wsgiref.types` -- WSGI types for static type checking"
+msgid ":mod:`!wsgiref.types` -- WSGI types for static type checking"
 msgstr ""
 
 msgid ""
@@ -905,7 +901,6 @@ msgid ""
 "directory and port number (default: 8000) on the command line::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "\"\"\"\n"
 "Small wsgiref based web server. Takes a path to serve from and an\n"
@@ -924,7 +919,7 @@ msgid ""
 "    fn = os.path.join(path, environ[\"PATH_INFO\"][1:])\n"
 "    if \".\" not in fn.split(os.path.sep)[-1]:\n"
 "        fn = os.path.join(fn, \"index.html\")\n"
-"    mime_type = mimetypes.guess_type(fn)[0]\n"
+"    mime_type = mimetypes.guess_file_type(fn)[0]\n"
 "\n"
 "    # Return 200 OK if file exists, otherwise 404 Not Found\n"
 "    if os.path.exists(fn):\n"

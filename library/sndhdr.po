@@ -1,168 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ":mod:`sndhdr` --- Determine type of sound file"
-msgstr ""
-
-msgid "**Source code:** :source:`Lib/sndhdr.py`"
-msgstr ""
-
-msgid ""
-"The :mod:`sndhdr` module is deprecated (see :pep:`PEP 594 <594#sndhdr>` for "
-"details and alternatives)."
+msgid ":mod:`!sndhdr` --- Determine type of sound file"
 msgstr ""
 
 msgid ""
-"The :mod:`sndhdr` provides utility functions which attempt to determine the "
-"type of sound data which is in a file.  When these functions are able to "
-"determine what type of sound data is stored in a file, they return a :func:"
-"`~collections.namedtuple`, containing five attributes: (``filetype``, "
-"``framerate``, ``nchannels``, ``nframes``, ``sampwidth``). The value for "
-"*type* indicates the data type and will be one of the strings ``'aifc'``, "
-"``'aiff'``, ``'au'``, ``'hcom'``, ``'sndr'``, ``'sndt'``, ``'voc'``, "
-"``'wav'``, ``'8svx'``, ``'sb'``, ``'ub'``, or ``'ul'``.  The *sampling_rate* "
-"will be either the actual value or ``0`` if unknown or difficult to decode.  "
-"Similarly, *channels* will be either the number of channels or ``0`` if it "
-"cannot be determined or if the value is difficult to decode.  The value for "
-"*frames* will be either the number of frames or ``-1``.  The last item in "
-"the tuple, *bits_per_sample*, will either be the sample size in bits or "
-"``'A'`` for A-LAW or ``'U'`` for u-LAW."
+"This module is no longer part of the Python standard library. It was :ref:"
+"`removed in Python 3.13 <whatsnew313-pep594>` after being deprecated in "
+"Python 3.11.  The removal was decided in :pep:`594`."
 msgstr ""
 
 msgid ""
-"Determines the type of sound data stored in the file *filename* using :func:"
-"`whathdr`.  If it succeeds, returns a namedtuple as described above, "
-"otherwise ``None`` is returned."
-msgstr ""
-
-msgid "Result changed from a tuple to a namedtuple."
+"Possible replacements are third-party modules from PyPI: :pypi:`filetype`, :"
+"pypi:`puremagic`, or :pypi:`python-magic`. These are not supported or "
+"maintained by the Python core team."
 msgstr ""
 
 msgid ""
-"Determines the type of sound data stored in a file based on the file  "
-"header. The name of the file is given by *filename*.  This function returns "
-"a namedtuple as described above on success, or ``None``."
-msgstr ""
-
-msgid ""
-"The following sound header types are recognized, as listed below with the "
-"return value from :func:`whathdr`: and :func:`what`:"
-msgstr ""
-
-msgid "Value"
-msgstr ""
-
-msgid "Sound header format"
-msgstr ""
-
-msgid "``'aifc'``"
-msgstr ""
-
-msgid "Compressed Audio Interchange Files"
-msgstr ""
-
-msgid "``'aiff'``"
-msgstr ""
-
-msgid "Audio Interchange Files"
-msgstr ""
-
-msgid "``'au'``"
-msgstr ""
-
-msgid "Au Files"
-msgstr ""
-
-msgid "``'hcom'``"
-msgstr ""
-
-msgid "HCOM Files"
-msgstr ""
-
-msgid "``'sndt'``"
-msgstr ""
-
-msgid "Sndtool Sound Files"
-msgstr ""
-
-msgid "``'voc'``"
-msgstr ""
-
-msgid "Creative Labs Audio Files"
-msgstr ""
-
-msgid "``'wav'``"
-msgstr ""
-
-msgid "Waveform Audio File Format Files"
-msgstr ""
-
-msgid "``'8svx'``"
-msgstr ""
-
-msgid "8-Bit Sampled Voice Files"
-msgstr ""
-
-msgid "``'sb'``"
-msgstr ""
-
-msgid "Signed Byte Audio Data Files"
-msgstr ""
-
-msgid "``'ub'``"
-msgstr ""
-
-msgid "UB Files"
-msgstr ""
-
-msgid "``'ul'``"
-msgstr ""
-
-msgid "uLAW Audio Files"
-msgstr ""
-
-msgid ""
-"A list of functions performing the individual tests.  Each function takes "
-"two arguments: the byte-stream and an open file-like object. When :func:"
-"`what` is called with a byte-stream, the file-like object will be ``None``."
-msgstr ""
-
-msgid ""
-"The test function should return a string describing the image type if the "
-"test succeeded, or ``None`` if it failed."
-msgstr ""
-
-msgid "Example:"
-msgstr ""
-
-msgid ""
-">>> import sndhdr\n"
-">>> imghdr.what('bass.wav')\n"
-"'wav'\n"
-">>> imghdr.whathdr('bass.wav')\n"
-"'wav'"
-msgstr ""
-
-msgid "A-LAW"
-msgstr ""
-
-msgid "u-LAW"
+"The last version of Python that provided the :mod:`!sndhdr` module was "
+"`Python 3.12 <https://docs.python.org/3.12/library/sndhdr.html>`_."
 msgstr ""

@@ -1,25 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Pending Removal in Future Versions"
+msgid "Pending removal in future versions"
 msgstr ""
 
 msgid ""
@@ -27,18 +25,22 @@ msgid ""
 "currently no date scheduled for their removal."
 msgstr ""
 
-msgid ""
-":mod:`argparse`: Nesting argument groups and nesting mutually exclusive "
-"groups are deprecated."
+msgid ":mod:`argparse`:"
 msgstr ""
 
-msgid ":mod:`array`'s ``'u'`` format code (:gh:`57281`)"
+msgid ""
+"Nesting argument groups and nesting mutually exclusive groups are deprecated."
+msgstr ""
+
+msgid ""
+"Passing the undocumented keyword argument *prefix_chars* to :meth:`~argparse."
+"ArgumentParser.add_argument_group` is now deprecated."
+msgstr ""
+
+msgid "The :class:`argparse.FileType` type converter is deprecated."
 msgstr ""
 
 msgid ":mod:`builtins`:"
-msgstr ""
-
-msgid "``bool(NotImplemented)``."
 msgstr ""
 
 msgid ""
@@ -76,9 +78,6 @@ msgid ""
 "`complex`."
 msgstr ""
 
-msgid "Delegation of ``int()`` to ``__trunc__()`` method."
-msgstr ""
-
 msgid ""
 "Passing a complex number as the *real* or *imag* argument in the :func:"
 "`complex` constructor is now deprecated; it should only be passed as a "
@@ -90,6 +89,11 @@ msgid ""
 ":mod:`calendar`: ``calendar.January`` and ``calendar.February`` constants "
 "are deprecated and replaced by :data:`calendar.JANUARY` and :data:`calendar."
 "FEBRUARY`. (Contributed by Prince Roshan in :gh:`103636`.)"
+msgstr ""
+
+msgid ""
+":mod:`codecs`: use :func:`open` instead of :func:`codecs.open`. (:gh:"
+"`133038`)"
 msgstr ""
 
 msgid ""
@@ -128,6 +132,11 @@ msgid "``EntryPoints`` tuple interface."
 msgstr ""
 
 msgid "Implicit ``None`` on return values."
+msgstr ""
+
+msgid ""
+":mod:`logging`: the ``warn()`` method has been deprecated since Python 3.3, "
+"use :meth:`~logging.warning` instead."
 msgstr ""
 
 msgid ""
@@ -233,6 +242,13 @@ msgid ":class:`typing.Text` (:gh:`92332`)."
 msgstr ""
 
 msgid ""
+"The internal class ``typing._UnionGenericAlias`` is no longer used to "
+"implement :class:`typing.Union`. To preserve compatibility with users using "
+"this private class, a compatibility shim will be provided until at least "
+"Python 3.17. (Contributed by Jelle Zijlstra in :gh:`105499`.)"
+msgstr ""
+
+msgid ""
 ":class:`unittest.IsolatedAsyncioTestCase`: it is deprecated to return a "
 "value that is not ``None`` from a test case."
 msgstr ""
@@ -276,12 +292,6 @@ msgid "``to_bytes()``"
 msgstr ""
 
 msgid ""
-":mod:`urllib.request`: :class:`~urllib.request.URLopener` and :class:"
-"`~urllib.request.FancyURLopener` style of invoking requests is deprecated. "
-"Use newer :func:`~urllib.request.urlopen` functions and methods."
-msgstr ""
-
-msgid ""
 ":mod:`wsgiref`: ``SimpleHandler.stdout.write()`` should not do partial "
 "writes."
 msgstr ""
@@ -294,6 +304,6 @@ msgid ""
 msgstr ""
 
 msgid ""
-":meth:`zipimport.zipimporter.load_module` is deprecated: use :meth:"
-"`~zipimport.zipimporter.exec_module` instead."
+":func:`sys._clear_type_cache` is deprecated: use :func:`sys."
+"_clear_internal_caches` instead."
 msgstr ""

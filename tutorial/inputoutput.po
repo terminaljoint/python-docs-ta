@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Input and Output"
 msgstr ""
@@ -45,7 +43,6 @@ msgid ""
 "output."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "To use :ref:`formatted string literals <tut-f-strings>`, begin a string with "
 "``f`` or ``F`` before the opening quotation mark or triple quotation mark. "
@@ -53,7 +50,6 @@ msgid ""
 "`` characters that can refer to variables or literal values."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> year = 2016\n"
 ">>> event = 'Referendum'\n"
@@ -61,7 +57,6 @@ msgid ""
 "'Results of the 2016 Referendum'"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The :meth:`str.format` method of strings requires more manual effort.  "
 "You'll still use ``{`` and ``}`` to mark where a variable will be "
@@ -70,7 +65,6 @@ msgid ""
 "there are two examples of how to format variables:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> yes_votes = 42_572_654\n"
 ">>> total_votes = 85_705_149\n"
@@ -137,16 +131,16 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :mod:`string` module contains a :class:`~string.Template` class that "
-"offers yet another way to substitute values into strings, using placeholders "
-"like ``$x`` and replacing them with values from a dictionary, but offers "
-"much less control of the formatting."
+"The :mod:`string` module contains support for a simple templating approach "
+"based upon regular expressions, via :class:`string.Template`. This offers "
+"yet another way to substitute values into strings, using placeholders like "
+"``$x`` and replacing them with values from a dictionary. This syntax is easy "
+"to use, although it offers much less control for formatting."
 msgstr ""
 
 msgid "Formatted String Literals"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ":ref:`Formatted string literals <f-strings>` (also called f-strings for "
 "short) let you include the value of Python expressions inside a string by "
@@ -160,7 +154,6 @@ msgid ""
 "three places after the decimal::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import math\n"
 ">>> print(f'The value of pi is approximately {math.pi:.3f}.')\n"
@@ -172,7 +165,6 @@ msgid ""
 "number of characters wide.  This is useful for making columns line up. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}\n"
 ">>> for name, phone in table.items():\n"
@@ -189,7 +181,6 @@ msgid ""
 "applies :func:`repr`::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> animals = 'eels'\n"
 ">>> print(f'My hovercraft is full of {animals}.')\n"
@@ -216,7 +207,6 @@ msgstr ""
 msgid "Basic usage of the :meth:`str.format` method looks like this::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> print('We are the {} who say \"{}!\"'.format('knights', 'Ni'))\n"
 "We are the knights who say \"Ni!\""
@@ -229,7 +219,6 @@ msgid ""
 "meth:`str.format` method. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> print('{0} and {1}'.format('spam', 'eggs'))\n"
 "spam and eggs\n"
@@ -242,7 +231,6 @@ msgid ""
 "are referred to by using the name of the argument. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> print('This {food} is {adjective}.'.format(\n"
 "...       food='spam', adjective='absolutely horrible'))\n"
@@ -252,7 +240,6 @@ msgstr ""
 msgid "Positional and keyword arguments can be arbitrarily combined::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',\n"
 "...                                                    other='Georg'))\n"
@@ -266,7 +253,6 @@ msgid ""
 "using square brackets ``'[]'`` to access the keys. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}\n"
 ">>> print('Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; '\n"
@@ -279,7 +265,6 @@ msgid ""
 "arguments with the ``**`` notation. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}\n"
 ">>> print('Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; Dcab: {Dcab:d}'."
@@ -292,7 +277,6 @@ msgid ""
 "`vars`, which returns a dictionary containing all local variables::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> table = {k: str(v) for k, v in vars().items()}\n"
 ">>> message = \" \".join([f'{k}: ' + '{' + k +'};' for k in table.keys()])\n"
@@ -305,7 +289,6 @@ msgid ""
 "giving integers and their squares and cubes::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> for x in range(1, 11):\n"
 "...     print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))\n"
@@ -384,7 +367,6 @@ msgstr ""
 msgid "Old string formatting"
 msgstr ""
 
-#, python-format
 msgid ""
 "The % operator (modulo) can also be used for string formatting. Given "
 "``format % values`` (where *format* is a string), ``%`` conversion "
@@ -393,7 +375,6 @@ msgid ""
 "example::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> import math\n"
 ">>> print('The value of pi is approximately %5.3f.' % math.pi)\n"

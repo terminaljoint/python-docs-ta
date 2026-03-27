@@ -1,23 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Murugan Santhosh, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Last-Translator: Murugan Santhosh, 2026\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!logging` --- Logging facility for Python"
 msgstr ""
@@ -29,6 +31,8 @@ msgid ""
 "This page contains the API reference information. For tutorial information "
 "and discussion of more advanced topics, see"
 msgstr ""
+"இந்தப் பக்கத்தில் API குறிப்பு தகவல்கள் உள்ளன. பயிற்சித் தகவல்களுக்கும் மேம்பட்ட "
+"தலைப்புகளுக்கான விவாதங்களுக்கும், பார்க்கவும்"
 
 msgid ":ref:`Basic Tutorial <logging-basic-tutorial>`"
 msgstr ""
@@ -312,7 +316,6 @@ msgid ""
 "include one named ``foo.bar.baz``."
 msgstr ""
 
-#, python-format
 msgid ""
 "Logs a message with level :const:`DEBUG` on this logger. The *msg* is the "
 "message format string, and the *args* are the arguments which are merged "
@@ -379,7 +382,6 @@ msgid ""
 "example, they could be incorporated into logged messages. For example::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "FORMAT = '%(asctime)s %(clientip)-15s %(user)-8s %(message)s'\n"
 "logging.basicConfig(format=FORMAT)\n"
@@ -741,7 +743,6 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#, python-format
 msgid ""
 "A format string in the given *style* for the logged output as a whole. The "
 "possible mapping keys are drawn from the :class:`LogRecord` object's :ref:"
@@ -750,30 +751,26 @@ msgid ""
 msgstr ""
 
 msgid ""
-"A format string in the given *style* for the date/time portion of the logged "
-"output. If not specified, the default described in :meth:`formatTime` is "
-"used."
+"A format string for the date/time portion of the logged output. If not "
+"specified, the default described in :meth:`formatTime` is used."
 msgstr ""
 
-#, python-format
 msgid ""
 "Can be one of ``'%'``, ``'{'`` or ``'$'`` and determines how the format "
 "string will be merged with its data: using one of :ref:`old-string-"
 "formatting` (``%``), :meth:`str.format` (``{``) or :class:`string.Template` "
-"(``$``). This only applies to *fmt* and *datefmt* (e.g. ``'%(message)s'`` "
-"versus ``'{message}'``), not to the actual log messages passed to the "
-"logging methods. However, there are :ref:`other ways <formatting-styles>` to "
-"use ``{``- and ``$``-formatting for log messages."
+"(``$``). This only applies to *fmt* (e.g. ``'%(message)s'`` versus "
+"``'{message}'``), not to the actual log messages passed to the logging "
+"methods. However, there are :ref:`other ways <formatting-styles>` to use "
+"``{``- and ``$``-formatting for log messages."
 msgstr ""
 
-#, python-format
 msgid ""
 "If ``True`` (the default), incorrect or mismatched *fmt* and *style* will "
 "raise a :exc:`ValueError`; for example, ``logging.Formatter('%(asctime)s - "
 "%(message)s', style='{')``."
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "A dictionary with default values to use in custom fields. For example, "
 "``logging.Formatter('%(ip)s %(message)s', defaults={\"ip\": None})``"
@@ -811,7 +808,6 @@ msgid ""
 "information, using :meth:`formatStack` to transform it if necessary."
 msgstr ""
 
-#, python-format
 msgid ""
 "This method should be called from :meth:`format` by a formatter which wants "
 "to make use of a formatted time. This method can be overridden in formatters "
@@ -833,7 +829,6 @@ msgid ""
 "be shown in GMT, set the ``converter`` attribute in the ``Formatter`` class."
 msgstr ""
 
-#, python-format
 msgid ""
 "Previously, the default format was hard-coded as in this example: "
 "``2010-09-06 22:38:15,292`` where the part before the comma is handled by a "
@@ -999,7 +994,6 @@ msgstr ""
 msgid "The line number in the source file where the logging call was made."
 msgstr ""
 
-#, python-format
 msgid ""
 "The event description message, which can be a %-format string with "
 "placeholders for variable data, or an arbitrary object (see :ref:`arbitrary-"
@@ -1065,18 +1059,16 @@ msgstr ""
 msgid "LogRecord attributes"
 msgstr ""
 
-#, python-format
 msgid ""
 "The LogRecord has a number of attributes, most of which are derived from the "
 "parameters to the constructor. (Note that the names do not always correspond "
 "exactly between the LogRecord constructor parameters and the LogRecord "
 "attributes.) These attributes can be used to merge data from the record into "
 "the format string. The following table lists (in alphabetical order) the "
-"attribute names, their meanings and the corresponding placeholder in a "
-"%-style format string."
+"attribute names, their meanings and the corresponding placeholder in a %-"
+"style format string."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "If you are using {}-formatting (:func:`str.format`), you can use ``{attrname}"
 "`` as the placeholder in the format string. If you are using $-formatting (:"
@@ -1084,7 +1076,6 @@ msgid ""
 "course, replace ``attrname`` with the actual attribute name you want to use."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "In the case of {}-formatting, you can specify formatting flags by placing "
 "them after the attribute name, separated from it with a colon. For example: "
@@ -1117,7 +1108,6 @@ msgstr ""
 msgid "asctime"
 msgstr ""
 
-#, python-format
 msgid "``%(asctime)s``"
 msgstr ""
 
@@ -1130,13 +1120,12 @@ msgstr ""
 msgid "created"
 msgstr ""
 
-#, python-format
 msgid "``%(created)f``"
 msgstr ""
 
 msgid ""
 "Time when the :class:`LogRecord` was created (as returned by :func:`time."
-"time`)."
+"time_ns` / 1e9)."
 msgstr ""
 
 msgid "exc_info"
@@ -1147,10 +1136,17 @@ msgid ""
 "``None``."
 msgstr ""
 
+msgid "exc_text"
+msgstr ""
+
+msgid ""
+"Exception information formatted as a string. This is set when :meth:"
+"`Formatter.format` is invoked, or ``None`` if no exception has occurred."
+msgstr ""
+
 msgid "filename"
 msgstr ""
 
-#, python-format
 msgid "``%(filename)s``"
 msgstr ""
 
@@ -1160,7 +1156,6 @@ msgstr ""
 msgid "funcName"
 msgstr ""
 
-#, python-format
 msgid "``%(funcName)s``"
 msgstr ""
 
@@ -1170,7 +1165,6 @@ msgstr ""
 msgid "levelname"
 msgstr ""
 
-#, python-format
 msgid "``%(levelname)s``"
 msgstr ""
 
@@ -1182,7 +1176,6 @@ msgstr ""
 msgid "levelno"
 msgstr ""
 
-#, python-format
 msgid "``%(levelno)s``"
 msgstr ""
 
@@ -1194,7 +1187,6 @@ msgstr ""
 msgid "lineno"
 msgstr ""
 
-#, python-format
 msgid "``%(lineno)d``"
 msgstr ""
 
@@ -1204,7 +1196,6 @@ msgstr ""
 msgid "message"
 msgstr ""
 
-#, python-format
 msgid "``%(message)s``"
 msgstr ""
 
@@ -1216,7 +1207,6 @@ msgstr ""
 msgid "module"
 msgstr ""
 
-#, python-format
 msgid "``%(module)s``"
 msgstr ""
 
@@ -1226,7 +1216,6 @@ msgstr ""
 msgid "msecs"
 msgstr ""
 
-#, python-format
 msgid "``%(msecs)d``"
 msgstr ""
 
@@ -1246,7 +1235,6 @@ msgstr ""
 msgid "name"
 msgstr ""
 
-#, python-format
 msgid "``%(name)s``"
 msgstr ""
 
@@ -1256,7 +1244,6 @@ msgstr ""
 msgid "pathname"
 msgstr ""
 
-#, python-format
 msgid "``%(pathname)s``"
 msgstr ""
 
@@ -1268,7 +1255,6 @@ msgstr ""
 msgid "process"
 msgstr ""
 
-#, python-format
 msgid "``%(process)d``"
 msgstr ""
 
@@ -1278,7 +1264,6 @@ msgstr ""
 msgid "processName"
 msgstr ""
 
-#, python-format
 msgid "``%(processName)s``"
 msgstr ""
 
@@ -1288,7 +1273,6 @@ msgstr ""
 msgid "relativeCreated"
 msgstr ""
 
-#, python-format
 msgid "``%(relativeCreated)d``"
 msgstr ""
 
@@ -1309,7 +1293,6 @@ msgstr ""
 msgid "thread"
 msgstr ""
 
-#, python-format
 msgid "``%(thread)d``"
 msgstr ""
 
@@ -1319,7 +1302,6 @@ msgstr ""
 msgid "threadName"
 msgstr ""
 
-#, python-format
 msgid "``%(threadName)s``"
 msgstr ""
 
@@ -1329,7 +1311,6 @@ msgstr ""
 msgid "taskName"
 msgstr ""
 
-#, python-format
 msgid "``%(taskName)s``"
 msgstr ""
 
@@ -1353,7 +1334,12 @@ msgstr ""
 
 msgid ""
 "Returns an instance of :class:`LoggerAdapter` initialized with an "
-"underlying :class:`Logger` instance and a dict-like object."
+"underlying :class:`Logger` instance, an optional dict-like object (*extra*), "
+"and an optional boolean (*merge_extra*) indicating whether or not the "
+"*extra* argument of individual log calls should be merged with the :class:"
+"`LoggerAdapter` extra. The default behavior is to ignore the *extra* "
+"argument of individual log calls and only use the one of the :class:"
+"`LoggerAdapter` instance"
 msgstr ""
 
 msgid ""
@@ -1392,12 +1378,18 @@ msgid ""
 "delegate to the underlying logger and allow adapters to be nested."
 msgstr ""
 
+msgid "The *extra* argument is now optional."
+msgstr ""
+
+msgid "The *merge_extra* parameter was added."
+msgstr ""
+
 msgid "Thread Safety"
 msgstr ""
 
 msgid ""
 "The logging module is intended to be thread-safe without any special work "
-"needing to be done by its clients. It achieves this though using threading "
+"needing to be done by its clients. It achieves this through using threading "
 "locks; there is one lock to serialize access to the module's shared data, "
 "and each handler also creates a lock to serialize access to its underlying I/"
 "O."
@@ -1477,7 +1469,7 @@ msgid ""
 "most programs will want to carefully and explicitly control the logging "
 "configuration, and should therefore prefer creating a module-level logger "
 "and calling :meth:`Logger.debug` (or other level-specific methods) on it, as "
-"described at the beginnning of this documentation."
+"described at the beginning of this documentation."
 msgstr ""
 
 msgid ""
@@ -1581,13 +1573,11 @@ msgid ""
 "value of the level."
 msgstr ""
 
-#, python-format
 msgid ""
-"If no matching numeric or string value is passed in, the string 'Level %s' "
-"% level is returned."
+"If no matching numeric or string value is passed in, the string 'Level %s' % "
+"level is returned."
 msgstr ""
 
-#, python-format
 msgid ""
 "Levels are internally integers (as they need to be compared in the logging "
 "logic). This function is used to convert between an integer level and the "
@@ -1875,8 +1865,8 @@ msgid "Integration with the warnings module"
 msgstr ""
 
 msgid ""
-"The :func:`captureWarnings` function can be used to integrate :mod:`logging` "
-"with the :mod:`warnings` module."
+"The :func:`captureWarnings` function can be used to integrate :mod:`!"
+"logging` with the :mod:`warnings` module."
 msgstr ""
 
 msgid ""
@@ -1923,9 +1913,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This is the original source for the :mod:`logging` package.  The version of "
+"This is the original source for the :mod:`!logging` package.  The version of "
 "the package available from this site is suitable for use with Python 1.5.2, "
-"2.1.x and 2.2.x, which do not include the :mod:`logging` package in the "
+"2.1.x and 2.2.x, which do not include the :mod:`!logging` package in the "
 "standard library."
 msgstr ""
 

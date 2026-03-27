@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Operating System Utilities"
 msgstr ""
@@ -120,6 +118,27 @@ msgid ""
 "func:`!signal`.  Do not call those functions directly!"
 msgstr ""
 
+msgid "Check if a :c:macro:`!SIGINT` signal has been received."
+msgstr ""
+
+msgid ""
+"Returns ``1`` if a :c:macro:`!SIGINT` has occurred and clears the signal "
+"flag, or ``0`` otherwise."
+msgstr ""
+
+msgid ""
+"In most cases, you should prefer :c:func:`PyErr_CheckSignals` over this "
+"function. :c:func:`!PyErr_CheckSignals` invokes the appropriate signal "
+"handlers for all pending signals, allowing Python code to handle the signal "
+"properly. This function only detects :c:macro:`!SIGINT` and does not invoke "
+"any Python signal handlers."
+msgstr ""
+
+msgid ""
+"This function is async-signal-safe and this function cannot fail. The caller "
+"must hold an :term:`attached thread state`."
+msgstr ""
+
 msgid ""
 "This function should not be called directly: use the :c:type:`PyConfig` API "
 "with the :c:func:`PyConfig_SetBytesString` function which ensures that :ref:"
@@ -216,6 +235,41 @@ msgid ""
 "`PyPreConfig.legacy_windows_fs_encoding` is zero."
 msgstr ""
 
+msgid ""
+"Similar to :c:func:`!fopen`, but *path* is a Python object and an exception "
+"is set on error."
+msgstr ""
+
+msgid ""
+"*path* must be a :class:`str` object, a :class:`bytes` object, or a :term:"
+"`path-like object`."
+msgstr ""
+
+msgid ""
+"On success, return the new file pointer. On error, set an exception and "
+"return ``NULL``."
+msgstr ""
+
+msgid ""
+"The file must be closed by :c:func:`Py_fclose` rather than calling directly :"
+"c:func:`!fclose`."
+msgstr ""
+
+msgid "The file descriptor is created non-inheritable (:pep:`446`)."
+msgstr ""
+
+msgid "The caller must have an :term:`attached thread state`."
+msgstr ""
+
+msgid "Close a file that was opened by :c:func:`Py_fopen`."
+msgstr ""
+
+msgid ""
+"On success, return ``0``. On error, return ``EOF`` and ``errno`` is set to "
+"indicate the error. In either case, any further access (including another "
+"call to :c:func:`Py_fclose`) to the stream results in undefined behavior."
+msgstr ""
+
 msgid "System Functions"
 msgstr ""
 
@@ -242,39 +296,7 @@ msgid ""
 "prior to :c:func:`Py_Initialize`."
 msgstr ""
 
-msgid ""
-"This API is kept for backward compatibility: setting :c:member:`PyConfig."
-"warnoptions` should be used instead, see :ref:`Python Initialization "
-"Configuration <init-config>`."
-msgstr ""
-
-msgid ""
-"Append *s* to :data:`sys.warnoptions`. This function must be called prior "
-"to :c:func:`Py_Initialize` in order to affect the warnings filter list."
-msgstr ""
-
-msgid "Append *unicode* to :data:`sys.warnoptions`."
-msgstr ""
-
-msgid ""
-"Note: this function is not currently usable from outside the CPython "
-"implementation, as it must be called prior to the implicit import of :mod:"
-"`warnings` in :c:func:`Py_Initialize` to be effective, but can't be called "
-"until enough of the runtime has been initialized to permit the creation of "
-"Unicode objects."
-msgstr ""
-
-msgid ""
-"This API is kept for backward compatibility: setting :c:member:`PyConfig."
-"module_search_paths` and :c:member:`PyConfig.module_search_paths_set` should "
-"be used instead, see :ref:`Python Initialization Configuration <init-"
-"config>`."
-msgstr ""
-
-msgid ""
-"Set :data:`sys.path` to a list object of paths found in *path* which should "
-"be a list of paths separated with the platform's search path delimiter (``:"
-"`` on Unix, ``;`` on Windows)."
+msgid "Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
 msgstr ""
 
 msgid ""
@@ -282,7 +304,6 @@ msgid ""
 "exceptions are raised, even if truncation occurs (see below)."
 msgstr ""
 
-#, python-format
 msgid ""
 "*format* should limit the total size of the formatted output string to 1000 "
 "bytes or less -- after 1000 bytes, the output string is truncated. In "
@@ -315,18 +336,6 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This API is kept for backward compatibility: setting :c:member:`PyConfig."
-"xoptions` should be used instead, see :ref:`Python Initialization "
-"Configuration <init-config>`."
-msgstr ""
-
-msgid ""
-"Parse *s* as a set of :option:`-X` options and add them to the current "
-"options mapping as returned by :c:func:`PySys_GetXOptions`. This function "
-"may be called prior to :c:func:`Py_Initialize`."
-msgstr ""
-
-msgid ""
 "Return the current dictionary of :option:`-X` options, similarly to :data:"
 "`sys._xoptions`.  On error, ``NULL`` is returned and an exception is set."
 msgstr ""
@@ -336,14 +345,20 @@ msgid ""
 "non-zero with an exception set on failure."
 msgstr ""
 
+msgid "The *event* string argument must not be *NULL*."
+msgstr ""
+
 msgid ""
 "If any hooks have been added, *format* and other arguments will be used to "
 "construct a tuple to pass. Apart from ``N``, the same format characters as "
 "used in :c:func:`Py_BuildValue` are available. If the built value is not a "
-"tuple, it will be added into a single-element tuple. (The ``N`` format "
-"option consumes a reference, but since there is no way to know whether "
-"arguments to this function will be consumed, using it may cause reference "
-"leaks.)"
+"tuple, it will be added into a single-element tuple."
+msgstr ""
+
+msgid ""
+"The ``N`` format option must not be used. It consumes a reference, but since "
+"there is no way to know whether arguments to this function will be consumed, "
+"using it may cause reference leaks."
 msgstr ""
 
 msgid ""
@@ -354,9 +369,17 @@ msgstr ""
 msgid ":func:`sys.audit` performs the same function from Python code."
 msgstr ""
 
+msgid "See also :c:func:`PySys_AuditTuple`."
+msgstr ""
+
 msgid ""
 "Require :c:type:`Py_ssize_t` for ``#`` format characters. Previously, an "
 "unavoidable deprecation warning was raised."
+msgstr ""
+
+msgid ""
+"Similar to :c:func:`PySys_Audit`, but pass arguments as a Python object. "
+"*args* must be a :class:`tuple`. To pass no arguments, *args* can be *NULL*."
 msgstr ""
 
 msgid ""
@@ -380,8 +403,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The hook function is always called with the GIL held by the Python "
-"interpreter that raised the event."
+"The hook function is always called with an :term:`attached thread state` by "
+"the Python interpreter that raised the event."
 msgstr ""
 
 msgid ""
@@ -400,8 +423,9 @@ msgstr ""
 
 msgid ""
 "The type of the hook function. *event* is the C string event argument passed "
-"to :c:func:`PySys_Audit`. *args* is guaranteed to be a :c:type:"
-"`PyTupleObject`. *userData* is the argument passed to PySys_AddAuditHook()."
+"to :c:func:`PySys_Audit` or :c:func:`PySys_AuditTuple`. *args* is guaranteed "
+"to be a :c:type:`PyTupleObject`. *userData* is the argument passed to "
+"PySys_AddAuditHook()."
 msgstr ""
 
 msgid "Process Control"
@@ -443,6 +467,9 @@ msgid ""
 "Each cleanup function will be called at most once.  Since Python's internal "
 "finalization will have completed before the cleanup function, no Python APIs "
 "should be called by *func*."
+msgstr ""
+
+msgid ":c:func:`PyUnstable_AtExit` for passing a ``void *data`` argument."
 msgstr ""
 
 msgid "USE_STACKCHECK (C macro)"

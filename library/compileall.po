@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!compileall` --- Byte-compile Python libraries"
 msgstr ""
@@ -37,9 +35,8 @@ msgid "Availability"
 msgstr ""
 
 msgid ""
-"This module does not work or is not available on WebAssembly platforms "
-"``wasm32-emscripten`` and ``wasm32-wasi``. See :ref:`wasm-availability` for "
-"more information."
+"This module does not work or is not available on WebAssembly. See :ref:`wasm-"
+"availability` for more information."
 msgstr ""
 
 msgid "Command-line use"
@@ -50,7 +47,6 @@ msgid ""
 "compile Python sources."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Positional arguments are files to compile or directories that contain source "
 "files, traversed recursively.  If no argument is given, behave as if the "
@@ -79,8 +75,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Remove (``-s``) or append (``-p``) the given prefix of paths recorded in the "
-"``.pyc`` files. Cannot be combined with ``-d``."
+"Remove the given prefix from paths recorded in the ``.pyc`` files. Paths are "
+"made relative to the prefix."
+msgstr ""
+
+msgid "This option can be used with ``-p`` but not with ``-d``."
+msgstr ""
+
+msgid ""
+"Prepend the given prefix to paths recorded in the ``.pyc`` files. Use ``-p /"
+"`` to make the paths absolute."
+msgstr ""
+
+msgid "This option can be used with ``-s`` but not with ``-d``."
 msgstr ""
 
 msgid ""
@@ -110,7 +117,7 @@ msgstr ""
 
 msgid ""
 "Use *N* workers to compile the files within the given directory. If ``0`` is "
-"used, then the result of :func:`os.cpu_count` will be used."
+"used, then the result of :func:`os.process_cpu_count` will be used."
 msgstr ""
 
 msgid ""

@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!socket` --- Low-level networking interface"
 msgstr ""
@@ -40,9 +38,8 @@ msgid "Availability"
 msgstr ""
 
 msgid ""
-"This module does not work or is not available on WebAssembly platforms "
-"``wasm32-emscripten`` and ``wasm32-wasi``. See :ref:`wasm-availability` for "
-"more information."
+"This module does not work or is not available on WebAssembly. See :ref:`wasm-"
+"availability` for more information."
 msgstr ""
 
 msgid ""
@@ -119,13 +116,12 @@ msgid ""
 "For :const:`AF_INET6` address family, a four-tuple ``(host, port, flowinfo, "
 "scope_id)`` is used, where *flowinfo* and *scope_id* represent the "
 "``sin6_flowinfo`` and ``sin6_scope_id`` members in :const:`struct "
-"sockaddr_in6` in C.  For :mod:`socket` module methods, *flowinfo* and "
+"sockaddr_in6` in C.  For :mod:`!socket` module methods, *flowinfo* and "
 "*scope_id* can be omitted just for backward compatibility.  Note, however, "
 "omission of *scope_id* can cause problems in manipulating scoped IPv6 "
 "addresses."
 msgstr ""
 
-#, python-format
 msgid ""
 "For multicast addresses (with *scope_id* meaningful) *address* may not "
 "contain ``%scope_id`` (or ``zone id``) part. This information is superfluous "
@@ -176,16 +172,16 @@ msgid ""
 msgstr ""
 
 msgid ""
-":const:`CAN_ISOTP` protocol require a tuple ``(interface, rx_addr, "
+":const:`CAN_ISOTP` protocol requires a tuple ``(interface, rx_addr, "
 "tx_addr)`` where both additional parameters are unsigned long integer that "
 "represent a CAN identifier (standard or extended)."
 msgstr ""
 
 msgid ""
-":const:`CAN_J1939` protocol require a tuple ``(interface, name, pgn, addr)`` "
-"where additional parameters are 64-bit unsigned integer representing the ECU "
-"name, a 32-bit unsigned integer representing the Parameter Group Number "
-"(PGN), and an 8-bit integer representing the address."
+":const:`CAN_J1939` protocol requires a tuple ``(interface, name, pgn, "
+"addr)`` where additional parameters are 64-bit unsigned integer representing "
+"the ECU name, a 32-bit unsigned integer representing the Parameter Group "
+"Number (PGN), and an 8-bit integer representing the address."
 msgstr ""
 
 msgid ""
@@ -201,8 +197,28 @@ msgid ""
 msgstr ""
 
 msgid ""
-":const:`BTPROTO_L2CAP` accepts ``(bdaddr, psm)`` where ``bdaddr`` is the "
-"Bluetooth address as a string and ``psm`` is an integer."
+":const:`BTPROTO_L2CAP` accepts a tuple ``(bdaddr, psm[, cid[, "
+"bdaddr_type]])`` where:"
+msgstr ""
+
+msgid "``bdaddr`` is a string specifying the Bluetooth address."
+msgstr ""
+
+msgid "``psm`` is an integer specifying the Protocol/Service Multiplexer."
+msgstr ""
+
+msgid ""
+"``cid`` is an optional integer specifying the Channel Identifier. If not "
+"given, defaults to zero."
+msgstr ""
+
+msgid ""
+"``bdaddr_type`` is an optional integer specifying the address type; one of :"
+"const:`BDADDR_BREDR` (default), :const:`BDADDR_LE_PUBLIC`, :const:"
+"`BDADDR_LE_RANDOM`."
+msgstr ""
+
+msgid "Added ``cid`` and ``bdaddr_type`` fields."
 msgstr ""
 
 msgid ""
@@ -210,20 +226,35 @@ msgid ""
 "the Bluetooth address as a string and ``channel`` is an integer."
 msgstr ""
 
+msgid ":const:`BTPROTO_HCI` accepts a format that depends on your OS."
+msgstr ""
+
 msgid ""
-":const:`BTPROTO_HCI` accepts ``(device_id,)`` where ``device_id`` is either "
-"an integer or a string with the Bluetooth address of the interface. (This "
-"depends on your OS; NetBSD and DragonFlyBSD expect a Bluetooth address while "
-"everything else expects an integer.)"
+"On Linux it accepts an integer ``device_id`` or a tuple ``(device_id, "
+"[channel])`` where ``device_id`` specifies the number of the Bluetooth "
+"device, and ``channel`` is an optional integer specifying the HCI channel (:"
+"const:`HCI_CHANNEL_RAW` by default)."
+msgstr ""
+
+msgid ""
+"On FreeBSD, NetBSD and DragonFly BSD it accepts ``bdaddr`` where ``bdaddr`` "
+"is the Bluetooth address as a string."
 msgstr ""
 
 msgid "NetBSD and DragonFlyBSD support added."
 msgstr ""
 
+msgid "FreeBSD support added."
+msgstr ""
+
 msgid ""
-":const:`BTPROTO_SCO` accepts ``bdaddr`` where ``bdaddr`` is a :class:`bytes` "
-"object containing the Bluetooth address in a string format. (ex. "
-"``b'12:23:34:45:56:67'``) This protocol is not supported under FreeBSD."
+"Added ``channel`` field. ``device_id`` not packed in a tuple is now accepted."
+msgstr ""
+
+msgid ""
+":const:`BTPROTO_SCO` accepts ``bdaddr`` where ``bdaddr`` is the Bluetooth "
+"address as a string or a :class:`bytes` object. (ex. ``'12:23:34:45:56:67'`` "
+"or ``b'12:23:34:45:56:67'``)"
 msgstr ""
 
 msgid ""
@@ -391,7 +422,7 @@ msgstr ""
 msgid "Module contents"
 msgstr ""
 
-msgid "The module :mod:`socket` exports the following elements."
+msgid "The module :mod:`!socket` exports the following elements."
 msgstr ""
 
 msgid "Exceptions"
@@ -492,16 +523,16 @@ msgid ""
 msgstr ""
 
 msgid ""
-"On Windows, ``TCP_FASTOPEN``, ``TCP_KEEPCNT`` appear if run-time Windows "
-"supports."
+"Added support for ``TCP_FASTOPEN``, ``TCP_KEEPCNT`` on Windows platforms "
+"when available."
 msgstr ""
 
 msgid "``TCP_NOTSENT_LOWAT`` was added."
 msgstr ""
 
 msgid ""
-"On Windows, ``TCP_KEEPIDLE``, ``TCP_KEEPINTVL`` appear if run-time Windows "
-"supports."
+"Added support for ``TCP_KEEPIDLE``, ``TCP_KEEPINTVL`` on Windows platforms "
+"when available."
 msgstr ""
 
 msgid ""
@@ -530,11 +561,28 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Added ``SO_BINDTOIFINDEX``. On Linux this constant can be used in the same "
+"way that ``SO_BINDTODEVICE`` is used, but with the index of a network "
+"interface instead of its name."
+msgstr ""
+
+msgid ""
+"Added missing ``IP_FREEBIND``, ``IP_RECVERR``, ``IPV6_RECVERR``, "
+"``IP_RECVTTL``, and ``IP_RECVORIGDSTADDR`` on Linux."
+msgstr ""
+
+msgid "Added support for ``TCP_QUICKACK`` on Windows platforms when available."
+msgstr ""
+
+msgid ""
 "Many constants of these forms, documented in the Linux documentation, are "
 "also defined in the socket module."
 msgstr ""
 
 msgid "NetBSD support was added."
+msgstr ""
+
+msgid "Restored missing ``CAN_RAW_ERR_FILTER`` on Linux."
 msgstr ""
 
 msgid ""
@@ -609,6 +657,9 @@ msgid ""
 "on this platform."
 msgstr ""
 
+msgid "Integer constants for use with Bluetooth addresses."
+msgstr ""
+
 msgid ""
 "These are string constants containing Bluetooth addresses with special "
 "meanings. For example, :const:`BDADDR_ANY` can be used to indicate any "
@@ -616,9 +667,49 @@ msgid ""
 msgstr ""
 
 msgid ""
-"For use with :const:`BTPROTO_HCI`. :const:`HCI_FILTER` is not available for "
-"NetBSD or DragonFlyBSD. :const:`HCI_TIME_STAMP` and :const:`HCI_DATA_DIR` "
-"are not available for FreeBSD, NetBSD, or DragonFlyBSD."
+"These constants describe the Bluetooth address type when binding or "
+"connecting a :const:`BTPROTO_L2CAP` socket."
+msgstr ""
+
+msgid ""
+"Used in the level argument to the :meth:`~socket.setsockopt` and :meth:"
+"`~socket.getsockopt` methods of Bluetooth socket objects."
+msgstr ""
+
+msgid ""
+":const:`SOL_BLUETOOTH` is only available on Linux. Other constants are "
+"available if the corresponding protocol is supported."
+msgstr ""
+
+msgid ""
+"Used in the option name and value argument to the :meth:`~socket.setsockopt` "
+"and :meth:`~socket.getsockopt` methods of Bluetooth socket objects."
+msgstr ""
+
+msgid ""
+":const:`!BT_*` and :const:`L2CAP_LM` are only available on Linux. :const:`!"
+"SO_BTH_*` are only available on Windows. Other constants may be available on "
+"Linux and various BSD platforms."
+msgstr ""
+
+msgid ""
+"Option names for use with :const:`BTPROTO_HCI`. Availability and format of "
+"the option values depend on platform."
+msgstr ""
+
+msgid ""
+"Added :const:`!SO_HCI_EVT_FILTER` and :const:`!SO_HCI_PKT_FILTER` on NetBSD "
+"and DragonFly BSD. Added :const:`!HCI_DATA_DIR` on FreeBSD, NetBSD and "
+"DragonFly BSD."
+msgstr ""
+
+msgid ""
+"The ``device_id`` value used to create an HCI socket that isn't specific to "
+"a single Bluetooth adapter."
+msgstr ""
+
+msgid ""
+"Possible values for ``channel`` field in the :const:`BTPROTO_HCI` address."
 msgstr ""
 
 msgid ""
@@ -637,6 +728,10 @@ msgstr ""
 msgid ""
 "Constant to optimize CPU locality, to be used in conjunction with :data:"
 "`SO_REUSEPORT`."
+msgstr ""
+
+msgid ""
+"Constant to enable duplicate address and port bindings with load balancing."
 msgstr ""
 
 msgid "Constants for Windows Hyper-V sockets for host/guest communications."
@@ -855,13 +950,13 @@ msgstr ""
 msgid "Other functions"
 msgstr ""
 
-msgid "The :mod:`socket` module also offers various network-related services:"
+msgid "The :mod:`!socket` module also offers various network-related services:"
 msgstr ""
 
 msgid ""
 "Close a socket file descriptor. This is like :func:`os.close`, but for "
-"sockets. On some platforms (most noticeable Windows) :func:`os.close` does "
-"not work for socket file descriptors."
+"sockets. On some platforms (most notably Windows) :func:`os.close` does not "
+"work for socket file descriptors."
 msgstr ""
 
 msgid ""
@@ -958,7 +1053,6 @@ msgstr ""
 msgid "parameters can now be passed using keyword arguments."
 msgstr ""
 
-#, python-format
 msgid ""
 "for IPv6 multicast addresses, string representing an address will not "
 "contain ``%scope_id`` part."
@@ -1036,7 +1130,6 @@ msgid ""
 "Similarly, *port* can contain a string port name or a numeric port number."
 msgstr ""
 
-#, python-format
 msgid ""
 "For IPv6 addresses, ``%scope_id`` is appended to the host part if *sockaddr* "
 "contains meaningful *scope_id*. Usually this happens for multicast addresses."
@@ -1249,7 +1342,6 @@ msgid ""
 "(all names are examples):"
 msgstr ""
 
-#, python-brace-format
 msgid "UUID: ``{FB605B73-AAC2-49A6-9A2F-25416AEA0573}``"
 msgstr ""
 
@@ -1295,6 +1387,11 @@ msgid ""
 "Receive up to *maxfds* file descriptors from an :const:`AF_UNIX` socket "
 "*sock*. Return ``(msg, list(fds), flags, addr)``. Consult :meth:`~socket."
 "recvmsg` for the documentation of these parameters."
+msgstr ""
+
+msgid ""
+"Unix platforms supporting :meth:`~socket.recvmsg` and :const:`SCM_RIGHTS` "
+"mechanism."
 msgstr ""
 
 msgid "Any truncated integers at the end of the list of file descriptors."
@@ -1372,7 +1469,7 @@ msgstr ""
 
 msgid ""
 "If the connection is interrupted by a signal, the method waits until the "
-"connection completes, or raise a :exc:`TimeoutError` on timeout, if the "
+"connection completes, or raises a :exc:`TimeoutError` on timeout, if the "
 "signal handler doesn't raise an exception and the socket is blocking or has "
 "a timeout. For non-blocking sockets, the method raises an :exc:"
 "`InterruptedError` exception if the connection is interrupted by a signal "
@@ -1464,12 +1561,6 @@ msgid ""
 "`setblocking` or :meth:`settimeout`."
 msgstr ""
 
-msgid "platform"
-msgstr ""
-
-msgid "Windows"
-msgstr ""
-
 msgid ""
 "The :meth:`ioctl` method is a limited interface to the WSAIoctl system "
 "interface.  Please refer to the `Win32 documentation <https://msdn.microsoft."
@@ -1540,7 +1631,6 @@ msgid ""
 "address family --- see above.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "For multicast IPv6 address, first item of *address* does not contain "
 "``%scope_id`` part anymore. In order to get full IPv6 address use :func:"
@@ -1599,7 +1689,6 @@ msgid ""
 "meth:`sendmsg`. ::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import socket, array\n"
 "\n"
@@ -1810,12 +1899,12 @@ msgid ""
 "Set the value of the given socket option (see the Unix manual page :manpage:"
 "`setsockopt(2)`).  The needed symbolic constants are defined in this module "
 "(:ref:`!SO_\\* etc. <socket-unix-constants>`).  The value can be an integer, "
-"``None`` or a :term:`bytes-like object` representing a buffer. In the later "
+"``None`` or a :term:`bytes-like object` representing a buffer. In the latter "
 "case it is up to the caller to ensure that the bytestring contains the "
 "proper bits (see the optional built-in module :mod:`struct` for a way to "
 "encode C structures as bytestrings). When *value* is set to ``None``, "
-"*optlen* argument is required. It's equivalent to call :c:func:`setsockopt` "
-"C function with ``optval=NULL`` and ``optlen=optlen``."
+"*optlen* argument is required. It's equivalent to calling :c:func:"
+"`setsockopt` C function with ``optval=NULL`` and ``optlen=optlen``."
 msgstr ""
 
 msgid "setsockopt(level, optname, None, optlen: int) form added."
@@ -2098,7 +2187,6 @@ msgstr ""
 msgid "This last example might require special privileges::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import socket\n"
 "import struct\n"
@@ -2126,8 +2214,8 @@ msgid ""
 "while True:\n"
 "    cf, addr = s.recvfrom(can_frame_size)\n"
 "\n"
-"    print('Received: can_id=%x, can_dlc=%x, data=%s' "
-"% dissect_can_frame(cf))\n"
+"    print('Received: can_id=%x, can_dlc=%x, data=%s' % "
+"dissect_can_frame(cf))\n"
 "\n"
 "    try:\n"
 "        s.send(cf)\n"
@@ -2154,7 +2242,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"There is a :mod:`socket` flag to set, in order to prevent this, :const:"
+"There is a :mod:`!socket` flag to set, in order to prevent this, :const:"
 "`socket.SO_REUSEADDR`::"
 msgstr ""
 

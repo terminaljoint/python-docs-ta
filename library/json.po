@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!json` --- JSON encoder and decoder"
 msgstr ""
@@ -35,20 +33,25 @@ msgid ""
 msgstr ""
 
 msgid ""
+"The term \"object\" in the context of JSON processing in Python can be "
+"ambiguous. All values in Python are objects. In JSON, an object refers to "
+"any data wrapped in curly braces, similar to a Python dictionary."
+msgstr ""
+
+msgid ""
 "Be cautious when parsing JSON data from untrusted sources. A malicious JSON "
 "string may cause the decoder to consume considerable CPU and memory "
 "resources. Limiting the size of data to be parsed is recommended."
 msgstr ""
 
 msgid ""
-":mod:`json` exposes an API familiar to users of the standard library :mod:"
+"This module exposes an API familiar to users of the standard library :mod:"
 "`marshal` and :mod:`pickle` modules."
 msgstr ""
 
 msgid "Encoding basic Python object hierarchies::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import json\n"
 ">>> json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])\n"
@@ -71,7 +74,6 @@ msgstr ""
 msgid "Compact encoding::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import json\n"
 ">>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))\n"
@@ -81,20 +83,33 @@ msgstr ""
 msgid "Pretty printing::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import json\n"
-">>> print(json.dumps({'4': 5, '6': 7}, sort_keys=True, indent=4))\n"
+">>> print(json.dumps({'6': 7, '4': 5}, sort_keys=True, indent=4))\n"
 "{\n"
 "    \"4\": 5,\n"
 "    \"6\": 7\n"
 "}"
 msgstr ""
 
+msgid "Customizing JSON object encoding::"
+msgstr ""
+
+msgid ""
+">>> import json\n"
+">>> def custom_json(obj):\n"
+"...     if isinstance(obj, complex):\n"
+"...         return {'__complex__': True, 'real': obj.real, 'imag': obj."
+"imag}\n"
+"...     raise TypeError(f'Cannot serialize object of {type(obj)}')\n"
+"...\n"
+">>> json.dumps(1 + 2j, default=custom_json)\n"
+"'{\"__complex__\": true, \"real\": 1.0, \"imag\": 2.0}'"
+msgstr ""
+
 msgid "Decoding JSON::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import json\n"
 ">>> json.loads('[\"foo\", {\"bar\":[\"baz\", null, 1.0, 2]}]')\n"
@@ -107,10 +122,9 @@ msgid ""
 "['streaming API']"
 msgstr ""
 
-msgid "Specializing JSON object decoding::"
+msgid "Customizing JSON object decoding::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import json\n"
 ">>> def as_complex(dct):\n"
@@ -146,16 +160,15 @@ msgid ""
 "['[2.0', ', 1.0', ']']"
 msgstr ""
 
-msgid "Using :mod:`json.tool` from the shell to validate and pretty-print:"
+msgid "Using :mod:`!json` from the shell to validate and pretty-print:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
-"$ echo '{\"json\":\"obj\"}' | python -m json.tool\n"
+"$ echo '{\"json\":\"obj\"}' | python -m json\n"
 "{\n"
 "    \"json\": \"obj\"\n"
 "}\n"
-"$ echo '{1.2:3.4}' | python -m json.tool\n"
+"$ echo '{1.2:3.4}' | python -m json\n"
 "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
 msgstr ""
 
@@ -209,8 +222,10 @@ msgstr ""
 
 msgid ""
 "If ``True`` (the default), the output is guaranteed to have all incoming non-"
-"ASCII characters escaped. If ``False``, these characters will be outputted "
-"as-is."
+"ASCII and non-printable characters escaped. If ``False``, all characters "
+"will be outputted as-is, except for the characters that must be escaped: "
+"quotation mark, reverse solidus, and the control characters U+0000 through "
+"U+001F."
 msgstr ""
 
 msgid ""
@@ -298,7 +313,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"If set, a function that is called with the result of any object literal "
+"If set, a function that is called with the result of any JSON object literal "
 "decoded (a :class:`dict`). The return value of this function will be used "
 "instead of the :class:`dict`. This feature can be used to implement custom "
 "decoders, for example `JSON-RPC <https://www.jsonrpc.org>`_ class hinting. "
@@ -306,7 +321,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"If set, a function that is called with the result of any object literal "
+"If set, a function that is called with the result of any JSON object literal "
 "decoded with an ordered list of pairs. The return value of this function "
 "will be used instead of the :class:`dict`. This feature can be used to "
 "implement custom decoders. If *object_hook* is also set, *object_pairs_hook* "
@@ -552,8 +567,10 @@ msgstr ""
 
 msgid ""
 "If *ensure_ascii* is true (the default), the output is guaranteed to have "
-"all incoming non-ASCII characters escaped.  If *ensure_ascii* is false, "
-"these characters will be output as-is."
+"all incoming non-ASCII and non-printable characters escaped. If "
+"*ensure_ascii* is false, all characters will be output as-is, except for the "
+"characters that must be escaped: quotation mark, reverse solidus, and the "
+"control characters U+0000 through U+001F."
 msgstr ""
 
 msgid ""
@@ -627,7 +644,6 @@ msgid ""
 "example::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> json.JSONEncoder().encode({\"foo\": [\"bar\", \"baz\"]})\n"
 "'{\"foo\": [\"bar\", \"baz\"]}'"
@@ -706,7 +722,7 @@ msgstr ""
 msgid ""
 "As permitted, though not required, by the RFC, this module's serializer sets "
 "*ensure_ascii=True* by default, thus escaping the output so that the "
-"resulting strings only contain ASCII characters."
+"resulting strings only contain printable ASCII characters."
 msgstr ""
 
 msgid ""
@@ -771,7 +787,6 @@ msgid ""
 "but the last name-value pair for a given name::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> weird_json = '{\"x\": 1, \"x\": 2, \"x\": 3}'\n"
 ">>> json.loads(weird_json)\n"
@@ -831,15 +846,16 @@ msgid ""
 "as :class:`decimal.Decimal`."
 msgstr ""
 
-msgid "Command Line Interface"
+msgid "Command-line interface"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/json/tool.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`json.tool` module provides a simple command line interface to "
-"validate and pretty-print JSON objects."
+"The :mod:`!json` module can be invoked as a script via ``python -m json`` to "
+"validate and pretty-print JSON objects. The :mod:`!json.tool` submodule "
+"implements this interface."
 msgstr ""
 
 msgid ""
@@ -847,13 +863,12 @@ msgid ""
 "data:`sys.stdin` and :data:`sys.stdout` will be used respectively:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
-"$ echo '{\"json\": \"obj\"}' | python -m json.tool\n"
+"$ echo '{\"json\": \"obj\"}' | python -m json\n"
 "{\n"
 "    \"json\": \"obj\"\n"
 "}\n"
-"$ echo '{1.2:3.4}' | python -m json.tool\n"
+"$ echo '{1.2:3.4}' | python -m json\n"
 "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
 msgstr ""
 
@@ -862,15 +877,20 @@ msgid ""
 "keys` option to sort the output of dictionaries alphabetically by key."
 msgstr ""
 
-msgid "Command line options"
+msgid ""
+"The :mod:`!json` module may now be directly executed as ``python -m json``. "
+"For backwards compatibility, invoking the CLI as ``python -m json.tool`` "
+"remains supported."
+msgstr ""
+
+msgid "Command-line options"
 msgstr ""
 
 msgid "The JSON file to be validated or pretty-printed:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
-"$ python -m json.tool mp_films.json\n"
+"$ python -m json mp_films.json\n"
 "[\n"
 "    {\n"
 "        \"title\": \"And Now for Something Completely Different\",\n"

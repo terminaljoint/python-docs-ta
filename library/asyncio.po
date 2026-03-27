@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "High-level APIs"
 msgstr ""
@@ -59,6 +57,12 @@ msgstr ""
 msgid ""
 "asyncio is often a perfect fit for IO-bound and high-level **structured** "
 "network code."
+msgstr ""
+
+msgid ":ref:`a-conceptual-overview-of-asyncio`"
+msgstr ""
+
+msgid "Explanation of the fundamentals of asyncio."
 msgstr ""
 
 msgid "asyncio provides a set of **high-level** APIs to:"
@@ -107,15 +111,16 @@ msgid "Availability"
 msgstr ""
 
 msgid ""
-"This module does not work or is not available on WebAssembly platforms "
-"``wasm32-emscripten`` and ``wasm32-wasi``. See :ref:`wasm-availability` for "
-"more information."
+"This module does not work or is not available on WebAssembly. See :ref:`wasm-"
+"availability` for more information."
 msgstr ""
 
 msgid "asyncio REPL"
 msgstr ""
 
-msgid "You can experiment with an ``asyncio`` concurrent context in the REPL:"
+msgid ""
+"You can experiment with an ``asyncio`` concurrent context in the :term:"
+"`REPL`:"
 msgstr ""
 
 msgid ""
@@ -130,11 +135,22 @@ msgid ""
 msgstr ""
 
 msgid ""
+"This REPL provides limited compatibility with :envvar:`PYTHON_BASIC_REPL`. "
+"It is recommended that the default REPL is used for full functionality and "
+"the latest features."
+msgstr ""
+
+msgid ""
 "Raises an :ref:`auditing event <auditing>` ``cpython.run_stdin`` with no "
 "arguments."
 msgstr ""
 
 msgid "(also 3.11.10, 3.10.15, 3.9.20, and 3.8.20) Emits audit events."
+msgstr ""
+
+msgid ""
+"Uses PyREPL if possible, in which case :envvar:`PYTHONSTARTUP` is also "
+"executed. Emits audit events."
 msgstr ""
 
 msgid "Reference"

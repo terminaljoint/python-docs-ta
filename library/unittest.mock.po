@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!unittest.mock` --- mock object library"
 msgstr ""
@@ -26,13 +24,13 @@ msgid "**Source code:** :source:`Lib/unittest/mock.py`"
 msgstr ""
 
 msgid ""
-":mod:`unittest.mock` is a library for testing in Python. It allows you to "
+":mod:`!unittest.mock` is a library for testing in Python. It allows you to "
 "replace parts of your system under test with mock objects and make "
 "assertions about how they have been used."
 msgstr ""
 
 msgid ""
-":mod:`unittest.mock` provides a core :class:`Mock` class removing the need "
+":mod:`!unittest.mock` provides a core :class:`Mock` class removing the need "
 "to create a host of stubs throughout your test suite. After performing an "
 "action, you can make assertions about which methods / attributes were used "
 "and arguments they were called with. You can also specify return values and "
@@ -54,7 +52,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"There is a backport of :mod:`unittest.mock` for earlier versions of Python, "
+"There is a backport of :mod:`!unittest.mock` for earlier versions of Python, "
 "available as :pypi:`mock` on PyPI."
 msgstr ""
 
@@ -488,9 +486,9 @@ msgid ""
 "This is either ``None`` (if the mock hasn't been called), or the arguments "
 "that the mock was last called with. This will be in the form of a tuple: the "
 "first member, which can also be accessed through the ``args`` property, is "
-"any ordered arguments the mock was called with (or an empty tuple) and the "
-"second member, which can also be accessed through the ``kwargs`` property, "
-"is any keyword arguments (or an empty dictionary)."
+"any positional arguments the mock was called with (or an empty tuple) and "
+"the second member, which can also be accessed through the ``kwargs`` "
+"property, is any keyword arguments (or an empty dictionary)."
 msgstr ""
 
 msgid ""
@@ -780,6 +778,45 @@ msgid ""
 "This is a list of all the awaits made to the mock object in sequence (so the "
 "length of the list is the number of times it has been awaited). Before any "
 "awaits have been made it is an empty list."
+msgstr ""
+
+msgid ""
+"A version of :class:`MagicMock` for multithreading tests. The :class:"
+"`ThreadingMock` object provides extra methods to wait for a call to be "
+"invoked, rather than assert on it immediately."
+msgstr ""
+
+msgid ""
+"The default timeout is specified by the ``timeout`` argument, or if unset by "
+"the :attr:`ThreadingMock.DEFAULT_TIMEOUT` attribute, which defaults to "
+"blocking (``None``)."
+msgstr ""
+
+msgid ""
+"You can configure the global default timeout by setting :attr:`ThreadingMock."
+"DEFAULT_TIMEOUT`."
+msgstr ""
+
+msgid "Waits until the mock is called."
+msgstr ""
+
+msgid ""
+"If a timeout was passed at the creation of the mock or if a timeout argument "
+"is passed to this function, the function raises an :exc:`AssertionError` if "
+"the call is not performed in time."
+msgstr ""
+
+msgid "Waits until the mock is called with the specified arguments."
+msgstr ""
+
+msgid ""
+"If a timeout was passed at the creation of the mock the function raises an :"
+"exc:`AssertionError` if the call is not performed in time."
+msgstr ""
+
+msgid ""
+"Global default timeout in seconds to create instances of :class:"
+"`ThreadingMock`."
 msgstr ""
 
 msgid "Calling"
@@ -1182,7 +1219,6 @@ msgid ""
 "func:`patch` call using ``**``::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> config = {'method.return_value': 3, 'other.side_effect': KeyError}\n"
 ">>> patcher = patch('__main__.thing', **config)\n"
@@ -1274,7 +1310,8 @@ msgstr ""
 
 msgid ""
 "Patch a dictionary, or dictionary like object, and restore the dictionary to "
-"its original state after the test."
+"its original state after the test, where the restored dictionary is a copy "
+"of the dictionary as it was before the test."
 msgstr ""
 
 msgid ""
@@ -2313,7 +2350,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-":mod:`unittest.mock` already provides a feature to help with this, called "
+":mod:`!unittest.mock` already provides a feature to help with this, called "
 "speccing. If you use a class or instance as the :attr:`!spec` for a mock "
 "then you can only access attributes on the mock that exist on the real class:"
 msgstr ""
@@ -2324,9 +2361,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-">>> mock.has_data()\n"
+">>> mock.header_items()\n"
 "<mock.Mock object at 0x...>\n"
-">>> mock.has_data.assret_called_with()  # Intentional typo!"
+">>> mock.header_items.assret_called_with()  # Intentional typo!"
 msgstr ""
 
 msgid ""

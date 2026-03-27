@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Regular Expression HOWTO"
 msgstr ""
@@ -111,7 +109,6 @@ msgid ""
 "discussed in the rest of this HOWTO."
 msgstr ""
 
-#, python-brace-format
 msgid ". ^ $ * + ? { } [ ] \\ | ( )"
 msgstr ""
 
@@ -366,7 +363,6 @@ msgid ""
 "either ``'homebrew'`` or ``'home-brew'``."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The most complicated quantifier is ``{m,n}``, where *m* and *n* are decimal "
 "integers.  This quantifier means there must be at least *m* repetitions, and "
@@ -381,13 +377,11 @@ msgid ""
 "while omitting *n* results in an upper bound of infinity."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The simplest case ``{m}`` matches the preceding item exactly *m* times. For "
 "example, ``a/{2}b`` will only match ``'a//b'``."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Readers of a reductionist bent may notice that the three other quantifiers "
 "can all be expressed using this notation.  ``{0,}`` is the same as ``*``, "
@@ -1053,10 +1047,16 @@ msgid ""
 "newline character."
 msgstr ""
 
-msgid "``\\Z``"
+msgid "``\\z``"
 msgstr ""
 
 msgid "Matches only at the end of the string."
+msgstr ""
+
+msgid "``\\Z``"
+msgstr ""
+
+msgid "The same as ``\\z``.  For compatibility with old Python versions."
 msgstr ""
 
 msgid "``\\b``"
@@ -1140,7 +1140,6 @@ msgid ""
 "group which matches the header's value."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Groups are marked by the ``'('``, ``')'`` metacharacters. ``'('`` and "
 "``')'`` have much the same meaning as they do in mathematical expressions; "
@@ -1340,7 +1339,6 @@ msgid ""
 "Match.groupdict`::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> m = re.match(r'(?P<first>\\w+) (?P<last>\\w+)', 'Jane Doe')\n"
 ">>> m.groupdict()\n"
@@ -1439,10 +1437,13 @@ msgid ""
 "filenames where the extension is not ``bat``? Some incorrect attempts:"
 msgstr ""
 
+msgid "``.*[.][^b].*$``"
+msgstr ""
+
 msgid ""
-"``.*[.][^b].*$``  The first attempt above tries to exclude ``bat`` by "
-"requiring that the first character of the extension is not a ``b``.  This is "
-"wrong, because the pattern also doesn't match ``foo.bar``."
+"The first attempt above tries to exclude ``bat`` by requiring that the first "
+"character of the extension is not a ``b``.  This is wrong, because the "
+"pattern also doesn't match ``foo.bar``."
 msgstr ""
 
 msgid "``.*[.]([^b]..|.[^a].|..[^t])$``"
@@ -1477,13 +1478,16 @@ msgstr ""
 msgid "A negative lookahead cuts through all this confusion:"
 msgstr ""
 
+msgid "``.*[.](?!bat$)[^.]*$``"
+msgstr ""
+
 msgid ""
-"``.*[.](?!bat$)[^.]*$``  The negative lookahead means: if the expression "
-"``bat`` doesn't match at this point, try the rest of the pattern; if "
-"``bat$`` does match, the whole pattern will fail.  The trailing ``$`` is "
-"required to ensure that something like ``sample.batch``, where the extension "
-"only starts with ``bat``, will be allowed.  The ``[^.]*`` makes sure that "
-"the pattern works when there are multiple dots in the filename."
+"The negative lookahead means: if the expression ``bat`` doesn't match at "
+"this point, try the rest of the pattern; if ``bat$`` does match, the whole "
+"pattern will fail.  The trailing ``$`` is required to ensure that something "
+"like ``sample.batch``, where the extension only starts with ``bat``, will be "
+"allowed.  The ``[^.]*`` makes sure that the pattern works when there are "
+"multiple dots in the filename."
 msgstr ""
 
 msgid ""
@@ -1661,13 +1665,11 @@ msgid ""
 "string."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "This example matches the word ``section`` followed by a string enclosed in "
 "``{``, ``}``, and changes ``section`` to ``subsection``::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> p = re.compile('section{ ( [^}]* ) }', re.VERBOSE)\n"
 ">>> p.sub(r'subsection{\\1}','section{First} section{second}')\n"
@@ -1685,7 +1687,6 @@ msgid ""
 "but use all three variations of the replacement string. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> p = re.compile('section{ (?P<name> [^}]* ) }', re.VERBOSE)\n"
 ">>> p.sub(r'subsection{\\1}','section{First}')\n"
@@ -1856,7 +1857,6 @@ msgid ""
 "``'</title>'``, which isn't what you want."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "In this case, the solution is to use the non-greedy quantifiers ``*?``, ``+?"
 "``, ``??``, or ``{m,n}?``, which match as *little* text as possible.  In the "

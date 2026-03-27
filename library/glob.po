@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!glob` --- Unix style pathname pattern expansion"
 msgstr ""
@@ -26,19 +24,23 @@ msgid "**Source code:** :source:`Lib/glob.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`glob` module finds all the pathnames matching a specified pattern "
-"according to the rules used by the Unix shell, although results are returned "
-"in arbitrary order.  No tilde expansion is done, but ``*``, ``?``, and "
+"The :mod:`!glob` module finds pathnames using pattern matching rules similar "
+"to the Unix shell. No tilde expansion is done, but ``*``, ``?``, and "
 "character ranges expressed with ``[]`` will be correctly matched.  This is "
 "done by using the :func:`os.scandir` and :func:`fnmatch.fnmatch` functions "
 "in concert, and not by actually invoking a subshell."
 msgstr ""
 
 msgid ""
-"Note that files beginning with a dot (``.``) can only be matched by patterns "
-"that also start with a dot, unlike :func:`fnmatch.fnmatch` or :func:`pathlib."
-"Path.glob`. (For tilde and shell variable expansion, use :func:`os.path."
-"expanduser` and :func:`os.path.expandvars`.)"
+"The pathnames are returned in no particular order.  If you need a specific "
+"order, sort the results."
+msgstr ""
+
+msgid ""
+"Files beginning with a dot (``.``) can only be matched by patterns that also "
+"start with a dot, unlike :func:`fnmatch.fnmatch` or :func:`pathlib.Path."
+"glob`. For tilde and shell variable expansion, use :func:`os.path."
+"expanduser` and :func:`os.path.expandvars`."
 msgstr ""
 
 msgid ""
@@ -46,7 +48,7 @@ msgid ""
 "``'[?]'`` matches the character ``'?'``."
 msgstr ""
 
-msgid "The :mod:`pathlib` module offers high-level path objects."
+msgid "The :mod:`!glob` module defines the following functions:"
 msgstr ""
 
 msgid ""
@@ -63,7 +65,7 @@ msgstr ""
 msgid ""
 "If *root_dir* is not ``None``, it should be a :term:`path-like object` "
 "specifying the root directory for searching.  It has the same effect on :"
-"func:`glob` as changing the current directory before calling it.  If "
+"func:`!glob` as changing the current directory before calling it.  If "
 "*pathname* is relative, the result will contain paths relative to *root_dir*."
 msgstr ""
 
@@ -127,11 +129,47 @@ msgid ""
 msgstr ""
 
 msgid ""
-"For example, consider a directory containing the following files: :file:`1."
-"gif`, :file:`2.txt`, :file:`card.gif` and a subdirectory :file:`sub` which "
-"contains only the file :file:`3.txt`.  :func:`glob` will produce the "
-"following results.  Notice how any leading components of the path are "
-"preserved. ::"
+"Convert the given path specification to a regular expression for use with :"
+"func:`re.match`. The path specification can contain shell-style wildcards."
+msgstr ""
+
+msgid "For example:"
+msgstr ""
+
+msgid ""
+"Path separators and segments are meaningful to this function, unlike :func:"
+"`fnmatch.translate`. By default wildcards do not match path separators, and "
+"``*`` pattern segments match precisely one path segment."
+msgstr ""
+
+msgid ""
+"If *recursive* is true, the pattern segment \"``**``\" will match any number "
+"of path segments."
+msgstr ""
+
+msgid ""
+"If *include_hidden* is true, wildcards can match path segments that start "
+"with a dot (``.``)."
+msgstr ""
+
+msgid ""
+"A sequence of path separators may be supplied to the *seps* argument. If not "
+"given, :data:`os.sep` and :data:`~os.altsep` (if available) are used."
+msgstr ""
+
+msgid ""
+":meth:`pathlib.PurePath.full_match` and :meth:`pathlib.Path.glob` methods, "
+"which call this function to implement pattern matching and globbing."
+msgstr ""
+
+msgid "Examples"
+msgstr ""
+
+msgid ""
+"Consider a directory containing the following files: :file:`1.gif`, :file:`2."
+"txt`, :file:`card.gif` and a subdirectory :file:`sub` which contains only "
+"the file :file:`3.txt`.  :func:`glob` will produce the following results.  "
+"Notice how any leading components of the path are preserved. ::"
 msgstr ""
 
 msgid ""
@@ -162,10 +200,11 @@ msgid ""
 "['.card.gif']"
 msgstr ""
 
-msgid "Module :mod:`fnmatch`"
+msgid ""
+"The :mod:`fnmatch` module offers shell-style filename (not path) expansion."
 msgstr ""
 
-msgid "Shell-style filename (not path) expansion"
+msgid "The :mod:`pathlib` module offers high-level path objects."
 msgstr ""
 
 msgid "filenames"

@@ -1,85 +1,83 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Pending Removal in Python 3.13"
+msgid "Pending removal in Python 3.13"
 msgstr ""
 
 msgid "Modules (see :pep:`594`):"
 msgstr ""
 
-msgid ":mod:`aifc`"
+msgid ":mod:`!aifc`"
 msgstr ""
 
-msgid ":mod:`audioop`"
+msgid ":mod:`!audioop`"
 msgstr ""
 
-msgid ":mod:`cgi`"
+msgid ":mod:`!cgi`"
 msgstr ""
 
-msgid ":mod:`cgitb`"
+msgid ":mod:`!cgitb`"
 msgstr ""
 
-msgid ":mod:`chunk`"
+msgid ":mod:`!chunk`"
 msgstr ""
 
-msgid ":mod:`crypt`"
+msgid ":mod:`!crypt`"
 msgstr ""
 
-msgid ":mod:`imghdr`"
+msgid ":mod:`!imghdr`"
 msgstr ""
 
-msgid ":mod:`mailcap`"
+msgid ":mod:`!mailcap`"
 msgstr ""
 
-msgid ":mod:`msilib`"
+msgid ":mod:`!msilib`"
 msgstr ""
 
-msgid ":mod:`nis`"
+msgid ":mod:`!nis`"
 msgstr ""
 
-msgid ":mod:`nntplib`"
+msgid ":mod:`!nntplib`"
 msgstr ""
 
-msgid ":mod:`ossaudiodev`"
+msgid ":mod:`!ossaudiodev`"
 msgstr ""
 
-msgid ":mod:`pipes`"
+msgid ":mod:`!pipes`"
 msgstr ""
 
-msgid ":mod:`sndhdr`"
+msgid ":mod:`!sndhdr`"
 msgstr ""
 
-msgid ":mod:`spwd`"
+msgid ":mod:`!spwd`"
 msgstr ""
 
-msgid ":mod:`sunau`"
+msgid ":mod:`!sunau`"
 msgstr ""
 
-msgid ":mod:`telnetlib`"
+msgid ":mod:`!telnetlib`"
 msgstr ""
 
-msgid ":mod:`uu`"
+msgid ":mod:`!uu`"
 msgstr ""
 
-msgid ":mod:`xdrlib`"
+msgid ":mod:`!xdrlib`"
 msgstr ""
 
 msgid "Other modules:"
@@ -116,34 +114,4 @@ msgid ":class:`!webbrowser.MacOSX` (:gh:`86421`)"
 msgstr ""
 
 msgid ":class:`classmethod` descriptor chaining (:gh:`89519`)"
-msgstr ""
-
-msgid ":mod:`importlib.resources` deprecated methods:"
-msgstr ""
-
-msgid "``contents()``"
-msgstr ""
-
-msgid "``is_resource()``"
-msgstr ""
-
-msgid "``open_binary()``"
-msgstr ""
-
-msgid "``open_text()``"
-msgstr ""
-
-msgid "``path()``"
-msgstr ""
-
-msgid "``read_binary()``"
-msgstr ""
-
-msgid "``read_text()``"
-msgstr ""
-
-msgid ""
-"Use :func:`importlib.resources.files` instead.  Refer to `importlib-"
-"resources: Migrating from Legacy <https://importlib-resources.readthedocs.io/"
-"en/latest/using.html#migrating-from-legacy>`_ (:gh:`106531`)"
 msgstr ""

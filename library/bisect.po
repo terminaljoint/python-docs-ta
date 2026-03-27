@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!bisect` --- Array bisection algorithm"
 msgstr ""
@@ -33,13 +31,23 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The module is called :mod:`bisect` because it uses a basic bisection "
+"The module is called :mod:`!bisect` because it uses a basic bisection "
 "algorithm to do its work.  Unlike other bisection tools that search for a "
 "specific value, the functions in this module are designed to locate an "
 "insertion point. Accordingly, the functions never call an :meth:`~object."
 "__eq__` method to determine whether a value has been found.  Instead, the "
 "functions only call the :meth:`~object.__lt__` method and will return an "
 "insertion point between values in an array."
+msgstr ""
+
+msgid ""
+"The functions in this module are not thread-safe. If multiple threads "
+"concurrently use :mod:`!bisect` functions on the same sequence, this may "
+"result in undefined behaviour. Likewise, if the provided sequence is mutated "
+"by a different thread while a :mod:`!bisect` function is operating on it, "
+"the result is undefined. For example, using :py:func:`~bisect.insort_left` "
+"on the same list from multiple threads may result in the list becoming "
+"unsorted."
 msgstr ""
 
 msgid "The following functions are provided:"
@@ -92,8 +100,8 @@ msgstr ""
 
 msgid ""
 "This function first runs :py:func:`~bisect.bisect_left` to locate an "
-"insertion point. Next, it runs the :meth:`!insert` method on *a* to insert "
-"*x* at the appropriate position to maintain sort order."
+"insertion point. Next, it runs the :meth:`~sequence.insert` method on *a* to "
+"insert *x* at the appropriate position to maintain sort order."
 msgstr ""
 
 msgid ""
@@ -113,8 +121,8 @@ msgstr ""
 
 msgid ""
 "This function first runs :py:func:`~bisect.bisect_right` to locate an "
-"insertion point. Next, it runs the :meth:`!insert` method on *a* to insert "
-"*x* at the appropriate position to maintain sort order."
+"insertion point. Next, it runs the :meth:`~sequence.insert` method on *a* to "
+"insert *x* at the appropriate position to maintain sort order."
 msgstr ""
 
 msgid "Performance Notes"
@@ -217,9 +225,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-">>> def grade(score, breakpoints=[60, 70, 80, 90], grades='FDCBA'):\n"
-"...     i = bisect(breakpoints, score)\n"
-"...     return grades[i]\n"
+">>> def grade(score)\n"
+"...     i = bisect([60, 70, 80, 90], score)\n"
+"...     return \"FDCBA\"[i]\n"
 "...\n"
 ">>> [grade(score) for score in [33, 99, 77, 70, 89, 90, 100]]\n"
 "['F', 'A', 'C', 'C', 'B', 'A', 'A']"

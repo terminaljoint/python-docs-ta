@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "IDLE --- Python editor and shell"
 msgstr ""
@@ -55,6 +53,16 @@ msgid ""
 msgstr ""
 
 msgid "configuration, browsers, and other dialogs"
+msgstr ""
+
+msgid "The IDLE application is implemented in the :mod:`idlelib` package."
+msgstr ""
+
+msgid ""
+"This is an :term:`optional module`. If it is missing from your copy of "
+"CPython, look for documentation from your distributor (that is, whoever "
+"provided Python to you). If you are the distributor, see :ref:`optional-"
+"module-requirements`."
 msgstr ""
 
 msgid "Menus"
@@ -137,7 +145,7 @@ msgstr ""
 
 msgid ""
 "Save the current window with a Save As dialog.  The file saved becomes the "
-"new associated file for the window. (If your file namager is set to hide "
+"new associated file for the window. (If your file manager is set to hide "
 "extensions, the current extension will be omitted in the file name box. If "
 "the new filename has no '.', '.py' and '.txt' will be added for Python and "
 "text files, except that on macOS Aqua,'.py' is added for all files.)"
@@ -261,7 +269,7 @@ msgstr ""
 
 msgid ""
 "Open a scrollable list allowing selection of existing names. See :ref:"
-"`Completions <completions>` in the Editing and navigation section below."
+"`Completions <completions>` in the Editing and Navigation section below."
 msgstr ""
 
 msgid "Expand Word"
@@ -278,7 +286,7 @@ msgstr ""
 msgid ""
 "After an unclosed parenthesis for a function, open a small window with "
 "function parameter hints.  See :ref:`Calltips <calltips>` in the Editing and "
-"navigation section below."
+"Navigation section below."
 msgstr ""
 
 msgid "Show Surrounding Parens"
@@ -294,9 +302,9 @@ msgid "Format Paragraph"
 msgstr ""
 
 msgid ""
-"Reformat the current blank-line-delimited paragraph in comment block or "
-"multiline string or selected line in a string.  All lines in the paragraph "
-"will be formatted to less than N columns, where N defaults to 72."
+"Rewrap the text block containing the text insert cursor. Avoid code lines.  "
+"See :ref:`Format block<format-block>` in the Editing and Navigation section "
+"below."
 msgstr ""
 
 msgid "Indent Region"
@@ -351,12 +359,12 @@ msgid ""
 "community is 4 spaces."
 msgstr ""
 
-msgid "Strip Trailing Chitespace"
+msgid "Strip Trailing Whitespace"
 msgstr ""
 
 msgid ""
 "Remove trailing space and other whitespace characters after the last non-"
-"whitespace character of a line by applying str.rstrip to each line, "
+"whitespace character of a line by applying :meth:`str.rstrip` to each line, "
 "including lines within multiline strings.  Except for Shell windows, remove "
 "extra newlines at the end of the file."
 msgstr ""
@@ -823,6 +831,19 @@ msgid ""
 "function definitions, or after opening an existing file."
 msgstr ""
 
+msgid "Format block"
+msgstr ""
+
+msgid ""
+"Reformat Paragraph rewraps a block ('paragraph') of contiguous equally "
+"indented non-blank comments, a similar block of text within a multiline "
+"string, or a selected subset of either. If needed, add a blank line to "
+"separate string from code. Partial lines in a selection expand to complete "
+"lines. The resulting lines have the same indent as before but have maximum "
+"total length of N columns (characters). Change the default N of 72 on the "
+"Window tab of IDLE Settings."
+msgstr ""
+
 msgid "Code Context"
 msgstr ""
 
@@ -945,7 +966,7 @@ msgid ""
 "importing functions to be used from IDLE's Python shell."
 msgstr ""
 
-msgid "Command line usage"
+msgid "Command-line usage"
 msgstr ""
 
 msgid ""

@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!resource` --- Resource usage information"
 msgstr ""
@@ -77,14 +75,14 @@ msgstr ""
 msgid ""
 "Sets new limits of consumption of *resource*. The *limits* argument must be "
 "a tuple ``(soft, hard)`` of two integers describing the new limits. A value "
-"of :data:`~resource.RLIM_INFINITY` can be used to request a limit that is "
+"of :const:`~resource.RLIM_INFINITY` can be used to request a limit that is "
 "unlimited."
 msgstr ""
 
 msgid ""
 "Raises :exc:`ValueError` if an invalid resource is specified, if the new "
 "soft limit exceeds the hard limit, or if a process tries to raise its hard "
-"limit. Specifying a limit of :data:`~resource.RLIM_INFINITY` when the hard "
+"limit. Specifying a limit of :const:`~resource.RLIM_INFINITY` when the hard "
 "or system limit for that resource is not unlimited will result in a :exc:"
 "`ValueError`.  A process with the effective UID of super-user can request "
 "any valid limit value, including unlimited, but :exc:`ValueError` will still "
@@ -96,7 +94,7 @@ msgid ""
 "fails."
 msgstr ""
 
-msgid "VxWorks only supports setting :data:`RLIMIT_NOFILE`."
+msgid "VxWorks only supports setting :const:`RLIMIT_NOFILE`."
 msgstr ""
 
 msgid ""
@@ -151,9 +149,10 @@ msgstr ""
 
 msgid ""
 "The maximum amount of processor time (in seconds) that a process can use. If "
-"this limit is exceeded, a :const:`SIGXCPU` signal is sent to the process. "
-"(See the :mod:`signal` module documentation for information about how to "
-"catch this signal and do something useful, e.g. flush open files to disk.)"
+"this limit is exceeded, a :const:`~signal.SIGXCPU` signal is sent to the "
+"process. (See the :mod:`signal` module documentation for information about "
+"how to catch this signal and do something useful, e.g. flush open files to "
+"disk.)"
 msgstr ""
 
 msgid "The maximum size of a file which the process may create."
@@ -183,7 +182,9 @@ msgstr ""
 msgid "The maximum address space which may be locked in memory."
 msgstr ""
 
-msgid "The largest area of mapped memory which the process may occupy."
+msgid ""
+"The largest area of mapped memory which the process may occupy. Usually an "
+"alias of :const:`RLIMIT_AS`."
 msgstr ""
 
 msgid ""
@@ -260,9 +261,9 @@ msgstr ""
 
 msgid ""
 "The fields of the return value each describe how a particular system "
-"resource has been used, e.g. amount of time spent running is user mode or "
+"resource has been used, e.g. amount of time spent running in user mode or "
 "number of times the process was swapped out of main memory. Some values are "
-"dependent on the clock tick internal, e.g. the amount of memory the process "
+"dependent on the clock tick interval, e.g. the amount of memory the process "
 "is using."
 msgstr ""
 
@@ -272,7 +273,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The fields :attr:`ru_utime` and :attr:`ru_stime` of the return value are "
+"The fields :attr:`!ru_utime` and :attr:`!ru_stime` of the return value are "
 "floating-point values representing the amount of time spent executing in "
 "user mode and the amount of time spent executing in system mode, "
 "respectively. The remaining values are integers. Consult the :manpage:"
@@ -292,7 +293,7 @@ msgstr ""
 msgid "``0``"
 msgstr ""
 
-msgid ":attr:`ru_utime`"
+msgid ":attr:`!ru_utime`"
 msgstr ""
 
 msgid "time in user mode (float seconds)"
@@ -301,7 +302,7 @@ msgstr ""
 msgid "``1``"
 msgstr ""
 
-msgid ":attr:`ru_stime`"
+msgid ":attr:`!ru_stime`"
 msgstr ""
 
 msgid "time in system mode (float seconds)"
@@ -310,7 +311,7 @@ msgstr ""
 msgid "``2``"
 msgstr ""
 
-msgid ":attr:`ru_maxrss`"
+msgid ":attr:`!ru_maxrss`"
 msgstr ""
 
 msgid "maximum resident set size"
@@ -319,7 +320,7 @@ msgstr ""
 msgid "``3``"
 msgstr ""
 
-msgid ":attr:`ru_ixrss`"
+msgid ":attr:`!ru_ixrss`"
 msgstr ""
 
 msgid "shared memory size"
@@ -328,7 +329,7 @@ msgstr ""
 msgid "``4``"
 msgstr ""
 
-msgid ":attr:`ru_idrss`"
+msgid ":attr:`!ru_idrss`"
 msgstr ""
 
 msgid "unshared memory size"
@@ -337,7 +338,7 @@ msgstr ""
 msgid "``5``"
 msgstr ""
 
-msgid ":attr:`ru_isrss`"
+msgid ":attr:`!ru_isrss`"
 msgstr ""
 
 msgid "unshared stack size"
@@ -346,7 +347,7 @@ msgstr ""
 msgid "``6``"
 msgstr ""
 
-msgid ":attr:`ru_minflt`"
+msgid ":attr:`!ru_minflt`"
 msgstr ""
 
 msgid "page faults not requiring I/O"
@@ -355,7 +356,7 @@ msgstr ""
 msgid "``7``"
 msgstr ""
 
-msgid ":attr:`ru_majflt`"
+msgid ":attr:`!ru_majflt`"
 msgstr ""
 
 msgid "page faults requiring I/O"
@@ -364,7 +365,7 @@ msgstr ""
 msgid "``8``"
 msgstr ""
 
-msgid ":attr:`ru_nswap`"
+msgid ":attr:`!ru_nswap`"
 msgstr ""
 
 msgid "number of swap outs"
@@ -373,7 +374,7 @@ msgstr ""
 msgid "``9``"
 msgstr ""
 
-msgid ":attr:`ru_inblock`"
+msgid ":attr:`!ru_inblock`"
 msgstr ""
 
 msgid "block input operations"
@@ -382,7 +383,7 @@ msgstr ""
 msgid "``10``"
 msgstr ""
 
-msgid ":attr:`ru_oublock`"
+msgid ":attr:`!ru_oublock`"
 msgstr ""
 
 msgid "block output operations"
@@ -391,7 +392,7 @@ msgstr ""
 msgid "``11``"
 msgstr ""
 
-msgid ":attr:`ru_msgsnd`"
+msgid ":attr:`!ru_msgsnd`"
 msgstr ""
 
 msgid "messages sent"
@@ -400,7 +401,7 @@ msgstr ""
 msgid "``12``"
 msgstr ""
 
-msgid ":attr:`ru_msgrcv`"
+msgid ":attr:`!ru_msgrcv`"
 msgstr ""
 
 msgid "messages received"
@@ -409,7 +410,7 @@ msgstr ""
 msgid "``13``"
 msgstr ""
 
-msgid ":attr:`ru_nsignals`"
+msgid ":attr:`!ru_nsignals`"
 msgstr ""
 
 msgid "signals received"
@@ -418,7 +419,7 @@ msgstr ""
 msgid "``14``"
 msgstr ""
 
-msgid ":attr:`ru_nvcsw`"
+msgid ":attr:`!ru_nvcsw`"
 msgstr ""
 
 msgid "voluntary context switches"
@@ -427,7 +428,7 @@ msgstr ""
 msgid "``15``"
 msgstr ""
 
-msgid ":attr:`ru_nivcsw`"
+msgid ":attr:`!ru_nivcsw`"
 msgstr ""
 
 msgid "involuntary context switches"

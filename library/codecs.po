@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!codecs` --- Codec registry and base classes"
 msgstr ""
@@ -62,6 +60,14 @@ msgid ""
 "`ValueError` (or a more codec specific subclass, such as :exc:"
 "`UnicodeDecodeError`). Refer to :ref:`codec-base-classes` for more "
 "information on codec error handling."
+msgstr ""
+
+msgid ""
+"Return a mapping suitable for encoding with a custom single-byte encoding. "
+"Given a :class:`str` *string* of up to 256 characters representing a "
+"decoding table, returns either a compact internal mapping object "
+"``EncodingMap`` or a :class:`dictionary <dict>` mapping character ordinals "
+"to byte values. Raises a :exc:`TypeError` on invalid input."
 msgstr ""
 
 msgid "The full details for each codec can also be looked up directly:"
@@ -215,6 +221,9 @@ msgstr ""
 msgid "The ``'U'`` mode has been removed."
 msgstr ""
 
+msgid ":func:`codecs.open` has been superseded by :func:`open`."
+msgstr ""
+
 msgid ""
 "Return a :class:`StreamRecoder` instance, a wrapped version of *file* which "
 "provides transparent transcoding. The original file is closed when the "
@@ -239,9 +248,9 @@ msgstr ""
 
 msgid ""
 "Uses an incremental encoder to iteratively encode the input provided by "
-"*iterator*. This function is a :term:`generator`. The *errors* argument (as "
-"well as any other keyword argument) is passed through to the incremental "
-"encoder."
+"*iterator*. *iterator* must yield :class:`str` objects. This function is a :"
+"term:`generator`. The *errors* argument (as well as any other keyword "
+"argument) is passed through to the incremental encoder."
 msgstr ""
 
 msgid ""
@@ -252,9 +261,9 @@ msgstr ""
 
 msgid ""
 "Uses an incremental decoder to iteratively decode the input provided by "
-"*iterator*. This function is a :term:`generator`. The *errors* argument (as "
-"well as any other keyword argument) is passed through to the incremental "
-"decoder."
+"*iterator*. *iterator* must yield :class:`bytes` objects. This function is "
+"a :term:`generator`. The *errors* argument (as well as any other keyword "
+"argument) is passed through to the incremental decoder."
 msgstr ""
 
 msgid ""
@@ -262,6 +271,20 @@ msgid ""
 "decode. Therefore it does not support text-to-text encoders such as "
 "``rot_13``, although ``rot_13`` may be used equivalently with :func:"
 "`iterencode`."
+msgstr ""
+
+msgid ""
+"Return a :class:`tuple` containing the raw bytes of *buffer*, a :ref:`buffer-"
+"compatible object <bufferobjects>` or :class:`str` (encoded to UTF-8 before "
+"processing), and their length in bytes."
+msgstr ""
+
+msgid "The *errors* argument is ignored."
+msgstr ""
+
+msgid ""
+">>> codecs.readbuffer_encode(b\"Zito\")\n"
+"(b'Zito', 4)"
 msgstr ""
 
 msgid ""
@@ -284,7 +307,7 @@ msgid "Codec Base Classes"
 msgstr ""
 
 msgid ""
-"The :mod:`codecs` module defines a set of base classes which define the "
+"The :mod:`!codecs` module defines a set of base classes which define the "
 "interfaces for working with codec objects, and can also be used as the basis "
 "for custom codec implementations."
 msgstr ""
@@ -344,7 +367,6 @@ msgstr ""
 msgid "``'backslashreplace'``"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Replace with backslashed escape sequences. On encoding, use hexadecimal form "
 "of Unicode code point with formats :samp:`\\\\x{hh}` :samp:`\\\\u{xxxx}` :"
@@ -370,7 +392,6 @@ msgstr ""
 msgid "``'xmlcharrefreplace'``"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Replace with XML/HTML numeric character reference, which is a decimal form "
 "of Unicode code point with format :samp:`&#{num};`. Implemented in :func:"
@@ -380,7 +401,6 @@ msgstr ""
 msgid "``'namereplace'``"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Replace with ``\\N{...}`` escape sequences, what appears in the braces is "
 "the Name property from Unicode Character Database. Implemented in :func:"
@@ -494,7 +514,6 @@ msgstr ""
 msgid "Implements the ``'backslashreplace'`` error handling."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Malformed data is replaced by a backslashed escape sequence. On encoding, "
 "use the hexadecimal form of Unicode code point with formats :samp:`\\\\x{hh}"
@@ -510,7 +529,6 @@ msgid ""
 "term:`text encoding` only)."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The unencodable character is replaced by an appropriate XML/HTML numeric "
 "character reference, which is a decimal form of Unicode code point with "
@@ -522,7 +540,6 @@ msgid ""
 "`text encoding` only)."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The unencodable character is replaced by a ``\\N{...}`` escape sequence. The "
 "set of characters that appear in the braces is the Name property from "
@@ -1006,27 +1023,34 @@ msgid ""
 "Unicode code point, is to store each code point as four consecutive bytes. "
 "There are two possibilities: store the bytes in big endian or in little "
 "endian order. These two encodings are called ``UTF-32-BE`` and ``UTF-32-LE`` "
-"respectively. Their disadvantage is that if e.g. you use ``UTF-32-BE`` on a "
-"little endian machine you will always have to swap bytes on encoding and "
-"decoding. ``UTF-32`` avoids this problem: bytes will always be in natural "
-"endianness. When these bytes are read by a CPU with a different endianness, "
-"then bytes have to be swapped though. To be able to detect the endianness of "
-"a ``UTF-16`` or ``UTF-32`` byte sequence, there's the so called BOM (\"Byte "
-"Order Mark\"). This is the Unicode character ``U+FEFF``. This character can "
-"be prepended to every ``UTF-16`` or ``UTF-32`` byte sequence. The byte "
-"swapped version of this character (``0xFFFE``) is an illegal character that "
-"may not appear in a Unicode text. So when the first character in a "
-"``UTF-16`` or ``UTF-32`` byte sequence appears to be a ``U+FFFE`` the bytes "
-"have to be swapped on decoding. Unfortunately the character ``U+FEFF`` had a "
-"second purpose as a ``ZERO WIDTH NO-BREAK SPACE``: a character that has no "
-"width and doesn't allow a word to be split. It can e.g. be used to give "
-"hints to a ligature algorithm. With Unicode 4.0 using ``U+FEFF`` as a ``ZERO "
-"WIDTH NO-BREAK SPACE`` has been deprecated (with ``U+2060`` (``WORD "
-"JOINER``) assuming this role). Nevertheless Unicode software still must be "
-"able to handle ``U+FEFF`` in both roles: as a BOM it's a device to determine "
-"the storage layout of the encoded bytes, and vanishes once the byte sequence "
-"has been decoded into a string; as a ``ZERO WIDTH NO-BREAK SPACE`` it's a "
-"normal character that will be decoded like any other."
+"respectively. Their disadvantage is that if, for example, you use ``UTF-32-"
+"BE`` on a little endian machine you will always have to swap bytes on "
+"encoding and decoding. Python's ``UTF-16`` and ``UTF-32`` codecs avoid this "
+"problem by using the platform's native byte order when no BOM is present. "
+"Python follows prevailing platform practice, so native-endian data round-"
+"trips without redundant byte swapping, even though the Unicode Standard "
+"defaults to big-endian when the byte order is unspecified. When these bytes "
+"are read by a CPU with a different endianness, the bytes have to be swapped. "
+"To be able to detect the endianness of a ``UTF-16`` or ``UTF-32`` byte "
+"sequence, a BOM (\"Byte Order Mark\") is used. This is the Unicode character "
+"``U+FEFF``. This character can be prepended to every ``UTF-16`` or "
+"``UTF-32`` byte sequence. The byte swapped version of this character "
+"(``0xFFFE``) is an illegal character that may not appear in a Unicode text. "
+"When the first character of a ``UTF-16`` or ``UTF-32`` byte sequence is "
+"``U+FFFE``, the bytes have to be swapped on decoding."
+msgstr ""
+
+msgid ""
+"Unfortunately the character ``U+FEFF`` had a second purpose as a ``ZERO "
+"WIDTH NO-BREAK SPACE``: a character that has no width and doesn't allow a "
+"word to be split. It can e.g. be used to give hints to a ligature algorithm. "
+"With Unicode 4.0 using ``U+FEFF`` as a ``ZERO WIDTH NO-BREAK SPACE`` has "
+"been deprecated (with ``U+2060`` (``WORD JOINER``) assuming this role). "
+"Nevertheless Unicode software still must be able to handle ``U+FEFF`` in "
+"both roles: as a BOM it's a device to determine the storage layout of the "
+"encoded bytes, and vanishes once the byte sequence has been decoded into a "
+"string; as a ``ZERO WIDTH NO-BREAK SPACE`` it's a normal character that will "
+"be decoded like any other."
 msgstr ""
 
 msgid ""
@@ -1122,8 +1146,20 @@ msgid ""
 "for which the encoding is likely used. Neither the list of aliases nor the "
 "list of languages is meant to be exhaustive. Notice that spelling "
 "alternatives that only differ in case or use a hyphen instead of an "
-"underscore are also valid aliases; therefore, e.g. ``'utf-8'`` is a valid "
-"alias for the ``'utf_8'`` codec."
+"underscore are also valid aliases because they are equivalent when "
+"normalized by :func:`~encodings.normalize_encoding`. For example, "
+"``'utf-8'`` is a valid alias for the ``'utf_8'`` codec."
+msgstr ""
+
+msgid ""
+"The below table lists the most common aliases, for a complete list refer to "
+"the source :source:`aliases.py <Lib/encodings/aliases.py>` file."
+msgstr ""
+
+msgid ""
+"On Windows, ``cpXXX`` codecs are available for all code pages. But only "
+"codecs listed in the following table are guarantead to exist on other "
+"platforms."
 msgstr ""
 
 msgid ""
@@ -1273,7 +1309,7 @@ msgstr ""
 msgid "855, IBM855"
 msgstr ""
 
-msgid "Bulgarian, Byelorussian, Macedonian, Russian, Serbian"
+msgid "Belarusian, Bulgarian, Macedonian, Russian, Serbian"
 msgstr ""
 
 msgid "cp856"
@@ -1369,7 +1405,7 @@ msgstr ""
 msgid "cp932"
 msgstr ""
 
-msgid "932, ms932, mskanji, ms-kanji"
+msgid "932, ms932, mskanji, ms-kanji, windows-31j"
 msgstr ""
 
 msgid "Japanese"
@@ -1602,6 +1638,9 @@ msgstr ""
 msgid "iso-8859-4, latin4, L4"
 msgstr ""
 
+msgid "Northern Europe"
+msgstr ""
+
 msgid "iso8859_5"
 msgstr ""
 
@@ -1830,6 +1869,9 @@ msgstr ""
 msgid "``cp65001`` is now an alias to ``utf_8``."
 msgstr ""
 
+msgid "On Windows, ``cpXXX`` codecs are now available for all code pages."
+msgstr ""
+
 msgid "Python Specific Encodings"
 msgstr ""
 
@@ -1891,7 +1933,6 @@ msgstr ""
 msgid "raw_unicode_escape"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Latin-1 encoding with :samp:`\\\\u{XXXX}` and :samp:`\\\\U{XXXXXXXX}` for "
 "other code points. Existing backslashes are not escaped in any way. It is "
@@ -1899,6 +1940,9 @@ msgid ""
 msgstr ""
 
 msgid "undefined"
+msgstr ""
+
+msgid "This Codec should only be used for testing purposes."
 msgstr ""
 
 msgid ""
@@ -1994,10 +2038,6 @@ msgstr ""
 msgid "Convert the operand using uuencode."
 msgstr ""
 
-msgid ""
-":meth:`!uu.encode` / :meth:`!uu.decode` (Note: :mod:`uu` is deprecated.)"
-msgstr ""
-
 msgid "zlib_codec"
 msgstr ""
 
@@ -2020,6 +2060,36 @@ msgid "Restoration of the binary transforms."
 msgstr ""
 
 msgid "Restoration of the aliases for the binary transforms."
+msgstr ""
+
+msgid "Standalone Codec Functions"
+msgstr ""
+
+msgid ""
+"The following functions provide encoding and decoding functionality similar "
+"to codecs, but are not available as named codecs through :func:`codecs."
+"encode` or :func:`codecs.decode`. They are used internally (for example, by :"
+"mod:`pickle`) and behave similarly to the ``string_escape`` codec that was "
+"removed in Python 3."
+msgstr ""
+
+msgid ""
+"Encode *input* using escape sequences. Similar to how :func:`repr` on bytes "
+"produces escaped byte values."
+msgstr ""
+
+msgid "*input* must be a :class:`bytes` object."
+msgstr ""
+
+msgid ""
+"Returns a tuple ``(output, length)`` where *output* is a :class:`bytes` "
+"object and *length* is the number of bytes consumed."
+msgstr ""
+
+msgid "Decode *input* from escape sequences back to the original bytes."
+msgstr ""
+
+msgid "*input* must be a :term:`bytes-like object`."
 msgstr ""
 
 msgid "Text Transforms"
@@ -2046,8 +2116,69 @@ msgstr ""
 msgid "Restoration of the ``rot13`` alias."
 msgstr ""
 
+msgid ":mod:`!encodings` --- Encodings package"
+msgstr ""
+
+msgid "This module implements the following functions:"
+msgstr ""
+
+msgid "Normalize encoding name *encoding*."
+msgstr ""
+
 msgid ""
-":mod:`encodings.idna` --- Internationalized Domain Names in Applications"
+"Normalization works as follows: all non-alphanumeric characters except the "
+"dot used for Python package names are collapsed and replaced with a single "
+"underscore, leading and trailing underscores are removed. For example, ``'  "
+"-;#'`` becomes ``'_'``."
+msgstr ""
+
+msgid "Note that *encoding* should be ASCII only."
+msgstr ""
+
+msgid ""
+"The following functions should not be used directly, except for testing "
+"purposes; :func:`codecs.lookup` should be used instead."
+msgstr ""
+
+msgid ""
+"Search for the codec module corresponding to the given encoding name "
+"*encoding*."
+msgstr ""
+
+msgid ""
+"This function first normalizes the *encoding* using :func:"
+"`normalize_encoding`, then looks for a corresponding alias. It attempts to "
+"import a codec module from the encodings package using either the alias or "
+"the normalized name. If the module is found and defines a valid "
+"``getregentry()`` function that returns a :class:`codecs.CodecInfo` object, "
+"the codec is cached and returned."
+msgstr ""
+
+msgid ""
+"If the codec module defines a ``getaliases()`` function any returned aliases "
+"are registered for future use."
+msgstr ""
+
+msgid ""
+"Search for a Windows code page encoding *encoding* of the form ``cpXXXX``."
+msgstr ""
+
+msgid ""
+"If the code page is valid and supported, return a :class:`codecs.CodecInfo` "
+"object for it."
+msgstr ""
+
+msgid "Availability"
+msgstr ""
+
+msgid "This module implements the following exception:"
+msgstr ""
+
+msgid "Raised when a codec is invalid or incompatible."
+msgstr ""
+
+msgid ""
+":mod:`!encodings.idna` --- Internationalized Domain Names in Applications"
 msgstr ""
 
 msgid ""
@@ -2098,7 +2229,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The module :mod:`encodings.idna` also implements the nameprep procedure, "
+"The module :mod:`!encodings.idna` also implements the nameprep procedure, "
 "which performs certain normalizations on host names, to achieve case-"
 "insensitivity of international domain names, and to unify similar "
 "characters. The nameprep functions can be used directly if desired."
@@ -2117,13 +2248,10 @@ msgstr ""
 msgid "Convert a label to Unicode, as specified in :rfc:`3490`."
 msgstr ""
 
-msgid ":mod:`encodings.mbcs` --- Windows ANSI codepage"
+msgid ":mod:`!encodings.mbcs` --- Windows ANSI codepage"
 msgstr ""
 
 msgid "This module implements the ANSI codepage (CP_ACP)."
-msgstr ""
-
-msgid "Availability"
 msgstr ""
 
 msgid ""
@@ -2134,7 +2262,7 @@ msgstr ""
 msgid "Support any error handler."
 msgstr ""
 
-msgid ":mod:`encodings.utf_8_sig` --- UTF-8 codec with BOM signature"
+msgid ":mod:`!encodings.utf_8_sig` --- UTF-8 codec with BOM signature"
 msgstr ""
 
 msgid ""
@@ -2203,9 +2331,6 @@ msgid "xmlcharrefreplace"
 msgstr ""
 
 msgid "namereplace"
-msgstr ""
-
-msgid "\\N"
 msgstr ""
 
 msgid "surrogatepass"

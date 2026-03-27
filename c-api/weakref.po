@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Weak Reference Objects"
 msgstr ""
@@ -30,15 +28,22 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Return true if *ob* is either a reference or proxy object.  This function "
-"always succeeds."
+"Return non-zero if *ob* is either a reference or proxy object.  This "
+"function always succeeds."
 msgstr ""
 
 msgid ""
-"Return true if *ob* is a reference object.  This function always succeeds."
+"Return non-zero if *ob* is a reference object or a subclass of the reference "
+"type.  This function always succeeds."
 msgstr ""
 
-msgid "Return true if *ob* is a proxy object.  This function always succeeds."
+msgid ""
+"Return non-zero if *ob* is a reference object, but not a subclass of the "
+"reference type.  This function always succeeds."
+msgstr ""
+
+msgid ""
+"Return non-zero if *ob* is a proxy object.  This function always succeeds."
 msgstr ""
 
 msgid ""
@@ -53,6 +58,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+":c:func:`PyType_SUPPORTS_WEAKREFS` for checking if *ob* is weakly "
+"referenceable."
+msgstr ""
+
+msgid ""
 "Return a weak reference proxy object for the object *ob*.  This will always "
 "return a new reference, but is not guaranteed to create a new object; an "
 "existing proxy object may be returned.  The second parameter, *callback*, "
@@ -64,8 +74,24 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Return the referenced object from a weak reference, *ref*.  If the referent "
-"is no longer live, returns ``Py_None``."
+"Get a :term:`strong reference` to the referenced object from a weak "
+"reference, *ref*, into *\\*pobj*."
+msgstr ""
+
+msgid ""
+"On success, set *\\*pobj* to a new :term:`strong reference` to the "
+"referenced object and return 1."
+msgstr ""
+
+msgid "If the reference is dead, set *\\*pobj* to ``NULL`` and return 0."
+msgstr ""
+
+msgid "On error, raise an exception and return -1."
+msgstr ""
+
+msgid ""
+"Return a :term:`borrowed reference` to the referenced object from a weak "
+"reference, *ref*.  If the referent is no longer live, returns ``Py_None``."
 msgstr ""
 
 msgid ""
@@ -75,7 +101,16 @@ msgid ""
 "reference."
 msgstr ""
 
+msgid "Use :c:func:`PyWeakref_GetRef` instead."
+msgstr ""
+
 msgid "Similar to :c:func:`PyWeakref_GetObject`, but does no error checking."
+msgstr ""
+
+msgid ""
+"Test if the weak reference *ref* is dead. Returns 1 if the reference is "
+"dead, 0 if it is alive, and -1 with an error set if *ref* is not a weak "
+"reference object."
 msgstr ""
 
 msgid ""
@@ -87,4 +122,20 @@ msgid ""
 "This iterates through the weak references for *object* and calls callbacks "
 "for those references which have one. It returns when all callbacks have been "
 "attempted."
+msgstr ""
+
+msgid "Clears the weakrefs for *object* without calling the callbacks."
+msgstr ""
+
+msgid ""
+"This function is called by the :c:member:`~PyTypeObject.tp_dealloc` handler "
+"for types with finalizers (i.e., :meth:`~object.__del__`).  The handler for "
+"those objects first calls :c:func:`PyObject_ClearWeakRefs` to clear weakrefs "
+"and call their callbacks, then the finalizer, and finally this function to "
+"clear any weakrefs that may have been created by the finalizer."
+msgstr ""
+
+msgid ""
+"In most circumstances, it's more appropriate to use :c:func:"
+"`PyObject_ClearWeakRefs` to clear weakrefs instead of this function."
 msgstr ""

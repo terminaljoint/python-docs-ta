@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!http` --- HTTP modules"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/http/__init__.py`"
 msgstr ""
 
 msgid ""
-":mod:`http` is a package that collects several modules for working with the "
+":mod:`!http` is a package that collects several modules for working with the "
 "HyperText Transfer Protocol:"
 msgstr ""
 
@@ -49,7 +47,7 @@ msgid ":mod:`http.cookiejar` provides persistence of cookies"
 msgstr ""
 
 msgid ""
-"The :mod:`http` module also defines the following enums that help you work "
+"The :mod:`!http` module also defines the following enums that help you work "
 "with http related code:"
 msgstr ""
 
@@ -101,7 +99,7 @@ msgstr ""
 msgid "``CONTINUE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.2.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.2.1"
 msgstr ""
 
 msgid "``101``"
@@ -110,7 +108,7 @@ msgstr ""
 msgid "``SWITCHING_PROTOCOLS``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.2.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.2.2"
 msgstr ""
 
 msgid "``102``"
@@ -137,7 +135,7 @@ msgstr ""
 msgid "``OK``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.3.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.1"
 msgstr ""
 
 msgid "``201``"
@@ -146,7 +144,7 @@ msgstr ""
 msgid "``CREATED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.3.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.2"
 msgstr ""
 
 msgid "``202``"
@@ -155,7 +153,7 @@ msgstr ""
 msgid "``ACCEPTED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.3.3"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.3"
 msgstr ""
 
 msgid "``203``"
@@ -164,7 +162,7 @@ msgstr ""
 msgid "``NON_AUTHORITATIVE_INFORMATION``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.3.4"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.4"
 msgstr ""
 
 msgid "``204``"
@@ -173,7 +171,7 @@ msgstr ""
 msgid "``NO_CONTENT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.3.5"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.5"
 msgstr ""
 
 msgid "``205``"
@@ -182,7 +180,7 @@ msgstr ""
 msgid "``RESET_CONTENT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.3.6"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.6"
 msgstr ""
 
 msgid "``206``"
@@ -191,7 +189,7 @@ msgstr ""
 msgid "``PARTIAL_CONTENT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7233`, Section 4.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.3.7"
 msgstr ""
 
 msgid "``207``"
@@ -227,7 +225,7 @@ msgstr ""
 msgid "``MULTIPLE_CHOICES``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.4.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.1"
 msgstr ""
 
 msgid "``301``"
@@ -236,7 +234,7 @@ msgstr ""
 msgid "``MOVED_PERMANENTLY``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.4.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.2"
 msgstr ""
 
 msgid "``302``"
@@ -245,7 +243,7 @@ msgstr ""
 msgid "``FOUND``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.4.3"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.3"
 msgstr ""
 
 msgid "``303``"
@@ -254,7 +252,7 @@ msgstr ""
 msgid "``SEE_OTHER``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.4.4"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.4"
 msgstr ""
 
 msgid "``304``"
@@ -263,7 +261,7 @@ msgstr ""
 msgid "``NOT_MODIFIED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7232`, Section 4.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.5"
 msgstr ""
 
 msgid "``305``"
@@ -272,7 +270,7 @@ msgstr ""
 msgid "``USE_PROXY``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.4.5"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.6"
 msgstr ""
 
 msgid "``307``"
@@ -281,7 +279,7 @@ msgstr ""
 msgid "``TEMPORARY_REDIRECT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.4.7"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.8"
 msgstr ""
 
 msgid "``308``"
@@ -290,7 +288,7 @@ msgstr ""
 msgid "``PERMANENT_REDIRECT``"
 msgstr ""
 
-msgid "Permanent Redirect :rfc:`7238`, Section 3 (Experimental)"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.4.9"
 msgstr ""
 
 msgid "``400``"
@@ -299,7 +297,7 @@ msgstr ""
 msgid "``BAD_REQUEST``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.1"
 msgstr ""
 
 msgid "``401``"
@@ -308,7 +306,7 @@ msgstr ""
 msgid "``UNAUTHORIZED``"
 msgstr ""
 
-msgid "HTTP/1.1 Authentication :rfc:`7235`, Section 3.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.2"
 msgstr ""
 
 msgid "``402``"
@@ -317,7 +315,7 @@ msgstr ""
 msgid "``PAYMENT_REQUIRED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.3"
 msgstr ""
 
 msgid "``403``"
@@ -326,7 +324,7 @@ msgstr ""
 msgid "``FORBIDDEN``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.3"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.4"
 msgstr ""
 
 msgid "``404``"
@@ -335,7 +333,7 @@ msgstr ""
 msgid "``NOT_FOUND``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.4"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.5"
 msgstr ""
 
 msgid "``405``"
@@ -344,7 +342,7 @@ msgstr ""
 msgid "``METHOD_NOT_ALLOWED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.5"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.6"
 msgstr ""
 
 msgid "``406``"
@@ -353,7 +351,7 @@ msgstr ""
 msgid "``NOT_ACCEPTABLE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.6"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.7"
 msgstr ""
 
 msgid "``407``"
@@ -362,7 +360,7 @@ msgstr ""
 msgid "``PROXY_AUTHENTICATION_REQUIRED``"
 msgstr ""
 
-msgid "HTTP/1.1 Authentication :rfc:`7235`, Section 3.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.8"
 msgstr ""
 
 msgid "``408``"
@@ -371,7 +369,7 @@ msgstr ""
 msgid "``REQUEST_TIMEOUT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.7"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.9"
 msgstr ""
 
 msgid "``409``"
@@ -380,7 +378,7 @@ msgstr ""
 msgid "``CONFLICT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.8"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.10"
 msgstr ""
 
 msgid "``410``"
@@ -389,7 +387,7 @@ msgstr ""
 msgid "``GONE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.9"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.11"
 msgstr ""
 
 msgid "``411``"
@@ -398,7 +396,7 @@ msgstr ""
 msgid "``LENGTH_REQUIRED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.10"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.12"
 msgstr ""
 
 msgid "``412``"
@@ -407,25 +405,25 @@ msgstr ""
 msgid "``PRECONDITION_FAILED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7232`, Section 4.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.13"
 msgstr ""
 
 msgid "``413``"
 msgstr ""
 
-msgid "``REQUEST_ENTITY_TOO_LARGE``"
+msgid "``CONTENT_TOO_LARGE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.11"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.14"
 msgstr ""
 
 msgid "``414``"
 msgstr ""
 
-msgid "``REQUEST_URI_TOO_LONG``"
+msgid "``URI_TOO_LONG``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.12"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.15"
 msgstr ""
 
 msgid "``415``"
@@ -434,16 +432,16 @@ msgstr ""
 msgid "``UNSUPPORTED_MEDIA_TYPE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.13"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.16"
 msgstr ""
 
 msgid "``416``"
 msgstr ""
 
-msgid "``REQUESTED_RANGE_NOT_SATISFIABLE``"
+msgid "``RANGE_NOT_SATISFIABLE``"
 msgstr ""
 
-msgid "HTTP/1.1 Range Requests :rfc:`7233`, Section 4.4"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.17"
 msgstr ""
 
 msgid "``417``"
@@ -452,7 +450,7 @@ msgstr ""
 msgid "``EXPECTATION_FAILED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.14"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.18"
 msgstr ""
 
 msgid "``418``"
@@ -470,16 +468,16 @@ msgstr ""
 msgid "``MISDIRECTED_REQUEST``"
 msgstr ""
 
-msgid "HTTP/2 :rfc:`7540`, Section 9.1.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.20"
 msgstr ""
 
 msgid "``422``"
 msgstr ""
 
-msgid "``UNPROCESSABLE_ENTITY``"
+msgid "``UNPROCESSABLE_CONTENT``"
 msgstr ""
 
-msgid "WebDAV :rfc:`4918`, Section 11.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.21"
 msgstr ""
 
 msgid "``423``"
@@ -515,7 +513,7 @@ msgstr ""
 msgid "``UPGRADE_REQUIRED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.5.15"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.5.22"
 msgstr ""
 
 msgid "``428``"
@@ -554,7 +552,7 @@ msgstr ""
 msgid "``INTERNAL_SERVER_ERROR``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.6.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.6.1"
 msgstr ""
 
 msgid "``501``"
@@ -563,7 +561,7 @@ msgstr ""
 msgid "``NOT_IMPLEMENTED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.6.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.6.2"
 msgstr ""
 
 msgid "``502``"
@@ -572,7 +570,7 @@ msgstr ""
 msgid "``BAD_GATEWAY``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.6.3"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.6.3"
 msgstr ""
 
 msgid "``503``"
@@ -581,7 +579,7 @@ msgstr ""
 msgid "``SERVICE_UNAVAILABLE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.6.4"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.6.4"
 msgstr ""
 
 msgid "``504``"
@@ -590,7 +588,7 @@ msgstr ""
 msgid "``GATEWAY_TIMEOUT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.6.5"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.6.5"
 msgstr ""
 
 msgid "``505``"
@@ -599,7 +597,7 @@ msgstr ""
 msgid "``HTTP_VERSION_NOT_SUPPORTED``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6.6.6"
+msgid "HTTP Semantics :rfc:`9110`, Section 15.6.6"
 msgstr ""
 
 msgid "``506``"
@@ -667,6 +665,13 @@ msgid ""
 "codes."
 msgstr ""
 
+msgid ""
+"Implemented RFC9110 naming for status constants. Old constant names are "
+"preserved for backwards compatibility: ``413 REQUEST_ENTITY_TOO_LARGE``, "
+"``414 REQUEST_URI_TOO_LONG``, ``416 REQUESTED_RANGE_NOT_SATISFIABLE`` and "
+"``422 UNPROCESSABLE_ENTITY``."
+msgstr ""
+
 msgid "HTTP status category"
 msgstr ""
 
@@ -686,7 +691,7 @@ msgstr ""
 msgid "``100 <= status <= 199``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 6"
+msgid "HTTP Semantics :rfc:`9110`, Section 15"
 msgstr ""
 
 msgid "``is_success``"
@@ -763,49 +768,49 @@ msgstr ""
 msgid "``GET``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.1"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.1"
 msgstr ""
 
 msgid "``HEAD``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.2"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.2"
 msgstr ""
 
 msgid "``POST``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.3"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.3"
 msgstr ""
 
 msgid "``PUT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.4"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.4"
 msgstr ""
 
 msgid "``DELETE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.5"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.5"
 msgstr ""
 
 msgid "``CONNECT``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.6"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.6"
 msgstr ""
 
 msgid "``OPTIONS``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.7"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.7"
 msgstr ""
 
 msgid "``TRACE``"
 msgstr ""
 
-msgid "HTTP/1.1 :rfc:`7231`, Section 4.3.8"
+msgid "HTTP Semantics :rfc:`9110`, Section 9.3.8"
 msgstr ""
 
 msgid "``PATCH``"

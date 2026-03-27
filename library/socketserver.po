@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!socketserver` --- A framework for network servers"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/socketserver.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`socketserver` module simplifies the task of writing network "
+"The :mod:`!socketserver` module simplifies the task of writing network "
 "servers."
 msgstr ""
 
@@ -34,9 +32,8 @@ msgid "Availability"
 msgstr ""
 
 msgid ""
-"This module does not work or is not available on WebAssembly platforms "
-"``wasm32-emscripten`` and ``wasm32-wasi``. See :ref:`wasm-availability` for "
-"more information."
+"This module does not work or is not available on WebAssembly. See :ref:`wasm-"
+"availability` for more information."
 msgstr ""
 
 msgid "There are four basic concrete server classes:"
@@ -163,6 +160,12 @@ msgid ""
 ":meth:`ThreadingMixIn.server_close <BaseServer.server_close>` waits until "
 "all non-daemon threads complete, except if :attr:`block_on_close` attribute "
 "is ``False``."
+msgstr ""
+
+msgid ""
+"Specify how many child processes will exist to handle requests at a time "
+"for :class:`ForkingMixIn`.  If the limit is reached, new requests will wait "
+"until one child process has finished."
 msgstr ""
 
 msgid ""
@@ -480,7 +483,6 @@ msgstr ""
 msgid "This is the server side::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import socketserver\n"
 "\n"
@@ -523,7 +525,6 @@ msgid ""
 "interface)::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "class MyTCPHandler(socketserver.StreamRequestHandler):\n"
 "\n"
@@ -542,11 +543,11 @@ msgstr ""
 msgid ""
 "The difference is that the ``readline()`` call in the second handler will "
 "call ``recv()`` multiple times until it encounters a newline character, "
-"while the the first handler had to use a ``recv()`` loop to accumulate data "
+"while the first handler had to use a ``recv()`` loop to accumulate data "
 "until a newline itself.  If it had just used a single ``recv()`` without the "
 "loop it would just have returned what has been received so far from the "
 "client. TCP is stream based: data arrives in the order it was sent, but "
-"there no correlation between client ``send()`` or ``sendall()`` calls and "
+"there is no correlation between client ``send()`` or ``sendall()`` calls and "
 "the number of ``recv()`` calls on the server required to receive it."
 msgstr ""
 
@@ -603,7 +604,6 @@ msgstr ""
 msgid ":class:`socketserver.UDPServer` Example"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import socketserver\n"
 "\n"
@@ -663,7 +663,6 @@ msgstr ""
 msgid "An example for the :class:`ThreadingMixIn` class::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import socket\n"
 "import threading\n"

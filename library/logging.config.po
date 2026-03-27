@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!logging.config` --- Logging configuration"
 msgstr ""
@@ -46,7 +44,7 @@ msgstr ""
 
 msgid ""
 "The following functions configure the logging module. They are located in "
-"the :mod:`logging.config` module.  Their use is optional --- you can "
+"the :mod:`!logging.config` module.  Their use is optional --- you can "
 "configure the logging module using these functions or by making calls to the "
 "main API (defined in :mod:`logging` itself) and defining handlers which are "
 "declared either in :mod:`logging` or :mod:`logging.handlers`."
@@ -87,7 +85,7 @@ msgstr ""
 msgid ""
 "Parsing is performed by the :class:`DictConfigurator` class, whose "
 "constructor is passed the dictionary used for configuration, and has a :meth:"
-"`configure` method.  The :mod:`logging.config` module has a callable "
+"`configure` method.  The :mod:`!logging.config` module has a callable "
 "attribute :attr:`dictConfigClass` which is initially set to :class:"
 "`DictConfigurator`. You can replace the value of :attr:`dictConfigClass` "
 "with a suitable implementation of your own."
@@ -570,7 +568,6 @@ msgid ""
 "made available under the special key ``'()'``.  Here's a concrete example:"
 msgstr ""
 
-#, python-format
 msgid ""
 "formatters:\n"
 "  brief:\n"
@@ -595,7 +592,6 @@ msgid ""
 "configuration sub-dictionaries::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "{\n"
 "  'format' : '%(message)s'\n"
@@ -605,7 +601,6 @@ msgstr ""
 msgid "and::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "{\n"
 "  'format' : '%(asctime)s %(levelname)-8s %(name)-15s %(message)s',\n"
@@ -621,7 +616,6 @@ msgid ""
 "is::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "{\n"
 "  '()' : 'my.package.customFormatterFactory',\n"
@@ -665,13 +659,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-"You can also specify a special key ``'.'`` whose value is a dictionary is a "
-"mapping of attribute names to values. If found, the specified attributes "
-"will be set on the user-defined object before it is returned. Thus, with the "
-"following configuration::"
+"You can also specify a special key ``'.'`` whose value is a mapping of "
+"attribute names to values. If found, the specified attributes will be set on "
+"the user-defined object before it is returned. Thus, with the following "
+"configuration::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "{\n"
 "  '()' : 'my.package.customFormatterFactory',\n"
@@ -709,7 +702,7 @@ msgid ""
 "handler has been configured) it points to the configured handler instance. "
 "Thus, ``cfg://handlers.foo`` could resolve to either a dictionary or a "
 "handler instance. In general, it is wise to name handlers in a way such that "
-"dependent handlers are configured _after_ any handlers they depend on; that "
+"dependent handlers are configured *after* any handlers they depend on; that "
 "allows something like ``cfg://handlers.foo`` to be used in configuring a "
 "handler that depends on handler ``foo``. If that dependent handler were "
 "named ``bar``, problems would result, because the configuration of ``bar`` "
@@ -812,7 +805,8 @@ msgid ""
 "``subject`` value could be accessed using either ``'cfg://handlers.email."
 "subject'`` or, equivalently, ``'cfg://handlers.email[subject]'``.  The "
 "latter form only needs to be used if the key contains spaces or non-"
-"alphanumeric characters.  If an index value consists only of decimal digits, "
+"alphanumeric characters. Please note that the characters ``[`` and ``]`` are "
+"not allowed in the keys. If an index value consists only of decimal digits, "
 "access will be attempted using the corresponding integer value, falling back "
 "to the string value if needed."
 msgstr ""
@@ -1086,7 +1080,6 @@ msgid ""
 "provided, it defaults to ``()``."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The optional ``kwargs`` entry, when :ref:`evaluated <func-eval>` in the "
 "context of the ``logging`` package's namespace, is the keyword argument dict "
@@ -1094,7 +1087,6 @@ msgid ""
 "``{}``."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "[handler_hand02]\n"
 "class=FileHandler\n"
@@ -1154,7 +1146,6 @@ msgid ""
 "Sections which specify formatter configuration are typified by the following."
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "[formatter_form01]\n"
 "format=F1 %(asctime)s %(levelname)s %(message)s %(customfield)s\n"

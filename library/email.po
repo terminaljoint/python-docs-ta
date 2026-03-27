@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!email` --- An email and MIME handling package"
 msgstr ""
@@ -26,13 +24,13 @@ msgid "**Source code:** :source:`Lib/email/__init__.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`email` package is a library for managing email messages.  It is "
+"The :mod:`!email` package is a library for managing email messages.  It is "
 "specifically *not* designed to do any sending of email messages to SMTP (:"
 "rfc:`2821`), NNTP, or other servers; those are functions of modules such as :"
-"mod:`smtplib` and :mod:`nntplib`.  The :mod:`email` package attempts to be "
-"as RFC-compliant as possible, supporting :rfc:`5322` and :rfc:`6532`, as "
-"well as such MIME-related RFCs as :rfc:`2045`, :rfc:`2046`, :rfc:`2047`, :"
-"rfc:`2183`, and :rfc:`2231`."
+"mod:`smtplib`.  The :mod:`!email` package attempts to be as RFC-compliant as "
+"possible, supporting :rfc:`5322` and :rfc:`6532`, as well as such MIME-"
+"related RFCs as :rfc:`2045`, :rfc:`2046`, :rfc:`2047`, :rfc:`2183`, and :rfc:"
+"`2231`."
 msgstr ""
 
 msgid ""
@@ -95,7 +93,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The following sections describe the functionality of the :mod:`email` "
+"The following sections describe the functionality of the :mod:`!email` "
 "package. We start with the :mod:`~email.message` object model, which is the "
 "primary interface an application will use, and follow that with the :mod:"
 "`~email.parser` and :mod:`~email.generator` components.  Then we cover the :"
@@ -136,7 +134,7 @@ msgid ""
 "EmailMessage`/:class:`~email.policy.EmailPolicy` API."
 msgstr ""
 
-msgid "Contents of the :mod:`email` package documentation:"
+msgid "Contents of the :mod:`!email` package documentation:"
 msgstr ""
 
 msgid "Legacy API:"
@@ -158,12 +156,6 @@ msgid "Module :mod:`imaplib`"
 msgstr ""
 
 msgid "IMAP (Internet Message Access Protocol) client"
-msgstr ""
-
-msgid "Module :mod:`nntplib`"
-msgstr ""
-
-msgid "NNTP (Net News Transport Protocol) client"
 msgstr ""
 
 msgid "Module :mod:`mailbox`"

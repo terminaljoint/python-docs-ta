@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "What's New in Python 2.3"
 msgstr ""
@@ -98,7 +96,7 @@ msgid ""
 "`~frozenset.union` and :meth:`~frozenset.intersection` methods; an "
 "alternative notation uses the bitwise operators ``&`` and ``|``. Mutable "
 "sets also have in-place versions of these methods, :meth:`!union_update` "
-"and :meth:`~frozenset.intersection_update`. ::"
+"and :meth:`~set.intersection_update`. ::"
 msgstr ""
 
 msgid ""
@@ -123,8 +121,8 @@ msgid ""
 "the set of all elements in the union that aren't in the intersection.  "
 "Another way of putting it is that the symmetric difference contains all "
 "elements that are in exactly one set.  Again, there's an alternative "
-"notation (``^``), and an in-place version with the ungainly name :meth:"
-"`~frozenset.symmetric_difference_update`. ::"
+"notation (``^``), and an in-place version with the ungainly name :meth:`~set."
+"symmetric_difference_update`. ::"
 msgstr ""
 
 msgid ""
@@ -568,7 +566,6 @@ msgid ""
 "functions that always use the root log::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "\n"
@@ -631,7 +628,6 @@ msgid ""
 "logger. ::"
 msgstr ""
 
-#, python-format
 msgid ""
 "log = logging.getLogger('server')\n"
 " ...\n"
@@ -828,7 +824,6 @@ msgid ""
 "compatible with older versions of the Distutils::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "from distutils import core\n"
 "kw = {'name': \"Quixote\",\n"
@@ -1250,7 +1245,6 @@ msgid ""
 "is returned if it's specified and :exc:`KeyError` raised if it isn't. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> d = {1:2}\n"
 ">>> d\n"
@@ -1284,7 +1278,6 @@ msgid ""
 "creating small dictionaries::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> dict(red=1, blue=2, green=3, black=4)\n"
 "{'blue': 2, 'black': 4, 'green': 3, 'red': 1}"
@@ -1525,7 +1518,6 @@ msgid ""
 "changes.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "The net result of the 2.3 optimizations is that Python 2.3 runs the  pystone "
 "benchmark around 25% faster than Python 2.2."
@@ -1776,7 +1768,7 @@ msgstr ""
 
 msgid ""
 "The old and never-documented :mod:`!linuxaudiodev` module has been "
-"deprecated, and a new version named :mod:`ossaudiodev` has been added.  The "
+"deprecated, and a new version named :mod:`!ossaudiodev` has been added.  The "
 "module was renamed because the OSS sound drivers can be used on platforms "
 "other than Linux, and the interface has also been tidied and brought up to "
 "date in various ways. (Contributed by Greg Ward and Nicholas FitzRoy-Dale.)"
@@ -2130,7 +2122,6 @@ msgid ""
 "Unicode domain name and the ASCII-compatible encoding (ACE) of that name. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">{}>{}> u\"www.Alliancefrançaise.nu\".encode(\"idna\")\n"
 "'www.xn--alliancefranaise-npb.nu'"
@@ -2183,10 +2174,9 @@ msgid ""
 "are a number of methods for producing formatted strings from objects::"
 msgstr ""
 
-#, python-format
 msgid ""
-">>> import datetime\n"
-">>> now = datetime.datetime.now()\n"
+">>> import datetime as dt\n"
+">>> now = dt.datetime.now()\n"
 ">>> now.isoformat()\n"
 "'2002-12-30T21:27:03.994956'\n"
 ">>> now.ctime()  # Only available on date, datetime\n"
@@ -2202,10 +2192,10 @@ msgid ""
 msgstr ""
 
 msgid ""
-">>> d = datetime.datetime.now()\n"
+">>> d = dt.datetime.now()\n"
 ">>> d\n"
 "datetime.datetime(2002, 12, 30, 22, 15, 38, 827738)\n"
-">>> d.replace(year=2001, hour = 12)\n"
+">>> d.replace(year=2001, hour=12)\n"
 "datetime.datetime(2001, 12, 30, 12, 15, 38, 827738)\n"
 ">>>"
 msgstr ""
@@ -2275,7 +2265,6 @@ msgid ""
 "to. Note that the length argument is automatically converted to an integer."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "$ ./python opt.py -i data arg1\n"
 "<Values at 0x400cad4c: {'input': 'data', 'length': None}>\n"
@@ -2429,13 +2418,12 @@ msgid ""
 "PyAPI_DATA` macros."
 msgstr ""
 
-#, python-format
 msgid ""
 "The interpreter can be compiled without any docstrings for the built-in "
 "functions and modules by supplying :option:`!--without-doc-strings` to the :"
-"program:`configure` script. This makes the Python executable about "
-"10% smaller, but will also mean that you can't get help for Python's built-"
-"ins.  (Contributed by Gustavo Niemeyer.)"
+"program:`configure` script. This makes the Python executable about 10% "
+"smaller, but will also mean that you can't get help for Python's built-ins.  "
+"(Contributed by Gustavo Niemeyer.)"
 msgstr ""
 
 msgid ""
@@ -2647,7 +2635,6 @@ msgid ""
 "uses the new keywords with a version of the Distutils that supports them::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "from distutils import core\n"
 "\n"

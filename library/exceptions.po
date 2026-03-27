@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Built-in Exceptions"
 msgstr ""
@@ -220,10 +218,14 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :attr:`name` and :attr:`obj` attributes can be set using keyword-only "
-"arguments to the constructor. When set they represent the name of the "
-"attribute that was attempted to be accessed and the object that was accessed "
-"for said attribute, respectively."
+"The optional *name* and *obj* keyword-only arguments set the corresponding "
+"attributes:"
+msgstr ""
+
+msgid "The name of the attribute that was attempted to be accessed."
+msgstr ""
+
+msgid "The object that was accessed for the named attribute."
 msgstr ""
 
 msgid "Added the :attr:`name` and :attr:`obj` attributes."
@@ -231,8 +233,8 @@ msgstr ""
 
 msgid ""
 "Raised when the :func:`input` function hits an end-of-file condition (EOF) "
-"without reading any data. (N.B.: the :meth:`io.IOBase.read` and :meth:`io."
-"IOBase.readline` methods return an empty string when they hit EOF.)"
+"without reading any data. (Note: the :meth:`io.TextIOBase.read` and :meth:"
+"`io.IOBase.readline` methods return an empty string when they hit EOF.)"
 msgstr ""
 
 msgid "Not currently used."
@@ -314,10 +316,10 @@ msgid ""
 "the name that could not be found."
 msgstr ""
 
-msgid ""
-"The :attr:`name` attribute can be set using a keyword-only argument to the "
-"constructor. When set it represent the name of the variable that was "
-"attempted to be accessed."
+msgid "The optional *name* keyword-only argument sets the attribute:"
+msgstr ""
+
+msgid "The name of the variable that was attempted to be accessed."
 msgstr ""
 
 msgid "Added the :attr:`name` attribute."
@@ -382,8 +384,8 @@ msgstr ""
 
 msgid ""
 "The corresponding error message, as provided by the operating system.  It is "
-"formatted by the C functions :c:func:`perror` under POSIX, and :c:func:"
-"`FormatMessage` under Windows."
+"formatted by the C functions :c:func:`!perror` under POSIX, and :c:func:`!"
+"FormatMessage` under Windows."
 msgstr ""
 
 msgid ""
@@ -396,8 +398,8 @@ msgstr ""
 
 msgid ""
 ":exc:`EnvironmentError`, :exc:`IOError`, :exc:`WindowsError`, :exc:`socket."
-"error`, :exc:`select.error` and :exc:`mmap.error` have been merged into :exc:"
-"`OSError`, and the constructor may return a subclass."
+"error`, :exc:`select.error` and :exc:`!mmap.error` have been merged into :"
+"exc:`OSError`, and the constructor may return a subclass."
 msgstr ""
 
 msgid ""
@@ -417,12 +419,38 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This exception is derived from :exc:`RuntimeError`.  It is raised when the "
-"interpreter detects that the maximum recursion depth (see :func:`sys."
-"getrecursionlimit`) is exceeded."
+"This exception is derived from :exc:`RuntimeError`.  It is raised when an "
+"operation is blocked during interpreter shutdown also known as :term:`Python "
+"finalization <interpreter shutdown>`."
+msgstr ""
+
+msgid ""
+"Examples of operations which can be blocked with a :exc:"
+"`PythonFinalizationError` during the Python finalization:"
+msgstr ""
+
+msgid "Creating a new Python thread."
+msgstr ""
+
+msgid ":meth:`Joining <threading.Thread.join>` a running daemon thread."
+msgstr ""
+
+msgid ":func:`os.fork`."
+msgstr ""
+
+msgid "See also the :func:`sys.is_finalizing` function."
 msgstr ""
 
 msgid "Previously, a plain :exc:`RuntimeError` was raised."
+msgstr ""
+
+msgid ":meth:`threading.Thread.join` can now raise this exception."
+msgstr ""
+
+msgid ""
+"This exception is derived from :exc:`RuntimeError`.  It is raised when the "
+"interpreter detects that the maximum recursion depth (see :func:`sys."
+"getrecursionlimit`) is exceeded."
 msgstr ""
 
 msgid ""
@@ -520,7 +548,6 @@ msgid ""
 "indexed: the first character in the line has an ``offset`` of 1."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "For errors in f-string fields, the message is prefixed by \"f-string: \" and "
 "the offsets are offsets in a text constructed from the replacement "
@@ -567,7 +594,7 @@ msgid ""
 "it is not handled, the Python interpreter exits; no stack traceback is "
 "printed.  The constructor accepts the same optional argument passed to :func:"
 "`sys.exit`. If the value is an integer, it specifies the system exit status "
-"(passed to C's :c:func:`exit` function); if it is ``None``, the exit status "
+"(passed to C's :c:func:`!exit` function); if it is ``None``, the exit status "
 "is zero; if it has another type (such as a string), the object's value is "
 "printed and the exit status is one."
 msgstr ""
@@ -635,6 +662,11 @@ msgstr ""
 msgid "The first index of invalid data in :attr:`object`."
 msgstr ""
 
+msgid ""
+"This value should not be negative as it is interpreted as an absolute offset "
+"but this constraint is not enforced at runtime."
+msgstr ""
+
 msgid "The index after the last invalid data in :attr:`object`."
 msgstr ""
 
@@ -694,8 +726,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"An integer containing the number of characters written to the stream before "
-"it blocked.  This attribute is available when using the buffered I/O classes "
+"An integer containing the number of **bytes** written to the stream before "
+"it blocked. This attribute is available when using the buffered I/O classes "
 "from the :mod:`io` module."
 msgstr ""
 
@@ -845,6 +877,11 @@ msgstr ""
 msgid "Base class for warnings about dubious syntax."
 msgstr ""
 
+msgid ""
+"This warning is typically emitted when compiling Python source code, and "
+"usually won't be reported when running already compiled code."
+msgstr ""
+
 msgid "Base class for warnings about dubious runtime behavior."
 msgstr ""
 
@@ -901,6 +938,12 @@ msgid ""
 "`TypeError` if any contained exception is not an :exc:`Exception` subclass."
 msgstr ""
 
+msgid ""
+"The ``excs`` parameter may be any sequence, but lists and tuples are "
+"specifically processed more efficiently here. For optimal performance, pass "
+"a tuple as ``excs``."
+msgstr ""
+
 msgid "The ``msg`` argument to the constructor. This is a read-only attribute."
 msgstr ""
 
@@ -915,10 +958,11 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The condition can be either a function that accepts an exception and returns "
-"true for those that should be in the subgroup, or it can be an exception "
-"type or a tuple of exception types, which is used to check for a match using "
-"the same check that is used in an ``except`` clause."
+"The condition can be an exception type or tuple of exception types, in which "
+"case each exception is checked for a match using the same check that is used "
+"in an ``except`` clause.  The condition can also be a callable (other than a "
+"type object) that accepts an exception as its single argument and returns "
+"true for the exceptions that should be in the subgroup."
 msgstr ""
 
 msgid ""
@@ -933,6 +977,9 @@ msgid ""
 "The condition is checked for all exceptions in the nested exception group, "
 "including the top-level and any nested exception groups. If the condition is "
 "true for such an exception group, it is included in the result in full."
+msgstr ""
+
+msgid "``condition`` can be any callable which is not a type object."
 msgstr ""
 
 msgid ""
@@ -993,11 +1040,10 @@ msgid ""
 "Note that :exc:`BaseExceptionGroup` defines :meth:`~object.__new__`, so "
 "subclasses that need a different constructor signature need to override that "
 "rather than :meth:`~object.__init__`. For example, the following defines an "
-"exception group subclass which accepts an exit_code and and constructs the "
+"exception group subclass which accepts an exit_code and constructs the "
 "group's message from it. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "class Errors(ExceptionGroup):\n"
 "   def __new__(cls, errors, exit_code):\n"
@@ -1064,6 +1110,7 @@ msgid ""
 "      ├── ReferenceError\n"
 "      ├── RuntimeError\n"
 "      │    ├── NotImplementedError\n"
+"      │    ├── PythonFinalizationError\n"
 "      │    └── RecursionError\n"
 "      ├── StopAsyncIteration\n"
 "      ├── StopIteration\n"

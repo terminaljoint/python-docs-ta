@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Type Objects"
 msgstr ""
@@ -88,6 +86,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"In free-threaded builds, :c:func:`PyType_AddWatcher` is not thread-safe, so "
+"it must be called at start up (before spawning the first thread)."
+msgstr ""
+
+msgid ""
 "Clear watcher identified by *watcher_id* (previously returned from :c:func:"
 "`PyType_AddWatcher`). Return ``0`` on success, ``-1`` on error (e.g. if "
 "*watcher_id* was never registered.)"
@@ -113,6 +116,21 @@ msgid ""
 "not returned to it by a previous call to :c:func:`PyType_AddWatcher`."
 msgstr ""
 
+msgid ""
+"Mark *type* as not watched. This undoes a previous call to :c:func:"
+"`PyType_Watch`. *type* must not be ``NULL``."
+msgstr ""
+
+msgid ""
+"An extension should never call this function with a *watcher_id* that was "
+"not returned to it by a previous call to :c:func:`PyType_AddWatcher`."
+msgstr ""
+
+msgid ""
+"On success, this function returns ``0``. On failure, this function returns "
+"``-1`` with an exception set."
+msgstr ""
+
 msgid "Type of a type-watcher callback function."
 msgstr ""
 
@@ -125,6 +143,18 @@ msgstr ""
 msgid ""
 "Return non-zero if the type object *o* sets the feature *feature*. Type "
 "features are denoted by single bit flags."
+msgstr ""
+
+msgid ""
+"Return non-zero if the type object *type* sets the subclass flag *flag*. "
+"Subclass flags are denoted by :c:macro:`Py_TPFLAGS_*_SUBCLASS "
+"<Py_TPFLAGS_LONG_SUBCLASS>`. This function is used by many ``_Check`` "
+"functions for common types."
+msgstr ""
+
+msgid ""
+":c:func:`PyObject_TypeCheck`, which is used as a slower alternative in "
+"``_Check`` functions for types that don't come with subclass flags."
 msgstr ""
 
 msgid ""
@@ -143,14 +173,31 @@ msgstr ""
 
 msgid ""
 "Generic handler for the :c:member:`~PyTypeObject.tp_alloc` slot of a type "
-"object.  Use Python's default memory allocation mechanism to allocate a new "
-"instance and initialize all its contents to ``NULL``."
+"object.  Uses Python's default memory allocation mechanism to allocate "
+"memory for a new instance, zeros the memory, then initializes the memory as "
+"if by calling :c:func:`PyObject_Init` or :c:func:`PyObject_InitVar`."
+msgstr ""
+
+msgid ""
+"Do not call this directly to allocate memory for an object; call the type's :"
+"c:member:`~PyTypeObject.tp_alloc` slot instead."
+msgstr ""
+
+msgid ""
+"For types that support garbage collection (i.e., the :c:macro:"
+"`Py_TPFLAGS_HAVE_GC` flag is set), this function behaves like :c:macro:"
+"`PyObject_GC_New` or :c:macro:`PyObject_GC_NewVar` (except the memory is "
+"guaranteed to be zeroed before initialization), and should be paired with :c:"
+"func:`PyObject_GC_Del` in :c:member:`~PyTypeObject.tp_free`. Otherwise, it "
+"behaves like :c:macro:`PyObject_New` or :c:macro:`PyObject_NewVar` (except "
+"the memory is guaranteed to be zeroed before initialization) and should be "
+"paired with :c:func:`PyObject_Free` in :c:member:`~PyTypeObject.tp_free`."
 msgstr ""
 
 msgid ""
 "Generic handler for the :c:member:`~PyTypeObject.tp_new` slot of a type "
-"object.  Create a new instance using the type's :c:member:`~PyTypeObject."
-"tp_alloc` slot."
+"object.  Creates a new instance using the type's :c:member:`~PyTypeObject."
+"tp_alloc` slot and returns the resulting object."
 msgstr ""
 
 msgid ""
@@ -181,6 +228,17 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Return the type's fully qualified name. Equivalent to ``f\"{type.__module__}."
+"{type.__qualname__}\"``, or :attr:`type.__qualname__` if :attr:`type."
+"__module__` is not a string or is equal to ``\"builtins\"``."
+msgstr ""
+
+msgid ""
+"Return the type's module name. Equivalent to getting the :attr:`type."
+"__module__` attribute."
+msgstr ""
+
+msgid ""
 "Return the function pointer stored in the given slot. If the result is "
 "``NULL``, this indicates that either the slot is ``NULL``, or that the "
 "function was called with invalid parameters. Callers will typically cast the "
@@ -199,6 +257,12 @@ msgstr ""
 msgid ""
 "Return the module object associated with the given type when the type was "
 "created using :c:func:`PyType_FromModuleAndSpec`."
+msgstr ""
+
+msgid ""
+"The returned reference is :term:`borrowed <borrowed reference>` from *type*, "
+"and will be valid as long as you hold a reference to *type*. Do not release "
+"it with :c:func:`Py_DECREF` or similar."
 msgstr ""
 
 msgid ""
@@ -244,12 +308,49 @@ msgid ""
 "type:`PyCMethod` calling convention."
 msgstr ""
 
+msgid ""
+"Find the first superclass in *type*'s :term:`method resolution order` whose :"
+"c:macro:`Py_tp_token` token is equal to the given one."
+msgstr ""
+
+msgid ""
+"If found, set *\\*result* to a new :term:`strong reference` to it and return "
+"``1``."
+msgstr ""
+
+msgid "If not found, set *\\*result* to ``NULL`` and return ``0``."
+msgstr ""
+
+msgid ""
+"On error, set *\\*result* to ``NULL`` and return ``-1`` with an exception "
+"set."
+msgstr ""
+
+msgid ""
+"The *result* argument may be ``NULL``, in which case *\\*result* is not set. "
+"Use this if you need only the return value."
+msgstr ""
+
+msgid "The *token* argument may not be ``NULL``."
+msgstr ""
+
 msgid "Attempt to assign a version tag to the given type."
 msgstr ""
 
 msgid ""
 "Returns 1 if the type already had a valid version tag or a new one was "
 "assigned, or 0 if a new tag could not be assigned."
+msgstr ""
+
+msgid ""
+"Return true if instances of *type* support creating weak references, false "
+"otherwise. This function always succeeds. *type* must not be ``NULL``."
+msgstr ""
+
+msgid ":ref:`weakrefobjects`"
+msgstr ""
+
+msgid ":py:mod:`weakref`"
 msgstr ""
 
 msgid "Creating Heap-Allocated Types"
@@ -273,17 +374,14 @@ msgstr ""
 
 msgid ""
 "Metaclasses that override :c:member:`~PyTypeObject.tp_new` are not "
-"supported, except if ``tp_new`` is ``NULL``. (For backwards compatibility, "
-"other ``PyType_From*`` functions allow such metaclasses. They ignore "
-"``tp_new``, which may result in incomplete initialization. This is "
-"deprecated and in Python 3.14+ such metaclasses will not be supported.)"
+"supported, except if ``tp_new`` is ``NULL``."
 msgstr ""
 
 msgid ""
 "The *bases* argument can be used to specify base classes; it can either be "
-"only one class or a tuple of classes. If *bases* is ``NULL``, the "
-"*Py_tp_bases* slot is used instead. If that also is ``NULL``, the "
-"*Py_tp_base* slot is used instead. If that also is ``NULL``, the new type "
+"only one class or a tuple of classes. If *bases* is ``NULL``, the :c:data:"
+"`Py_tp_bases` slot is used instead. If that also is ``NULL``, the :c:data:"
+"`Py_tp_base` slot is used instead. If that also is ``NULL``, the new type "
 "derives from :class:`object`."
 msgstr ""
 
@@ -336,8 +434,12 @@ msgstr ""
 msgid ""
 "The :c:member:`~PyTypeObject.tp_new` of the metaclass is *ignored*. which "
 "may result in incomplete initialization. Creating classes whose metaclass "
-"overrides :c:member:`~PyTypeObject.tp_new` is deprecated and in Python 3.14+ "
-"it will be no longer allowed."
+"overrides :c:member:`~PyTypeObject.tp_new` is deprecated."
+msgstr ""
+
+msgid ""
+"Creating classes whose metaclass overrides :c:member:`~PyTypeObject.tp_new` "
+"is no longer allowed."
 msgstr ""
 
 msgid "Equivalent to ``PyType_FromMetaclass(NULL, NULL, spec, bases)``."
@@ -350,6 +452,21 @@ msgid ""
 "The function now finds and uses a metaclass corresponding to the base "
 "classes provided in *Py_tp_base[s]* slots. Previously, only :class:`type` "
 "instances were returned."
+msgstr ""
+
+msgid ""
+"Make a type immutable: set the :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` flag."
+msgstr ""
+
+msgid "All base classes of *type* must be immutable."
+msgstr ""
+
+msgid "On success, return ``0``. On error, set an exception and return ``-1``."
+msgstr ""
+
+msgid ""
+"The type must not be used before it's made immutable. For example, type "
+"instances must not be created before the type is made immutable."
 msgstr ""
 
 msgid "Structure defining a type's behavior."
@@ -418,7 +535,6 @@ msgid ""
 "`PyType_FromSpecWithBases` sets it automatically."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Array of :c:type:`PyType_Slot` structures. Terminated by the special slot "
 "value ``{0, NULL}``."
@@ -442,13 +558,21 @@ msgid ""
 "prefix. For example, use:"
 msgstr ""
 
-msgid "``Py_tp_dealloc`` to set :c:member:`PyTypeObject.tp_dealloc`"
+msgid ":c:data:`Py_tp_dealloc` to set :c:member:`PyTypeObject.tp_dealloc`"
 msgstr ""
 
-msgid "``Py_nb_add`` to set :c:member:`PyNumberMethods.nb_add`"
+msgid ":c:data:`Py_nb_add` to set :c:member:`PyNumberMethods.nb_add`"
 msgstr ""
 
-msgid "``Py_sq_length`` to set :c:member:`PySequenceMethods.sq_length`"
+msgid ":c:data:`Py_sq_length` to set :c:member:`PySequenceMethods.sq_length`"
+msgstr ""
+
+msgid ""
+"An additional slot is supported that does not correspond to a :c:type:`!"
+"PyTypeObject` struct field:"
+msgstr ""
+
+msgid ":c:data:`Py_tp_token`"
 msgstr ""
 
 msgid ""
@@ -473,22 +597,18 @@ msgstr ""
 msgid ""
 "If it is not possible to switch to a ``MANAGED`` flag (for example, for "
 "vectorcall or to support Python older than 3.12), specify the offset in :c:"
-"member:`Py_tp_members <PyTypeObject.tp_members>`. See :ref:`PyMemberDef "
-"documentation <pymemberdef-offsets>` for details."
-msgstr ""
-
-msgid "The following fields cannot be set at all when creating a heap type:"
+"data:`Py_tp_members`. See :ref:`PyMemberDef documentation <pymemberdef-"
+"offsets>` for details."
 msgstr ""
 
 msgid ""
-":c:member:`~PyTypeObject.tp_vectorcall` (use :c:member:`~PyTypeObject."
-"tp_new` and/or :c:member:`~PyTypeObject.tp_init`)"
+"The following internal fields cannot be set at all when creating a heap type:"
 msgstr ""
 
 msgid ""
-"Internal fields: :c:member:`~PyTypeObject.tp_dict`, :c:member:`~PyTypeObject."
-"tp_mro`, :c:member:`~PyTypeObject.tp_cache`, :c:member:`~PyTypeObject."
-"tp_subclasses`, and :c:member:`~PyTypeObject.tp_weaklist`."
+":c:member:`~PyTypeObject.tp_dict`, :c:member:`~PyTypeObject.tp_mro`, :c:"
+"member:`~PyTypeObject.tp_cache`, :c:member:`~PyTypeObject.tp_subclasses`, "
+"and :c:member:`~PyTypeObject.tp_weaklist`."
 msgstr ""
 
 msgid ""
@@ -507,11 +627,67 @@ msgid ""
 msgstr ""
 
 msgid ""
+"The field :c:member:`~PyTypeObject.tp_vectorcall` can now be set using :c:"
+"data:`Py_tp_vectorcall`.  See the field's documentation for details."
+msgstr ""
+
+msgid ""
 "The desired value of the slot. In most cases, this is a pointer to a "
 "function."
 msgstr ""
 
-msgid "Slots other than ``Py_tp_doc`` may not be ``NULL``."
+msgid "*pfunc* values may not be ``NULL``, except for the following slots:"
+msgstr ""
+
+msgid ":c:data:`Py_tp_doc`"
+msgstr ""
+
+msgid ""
+":c:data:`Py_tp_token` (for clarity, prefer :c:data:`Py_TP_USE_SPEC` rather "
+"than ``NULL``)"
+msgstr ""
+
+msgid ""
+"A :c:member:`~PyType_Slot.slot` that records a static memory layout ID for a "
+"class."
+msgstr ""
+
+msgid ""
+"If the :c:type:`PyType_Spec` of the class is statically allocated, the token "
+"can be set to the spec using the special value :c:data:`Py_TP_USE_SPEC`:"
+msgstr ""
+
+msgid ""
+"static PyType_Slot foo_slots[] = {\n"
+"   {Py_tp_token, Py_TP_USE_SPEC},"
+msgstr ""
+
+msgid "It can also be set to an arbitrary pointer, but you must ensure that:"
+msgstr ""
+
+msgid ""
+"The pointer outlives the class, so it's not reused for something else while "
+"the class exists."
+msgstr ""
+
+msgid ""
+"It \"belongs\" to the extension module where the class lives, so it will not "
+"clash with other extensions."
+msgstr ""
+
+msgid ""
+"Use :c:func:`PyType_GetBaseByToken` to check if a class's superclass has a "
+"given token -- that is, check whether the memory layout is compatible."
+msgstr ""
+
+msgid ""
+"To get the token for a given class (without considering superclasses), use :"
+"c:func:`PyType_GetSlot` with ``Py_tp_token``."
+msgstr ""
+
+msgid ""
+"Used as a value with :c:data:`Py_tp_token` to set the token to the class's :"
+"c:type:`PyType_Spec`. Expands to ``NULL``."
 msgstr ""
 
 msgid "object"

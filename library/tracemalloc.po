@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!tracemalloc` --- Trace memory allocations"
 msgstr ""
@@ -180,7 +178,6 @@ msgstr ""
 msgid "Code to display the traceback of the biggest memory block::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import tracemalloc\n"
 "\n"
@@ -256,7 +253,6 @@ msgid ""
 "output, ignoring ``<frozen importlib._bootstrap>`` and ``<unknown>`` files::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import linecache\n"
 "import os\n"
@@ -329,7 +325,6 @@ msgid ""
 "memory usage during the computations::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import tracemalloc\n"
 "\n"
@@ -384,7 +379,7 @@ msgstr ""
 
 msgid ""
 "Get the traceback where the Python object *obj* was allocated. Return a :"
-"class:`Traceback` instance, or ``None`` if the :mod:`tracemalloc` module is "
+"class:`Traceback` instance, or ``None`` if the :mod:`!tracemalloc` module is "
 "not tracing memory allocations or did not trace the allocation of the object."
 msgstr ""
 
@@ -395,7 +390,7 @@ msgid "Get the maximum number of frames stored in the traceback of a trace."
 msgstr ""
 
 msgid ""
-"The :mod:`tracemalloc` module must be tracing memory allocations to get the "
+"The :mod:`!tracemalloc` module must be tracing memory allocations to get the "
 "limit, otherwise an exception is raised."
 msgstr ""
 
@@ -403,17 +398,17 @@ msgid "The limit is set by the :func:`start` function."
 msgstr ""
 
 msgid ""
-"Get the current size and peak size of memory blocks traced by the :mod:"
-"`tracemalloc` module as a tuple: ``(current: int, peak: int)``."
+"Get the current size and peak size of memory blocks traced by the :mod:`!"
+"tracemalloc` module as a tuple: ``(current: int, peak: int)``."
 msgstr ""
 
 msgid ""
-"Set the peak size of memory blocks traced by the :mod:`tracemalloc` module "
+"Set the peak size of memory blocks traced by the :mod:`!tracemalloc` module "
 "to the current size."
 msgstr ""
 
 msgid ""
-"Do nothing if the :mod:`tracemalloc` module is not tracing memory "
+"Do nothing if the :mod:`!tracemalloc` module is not tracing memory "
 "allocations."
 msgstr ""
 
@@ -428,12 +423,12 @@ msgid "See also :func:`get_traced_memory`."
 msgstr ""
 
 msgid ""
-"Get the memory usage in bytes of the :mod:`tracemalloc` module used to store "
-"traces of memory blocks. Return an :class:`int`."
+"Get the memory usage in bytes of the :mod:`!tracemalloc` module used to "
+"store traces of memory blocks. Return an :class:`int`."
 msgstr ""
 
 msgid ""
-"``True`` if the :mod:`tracemalloc` module is tracing Python memory "
+"``True`` if the :mod:`!tracemalloc` module is tracing Python memory "
 "allocations, ``False`` otherwise."
 msgstr ""
 
@@ -459,9 +454,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Storing more frames increases the memory and CPU overhead of the :mod:"
-"`tracemalloc` module. Use the :func:`get_tracemalloc_memory` function to "
-"measure how much memory is used by the :mod:`tracemalloc` module."
+"Storing more frames increases the memory and CPU overhead of the :mod:`!"
+"tracemalloc` module. Use the :func:`get_tracemalloc_memory` function to "
+"measure how much memory is used by the :mod:`!tracemalloc` module."
 msgstr ""
 
 msgid ""
@@ -497,8 +492,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The snapshot does not include memory blocks allocated before the :mod:"
-"`tracemalloc` module started to trace memory allocations."
+"The snapshot does not include memory blocks allocated before the :mod:`!"
+"tracemalloc` module started to trace memory allocations."
 msgstr ""
 
 msgid ""
@@ -507,7 +502,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :mod:`tracemalloc` module must be tracing memory allocations to take a "
+"The :mod:`!tracemalloc` module must be tracing memory allocations to take a "
 "snapshot, see the :func:`start` function."
 msgstr ""
 
@@ -553,8 +548,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"``Filter(False, tracemalloc.__file__)`` excludes traces of the :mod:"
-"`tracemalloc` module"
+"``Filter(False, tracemalloc.__file__)`` excludes traces of the :mod:`!"
+"tracemalloc` module"
 msgstr ""
 
 msgid "``Filter(False, \"<unknown>\")`` excludes empty tracebacks"
@@ -706,8 +701,8 @@ msgstr ""
 msgid ""
 "If *cumulative* is ``True``, cumulate size and count of memory blocks of all "
 "frames of the traceback of a trace, not only the most recent frame. The "
-"cumulative mode can only be used with *key_type* equals to ``'filename'`` "
-"and ``'lineno'``."
+"cumulative mode can only be used with *key_type* equal to ``'filename'`` and "
+"``'lineno'``."
 msgstr ""
 
 msgid ""
@@ -825,13 +820,11 @@ msgid ""
 "When a snapshot is taken, tracebacks of traces are limited to :func:"
 "`get_traceback_limit` frames. See the :func:`take_snapshot` function. The "
 "original number of frames of the traceback is stored in the :attr:`Traceback."
-"total_nframe` attribute. That allows to know if a traceback has been "
+"total_nframe` attribute. That allows one to know if a traceback has been "
 "truncated by the traceback limit."
 msgstr ""
 
-msgid ""
-"The :attr:`Trace.traceback` attribute is an instance of :class:`Traceback` "
-"instance."
+msgid "The :attr:`Trace.traceback` attribute is a :class:`Traceback` instance."
 msgstr ""
 
 msgid ""

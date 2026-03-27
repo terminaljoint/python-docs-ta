@@ -1,33 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ""
 ":mod:`!sysconfig` --- Provide access to Python's configuration information"
 msgstr ""
 
-msgid "**Source code:** :source:`Lib/sysconfig.py`"
+msgid "**Source code:** :source:`Lib/sysconfig`"
 msgstr ""
 
 msgid ""
-"The :mod:`sysconfig` module provides access to Python's configuration "
+"The :mod:`!sysconfig` module provides access to Python's configuration "
 "information like the list of installation paths and the configuration "
 "variables relevant for the current platform."
 msgstr ""
@@ -42,7 +40,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-":mod:`sysconfig` puts all variables found in these files in a dictionary "
+":mod:`!sysconfig` puts all variables found in these files in a dictionary "
 "that can be accessed using :func:`get_config_vars` or :func:`get_config_var`."
 msgstr ""
 
@@ -88,8 +86,8 @@ msgstr ""
 
 msgid ""
 "Python uses an installation scheme that differs depending on the platform "
-"and on the installation options.  These schemes are stored in :mod:"
-"`sysconfig` under unique identifiers based on the value returned by :const:"
+"and on the installation options.  These schemes are stored in :mod:`!"
+"sysconfig` under unique identifiers based on the value returned by :const:"
 "`os.name`. The schemes are used by package installers to determine where to "
 "copy files to."
 msgstr ""
@@ -187,7 +185,6 @@ msgid ""
 "want to install into it."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Files will be installed into subdirectories of :const:`site.USER_BASE` "
 "(written as :file:`{userbase}` hereafter).  This scheme installs pure Python "
@@ -207,7 +204,6 @@ msgstr ""
 msgid "*stdlib*"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}/lib/python{X.Y}`"
 msgstr ""
 
@@ -217,7 +213,6 @@ msgstr ""
 msgid "*platlib*"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}/lib/python{X.Y}/site-packages`"
 msgstr ""
 
@@ -227,51 +222,42 @@ msgstr ""
 msgid "*include*"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}/include/python{X.Y}`"
 msgstr ""
 
 msgid "*scripts*"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}/bin`"
 msgstr ""
 
 msgid "*data*"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}`"
 msgstr ""
 
 msgid "``nt_user``"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}\\\\Python{XY}`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}\\\\Python{XY}\\\\site-packages`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}\\\\Python{XY}\\\\Include`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}\\\\Python{XY}\\\\Scripts`"
 msgstr ""
 
 msgid "``osx_framework_user``"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}/lib/python`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{userbase}/lib/python/site-packages`"
 msgstr ""
 
@@ -290,22 +276,18 @@ msgstr ""
 msgid "``posix_home``"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{home}/lib/python`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{home}/include/python`"
 msgstr ""
 
 msgid "*platinclude*"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{home}/bin`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{home}`"
 msgstr ""
 
@@ -322,7 +304,6 @@ msgid ""
 "where the prefix scheme will be useful."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "First, consider that many Linux distributions put Python in :file:`/usr`, "
 "rather than the more traditional :file:`/usr/local`.  This is entirely "
@@ -332,7 +313,6 @@ msgid ""
 "rather than :file:`/usr/lib/python2.{X}`."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Another possibility is a network filesystem where the name used to write to "
 "a remote directory is different from the name used to read it: for example, "
@@ -345,42 +325,33 @@ msgstr ""
 msgid "``posix_prefix``"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}/lib/python{X.Y}`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}/lib/python{X.Y}/site-packages`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}/include/python{X.Y}`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}/bin`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}`"
 msgstr ""
 
 msgid "``nt``"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}\\\\Lib`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}\\\\Lib\\\\site-packages`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}\\\\Include`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{prefix}\\\\Scripts`"
 msgstr ""
 
@@ -388,13 +359,13 @@ msgid "Installation path functions"
 msgstr ""
 
 msgid ""
-":mod:`sysconfig` provides some functions to determine these installation "
+":mod:`!sysconfig` provides some functions to determine these installation "
 "paths."
 msgstr ""
 
 msgid ""
-"Return a tuple containing all schemes currently supported in :mod:"
-"`sysconfig`."
+"Return a tuple containing all schemes currently supported in :mod:`!"
+"sysconfig`."
 msgstr ""
 
 msgid "Return the default scheme name for the current platform."
@@ -418,7 +389,7 @@ msgstr ""
 
 msgid ""
 "The return value is a scheme name listed in :func:`get_scheme_names`. It can "
-"be passed to :mod:`sysconfig` functions that take a *scheme* argument, such "
+"be passed to :mod:`!sysconfig` functions that take a *scheme* argument, such "
 "as :func:`get_paths`."
 msgstr ""
 
@@ -442,8 +413,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Return a tuple containing all path names currently supported in :mod:"
-"`sysconfig`."
+"Return a tuple containing all path names currently supported in :mod:`!"
+"sysconfig`."
 msgstr ""
 
 msgid ""
@@ -455,9 +426,8 @@ msgid ""
 "*name* has to be a value from the list returned by :func:`get_path_names`."
 msgstr ""
 
-#, python-brace-format
 msgid ""
-":mod:`sysconfig` stores installation paths corresponding to each path name, "
+":mod:`!sysconfig` stores installation paths corresponding to each path name, "
 "for each platform, with variables to be expanded.  For instance the *stdlib* "
 "path for the *nt* scheme is: ``{base}/Lib``."
 msgstr ""
@@ -513,7 +483,6 @@ msgstr ""
 msgid "Other functions"
 msgstr ""
 
-#, python-format
 msgid ""
 "Return the ``MAJOR.MINOR`` Python version number as a string.  Similar to "
 "``'%d.%d' % sys.version_info[:2]``."
@@ -533,16 +502,7 @@ msgstr ""
 msgid "Examples of returned values:"
 msgstr ""
 
-msgid "linux-i586"
-msgstr ""
-
-msgid "linux-alpha (?)"
-msgstr ""
-
-msgid "solaris-2.6-sun4u"
-msgstr ""
-
-msgid "Windows will return one of:"
+msgid "Windows:"
 msgstr ""
 
 msgid "win-amd64 (64-bit Windows on AMD64, aka x86_64, Intel64, and EM64T)"
@@ -554,19 +514,19 @@ msgstr ""
 msgid "win32 (all others - specifically, sys.platform is returned)"
 msgstr ""
 
-msgid "macOS can return:"
+msgid "POSIX based OS:"
 msgstr ""
 
-msgid "macosx-10.6-ppc"
+msgid "linux-x86_64"
 msgstr ""
 
-msgid "macosx-10.4-ppc64"
+msgid "macosx-15.5-arm64"
 msgstr ""
 
-msgid "macosx-10.3-i386"
+msgid "macosx-26.0-universal2 (macOS on Apple Silicon or Intel)"
 msgstr ""
 
-msgid "macosx-10.4-fat"
+msgid "android-24-arm64_v8a"
 msgstr ""
 
 msgid ""
@@ -598,10 +558,10 @@ msgstr ""
 msgid "Return the path of :file:`Makefile`."
 msgstr ""
 
-msgid "Using :mod:`sysconfig` as a script"
+msgid "Command-line usage"
 msgstr ""
 
-msgid "You can use :mod:`sysconfig` as a script with Python's *-m* option:"
+msgid "You can use :mod:`!sysconfig` as a script with Python's *-m* option:"
 msgstr ""
 
 msgid ""

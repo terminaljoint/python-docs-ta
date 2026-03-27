@@ -1,29 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!test` --- Regression tests package for Python"
 msgstr ""
 
 msgid ""
-"The :mod:`test` package is meant for internal use by Python only. It is "
+"The :mod:`!test` package is meant for internal use by Python only. It is "
 "documented for the benefit of the core developers of Python. Any use of this "
 "package outside of Python's standard library is discouraged as code "
 "mentioned here can change or be removed without notice between releases of "
@@ -31,15 +29,15 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :mod:`test` package contains all regression tests for Python as well as "
+"The :mod:`!test` package contains all regression tests for Python as well as "
 "the modules :mod:`test.support` and :mod:`test.regrtest`. :mod:`test."
 "support` is used to enhance your tests while :mod:`test.regrtest` drives the "
 "testing suite."
 msgstr ""
 
 msgid ""
-"Each module in the :mod:`test` package whose name starts with ``test_`` is a "
-"testing suite for a specific module or feature. All new tests should be "
+"Each module in the :mod:`!test` package whose name starts with ``test_`` is "
+"a testing suite for a specific module or feature. All new tests should be "
 "written using the :mod:`unittest` or :mod:`doctest` module.  Some older "
 "tests are written using a \"traditional\" testing style that compares output "
 "printed to ``sys.stdout``; this style of test is considered deprecated."
@@ -57,7 +55,7 @@ msgstr ""
 msgid "Tests embedded in documentation strings."
 msgstr ""
 
-msgid "Writing Unit Tests for the :mod:`test` package"
+msgid "Writing Unit Tests for the :mod:`!test` package"
 msgstr ""
 
 msgid ""
@@ -208,30 +206,30 @@ msgid "Running tests using the command-line interface"
 msgstr ""
 
 msgid ""
-"The :mod:`test` package can be run as a script to drive Python's regression "
+"The :mod:`!test` package can be run as a script to drive Python's regression "
 "test suite, thanks to the :option:`-m` option: :program:`python -m test`. "
-"Under the hood, it uses :mod:`test.regrtest`; the call :program:`python -m "
+"Under the hood, it uses :mod:`!test.regrtest`; the call :program:`python -m "
 "test.regrtest` used in previous Python versions still works.  Running the "
 "script by itself automatically starts running all regression tests in the :"
-"mod:`test` package. It does this by finding all modules in the package whose "
-"name starts with ``test_``, importing them, and executing the function :func:"
-"`test_main` if present or loading the tests via unittest.TestLoader."
-"loadTestsFromModule if ``test_main`` does not exist.  The names of tests to "
-"execute may also be passed to the script. Specifying a single regression "
-"test (:program:`python -m test test_spam`) will minimize output and only "
-"print whether the test passed or failed."
+"mod:`!test` package. It does this by finding all modules in the package "
+"whose name starts with ``test_``, importing them, and executing the "
+"function :func:`test_main` if present or loading the tests via unittest."
+"TestLoader.loadTestsFromModule if ``test_main`` does not exist.  The names "
+"of tests to execute may also be passed to the script. Specifying a single "
+"regression test (:program:`python -m test test_spam`) will minimize output "
+"and only print whether the test passed or failed."
 msgstr ""
 
 msgid ""
-"Running :mod:`test` directly allows what resources are available for tests "
+"Running :mod:`!test` directly allows what resources are available for tests "
 "to use to be set. You do this by using the ``-u`` command-line option. "
 "Specifying ``all`` as the value for the ``-u`` option enables all possible "
 "resources: :program:`python -m test -uall`. If all but one resource is "
 "desired (a more common case), a comma-separated list of resources that are "
 "not desired may be listed after ``all``. The command :program:`python -m "
-"test -uall,-audio,-largefile` will run :mod:`test` with all resources except "
-"the ``audio`` and ``largefile`` resources. For a list of all resources and "
-"more command-line options, run :program:`python -m test -h`."
+"test -uall,-audio,-largefile` will run :mod:`!test` with all resources "
+"except the ``audio`` and ``largefile`` resources. For a list of all "
+"resources and more command-line options, run :program:`python -m test -h`."
 msgstr ""
 
 msgid ""
@@ -242,16 +240,21 @@ msgid ""
 "tests."
 msgstr ""
 
-msgid ":mod:`test.support` --- Utilities for the Python test suite"
+msgid ""
+"Output is colorized by default and can be :ref:`controlled using environment "
+"variables <using-on-controlling-color>`."
+msgstr ""
+
+msgid ":mod:`!test.support` --- Utilities for the Python test suite"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support` module provides support for Python's regression test "
-"suite."
+"The :mod:`!test.support` module provides support for Python's regression "
+"test suite."
 msgstr ""
 
 msgid ""
-":mod:`test.support` is not a public module.  It is documented here to help "
+":mod:`!test.support` is not a public module.  It is documented here to help "
 "Python developers write tests.  The API of this module is subject to change "
 "without backwards compatibility concerns between releases."
 msgstr ""
@@ -271,7 +274,7 @@ msgid ""
 "function."
 msgstr ""
 
-msgid "The :mod:`test.support` module defines the following constants:"
+msgid "The :mod:`!test.support` module defines the following constants:"
 msgstr ""
 
 msgid ""
@@ -283,7 +286,21 @@ msgstr ""
 msgid "``True`` if the running interpreter is Jython."
 msgstr ""
 
-msgid "``True`` if the system is Android."
+msgid "``True`` if ``sys.platform`` is ``android``."
+msgstr ""
+
+msgid "``True`` if ``sys.platform`` is ``emscripten``."
+msgstr ""
+
+msgid "``True`` if ``sys.platform`` is ``wasi``."
+msgstr ""
+
+msgid "``True`` if ``sys.platform`` is ``ios``, ``tvos``, or ``watchos``."
+msgstr ""
+
+msgid ""
+"``True`` if ``sys.platform`` is ``darwin`` or ``is_apple_mobile`` is "
+"``True``."
 msgstr ""
 
 msgid "Path for shell if not on Windows; otherwise ``None``."
@@ -384,7 +401,7 @@ msgid ""
 "to make writes blocking."
 msgstr ""
 
-msgid "Set to the top level directory that contains :mod:`test.support`."
+msgid "Set to the top level directory that contains :mod:`!test.support`."
 msgstr ""
 
 msgid "Set to the top level directory for the test package."
@@ -445,7 +462,7 @@ msgid ""
 "comparison."
 msgstr ""
 
-msgid "The :mod:`test.support` module defines the following functions:"
+msgid "The :mod:`!test.support` module defines the following functions:"
 msgstr ""
 
 msgid "Run the loop body until ``break`` stops the loop."
@@ -509,6 +526,11 @@ msgid ""
 "Return ``True`` if *resource* is enabled and available. The list of "
 "available resources is only set when :mod:`test.regrtest` is executing the "
 "tests."
+msgstr ""
+
+msgid ""
+"Return the value specified for *resource* (as :samp:`-u {resource}={value}"
+"`). Return ``None`` if *resource* is disabled or no value is specified."
 msgstr ""
 
 msgid "Return ``True`` if Python was not built with ``-O0`` or ``-Og``."
@@ -668,7 +690,6 @@ msgid ""
 "before writing into stderr."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Print a warning into :data:`sys.__stderr__`. Format the message as: "
 "``f\"Warning -- {msg}\"``. If *msg* is made of multiple lines, add "
@@ -746,6 +767,11 @@ msgid ""
 "version is less than the minimum, the test is skipped."
 msgstr ""
 
+msgid ""
+"Decorator for skipping tests on the free-threaded build.  If the :term:`GIL` "
+"is disabled, the test is skipped."
+msgstr ""
+
 msgid "Decorator for skipping tests on non-IEEE 754 platforms."
 msgstr ""
 
@@ -780,6 +806,11 @@ msgid ""
 "returns ``False``, then uses *msg* as the reason for skipping the test."
 msgstr ""
 
+msgid ""
+"Decorator for marking tests as thread-unsafe.  This test always runs in one "
+"thread even when invoked with ``--parallel-threads``."
+msgstr ""
+
 msgid "Decorator to temporarily turn off tracing for the duration of the test."
 msgstr ""
 
@@ -808,6 +839,14 @@ msgid ""
 msgstr ""
 
 msgid "Decorator for tests that fill the address space."
+msgstr ""
+
+msgid ""
+"Return ``False`` if there is no evidence the interpreter was compiled with "
+"``musl``, otherwise return a version triple, either ``(0, 0, 0)`` if the "
+"version is unknown, or the actual version if it is known.  Intended for use "
+"in ``skip`` decorators.  ``emscripten`` and ``wasi`` are assumed to be "
+"compiled with ``musl``; otherwise ``platform.libc_ver`` is checked."
 msgstr ""
 
 msgid ""
@@ -940,7 +979,6 @@ msgstr ""
 msgid "Example use::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import bar\n"
 "import foo\n"
@@ -976,7 +1014,7 @@ msgid ""
 "digits when converting between an integer and string."
 msgstr ""
 
-msgid "The :mod:`test.support` module defines the following classes:"
+msgid "The :mod:`!test.support` module defines the following classes:"
 msgstr ""
 
 msgid ""
@@ -1018,11 +1056,11 @@ msgstr ""
 msgid "Try to match a single stored value (*dv*) with a supplied value (*v*)."
 msgstr ""
 
-msgid ":mod:`test.support.socket_helper` --- Utilities for socket tests"
+msgid ":mod:`!test.support.socket_helper` --- Utilities for socket tests"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support.socket_helper` module provides support for socket "
+"The :mod:`!test.support.socket_helper` module provides support for socket "
 "tests."
 msgstr ""
 
@@ -1087,12 +1125,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-":mod:`test.support.script_helper` --- Utilities for the Python execution "
+":mod:`!test.support.script_helper` --- Utilities for the Python execution "
 "tests"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support.script_helper` module provides support for Python's "
+"The :mod:`!test.support.script_helper` module provides support for Python's "
 "script execution tests."
 msgstr ""
 
@@ -1193,12 +1231,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-":mod:`test.support.bytecode_helper` --- Support tools for testing correct "
+":mod:`!test.support.bytecode_helper` --- Support tools for testing correct "
 "bytecode generation"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support.bytecode_helper` module provides support for testing "
+"The :mod:`!test.support.bytecode_helper` module provides support for testing "
 "and inspecting bytecode generation."
 msgstr ""
 
@@ -1218,11 +1256,11 @@ msgstr ""
 msgid "Throws :exc:`AssertionError` if *opname* is found."
 msgstr ""
 
-msgid ":mod:`test.support.threading_helper` --- Utilities for threading tests"
+msgid ":mod:`!test.support.threading_helper` --- Utilities for threading tests"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support.threading_helper` module provides support for "
+"The :mod:`!test.support.threading_helper` module provides support for "
 "threading tests."
 msgstr ""
 
@@ -1294,10 +1332,16 @@ msgid ""
 "# (to avoid reference cycles)"
 msgstr ""
 
-msgid ":mod:`test.support.os_helper` --- Utilities for os tests"
+msgid ""
+"Run the worker function concurrently in multiple threads. Re-raises an "
+"exception if any thread raises one, after all threads have finished."
 msgstr ""
 
-msgid "The :mod:`test.support.os_helper` module provides support for os tests."
+msgid ":mod:`!test.support.os_helper` --- Utilities for os tests"
+msgstr ""
+
+msgid ""
+"The :mod:`!test.support.os_helper` module provides support for os tests."
 msgstr ""
 
 msgid "A non-ASCII character encodable by :func:`os.fsencode`."
@@ -1355,7 +1399,10 @@ msgid ""
 "``value``."
 msgstr ""
 
-msgid "Temporarily unset the environment variable ``envvar``."
+msgid "Temporarily unset one or more environment variables."
+msgstr ""
+
+msgid "More than one environment variable can be unset."
 msgstr ""
 
 msgid "Return ``True`` if the OS supports symbolic links, ``False`` otherwise."
@@ -1448,11 +1495,11 @@ msgid ""
 "the file."
 msgstr ""
 
-msgid ":mod:`test.support.import_helper` --- Utilities for import tests"
+msgid ":mod:`!test.support.import_helper` --- Utilities for import tests"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support.import_helper` module provides support for import "
+"The :mod:`!test.support.import_helper` module provides support for import "
 "tests."
 msgstr ""
 
@@ -1561,12 +1608,12 @@ msgid ""
 "the block."
 msgstr ""
 
-msgid ":mod:`test.support.warnings_helper` --- Utilities for warnings tests"
+msgid ":mod:`!test.support.warnings_helper` --- Utilities for warnings tests"
 msgstr ""
 
 msgid ""
-"The :mod:`test.support.warnings_helper` module provides support for warnings "
-"tests."
+"The :mod:`!test.support.warnings_helper` module provides support for "
+"warnings tests."
 msgstr ""
 
 msgid ""

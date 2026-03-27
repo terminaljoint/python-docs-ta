@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!wave` --- Read and write WAV files"
 msgstr ""
@@ -26,9 +24,9 @@ msgid "**Source code:** :source:`Lib/wave.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`wave` module provides a convenient interface to the Waveform Audio "
-"\"WAVE\" (or \"WAV\") file format. Only uncompressed PCM encoded wave files "
-"are supported."
+"The :mod:`!wave` module provides a convenient interface to the Waveform "
+"Audio \"WAVE\" (or \"WAV\") file format. Only uncompressed PCM encoded wave "
+"files are supported."
 msgstr ""
 
 msgid ""
@@ -36,7 +34,7 @@ msgid ""
 "extended format is ``KSDATAFORMAT_SUBTYPE_PCM``."
 msgstr ""
 
-msgid "The :mod:`wave` module defines the following function and exception:"
+msgid "The :mod:`!wave` module defines the following function and exception:"
 msgstr ""
 
 msgid ""
@@ -97,7 +95,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Close the stream if it was opened by :mod:`wave`, and make the instance "
+"Close the stream if it was opened by :mod:`!wave`, and make the instance "
 "unusable.  This is called automatically on object collection."
 msgstr ""
 
@@ -135,11 +133,16 @@ msgid "Rewind the file pointer to the beginning of the audio stream."
 msgstr ""
 
 msgid ""
-"The following two methods are defined for compatibility with the :mod:`aifc` "
-"module, and don't do anything interesting."
+"The following two methods are defined for compatibility with the old :mod:`!"
+"aifc` module, and don't do anything interesting."
 msgstr ""
 
 msgid "Returns ``None``."
+msgstr ""
+
+msgid ""
+"The method only existed for compatibility with the :mod:`!aifc` module which "
+"has been removed in Python 3.13."
 msgstr ""
 
 msgid "Raise an error."
@@ -183,7 +186,7 @@ msgstr ""
 
 msgid ""
 "Make sure *nframes* is correct, and close the file if it was opened by :mod:"
-"`wave`.  This method is called upon object collection.  It will raise an "
+"`!wave`.  This method is called upon object collection.  It will raise an "
 "exception if the output stream is not seekable and *nframes* does not match "
 "the number of frames actually written."
 msgstr ""
@@ -191,7 +194,13 @@ msgstr ""
 msgid "Set the number of channels."
 msgstr ""
 
+msgid "Return the number of channels."
+msgstr ""
+
 msgid "Set the sample width to *n* bytes."
+msgstr ""
+
+msgid "Return the sample width in bytes."
 msgstr ""
 
 msgid "Set the frame rate to *n*."
@@ -200,10 +209,16 @@ msgstr ""
 msgid "A non-integral input to this method is rounded to the nearest integer."
 msgstr ""
 
+msgid "Return the frame rate."
+msgstr ""
+
 msgid ""
 "Set the number of frames to *n*.  This will be changed later if the number "
 "of frames actually written is different (this update attempt will raise an "
 "error if the output stream is not seekable)."
+msgstr ""
+
+msgid "Return the number of audio frames written so far."
 msgstr ""
 
 msgid ""
@@ -211,10 +226,21 @@ msgid ""
 "type ``NONE`` is supported, meaning no compression."
 msgstr ""
 
+msgid "Return the compression type (``'NONE'``)."
+msgstr ""
+
+msgid "Return the human-readable compression type name."
+msgstr ""
+
 msgid ""
 "The *tuple* should be ``(nchannels, sampwidth, framerate, nframes, comptype, "
 "compname)``, with values valid for the ``set*()`` methods.  Sets all "
 "parameters."
+msgstr ""
+
+msgid ""
+"Return a :func:`~collections.namedtuple` ``(nchannels, sampwidth, framerate, "
+"nframes, comptype, compname)`` containing the current output parameters."
 msgstr ""
 
 msgid ""

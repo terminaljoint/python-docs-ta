@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "What's New in Python 2.4"
 msgstr ""
@@ -230,7 +228,6 @@ msgstr ""
 msgid "The usual way of substituting variables by name is the ``%`` operator::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 ">>> '%(page)i: %(title)s' % {'page':2, 'title': 'The Best of Times'}\n"
 "'2: The Best of Times'"
@@ -253,7 +250,6 @@ msgid ""
 "``$`` to indicate a substitution::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import string\n"
 ">>> t = string.Template('$page: $title')\n"
@@ -267,7 +263,6 @@ msgid ""
 "ignores missing keys::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> t = string.Template('$page: $title')\n"
 ">>> t.safe_substitute({'page':3})\n"
@@ -747,7 +742,6 @@ msgid ""
 "and pass the string to the :class:`Decimal` constructor::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> f = 1.1\n"
 ">>> decimal.Decimal(str(f))\n"
@@ -1283,7 +1277,6 @@ msgid ""
 "number of strings together. (Contributed by Armin Rigo.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "The net result of the 2.4 optimizations is that Python 2.4 runs the pystone "
 "benchmark around 5% faster than Python 2.3 and 35% faster than Python 2.2. "
@@ -1572,7 +1565,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :mod:`nntplib` module's :class:`NNTP` class gained :meth:`description` "
+"The :mod:`!nntplib` module's :class:`NNTP` class gained :meth:`description` "
 "and :meth:`descriptions` methods to retrieve  newsgroup descriptions for a "
 "single group or for a range of groups. (Contributed by Jürgen A. Erhard.)"
 msgstr ""
@@ -1595,7 +1588,6 @@ msgid ""
 "[('d', 1), ('c', 2), ('b', 3), ('a', 4)]"
 msgstr ""
 
-#, python-format
 msgid ""
 "The :mod:`optparse` module was updated in various ways.  The module now "
 "passes its messages through :func:`gettext.gettext`, making it possible to "

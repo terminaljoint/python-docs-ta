@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!dbm` --- Interfaces to Unix \"databases\""
 msgstr ""
@@ -25,12 +23,22 @@ msgstr ""
 msgid "**Source code:** :source:`Lib/dbm/__init__.py`"
 msgstr ""
 
+msgid ":mod:`!dbm` is a generic interface to variants of the DBM database:"
+msgstr ""
+
+msgid ":mod:`dbm.sqlite3`"
+msgstr ""
+
+msgid ":mod:`dbm.gnu`"
+msgstr ""
+
+msgid ":mod:`dbm.ndbm`"
+msgstr ""
+
 msgid ""
-":mod:`dbm` is a generic interface to variants of the DBM database --- :mod:"
-"`dbm.gnu` or :mod:`dbm.ndbm`.  If none of these modules is installed, the "
-"slow-but-simple implementation in module :mod:`dbm.dumb` will be used.  "
-"There is a `third party interface <https://www.jcea.es/programacion/pybsddb."
-"htm>`_ to the Oracle Berkeley DB."
+"If none of these modules are installed, the slow-but-simple implementation "
+"in module :mod:`dbm.dumb` will be used.  There is a `third party interface "
+"<https://www.jcea.es/programacion/pybsddb.htm>`_ to the Oracle Berkeley DB."
 msgstr ""
 
 msgid ""
@@ -41,8 +49,8 @@ msgstr ""
 
 msgid ""
 "This function attempts to guess which of the several simple database modules "
-"available --- :mod:`dbm.gnu`, :mod:`dbm.ndbm` or :mod:`dbm.dumb` --- should "
-"be used to open a given file."
+"available --- :mod:`dbm.sqlite3`, :mod:`dbm.gnu`, :mod:`dbm.ndbm`, or :mod:"
+"`dbm.dumb` --- should be used to open a given file."
 msgstr ""
 
 msgid "Return one of the following values:"
@@ -109,11 +117,12 @@ msgid "*file* accepts a :term:`path-like object`."
 msgstr ""
 
 msgid ""
-"The object returned by :func:`~dbm.open` supports the same basic "
-"functionality as a :class:`dict`; keys and their corresponding values can be "
-"stored, retrieved, and deleted, and the :keyword:`in` operator and the :meth:"
-"`!keys` method are available, as well as :meth:`!get` and :meth:`!"
-"setdefault` methods."
+"The object returned by :func:`~dbm.open` supports the basic functionality of "
+"mutable :term:`mappings <mapping>`; keys and their corresponding values can "
+"be stored, retrieved, and deleted, and iteration, the :keyword:`in` operator "
+"and methods :meth:`!keys`, :meth:`!get`, :meth:`!setdefault` and :meth:`!"
+"clear` are available. The :meth:`!keys` method returns a list instead of a "
+"view object. The :meth:`!setdefault` method requires two arguments."
 msgstr ""
 
 msgid ""
@@ -129,7 +138,7 @@ msgstr ""
 
 msgid ""
 ":meth:`!get` and :meth:`!setdefault` methods are now available for all :mod:"
-"`dbm` backends."
+"`!dbm` backends."
 msgstr ""
 
 msgid ""
@@ -140,6 +149,9 @@ msgstr ""
 msgid ""
 "Deleting a key from a read-only database raises a database module specific "
 "exception instead of :exc:`KeyError`."
+msgstr ""
+
+msgid ":meth:`!clear` methods are now available for all :mod:`!dbm` backends."
 msgstr ""
 
 msgid ""
@@ -182,27 +194,82 @@ msgstr ""
 msgid "The individual submodules are described in the following sections."
 msgstr ""
 
-msgid ":mod:`dbm.gnu` --- GNU database manager"
+msgid ":mod:`!dbm.sqlite3` --- SQLite backend for dbm"
+msgstr ""
+
+msgid "**Source code:** :source:`Lib/dbm/sqlite3.py`"
+msgstr ""
+
+msgid ""
+"This module uses the standard library :mod:`sqlite3` module to provide an "
+"SQLite backend for the :mod:`!dbm` module. The files created by :mod:`!dbm."
+"sqlite3` can thus be opened by :mod:`sqlite3`, or any other SQLite browser, "
+"including the SQLite CLI."
+msgstr ""
+
+msgid "Availability"
+msgstr ""
+
+msgid ""
+"This module does not work or is not available on WebAssembly. See :ref:`wasm-"
+"availability` for more information."
+msgstr ""
+
+msgid "Open an SQLite database."
+msgstr ""
+
+msgid "The path to the database to be opened."
+msgstr ""
+
+msgid ""
+"The Unix file access mode of the file (default: octal ``0o666``), used only "
+"when the database has to be created."
+msgstr ""
+
+msgid ""
+"The returned database object behaves similar to a mutable :term:`mapping`, "
+"but the :meth:`!keys` method returns a list, and the :meth:`!setdefault` "
+"method requires two arguments. It also supports a \"closing\" context "
+"manager via the :keyword:`with` keyword."
+msgstr ""
+
+msgid "The following method is also provided:"
+msgstr ""
+
+msgid "Close the SQLite database."
+msgstr ""
+
+msgid ":mod:`!dbm.gnu` --- GNU database manager"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/dbm/gnu.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`dbm.gnu` module provides an interface to the :abbr:`GDBM (GNU "
+"The :mod:`!dbm.gnu` module provides an interface to the :abbr:`GDBM (GNU "
 "dbm)` library, similar to the :mod:`dbm.ndbm` module, but with additional "
 "functionality like crash tolerance."
 msgstr ""
 
 msgid ""
-"The file formats created by :mod:`dbm.gnu` and :mod:`dbm.ndbm` are "
+"The file formats created by :mod:`!dbm.gnu` and :mod:`dbm.ndbm` are "
 "incompatible and can not be used interchangeably."
 msgstr ""
 
 msgid ""
-"Raised on :mod:`dbm.gnu`-specific errors, such as I/O errors. :exc:"
+"This module is not supported on :ref:`mobile platforms <mobile-"
+"availability>` or :ref:`WebAssembly platforms <wasm-availability>`."
+msgstr ""
+
+msgid ""
+"Raised on :mod:`!dbm.gnu`-specific errors, such as I/O errors. :exc:"
 "`KeyError` is raised for general mapping errors like specifying an incorrect "
 "key."
+msgstr ""
+
+msgid ""
+"A string of characters the *flag* parameter of :meth:`~dbm.gnu.open` "
+"supports."
 msgstr ""
 
 msgid "Open a GDBM database and return a :class:`!gdbm` object."
@@ -249,14 +316,23 @@ msgid "If an invalid *flag* argument is passed."
 msgstr ""
 
 msgid ""
-"A string of characters the *flag* parameter of :meth:`~dbm.gnu.open` "
-"supports."
+":class:`!gdbm` objects behave similar to mutable :term:`mappings <mapping>`, "
+"but methods :meth:`!items`, :meth:`!values`, :meth:`!pop`, :meth:`!popitem`, "
+"and :meth:`!update` are not supported, the :meth:`!keys` method returns a "
+"list, and the :meth:`!setdefault` method requires two arguments. It also "
+"supports a \"closing\" context manager via the :keyword:`with` keyword."
 msgstr ""
 
-msgid ""
-":class:`!gdbm` objects behave similar to :term:`mappings <mapping>`, but :"
-"meth:`!items` and :meth:`!values` methods are not supported. The following "
-"methods are also provided:"
+msgid "Added the :meth:`!get` and :meth:`!setdefault` methods."
+msgstr ""
+
+msgid "Added the :meth:`!clear` method."
+msgstr ""
+
+msgid "The following methods are also provided:"
+msgstr ""
+
+msgid "Close the GDBM database."
 msgstr ""
 
 msgid ""
@@ -292,19 +368,21 @@ msgid ""
 "unwritten data to be written to the disk."
 msgstr ""
 
-msgid "Close the GDBM database."
-msgstr ""
-
-msgid ":mod:`dbm.ndbm` --- New Database Manager"
+msgid ":mod:`!dbm.ndbm` --- New Database Manager"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/dbm/ndbm.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`dbm.ndbm` module provides an interface to the :abbr:`NDBM (New "
+"The :mod:`!dbm.ndbm` module provides an interface to the :abbr:`NDBM (New "
 "Database Manager)` library. This module can be used with the \"classic\" "
 "NDBM interface or the :abbr:`GDBM (GNU dbm)` compatibility interface."
+msgstr ""
+
+msgid ""
+"The file formats created by :mod:`dbm.gnu` and :mod:`!dbm.ndbm` are "
+"incompatible and can not be used interchangeably."
 msgstr ""
 
 msgid ""
@@ -315,7 +393,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Raised on :mod:`dbm.ndbm`-specific errors, such as I/O errors. :exc:"
+"Raised on :mod:`!dbm.ndbm`-specific errors, such as I/O errors. :exc:"
 "`KeyError` is raised for general mapping errors like specifying an incorrect "
 "key."
 msgstr ""
@@ -331,34 +409,36 @@ msgid ""
 "extensions)."
 msgstr ""
 
-msgid ""
-":class:`!ndbm` objects behave similar to :term:`mappings <mapping>`, but :"
-"meth:`!items` and :meth:`!values` methods are not supported. The following "
-"methods are also provided:"
+msgid "Accepts :term:`path-like object` for filename."
 msgstr ""
 
-msgid "Accepts :term:`path-like object` for filename."
+msgid ""
+":class:`!ndbm` objects behave similar to mutable :term:`mappings <mapping>`, "
+"but methods :meth:`!items`, :meth:`!values`, :meth:`!pop`, :meth:`!popitem`, "
+"and :meth:`!update` are not supported, the :meth:`!keys` method returns a "
+"list, and the :meth:`!setdefault` method requires two arguments. It also "
+"supports a \"closing\" context manager via the :keyword:`with` keyword."
 msgstr ""
 
 msgid "Close the NDBM database."
 msgstr ""
 
-msgid ":mod:`dbm.dumb` --- Portable DBM implementation"
+msgid ":mod:`!dbm.dumb` --- Portable DBM implementation"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/dbm/dumb.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`dbm.dumb` module is intended as a last resort fallback for the :"
-"mod:`dbm` module when a more robust module is not available. The :mod:`dbm."
+"The :mod:`!dbm.dumb` module is intended as a last resort fallback for the :"
+"mod:`!dbm` module when a more robust module is not available. The :mod:`!dbm."
 "dumb` module is not written for speed and is not nearly as heavily used as "
 "the other database modules."
 msgstr ""
 
 msgid ""
-"The :mod:`dbm.dumb` module provides a persistent :class:`dict`-like "
-"interface which is written entirely in Python. Unlike other :mod:`dbm` "
+"The :mod:`!dbm.dumb` module provides a persistent :class:`dict`-like "
+"interface which is written entirely in Python. Unlike other :mod:`!dbm` "
 "backends, such as :mod:`dbm.gnu`, no external library is required."
 msgstr ""
 
@@ -366,18 +446,14 @@ msgid "The :mod:`!dbm.dumb` module defines the following:"
 msgstr ""
 
 msgid ""
-"Raised on :mod:`dbm.dumb`-specific errors, such as I/O errors.  :exc:"
+"Raised on :mod:`!dbm.dumb`-specific errors, such as I/O errors.  :exc:"
 "`KeyError` is raised for general mapping errors like specifying an incorrect "
 "key."
 msgstr ""
 
-msgid ""
-"Open a :mod:`!dbm.dumb` database. The returned database object behaves "
-"similar to a :term:`mapping`, in addition to providing :meth:`~dumbdbm.sync` "
-"and :meth:`~dumbdbm.close` methods."
+msgid "Open a :mod:`!dbm.dumb` database."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The basename of the database file (without extensions). A new database "
 "creates the following files:  - :file:`{filename}.dat` - :file:`{filename}."
@@ -389,11 +465,9 @@ msgid ""
 "creates the following files:"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{filename}.dat`"
 msgstr ""
 
-#, python-brace-format
 msgid ":file:`{filename}.dir`"
 msgstr ""
 
@@ -424,16 +498,18 @@ msgid ""
 msgstr ""
 
 msgid ""
-"In addition to the methods provided by the :class:`collections.abc."
-"MutableMapping` class, the following methods are provided:"
+"The returned database object behaves similar to a mutable :term:`mapping`, "
+"but the :meth:`!keys` and :meth:`!items` methods return lists, and the :meth:"
+"`!setdefault` method requires two arguments. It also supports a \"closing\" "
+"context manager via the :keyword:`with` keyword."
+msgstr ""
+
+msgid "Close the database."
 msgstr ""
 
 msgid ""
 "Synchronize the on-disk directory and data files.  This method is called by "
 "the :meth:`shelve.Shelf.sync` method."
-msgstr ""
-
-msgid "Close the database."
 msgstr ""
 
 msgid "databases"

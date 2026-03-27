@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!tarfile` --- Read and write tar archive files"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/tarfile.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`tarfile` module makes it possible to read and write tar archives, "
+"The :mod:`!tarfile` module makes it possible to read and write tar archives, "
 "including those using gzip, bz2 and lzma compression. Use the :mod:`zipfile` "
 "module to read or write :file:`.zip` files, or the higher-level functions "
 "in :ref:`shutil <archiving-operations>`."
@@ -36,8 +34,15 @@ msgid "Some facts and figures:"
 msgstr ""
 
 msgid ""
-"reads and writes :mod:`gzip`, :mod:`bz2` and :mod:`lzma` compressed archives "
-"if the respective modules are available."
+"reads and writes :mod:`gzip`, :mod:`bz2`, :mod:`compression.zstd`, and :mod:"
+"`lzma` compressed archives if the respective modules are available."
+msgstr ""
+
+msgid ""
+"If any of these :term:`optional modules <optional module>` are missing from "
+"your copy of CPython, look for documentation from your distributor (that is, "
+"whoever provided Python to you). If you are the distributor, see :ref:"
+"`optional-module-requirements`."
 msgstr ""
 
 msgid "read/write support for the POSIX.1-1988 (ustar) format."
@@ -64,9 +69,17 @@ msgstr ""
 msgid ""
 "Archives are extracted using a :ref:`filter <tarfile-extraction-filter>`, "
 "which makes it possible to either limit surprising/dangerous features, or to "
-"acknowledge that they are expected and the archive is fully trusted. By "
-"default, archives are fully trusted, but this default is deprecated and "
-"slated to change in Python 3.14."
+"acknowledge that they are expected and the archive is fully trusted."
+msgstr ""
+
+msgid ""
+"Set the default extraction filter to :func:`data <data_filter>`, which "
+"disallows some dangerous features such as links to absolute paths or paths "
+"outside of the destination. Previously, the filter strategy was equivalent "
+"to :func:`fully_trusted <fully_trusted_filter>`."
+msgstr ""
+
+msgid "Added support for Zstandard compression using :mod:`compression.zstd`."
 msgstr ""
 
 msgid ""
@@ -86,7 +99,7 @@ msgstr ""
 msgid "action"
 msgstr ""
 
-msgid "``'r' or 'r:*'``"
+msgid "``'r'`` or ``'r:*'``"
 msgstr ""
 
 msgid "Open for reading with transparent compression (recommended)."
@@ -114,6 +127,12 @@ msgid "``'r:xz'``"
 msgstr ""
 
 msgid "Open for reading with lzma compression."
+msgstr ""
+
+msgid "``'r:zst'``"
+msgstr ""
+
+msgid "Open for reading with Zstandard compression."
 msgstr ""
 
 msgid "``'x'`` or ``'x:'``"
@@ -148,7 +167,15 @@ msgid ""
 "exception if it already exists."
 msgstr ""
 
-msgid "``'a' or 'a:'``"
+msgid "``'x:zst'``"
+msgstr ""
+
+msgid ""
+"Create a tarfile with Zstandard compression. Raise a :exc:`FileExistsError` "
+"exception if it already exists."
+msgstr ""
+
+msgid "``'a'`` or ``'a:'``"
 msgstr ""
 
 msgid ""
@@ -156,7 +183,7 @@ msgid ""
 "exist."
 msgstr ""
 
-msgid "``'w' or 'w:'``"
+msgid "``'w'`` or ``'w:'``"
 msgstr ""
 
 msgid "Open for uncompressed writing."
@@ -180,6 +207,12 @@ msgstr ""
 msgid "Open for lzma compressed writing."
 msgstr ""
 
+msgid "``'w:zst'``"
+msgstr ""
+
+msgid "Open for Zstandard compressed writing."
+msgstr ""
+
 msgid ""
 "Note that ``'a:gz'``, ``'a:bz2'`` or ``'a:xz'`` is not possible. If *mode* "
 "is not suitable to open a certain (compressed) file for reading, :exc:"
@@ -199,8 +232,19 @@ msgid ""
 msgstr ""
 
 msgid ""
-"For modes ``'w:xz'`` and ``'x:xz'``, :func:`tarfile.open` accepts the "
-"keyword argument *preset* to specify the compression level of the file."
+"For modes ``'w:xz'``, ``'x:xz'`` and ``'w|xz'``, :func:`tarfile.open` "
+"accepts the keyword argument *preset* to specify the compression level of "
+"the file."
+msgstr ""
+
+msgid ""
+"For modes ``'w:zst'``, ``'x:zst'`` and ``'w|zst'``, :func:`tarfile.open` "
+"accepts the keyword argument *level* to specify the compression level of the "
+"file. The keyword argument *options* may also be passed, providing advanced "
+"Zstandard compression parameters described by :class:`~compression.zstd."
+"CompressionParameter`. The keyword argument *zstd_dict* can be passed to "
+"provide a :class:`~compression.zstd.ZstdDict`, a Zstandard dictionary used "
+"to improve compression of smaller amounts of data."
 msgstr ""
 
 msgid ""
@@ -252,6 +296,12 @@ msgstr ""
 msgid "Open an lzma compressed *stream* for reading."
 msgstr ""
 
+msgid "``'r|zst'``"
+msgstr ""
+
+msgid "Open a Zstandard compressed *stream* for reading."
+msgstr ""
+
 msgid "``'w|'``"
 msgstr ""
 
@@ -276,6 +326,12 @@ msgstr ""
 msgid "Open an lzma compressed *stream* for writing."
 msgstr ""
 
+msgid "``'w|zst'``"
+msgstr ""
+
+msgid "Open a Zstandard compressed *stream* for writing."
+msgstr ""
+
 msgid "The ``'x'`` (exclusive creation) mode was added."
 msgstr ""
 
@@ -285,29 +341,32 @@ msgstr ""
 msgid "The *compresslevel* keyword argument also works for streams."
 msgstr ""
 
+msgid "The *preset* keyword argument also works for streams."
+msgstr ""
+
 msgid ""
 "Class for reading and writing tar archives. Do not use this class directly: "
 "use :func:`tarfile.open` instead. See :ref:`tarfile-objects`."
 msgstr ""
 
 msgid ""
-"Return :const:`True` if *name* is a tar archive file, that the :mod:"
-"`tarfile` module can read. *name* may be a :class:`str`, file, or file-like "
+"Return :const:`True` if *name* is a tar archive file, that the :mod:`!"
+"tarfile` module can read. *name* may be a :class:`str`, file, or file-like "
 "object."
 msgstr ""
 
 msgid "Support for file and file-like objects."
 msgstr ""
 
-msgid "The :mod:`tarfile` module defines the following exceptions:"
+msgid "The :mod:`!tarfile` module defines the following exceptions:"
 msgstr ""
 
-msgid "Base class for all :mod:`tarfile` exceptions."
+msgid "Base class for all :mod:`!tarfile` exceptions."
 msgstr ""
 
 msgid ""
 "Is raised when a tar archive is opened, that either cannot be handled by "
-"the :mod:`tarfile` module or is somehow invalid."
+"the :mod:`!tarfile` module or is somehow invalid."
 msgstr ""
 
 msgid ""
@@ -403,8 +462,8 @@ msgid "A GNU tar sparse file :attr:`~TarInfo.type`."
 msgstr ""
 
 msgid ""
-"Each of the following constants defines a tar archive format that the :mod:"
-"`tarfile` module is able to create. See section :ref:`tar-formats` for "
+"Each of the following constants defines a tar archive format that the :mod:`!"
+"tarfile` module is able to create. See section :ref:`tar-formats` for "
 "details."
 msgstr ""
 
@@ -545,7 +604,15 @@ msgid ""
 "be added as a pax global header if *format* is :const:`PAX_FORMAT`."
 msgstr ""
 
+msgid ""
+"If *stream* is set to :const:`True` then while reading the archive info "
+"about files in the archive are not cached, saving memory."
+msgstr ""
+
 msgid "Use ``'surrogateescape'`` as the default for the *errors* argument."
+msgstr ""
+
+msgid "Add the *stream* parameter."
 msgstr ""
 
 msgid ""
@@ -609,20 +676,19 @@ msgstr ""
 msgid ""
 "The *filter* argument specifies how ``members`` are modified or rejected "
 "before extraction. See :ref:`tarfile-extraction-filter` for details. It is "
-"recommended to set this explicitly depending on which *tar* features you "
-"need to support."
+"recommended to set this explicitly only if specific *tar* features are "
+"required, or as ``filter='data'`` to support Python versions with a less "
+"secure default (3.13 and lower)."
+msgstr ""
+
+msgid "Never extract archives from untrusted sources without prior inspection."
 msgstr ""
 
 msgid ""
-"Never extract archives from untrusted sources without prior inspection. It "
-"is possible that files are created outside of *path*, e.g. members that have "
-"absolute filenames starting with ``\"/\"`` or filenames with two dots ``\".."
-"\"``."
-msgstr ""
-
-msgid ""
-"Set ``filter='data'`` to prevent the most dangerous security issues, and "
-"read the :ref:`tarfile-extraction-filter` section for details."
+"Since Python 3.14, the default (:func:`data <data_filter>`) will prevent the "
+"most dangerous security issues. However, it will not prevent *all* "
+"unintended or insecure behavior. Read the :ref:`tarfile-extraction-filter` "
+"section for details."
 msgstr ""
 
 msgid "Added the *numeric_owner* parameter."
@@ -632,6 +698,9 @@ msgid "The *path* parameter accepts a :term:`path-like object`."
 msgstr ""
 
 msgid "Added the *filter* parameter."
+msgstr ""
+
+msgid "The *filter* parameter now defaults to ``'data'``."
 msgstr ""
 
 msgid ""
@@ -652,7 +721,9 @@ msgid ""
 "In most cases you should consider using the :meth:`extractall` method."
 msgstr ""
 
-msgid "See the warning for :meth:`extractall`."
+msgid ""
+"Never extract archives from untrusted sources without prior inspection. See "
+"the warning for :meth:`extractall` for details."
 msgstr ""
 
 msgid "Added the *set_attrs* parameter."
@@ -667,6 +738,11 @@ msgid ""
 msgstr ""
 
 msgid "Return an :class:`io.BufferedReader` object."
+msgstr ""
+
+msgid ""
+"The returned :class:`io.BufferedReader` object has the :attr:`!mode` "
+"attribute which is always equal to ``'rb'``."
 msgstr ""
 
 msgid ""
@@ -706,15 +782,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"If ``extraction_filter`` is ``None`` (the default), calling an extraction "
-"method without a *filter* argument will raise a ``DeprecationWarning``, and "
-"fall back to the :func:`fully_trusted <fully_trusted_filter>` filter, whose "
-"dangerous behavior matches previous versions of Python."
-msgstr ""
-
-msgid ""
-"In Python 3.14+, leaving ``extraction_filter=None`` will cause extraction "
-"methods to use the :func:`data <data_filter>` filter by default."
+"If ``extraction_filter`` is ``None`` (the default), extraction methods will "
+"use the :func:`data <data_filter>` filter by default."
 msgstr ""
 
 msgid ""
@@ -724,6 +793,13 @@ msgid ""
 "practice to only do so in top-level applications or :mod:`site configuration "
 "<site>`. To set a global default this way, a filter function needs to be "
 "wrapped in :func:`staticmethod` to prevent injection of a ``self`` argument."
+msgstr ""
+
+msgid ""
+"The default filter is set to :func:`data <data_filter>`, which disallows "
+"some dangerous features such as links to absolute paths or paths outside of "
+"the destination. Previously, the default was equivalent to :func:"
+"`fully_trusted <fully_trusted_filter>`."
 msgstr ""
 
 msgid ""
@@ -742,10 +818,14 @@ msgid "Recursion adds entries in sorted order."
 msgstr ""
 
 msgid ""
-"Add the :class:`TarInfo` object *tarinfo* to the archive. If *fileobj* is "
-"given, it should be a :term:`binary file`, and ``tarinfo.size`` bytes are "
-"read from it and added to the archive.  You can create :class:`TarInfo` "
-"objects directly, or by using :meth:`gettarinfo`."
+"Add the :class:`TarInfo` object *tarinfo* to the archive. If *tarinfo* "
+"represents a non zero-size regular file, the *fileobj* argument should be a :"
+"term:`binary file`, and ``tarinfo.size`` bytes are read from it and added to "
+"the archive.  You can create :class:`TarInfo` objects directly, or by using :"
+"meth:`gettarinfo`."
+msgstr ""
+
+msgid "*fileobj* must be given for non-zero-sized regular files."
 msgstr ""
 
 msgid ""
@@ -974,6 +1054,12 @@ msgid ""
 "mitigate some of the security issues."
 msgstr ""
 
+msgid ""
+"None of the available filters blocks *all* dangerous archive features. Never "
+"extract archives from untrusted sources without prior inspection. See also :"
+"ref:`tarfile-further-verification`."
+msgstr ""
+
 msgid ":pep:`706`"
 msgstr ""
 
@@ -1007,14 +1093,12 @@ msgid "``None`` (default): Use :attr:`TarFile.extraction_filter`."
 msgstr ""
 
 msgid ""
-"If that is also ``None`` (the default), raise a ``DeprecationWarning``, and "
-"fall back to the ``'fully_trusted'`` filter, whose dangerous behavior "
-"matches previous versions of Python."
+"If that is also ``None`` (the default), the ``'data'`` filter will be used."
 msgstr ""
 
 msgid ""
-"In Python 3.14, the ``'data'`` filter will become the default instead. It's "
-"possible to switch earlier; see :attr:`TarFile.extraction_filter`."
+"The default filter is set to :func:`data <data_filter>`. Previously, the "
+"default was equivalent to :func:`fully_trusted <fully_trusted_filter>`."
 msgstr ""
 
 msgid ""
@@ -1141,6 +1225,11 @@ msgid ""
 "``None``, so that extraction methods skip setting it."
 msgstr ""
 
+msgid ""
+"Note that this filter does not block *all* dangerous archive features. See :"
+"ref:`tarfile-further-verification`  for details."
+msgstr ""
+
 msgid "Link targets are now normalized."
 msgstr ""
 
@@ -1184,7 +1273,7 @@ msgstr ""
 
 msgid ""
 "Check filenames against an allow-list of characters (to filter out control "
-"characters, confusables, foreign path separators, etc.)."
+"characters, confusables, foreign path separators, and so on)."
 msgstr ""
 
 msgid ""
@@ -1294,7 +1383,6 @@ msgstr ""
 msgid "Such a filter can be written as, for example::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "class StatefulFilter:\n"
 "    def __init__(self):\n"
@@ -1315,7 +1403,7 @@ msgid "Command-Line Interface"
 msgstr ""
 
 msgid ""
-"The :mod:`tarfile` module provides a simple command-line interface to "
+"The :mod:`!tarfile` module provides a simple command-line interface to "
 "interact with tar archives."
 msgstr ""
 
@@ -1383,6 +1471,9 @@ msgstr ""
 msgid "Examples"
 msgstr ""
 
+msgid "Reading examples"
+msgstr ""
+
 msgid "How to extract an entire tar archive to the current working directory::"
 msgstr ""
 
@@ -1412,6 +1503,29 @@ msgid ""
 "tar.close()"
 msgstr ""
 
+msgid ""
+"How to read a gzip compressed tar archive and display some member "
+"information::"
+msgstr ""
+
+msgid ""
+"import tarfile\n"
+"tar = tarfile.open(\"sample.tar.gz\", \"r:gz\")\n"
+"for tarinfo in tar:\n"
+"    print(tarinfo.name, \"is\", tarinfo.size, \"bytes in size and is \", "
+"end=\"\")\n"
+"    if tarinfo.isreg():\n"
+"        print(\"a regular file.\")\n"
+"    elif tarinfo.isdir():\n"
+"        print(\"a directory.\")\n"
+"    else:\n"
+"        print(\"something else.\")\n"
+"tar.close()"
+msgstr ""
+
+msgid "Writing examples"
+msgstr ""
+
 msgid "How to create an uncompressed tar archive from a list of filenames::"
 msgstr ""
 
@@ -1434,23 +1548,17 @@ msgid ""
 msgstr ""
 
 msgid ""
-"How to read a gzip compressed tar archive and display some member "
-"information::"
+"How to create and write an archive to stdout using :data:`sys.stdout.buffer "
+"<sys.stdout>` in the *fileobj* parameter in :meth:`TarFile.add`::"
 msgstr ""
 
 msgid ""
+"import sys\n"
 "import tarfile\n"
-"tar = tarfile.open(\"sample.tar.gz\", \"r:gz\")\n"
-"for tarinfo in tar:\n"
-"    print(tarinfo.name, \"is\", tarinfo.size, \"bytes in size and is \", "
-"end=\"\")\n"
-"    if tarinfo.isreg():\n"
-"        print(\"a regular file.\")\n"
-"    elif tarinfo.isdir():\n"
-"        print(\"a directory.\")\n"
-"    else:\n"
-"        print(\"something else.\")\n"
-"tar.close()"
+"with tarfile.open(\"sample.tar.gz\", \"w|gz\", fileobj=sys.stdout.buffer) as "
+"tar:\n"
+"    for name in [\"foo\", \"bar\", \"quux\"]:\n"
+"        tar.add(name)"
 msgstr ""
 
 msgid ""
@@ -1473,7 +1581,7 @@ msgid "Supported tar formats"
 msgstr ""
 
 msgid ""
-"There are three tar formats that can be created with the :mod:`tarfile` "
+"There are three tar formats that can be created with the :mod:`!tarfile` "
 "module:"
 msgstr ""
 
@@ -1487,7 +1595,7 @@ msgstr ""
 msgid ""
 "The GNU tar format (:const:`GNU_FORMAT`). It supports long filenames and "
 "linknames, files bigger than 8 GiB and sparse files. It is the de facto "
-"standard on GNU/Linux systems. :mod:`tarfile` fully supports the GNU tar "
+"standard on GNU/Linux systems. :mod:`!tarfile` fully supports the GNU tar "
 "extensions for long names, sparse file support is read-only."
 msgstr ""
 
@@ -1545,7 +1653,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The details of character conversion in :mod:`tarfile` are controlled by the "
+"The details of character conversion in :mod:`!tarfile` are controlled by the "
 "*encoding* and *errors* keyword arguments of the :class:`TarFile` class."
 msgstr ""
 

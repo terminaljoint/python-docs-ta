@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Memory Management"
 msgstr ""
@@ -121,13 +119,10 @@ msgid ""
 "allocation strategies and are optimized for different purposes. The specific "
 "details on how every domain allocates memory or what internal functions each "
 "domain calls is considered an implementation detail, but for debugging "
-"purposes a simplified table can be found at :ref:`here <default-memory-"
-"allocators>`. There is no hard requirement to use the memory returned by the "
-"allocation functions belonging to a given domain for only the purposes "
-"hinted by that domain (although this is the recommended practice). For "
-"example, one could use the memory returned by :c:func:`PyMem_RawMalloc` for "
-"allocating Python objects or the memory returned by :c:func:"
-"`PyObject_Malloc` for allocating memory for buffers."
+"purposes a simplified table can be found at :ref:`default-memory-"
+"allocators`. The APIs used to allocate and free a block of memory must be "
+"from the same domain. For example, :c:func:`PyMem_Free` must be used to free "
+"memory allocated using :c:func:`PyMem_Malloc`."
 msgstr ""
 
 msgid "The three allocation domains are:"
@@ -136,26 +131,38 @@ msgstr ""
 msgid ""
 "Raw domain: intended for allocating memory for general-purpose memory "
 "buffers where the allocation *must* go to the system allocator or where the "
-"allocator can operate without the :term:`GIL`. The memory is requested "
-"directly to the system."
+"allocator can operate without an :term:`attached thread state`. The memory "
+"is requested directly from the system. See :ref:`Raw Memory Interface <raw-"
+"memoryinterface>`."
 msgstr ""
 
 msgid ""
 "\"Mem\" domain: intended for allocating memory for Python buffers and "
 "general-purpose memory buffers where the allocation must be performed with "
-"the :term:`GIL` held. The memory is taken from the Python private heap."
+"an :term:`attached thread state`. The memory is taken from the Python "
+"private heap. See :ref:`Memory Interface <memoryinterface>`."
 msgstr ""
 
 msgid ""
-"Object domain: intended for allocating memory belonging to Python objects. "
-"The memory is taken from the Python private heap."
+"Object domain: intended for allocating memory for Python objects. The memory "
+"is taken from the Python private heap. See :ref:`Object allocators "
+"<objectinterface>`."
 msgstr ""
 
 msgid ""
-"When freeing memory previously allocated by the allocating functions "
-"belonging to a given domain,the matching specific deallocating functions "
-"must be used. For example, :c:func:`PyMem_Free` must be used to free memory "
-"allocated using :c:func:`PyMem_Malloc`."
+"The :term:`free-threaded <free threading>` build requires that only Python "
+"objects are allocated using the \"object\" domain and that all Python "
+"objects are allocated using that domain. This differs from the prior Python "
+"versions, where this was only a best practice and not a hard requirement."
+msgstr ""
+
+msgid ""
+"For example, buffers (non-Python objects) should be allocated using :c:func:"
+"`PyMem_Malloc`, :c:func:`PyMem_RawMalloc`, or :c:func:`malloc`, but not :c:"
+"func:`PyObject_Malloc`."
+msgstr ""
+
+msgid "See :ref:`Memory Allocation APIs <free-threaded-memory-allocation>`."
 msgstr ""
 
 msgid "Raw Memory Interface"
@@ -163,8 +170,8 @@ msgstr ""
 
 msgid ""
 "The following function sets are wrappers to the system allocator. These "
-"functions are thread-safe, the :term:`GIL <global interpreter lock>` does "
-"not need to be held."
+"functions are thread-safe, so a :term:`thread state` does not need to be :"
+"term:`attached <attached thread state>`."
 msgstr ""
 
 msgid ""
@@ -239,17 +246,23 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :ref:`default memory allocator <default-memory-allocators>` uses the :"
-"ref:`pymalloc memory allocator <pymalloc>`."
+"In the GIL-enabled build (default build) the :ref:`default memory allocator "
+"<default-memory-allocators>` uses the :ref:`pymalloc memory allocator "
+"<pymalloc>`, whereas in the :term:`free-threaded build`, the default is the :"
+"ref:`mimalloc memory allocator <mimalloc>` instead."
 msgstr ""
 
 msgid ""
-"The :term:`GIL <global interpreter lock>` must be held when using these "
-"functions."
+"There must be an :term:`attached thread state` when using these functions."
 msgstr ""
 
 msgid ""
 "The default allocator is now pymalloc instead of system :c:func:`malloc`."
+msgstr ""
+
+msgid ""
+"In the :term:`free-threaded <free threading>` build, the default allocator "
+"is now :ref:`mimalloc <mimalloc>`."
 msgstr ""
 
 msgid ""
@@ -313,29 +326,39 @@ msgstr ""
 msgid "Same as :c:func:`PyMem_Free`."
 msgstr ""
 
+msgid "Deprecated aliases"
+msgstr ""
+
 msgid ""
-"In addition, the following macro sets are provided for calling the Python "
-"memory allocator directly, without involving the C API functions listed "
-"above. However, note that their use does not preserve binary compatibility "
-"across Python versions and is therefore deprecated in extension modules."
+"These are :term:`soft deprecated` aliases to existing functions and macros. "
+"They exist solely for backwards compatibility."
 msgstr ""
 
-msgid "``PyMem_MALLOC(size)``"
+msgid "Deprecated alias"
 msgstr ""
 
-msgid "``PyMem_NEW(type, size)``"
+msgid "Corresponding function or macro"
 msgstr ""
 
-msgid "``PyMem_REALLOC(ptr, size)``"
+msgid ":c:func:`PyMem_Malloc`"
 msgstr ""
 
-msgid "``PyMem_RESIZE(ptr, type, size)``"
+msgid ":c:macro:`PyMem_New`"
 msgstr ""
 
-msgid "``PyMem_FREE(ptr)``"
+msgid ":c:func:`PyMem_Realloc`"
 msgstr ""
 
-msgid "``PyMem_DEL(ptr)``"
+msgid ":c:macro:`PyMem_Resize`"
+msgstr ""
+
+msgid ":c:func:`PyMem_Free`"
+msgstr ""
+
+msgid ""
+"The macros are now aliases of the corresponding functions and macros. "
+"Previously, their behavior was the same, but their use did not necessarily "
+"preserve binary compatibility across Python versions."
 msgstr ""
 
 msgid "Object allocators"
@@ -350,7 +373,9 @@ msgstr ""
 
 msgid ""
 "The :ref:`default object allocator <default-memory-allocators>` uses the :"
-"ref:`pymalloc memory allocator <pymalloc>`."
+"ref:`pymalloc memory allocator <pymalloc>`.  In the :term:`free-threaded "
+"<free threading>` build, the default is the :ref:`mimalloc memory allocator "
+"<mimalloc>` instead."
 msgstr ""
 
 msgid ""
@@ -387,6 +412,42 @@ msgid ""
 "previous call to :c:func:`PyObject_Malloc`, :c:func:`PyObject_Realloc` or :c:"
 "func:`PyObject_Calloc`.  Otherwise, or if ``PyObject_Free(p)`` has been "
 "called before, undefined behavior occurs."
+msgstr ""
+
+msgid ""
+"Do not call this directly to free an object's memory; call the type's :c:"
+"member:`~PyTypeObject.tp_free` slot instead."
+msgstr ""
+
+msgid ""
+"Do not use this for memory allocated by :c:macro:`PyObject_GC_New` or :c:"
+"macro:`PyObject_GC_NewVar`; use :c:func:`PyObject_GC_Del` instead."
+msgstr ""
+
+msgid ""
+":c:func:`PyObject_GC_Del` is the equivalent of this function for memory "
+"allocated by types that support garbage collection."
+msgstr ""
+
+msgid ":c:func:`PyObject_Malloc`"
+msgstr ""
+
+msgid ":c:func:`PyObject_Realloc`"
+msgstr ""
+
+msgid ":c:func:`PyObject_Calloc`"
+msgstr ""
+
+msgid ":c:macro:`PyObject_New`"
+msgstr ""
+
+msgid ":c:macro:`PyObject_NewVar`"
+msgstr ""
+
+msgid ":c:func:`PyType_GenericAlloc`"
+msgstr ""
+
+msgid ":c:member:`~PyTypeObject.tp_free`"
 msgstr ""
 
 msgid "Default Memory Allocators"
@@ -446,6 +507,24 @@ msgstr ""
 msgid "``\"malloc_debug\"``"
 msgstr ""
 
+msgid "Free-threaded build"
+msgstr ""
+
+msgid "``\"mimalloc\"``"
+msgstr ""
+
+msgid "``mimalloc``"
+msgstr ""
+
+msgid "Free-threaded debug build"
+msgstr ""
+
+msgid "``\"mimalloc_debug\"``"
+msgstr ""
+
+msgid "``mimalloc`` + debug"
+msgstr ""
+
 msgid "Legend:"
 msgstr ""
 
@@ -458,6 +537,9 @@ msgid ""
 msgstr ""
 
 msgid "``pymalloc``: :ref:`pymalloc memory allocator <pymalloc>`."
+msgstr ""
+
+msgid "``mimalloc``: :ref:`mimalloc memory allocator <mimalloc>`."
 msgstr ""
 
 msgid ""
@@ -538,22 +620,7 @@ msgstr ""
 msgid ":c:func:`PyMem_Malloc`,"
 msgstr ""
 
-msgid ":c:func:`PyMem_Realloc`"
-msgstr ""
-
 msgid ":c:func:`PyMem_Calloc`"
-msgstr ""
-
-msgid ":c:func:`PyMem_Free`"
-msgstr ""
-
-msgid ":c:func:`PyObject_Malloc`"
-msgstr ""
-
-msgid ":c:func:`PyObject_Realloc`"
-msgstr ""
-
-msgid ":c:func:`PyObject_Calloc`"
 msgstr ""
 
 msgid ":c:func:`PyObject_Free`"
@@ -572,14 +639,14 @@ msgstr ""
 
 msgid ""
 "For the :c:macro:`PYMEM_DOMAIN_RAW` domain, the allocator must be thread-"
-"safe: the :term:`GIL <global interpreter lock>` is not held when the "
-"allocator is called."
+"safe: a :term:`thread state` is not :term:`attached <attached thread state>` "
+"when the allocator is called."
 msgstr ""
 
 msgid ""
 "For the remaining domains, the allocator must also be thread-safe: the "
-"allocator may be called in different interpreters that do not share a "
-"``GIL``."
+"allocator may be called in different interpreters that do not share a :term:"
+"`GIL`."
 msgstr ""
 
 msgid ""
@@ -601,8 +668,8 @@ msgid ""
 "`Py_InitializeFromConfig` to install a custom memory allocator. There are no "
 "restrictions over the installed allocator other than the ones imposed by the "
 "domain (for instance, the Raw Domain allows the allocator to be called "
-"without the GIL held). See :ref:`the section on allocator domains <allocator-"
-"domains>` for more information."
+"without an :term:`attached thread state`). See :ref:`the section on "
+"allocator domains <allocator-domains>` for more information."
 msgstr ""
 
 msgid ""
@@ -664,7 +731,7 @@ msgid "Detect write after the end of the buffer (buffer overflow)."
 msgstr ""
 
 msgid ""
-"Check that the :term:`GIL <global interpreter lock>` is held when allocator "
+"Check that there is an :term:`attached thread state` when allocator "
 "functions of :c:macro:`PYMEM_DOMAIN_OBJ` (ex: :c:func:`PyObject_Malloc`) "
 "and :c:macro:`PYMEM_DOMAIN_MEM` (ex: :c:func:`PyMem_Malloc`) domains are "
 "called."
@@ -767,8 +834,9 @@ msgid ""
 "The :c:func:`PyMem_SetupDebugHooks` function now also works on Python "
 "compiled in release mode.  On error, the debug hooks now use :mod:"
 "`tracemalloc` to get the traceback where a memory block was allocated. The "
-"debug hooks now also check if the GIL is held when functions of :c:macro:"
-"`PYMEM_DOMAIN_OBJ` and :c:macro:`PYMEM_DOMAIN_MEM` domains are called."
+"debug hooks now also check if there is an :term:`attached thread state` when "
+"functions of :c:macro:`PYMEM_DOMAIN_OBJ` and :c:macro:`PYMEM_DOMAIN_MEM` "
+"domains are called."
 msgstr ""
 
 msgid ""
@@ -813,6 +881,12 @@ msgid ""
 "envvar:`PYTHONMALLOC` environment variable (ex: ``PYTHONMALLOC=malloc``)."
 msgstr ""
 
+msgid ""
+"Typically, it makes sense to disable the pymalloc allocator when building "
+"Python with AddressSanitizer (:option:`--with-address-sanitizer`) which "
+"helps uncover low level bugs within the C code."
+msgstr ""
+
 msgid "Customize pymalloc Arena Allocator"
 msgstr ""
 
@@ -837,6 +911,39 @@ msgid "Get the arena allocator."
 msgstr ""
 
 msgid "Set the arena allocator."
+msgstr ""
+
+msgid "The mimalloc allocator"
+msgstr ""
+
+msgid ""
+"Python supports the `mimalloc <https://github.com/microsoft/mimalloc/>`__ "
+"allocator when the underlying platform support is available. mimalloc is a "
+"general purpose allocator with excellent performance characteristics, "
+"initially developed by Daan Leijen for the runtime systems of the Koka and "
+"Lean languages."
+msgstr ""
+
+msgid ""
+"Unlike :ref:`pymalloc <pymalloc>`, which is optimized for small objects (512 "
+"bytes or fewer), mimalloc handles allocations of any size."
+msgstr ""
+
+msgid ""
+"In the :term:`free-threaded <free threading>` build, mimalloc is the default "
+"and **required** allocator for the :c:macro:`PYMEM_DOMAIN_MEM` and :c:macro:"
+"`PYMEM_DOMAIN_OBJ` domains.  It cannot be disabled in free-threaded builds.  "
+"The free-threaded build uses per-thread mimalloc heaps, which allows "
+"allocation and deallocation to proceed without locking in most cases."
+msgstr ""
+
+msgid ""
+"In the default (non-free-threaded) build, mimalloc is available but not the "
+"default allocator.  It can be selected at runtime using :envvar:"
+"`PYTHONMALLOC`\\ ``=mimalloc`` (or ``mimalloc_debug`` to include :ref:`debug "
+"hooks <pymem-debug-hooks>`).  It can be disabled at build time using the :"
+"option:`--without-mimalloc` configure option, but this option cannot be "
+"combined with :option:`--disable-gil`."
 msgstr ""
 
 msgid "tracemalloc C API"
@@ -893,7 +1000,7 @@ msgid ""
 "    return PyErr_NoMemory();\n"
 "/* ...Do some I/O operation involving buf... */\n"
 "res = PyBytes_FromString(buf);\n"
-"PyMem_Del(buf); /* allocated with PyMem_New */\n"
+"PyMem_Free(buf); /* allocated with PyMem_New */\n"
 "return res;"
 msgstr ""
 
@@ -913,13 +1020,13 @@ msgid ""
 "...\n"
 "PyMem_Del(buf3);  /* Wrong -- should be PyMem_Free() */\n"
 "free(buf2);       /* Right -- allocated via malloc() */\n"
-"free(buf1);       /* Fatal -- should be PyMem_Del()  */"
+"free(buf1);       /* Fatal -- should be PyMem_Free()  */"
 msgstr ""
 
 msgid ""
 "In addition to the functions aimed at handling raw memory blocks from the "
 "Python heap, objects in Python are allocated and released with :c:macro:"
-"`PyObject_New`, :c:macro:`PyObject_NewVar` and :c:func:`PyObject_Del`."
+"`PyObject_New`, :c:macro:`PyObject_NewVar` and :c:func:`PyObject_Free`."
 msgstr ""
 
 msgid ""

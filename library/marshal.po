@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!marshal` --- Internal Python object serialization"
 msgstr ""
@@ -34,39 +32,71 @@ msgstr ""
 msgid ""
 "This is not a general \"persistence\" module.  For general persistence and "
 "transfer of Python objects through RPC calls, see the modules :mod:`pickle` "
-"and :mod:`shelve`.  The :mod:`marshal` module exists mainly to support "
+"and :mod:`shelve`.  The :mod:`!marshal` module exists mainly to support "
 "reading and writing the \"pseudo-compiled\" code for Python modules of :file:"
 "`.pyc` files. Therefore, the Python maintainers reserve the right to modify "
-"the marshal format in backward incompatible ways should the need arise.  If "
-"you're serializing and de-serializing Python objects, use the :mod:`pickle` "
-"module instead -- the performance is comparable, version independence is "
-"guaranteed, and pickle supports a substantially wider range of objects than "
-"marshal."
+"the marshal format in backward incompatible ways should the need arise. The "
+"format of code objects is not compatible between Python versions, even if "
+"the version of the format is the same. De-serializing a code object in the "
+"incorrect Python version has undefined behavior. If you're serializing and "
+"de-serializing Python objects, use the :mod:`pickle` module instead -- the "
+"performance is comparable, version independence is guaranteed, and pickle "
+"supports a substantially wider range of objects than marshal."
 msgstr ""
 
 msgid ""
-"The :mod:`marshal` module is not intended to be secure against erroneous or "
+"The :mod:`!marshal` module is not intended to be secure against erroneous or "
 "maliciously constructed data.  Never unmarshal data received from an "
 "untrusted or unauthenticated source."
 msgstr ""
 
 msgid ""
-"Not all Python object types are supported; in general, only objects whose "
-"value is independent from a particular invocation of Python can be written "
-"and read by this module.  The following types are supported: booleans, "
-"integers, floating-point numbers, complex numbers, strings, bytes, "
-"bytearrays, tuples, lists, sets, frozensets, dictionaries, and code objects, "
-"where it should be understood that tuples, lists, sets, frozensets and "
-"dictionaries are only supported as long as the values contained therein are "
-"themselves supported.  The singletons :const:`None`, :const:`Ellipsis` and :"
-"exc:`StopIteration` can also be marshalled and unmarshalled. For format "
-"*version* lower than 3, recursive lists, sets and dictionaries cannot be "
-"written (see below)."
+"There are functions that read/write files as well as functions operating on "
+"bytes-like objects."
 msgstr ""
 
 msgid ""
-"There are functions that read/write files as well as functions operating on "
-"bytes-like objects."
+"Not all Python object types are supported; in general, only objects whose "
+"value is independent from a particular invocation of Python can be written "
+"and read by this module.  The following types are supported:"
+msgstr ""
+
+msgid ""
+"Numeric types: :class:`int`, :class:`bool`, :class:`float`, :class:`complex`."
+msgstr ""
+
+msgid ""
+"Strings (:class:`str`) and :class:`bytes`. :term:`Bytes-like objects <bytes-"
+"like object>` like :class:`bytearray` are marshalled as :class:`!bytes`."
+msgstr ""
+
+msgid ""
+"Containers: :class:`tuple`, :class:`list`, :class:`set`, :class:`frozenset`, "
+"and (since :data:`version` 5), :class:`slice`. It should be understood that "
+"these are supported only if the values contained therein are themselves "
+"supported. Recursive containers are supported since :data:`version` 3."
+msgstr ""
+
+msgid ""
+"The singletons :const:`None`, :const:`Ellipsis` and :exc:`StopIteration`."
+msgstr ""
+
+msgid ""
+":class:`code` objects, if *allow_code* is true. See note above about version "
+"dependence."
+msgstr ""
+
+msgid ""
+"Added format version 3, which supports marshalling recursive lists, sets and "
+"dictionaries."
+msgstr ""
+
+msgid ""
+"Added format version 4, which supports efficient representations of short "
+"strings."
+msgstr ""
+
+msgid "Added format version 5, which allows marshalling slices."
 msgstr ""
 
 msgid "The module defines these functions:"
@@ -81,7 +111,8 @@ msgid ""
 "If the value has (or contains an object that has) an unsupported type, a :"
 "exc:`ValueError` exception is raised --- but garbage data will also be "
 "written to the file.  The object will not be properly read back by :func:"
-"`load`."
+"`load`. :ref:`Code objects <code-objects>` are only supported if "
+"*allow_code* is true."
 msgstr ""
 
 msgid ""
@@ -94,11 +125,15 @@ msgid ""
 "``value``, ``version``."
 msgstr ""
 
+msgid "Added the *allow_code* parameter."
+msgstr ""
+
 msgid ""
 "Read one value from the open file and return it.  If no valid value is read "
 "(e.g. because the data has a different Python version's incompatible marshal "
-"format), raise :exc:`EOFError`, :exc:`ValueError` or :exc:`TypeError`.  The "
-"file must be a readable :term:`binary file`."
+"format), raise :exc:`EOFError`, :exc:`ValueError` or :exc:`TypeError`. :ref:"
+"`Code objects <code-objects>` are only supported if *allow_code* is true. "
+"The file must be a readable :term:`binary file`."
 msgstr ""
 
 msgid ""
@@ -119,7 +154,9 @@ msgstr ""
 msgid ""
 "Return the bytes object that would be written to a file by ``dump(value, "
 "file)``.  The value must be a supported type.  Raise a :exc:`ValueError` "
-"exception if value has (or contains an object that has) an unsupported type."
+"exception if value has (or contains an object that has) an unsupported "
+"type. :ref:`Code objects <code-objects>` are only supported if *allow_code* "
+"is true."
 msgstr ""
 
 msgid ""
@@ -129,8 +166,9 @@ msgstr ""
 
 msgid ""
 "Convert the :term:`bytes-like object` to a value.  If no valid value is "
-"found, raise :exc:`EOFError`, :exc:`ValueError` or :exc:`TypeError`.  Extra "
-"bytes in the input are ignored."
+"found, raise :exc:`EOFError`, :exc:`ValueError` or :exc:`TypeError`. :ref:"
+"`Code objects <code-objects>` are only supported if *allow_code* is true. "
+"Extra bytes in the input are ignored."
 msgstr ""
 
 msgid ""
@@ -147,10 +185,60 @@ msgid "In addition, the following constants are defined:"
 msgstr ""
 
 msgid ""
-"Indicates the format that the module uses. Version 0 is the historical "
-"format, version 1 shares interned strings and version 2 uses a binary format "
-"for floating-point numbers. Version 3 adds support for object instancing and "
-"recursion. The current version is 4."
+"Indicates the format that the module uses. Version 0 is the historical first "
+"version; subsequent versions add new features. Generally, a new version "
+"becomes the default when it is introduced."
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Available since"
+msgstr ""
+
+msgid "New features"
+msgstr ""
+
+msgid "1"
+msgstr ""
+
+msgid "Python 2.4"
+msgstr ""
+
+msgid "Sharing interned strings"
+msgstr ""
+
+msgid "2"
+msgstr ""
+
+msgid "Python 2.5"
+msgstr ""
+
+msgid "Binary representation of floats"
+msgstr ""
+
+msgid "3"
+msgstr ""
+
+msgid "Python 3.4"
+msgstr ""
+
+msgid "Support for object instancing and recursion"
+msgstr ""
+
+msgid "4"
+msgstr ""
+
+msgid "Efficient representation of short strings"
+msgstr ""
+
+msgid "5"
+msgstr ""
+
+msgid "Python 3.14"
+msgstr ""
+
+msgid "Support for :class:`slice` objects"
 msgstr ""
 
 msgid "Footnotes"

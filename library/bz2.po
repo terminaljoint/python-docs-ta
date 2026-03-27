@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!bz2` --- Support for :program:`bzip2` compression"
 msgstr ""
@@ -30,7 +28,7 @@ msgid ""
 "decompressing data using the bzip2 compression algorithm."
 msgstr ""
 
-msgid "The :mod:`bz2` module contains:"
+msgid "The :mod:`!bz2` module contains:"
 msgstr ""
 
 msgid ""
@@ -46,6 +44,13 @@ msgstr ""
 msgid ""
 "The :func:`compress` and :func:`decompress` functions for one-shot "
 "(de)compression."
+msgstr ""
+
+msgid ""
+"This is an :term:`optional module`. If it is missing from your copy of "
+"CPython, look for documentation from your distributor (that is, whoever "
+"provided Python to you). If you are the distributor, see :ref:`optional-"
+"module-requirements`."
 msgstr ""
 
 msgid "(De)compression of files"
@@ -130,7 +135,7 @@ msgid ""
 "IOBase.truncate`. Iteration and the :keyword:`with` statement are supported."
 msgstr ""
 
-msgid ":class:`BZ2File` also provides the following methods:"
+msgid ":class:`BZ2File` also provides the following methods and attributes:"
 msgstr ""
 
 msgid ""
@@ -171,6 +176,14 @@ msgid "Read bytes into *b*."
 msgstr ""
 
 msgid "Returns the number of bytes read (0 for EOF)."
+msgstr ""
+
+msgid "``'rb'`` for reading and ``'wb'`` for writing."
+msgstr ""
+
+msgid ""
+"The bzip2 file name.  Equivalent to the :attr:`~io.FileIO.name` attribute of "
+"the underlying :term:`file object`."
 msgstr ""
 
 msgid "Support for the :keyword:`with` statement was added."
@@ -323,7 +336,7 @@ msgstr ""
 msgid "Examples of usage"
 msgstr ""
 
-msgid "Below are some examples of typical usage of the :mod:`bz2` module."
+msgid "Below are some examples of typical usage of the :mod:`!bz2` module."
 msgstr ""
 
 msgid ""

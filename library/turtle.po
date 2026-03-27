@@ -1,25 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ":mod:`turtle` --- Turtle graphics"
+msgid ":mod:`!turtle` --- Turtle graphics"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/turtle.py`"
@@ -32,6 +30,24 @@ msgid ""
 "Turtle graphics is an implementation of `the popular geometric drawing tools "
 "introduced in Logo <https://en.wikipedia.org/wiki/Turtle_ (robot)>`_, "
 "developed by Wally Feurzeig, Seymour Papert and Cynthia Solomon in 1967."
+msgstr ""
+
+msgid ""
+"This is an :term:`optional module`. If it is missing from your copy of "
+"CPython, look for documentation from your distributor (that is, whoever "
+"provided Python to you). If you are the distributor, see :ref:`optional-"
+"module-requirements`."
+msgstr ""
+
+msgid "Get started"
+msgstr ""
+
+msgid ""
+"Imagine a robotic turtle starting at (0, 0) in the x-y plane.  After an "
+"``import turtle``, give it the command ``turtle.forward(15)``, and it moves "
+"(on-screen!) 15 pixels in the direction it is facing, drawing a line as it "
+"moves.  Give it the command ``turtle.right(25)``, and it rotates in-place 25 "
+"degrees clockwise."
 msgstr ""
 
 msgid ""
@@ -253,6 +269,37 @@ msgid ""
 "your system for turtle graphics to work. Be warned that this is not always "
 "straightforward, so check this in advance if you're planning to use turtle "
 "graphics with a learner."
+msgstr ""
+
+msgid "Automatically begin and end filling"
+msgstr ""
+
+msgid ""
+"Starting with Python 3.14, you can use the :func:`fill` :term:`context "
+"manager` instead of :func:`begin_fill` and :func:`end_fill` to automatically "
+"begin and end fill. Here is an example::"
+msgstr ""
+
+msgid ""
+"with fill():\n"
+"    for i in range(4):\n"
+"        forward(100)\n"
+"        right(90)\n"
+"\n"
+"forward(200)"
+msgstr ""
+
+msgid "The code above is equivalent to::"
+msgstr ""
+
+msgid ""
+"begin_fill()\n"
+"for i in range(4):\n"
+"    forward(100)\n"
+"    right(90)\n"
+"end_fill()\n"
+"\n"
+"forward(200)"
 msgstr ""
 
 msgid "Use the ``turtle`` module namespace"
@@ -492,6 +539,9 @@ msgstr ""
 msgid ":func:`filling`"
 msgstr ""
 
+msgid ":func:`fill`"
+msgstr ""
+
 msgid ":func:`begin_fill`"
 msgstr ""
 
@@ -540,9 +590,6 @@ msgstr ""
 msgid ":func:`shearfactor`"
 msgstr ""
 
-msgid ":func:`settiltangle`"
-msgstr ""
-
 msgid ":func:`tiltangle`"
 msgstr ""
 
@@ -568,6 +615,9 @@ msgid ":func:`ondrag`"
 msgstr ""
 
 msgid "Special Turtle methods"
+msgstr ""
+
+msgid ":func:`poly`"
 msgstr ""
 
 msgid ":func:`begin_poly`"
@@ -619,6 +669,9 @@ msgid ":func:`setworldcoordinates`"
 msgstr ""
 
 msgid "Animation control"
+msgstr ""
+
+msgid ":func:`no_animation`"
 msgstr ""
 
 msgid ":func:`delay`"
@@ -694,6 +747,9 @@ msgid ":func:`bye`"
 msgstr ""
 
 msgid ":func:`exitonclick`"
+msgstr ""
+
+msgid ":func:`save`"
 msgstr ""
 
 msgid ":func:`setup`"
@@ -964,7 +1020,7 @@ msgstr ""
 
 msgid ""
 "Draw a circular dot with diameter *size*, using *color*.  If *size* is not "
-"given, the maximum of pensize+4 and 2*pensize is used."
+"given, the maximum of ``pensize+4`` and ``2*pensize`` is used."
 msgstr ""
 
 msgid ""
@@ -1316,7 +1372,8 @@ msgstr ""
 
 msgid ""
 "Return the current pencolor as color specification string or as a tuple (see "
-"example).  May be used as input to another color/pencolor/fillcolor call."
+"example).  May be used as input to another color/pencolor/fillcolor/bgcolor "
+"call."
 msgstr ""
 
 msgid "``pencolor(colorstring)``"
@@ -1378,7 +1435,7 @@ msgstr ""
 msgid ""
 "Return the current fillcolor as color specification string, possibly in "
 "tuple format (see example).  May be used as input to another color/pencolor/"
-"fillcolor call."
+"fillcolor/bgcolor call."
 msgstr ""
 
 msgid "``fillcolor(colorstring)``"
@@ -1486,6 +1543,27 @@ msgid ""
 "...    turtle.pensize(3)"
 msgstr ""
 
+msgid "Fill the shape drawn in the ``with turtle.fill():`` block."
+msgstr ""
+
+msgid ""
+">>> turtle.color(\"black\", \"red\")\n"
+">>> with turtle.fill():\n"
+"...     turtle.circle(80)"
+msgstr ""
+
+msgid ""
+"Using :func:`!fill` is equivalent to adding the :func:`begin_fill` before "
+"the fill-block and :func:`end_fill` after the fill-block:"
+msgstr ""
+
+msgid ""
+">>> turtle.color(\"black\", \"red\")\n"
+">>> turtle.begin_fill()\n"
+">>> turtle.circle(80)\n"
+">>> turtle.end_fill()"
+msgstr ""
+
 msgid "To be called just before drawing a shape to be filled."
 msgstr ""
 
@@ -1497,13 +1575,6 @@ msgid ""
 "shapes are filled depends on the operating system graphics, type of overlap, "
 "and number of overlaps.  For example, the Turtle star above may be either "
 "all yellow or have some white regions."
-msgstr ""
-
-msgid ""
-">>> turtle.color(\"black\", \"red\")\n"
-">>> turtle.begin_fill()\n"
-">>> turtle.circle(80)\n"
-">>> turtle.end_fill()"
 msgstr ""
 
 msgid ""
@@ -1681,22 +1752,6 @@ msgid ""
 ">>> turtle.fd(50)"
 msgstr ""
 
-msgid ""
-"Rotate the turtleshape to point in the direction specified by *angle*, "
-"regardless of its current tilt-angle.  *Do not* change the turtle's heading "
-"(direction of movement)."
-msgstr ""
-
-msgid ""
-">>> turtle.reset()\n"
-">>> turtle.shape(\"circle\")\n"
-">>> turtle.shapesize(5,2)\n"
-">>> turtle.settiltangle(45)\n"
-">>> turtle.fd(50)\n"
-">>> turtle.settiltangle(-45)\n"
-">>> turtle.fd(50)"
-msgstr ""
-
 msgid "a number (optional)"
 msgstr ""
 
@@ -1812,6 +1867,18 @@ msgstr ""
 msgid ""
 "Subsequently, clicking and dragging the Turtle will move it across the "
 "screen thereby producing handdrawings (if pen is down)."
+msgstr ""
+
+msgid ""
+"Record the vertices of a polygon drawn in the ``with turtle.poly():`` block. "
+"The first and last vertices will be connected."
+msgstr ""
+
+msgid ""
+">>> with turtle.poly():\n"
+"...     turtle.forward(100)\n"
+"...     turtle.right(60)\n"
+"...     turtle.forward(100)"
 msgstr ""
 
 msgid ""
@@ -1945,12 +2012,41 @@ msgid ""
 "``screen``."
 msgstr ""
 
-msgid ""
-"a color string or three numbers in the range 0..colormode or a 3-tuple of "
-"such numbers"
+msgid "Return or set the background color of the TurtleScreen."
 msgstr ""
 
-msgid "Set or return background color of the TurtleScreen."
+msgid "``bgcolor()``"
+msgstr ""
+
+msgid ""
+"Return the current background color as color specification string or as a "
+"tuple (see example).  May be used as input to another color/pencolor/"
+"fillcolor/bgcolor call."
+msgstr ""
+
+msgid "``bgcolor(colorstring)``"
+msgstr ""
+
+msgid ""
+"Set the background color to *colorstring*, which is a Tk color specification "
+"string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
+msgstr ""
+
+msgid "``bgcolor((r, g, b))``"
+msgstr ""
+
+msgid ""
+"Set the background color to the RGB color represented by the tuple of *r*, "
+"*g*, and *b*. Each of *r*, *g*, and *b* must be in the range 0..colormode, "
+"where colormode is either 1.0 or 255 (see :func:`colormode`)."
+msgstr ""
+
+msgid "``bgcolor(r, g, b)``"
+msgstr ""
+
+msgid ""
+"Set the background color to the RGB color represented by *r*, *g*, and *b*.  "
+"Each of *r*, *g*, and *b* must be in the range 0..colormode."
 msgstr ""
 
 msgid ""
@@ -1962,7 +2058,9 @@ msgid ""
 "(128.0, 0.0, 128.0)"
 msgstr ""
 
-msgid "a string, name of a gif-file or ``\"nopic\"``, or ``None``"
+msgid ""
+"a string, name of an image file (PNG, GIF, PGM, and PPM) or ``\"nopic\"``, "
+"or ``None``"
 msgstr ""
 
 msgid ""
@@ -2052,6 +2150,19 @@ msgid ""
 "...\n"
 ">>> for _ in range(8):\n"
 "...     left(45); fd(2)   # a regular octagon"
+msgstr ""
+
+msgid ""
+"Temporarily disable turtle animation. The code written inside the "
+"``no_animation`` block will not be animated; once the code block is exited, "
+"the drawing will appear."
+msgstr ""
+
+msgid ""
+">>> with screen.no_animation():\n"
+"...     for dist in range(2, 400, 2):\n"
+"...         fd(dist)\n"
+"...         rt(90)"
 msgstr ""
 
 msgid "positive integer"
@@ -2232,7 +2343,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Mode \"standard\" is compatible with old :mod:`turtle`.  Mode \"logo\" is "
+"Mode \"standard\" is compatible with old :mod:`!turtle`.  Mode \"logo\" is "
 "compatible with most Logo turtle graphics.  Mode \"world\" uses user-defined "
 "\"world coordinates\". **Attention**: in this mode angles appear distorted "
 "if ``x/y`` unit-ratio doesn't equal 1."
@@ -2312,12 +2423,12 @@ msgid ""
 "['arrow', 'blank', 'circle', ..., 'turtle']"
 msgstr ""
 
-msgid "There are three different ways to call this function:"
+msgid "There are four different ways to call this function:"
 msgstr ""
 
 msgid ""
-"*name* is the name of a gif-file and *shape* is ``None``: Install the "
-"corresponding image shape. ::"
+"*name* is the name of an image file (PNG, GIF, PGM, and PPM) and *shape* is "
+"``None``: Install the corresponding image shape. ::"
 msgstr ""
 
 msgid ">>> screen.register_shape(\"turtle.gif\")"
@@ -2326,6 +2437,14 @@ msgstr ""
 msgid ""
 "Image shapes *do not* rotate when turning the turtle, so they do not display "
 "the heading of the turtle!"
+msgstr ""
+
+msgid ""
+"*name* is an arbitrary string and *shape* is the name of an image file (PNG, "
+"GIF, PGM, and PPM): Install the corresponding image shape. ::"
+msgstr ""
+
+msgid ">>> screen.register_shape(\"turtle\", \"turtle.gif\")"
 msgstr ""
 
 msgid ""
@@ -2344,6 +2463,11 @@ msgstr ""
 msgid ""
 "Add a turtle shape to TurtleScreen's shapelist.  Only thusly registered "
 "shapes can be used by issuing the command ``shape(shapename)``."
+msgstr ""
+
+msgid ""
+"Added support for PNG, PGM, and PPM image formats. Both a shape name and an "
+"image file name can be specified."
 msgstr ""
 
 msgid "Return the list of turtles on the screen."
@@ -2387,19 +2511,34 @@ msgid ""
 "client script."
 msgstr ""
 
+msgid "Save the current turtle drawing (and turtles) as a PostScript file."
+msgstr ""
+
+msgid "the path of the saved PostScript file"
+msgstr ""
+
+msgid ""
+"if ``False`` and there already exists a file with the given filename, then "
+"the function will raise a ``FileExistsError``. If it is ``True``, the file "
+"will be overwritten."
+msgstr ""
+
+msgid ""
+">>> screen.save(\"my_drawing.ps\")\n"
+">>> screen.save(\"my_drawing.ps\", overwrite=True)"
+msgstr ""
+
 msgid ""
 "Set the size and position of the main window.  Default values of arguments "
 "are stored in the configuration dictionary and can be changed via a :file:"
 "`turtle.cfg` file."
 msgstr ""
 
-#, python-format
 msgid ""
 "if an integer, a size in pixels, if a float, a fraction of the screen; "
 "default is 50% of screen"
 msgstr ""
 
-#, python-format
 msgid ""
 "if an integer, the height in pixels, if a float, a fraction of the screen; "
 "default is 75% of screen"
@@ -2415,7 +2554,6 @@ msgid ""
 "negative from the bottom edge, if ``None``, center window vertically"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> screen.setup (width=200, height=200, startx=0, starty=0)\n"
 ">>>              # sets window to 200x200 pixels, in upper left of screen\n"
@@ -2703,7 +2841,6 @@ msgstr ""
 msgid "a string, used as filename"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Create and write docstring-dictionary to a Python script with the given "
 "filename.  This function has to be called explicitly (it is not used by the "
@@ -2713,9 +2850,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-"If you (or your students) want to use :mod:`turtle` with online help in your "
-"native language, you have to translate the docstrings and save the resulting "
-"file as e.g. :file:`turtle_docstringdict_german.py`."
+"If you (or your students) want to use :mod:`!turtle` with online help in "
+"your native language, you have to translate the docstrings and save the "
+"resulting file as e.g. :file:`turtle_docstringdict_german.py`."
 msgstr ""
 
 msgid ""
@@ -2804,7 +2941,7 @@ msgstr ""
 msgid ""
 "If you set e.g. ``language = italian`` the docstringdict :file:"
 "`turtle_docstringdict_italian.py` will be loaded at import time (if present "
-"on the import path, e.g. in the same directory as :mod:`turtle`)."
+"on the import path, e.g. in the same directory as :mod:`!turtle`)."
 msgstr ""
 
 msgid ""
@@ -2821,7 +2958,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"There can be a :file:`turtle.cfg` file in the directory where :mod:`turtle` "
+"There can be a :file:`turtle.cfg` file in the directory where :mod:`!turtle` "
 "is stored and an additional one in the current working directory.  The "
 "latter will override the settings of the first one."
 msgstr ""
@@ -2832,12 +2969,12 @@ msgid ""
 "(preferably not from within the demo-viewer)."
 msgstr ""
 
-msgid ":mod:`turtledemo` --- Demo scripts"
+msgid ":mod:`!turtledemo` --- Demo scripts"
 msgstr ""
 
 msgid ""
-"The :mod:`turtledemo` package includes a set of demo scripts.  These scripts "
-"can be run and viewed using the supplied demo viewer as follows::"
+"The :mod:`!turtledemo` package includes a set of demo scripts.  These "
+"scripts can be run and viewed using the supplied demo viewer as follows::"
 msgstr ""
 
 msgid "python -m turtledemo"
@@ -2850,7 +2987,7 @@ msgstr ""
 msgid "python -m turtledemo.bytedesign"
 msgstr ""
 
-msgid "The :mod:`turtledemo` package directory contains:"
+msgid "The :mod:`!turtledemo` package directory contains:"
 msgstr ""
 
 msgid ""
@@ -2859,7 +2996,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Multiple scripts demonstrating different features of the :mod:`turtle` "
+"Multiple scripts demonstrating different features of the :mod:`!turtle` "
 "module.  Examples can be accessed via the Examples menu.  They can also be "
 "run standalone."
 msgstr ""
@@ -2881,16 +3018,16 @@ msgstr ""
 msgid "Features"
 msgstr ""
 
-msgid "bytedesign"
+msgid "``bytedesign``"
 msgstr ""
 
 msgid "complex classical turtle graphics pattern"
 msgstr ""
 
-msgid ":func:`tracer`, delay, :func:`update`"
+msgid ":func:`tracer`, :func:`delay`, :func:`update`"
 msgstr ""
 
-msgid "chaos"
+msgid "``chaos``"
 msgstr ""
 
 msgid ""
@@ -2901,22 +3038,22 @@ msgstr ""
 msgid "world coordinates"
 msgstr ""
 
-msgid "clock"
+msgid "``clock``"
 msgstr ""
 
 msgid "analog clock showing time of your computer"
 msgstr ""
 
-msgid "turtles as clock's hands, ontimer"
+msgid "turtles as clock's hands, :func:`ontimer`"
 msgstr ""
 
-msgid "colormixer"
+msgid "``colormixer``"
 msgstr ""
 
 msgid "experiment with r, g, b"
 msgstr ""
 
-msgid "forest"
+msgid "``forest``"
 msgstr ""
 
 msgid "3 breadth-first trees"
@@ -2925,7 +3062,7 @@ msgstr ""
 msgid "randomization"
 msgstr ""
 
-msgid "fractalcurves"
+msgid "``fractalcurves``"
 msgstr ""
 
 msgid "Hilbert & Koch curves"
@@ -2934,7 +3071,7 @@ msgstr ""
 msgid "recursion"
 msgstr ""
 
-msgid "lindenmayer"
+msgid "``lindenmayer``"
 msgstr ""
 
 msgid "ethnomathematics (indian kolams)"
@@ -2943,16 +3080,16 @@ msgstr ""
 msgid "L-System"
 msgstr ""
 
-msgid "minimal_hanoi"
+msgid "``minimal_hanoi``"
 msgstr ""
 
 msgid "Towers of Hanoi"
 msgstr ""
 
-msgid "Rectangular Turtles as Hanoi discs (shape, shapesize)"
+msgid "Rectangular Turtles as Hanoi discs (:func:`shape`, :func:`shapesize`)"
 msgstr ""
 
-msgid "nim"
+msgid "``nim``"
 msgstr ""
 
 msgid ""
@@ -2962,13 +3099,13 @@ msgstr ""
 msgid "turtles as nimsticks, event driven (mouse, keyboard)"
 msgstr ""
 
-msgid "paint"
+msgid "``paint``"
 msgstr ""
 
 msgid "super minimalistic drawing program"
 msgstr ""
 
-msgid "peace"
+msgid "``peace``"
 msgstr ""
 
 msgid "elementary"
@@ -2977,13 +3114,13 @@ msgstr ""
 msgid "turtle: appearance and animation"
 msgstr ""
 
-msgid "penrose"
+msgid "``penrose``"
 msgstr ""
 
 msgid "aperiodic tiling with kites and darts"
 msgstr ""
 
-msgid "planet_and_moon"
+msgid "``planet_and_moon``"
 msgstr ""
 
 msgid "simulation of gravitational system"
@@ -2992,7 +3129,7 @@ msgstr ""
 msgid "compound shapes, :class:`Vec2D`"
 msgstr ""
 
-msgid "rosette"
+msgid "``rosette``"
 msgstr ""
 
 msgid "a pattern from the wikipedia article on turtle graphics"
@@ -3001,16 +3138,18 @@ msgstr ""
 msgid ":func:`clone`, :func:`undo`"
 msgstr ""
 
-msgid "round_dance"
+msgid "``round_dance``"
 msgstr ""
 
 msgid "dancing turtles rotating pairwise in opposite direction"
 msgstr ""
 
-msgid "compound shapes, clone shapesize, tilt, get_shapepoly, update"
+msgid ""
+"compound shapes, :func:`clone` :func:`shapesize`, :func:`tilt`, :func:"
+"`get_shapepoly`, :func:`update`"
 msgstr ""
 
-msgid "sorting_animate"
+msgid "``sorting_animate``"
 msgstr ""
 
 msgid "visual demonstration of different sorting methods"
@@ -3019,13 +3158,13 @@ msgstr ""
 msgid "simple alignment, randomization"
 msgstr ""
 
-msgid "tree"
+msgid "``tree``"
 msgstr ""
 
 msgid "a (graphical) breadth first tree (using generators)"
 msgstr ""
 
-msgid "two_canvases"
+msgid "``two_canvases``"
 msgstr ""
 
 msgid "simple design"
@@ -3034,7 +3173,7 @@ msgstr ""
 msgid "turtles on two canvases"
 msgstr ""
 
-msgid "yinyang"
+msgid "``yinyang``"
 msgstr ""
 
 msgid "another elementary example"
@@ -3077,7 +3216,7 @@ msgid ""
 "func:`get_shapepoly` have been added. Thus the full range of regular linear "
 "transforms is now available for transforming turtle shapes. :func:"
 "`tiltangle` has been enhanced in functionality: it now can be used to get or "
-"set the tilt angle. :func:`settiltangle` has been deprecated."
+"set the tilt angle."
 msgstr ""
 
 msgid ""
@@ -3096,9 +3235,4 @@ msgid ""
 "Two input methods have been added: :func:`Screen.textinput <textinput>` and :"
 "func:`Screen.numinput <numinput>`. These pop up input dialogs and return "
 "strings and numbers respectively."
-msgstr ""
-
-msgid ""
-"Two example scripts :file:`tdemo_nim.py` and :file:`tdemo_round_dance.py` "
-"have been added to the :file:`Lib/turtledemo` directory."
 msgstr ""

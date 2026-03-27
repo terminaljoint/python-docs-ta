@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Bytes Objects"
 msgstr ""
@@ -75,18 +73,15 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#, python-format
 msgid "``%%``"
 msgstr ""
 
 msgid "*n/a*"
 msgstr ""
 
-#, python-format
 msgid "The literal % character."
 msgstr ""
 
-#, python-format
 msgid "``%c``"
 msgstr ""
 
@@ -96,44 +91,36 @@ msgstr ""
 msgid "A single byte, represented as a C int."
 msgstr ""
 
-#, python-format
 msgid "``%d``"
 msgstr ""
 
-#, python-format
 msgid "Equivalent to ``printf(\"%d\")``. [1]_"
 msgstr ""
 
-#, python-format
 msgid "``%u``"
 msgstr ""
 
 msgid "unsigned int"
 msgstr ""
 
-#, python-format
 msgid "Equivalent to ``printf(\"%u\")``. [1]_"
 msgstr ""
 
-#, python-format
 msgid "``%ld``"
 msgstr ""
 
 msgid "long"
 msgstr ""
 
-#, python-format
 msgid "Equivalent to ``printf(\"%ld\")``. [1]_"
 msgstr ""
 
-#, python-format
 msgid "``%lu``"
 msgstr ""
 
 msgid "unsigned long"
 msgstr ""
 
-#, python-format
 msgid "Equivalent to ``printf(\"%lu\")``. [1]_"
 msgstr ""
 
@@ -155,23 +142,18 @@ msgstr ""
 msgid "Equivalent to ``printf(\"%zu\")``. [1]_"
 msgstr ""
 
-#, python-format
 msgid "``%i``"
 msgstr ""
 
-#, python-format
 msgid "Equivalent to ``printf(\"%i\")``. [1]_"
 msgstr ""
 
-#, python-format
 msgid "``%x``"
 msgstr ""
 
-#, python-format
 msgid "Equivalent to ``printf(\"%x\")``. [1]_"
 msgstr ""
 
-#, python-format
 msgid "``%s``"
 msgstr ""
 
@@ -271,17 +253,77 @@ msgid ""
 "*newpart* (i.e. decrements its reference count)."
 msgstr ""
 
+msgid "Similar to ``sep.join(iterable)`` in Python."
+msgstr ""
+
 msgid ""
-"A way to resize a bytes object even though it is \"immutable\". Only use "
-"this to build up a brand new bytes object; don't use this if the bytes may "
-"already be known in other parts of the code.  It is an error to call this "
-"function if the refcount on the input bytes object is not one. Pass the "
-"address of an existing bytes object as an lvalue (it may be written into), "
-"and the new size desired.  On success, *\\*bytes* holds the resized bytes "
-"object and ``0`` is returned; the address in *\\*bytes* may differ from its "
-"input value.  If the reallocation fails, the original bytes object at "
-"*\\*bytes* is deallocated, *\\*bytes* is set to ``NULL``, :exc:`MemoryError` "
-"is set, and ``-1`` is returned."
+"*sep* must be Python :class:`bytes` object. (Note that :c:func:"
+"`PyUnicode_Join` accepts ``NULL`` separator and treats it as a space, "
+"whereas :c:func:`PyBytes_Join` doesn't accept ``NULL`` separator.)"
+msgstr ""
+
+msgid ""
+"*iterable* must be an iterable object yielding objects that implement the :"
+"ref:`buffer protocol <bufferobjects>`."
+msgstr ""
+
+msgid ""
+"On success, return a new :class:`bytes` object. On error, set an exception "
+"and return ``NULL``."
+msgstr ""
+
+msgid ""
+"Resize a bytes object. *newsize* will be the new length of the bytes object. "
+"You can think of it as creating a new bytes object and destroying the old "
+"one, only more efficiently. Pass the address of an existing bytes object as "
+"an lvalue (it may be written into), and the new size desired.  On success, "
+"*\\*bytes* holds the resized bytes object and ``0`` is returned; the address "
+"in *\\*bytes* may differ from its input value.  If the reallocation fails, "
+"the original bytes object at *\\*bytes* is deallocated, *\\*bytes* is set to "
+"``NULL``, :exc:`MemoryError` is set, and ``-1`` is returned."
+msgstr ""
+
+msgid ""
+"Get the string representation of *bytes*. This function is currently used to "
+"implement :meth:`!bytes.__repr__` in Python."
+msgstr ""
+
+msgid ""
+"This function does not do type checking; it is undefined behavior to pass "
+"*bytes* as a non-bytes object or ``NULL``."
+msgstr ""
+
+msgid ""
+"If *smartquotes* is true, the representation will use a double-quoted string "
+"instead of single-quoted string when single-quotes are present in *bytes*. "
+"For example, the byte string ``'Python'`` would be represented as "
+"``b\"'Python'\"`` when *smartquotes* is true, or ``b'\\'Python\\''`` when it "
+"is false."
+msgstr ""
+
+msgid ""
+"On success, this function returns a :term:`strong reference` to a :class:"
+"`str` object containing the representation. On failure, this returns "
+"``NULL`` with an exception set."
+msgstr ""
+
+msgid ""
+"Unescape a backslash-escaped string *s*. *s* must not be ``NULL``. *len* "
+"must be the size of *s*."
+msgstr ""
+
+msgid ""
+"*errors* must be one of ``\"strict\"``, ``\"replace\"``, or ``\"ignore\"``. "
+"If *errors* is ``NULL``, then ``\"strict\"`` is used by default."
+msgstr ""
+
+msgid ""
+"On success, this function returns a :term:`strong reference` to a Python :"
+"class:`bytes` object containing the unescaped string. On failure, this "
+"function returns ``NULL`` with an exception set."
+msgstr ""
+
+msgid "*unicode* and *recode_encoding* are now unused."
 msgstr ""
 
 msgid "object"

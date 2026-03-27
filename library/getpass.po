@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!getpass` --- Portable password input"
 msgstr ""
@@ -29,12 +27,11 @@ msgid "Availability"
 msgstr ""
 
 msgid ""
-"This module does not work or is not available on WebAssembly platforms "
-"``wasm32-emscripten`` and ``wasm32-wasi``. See :ref:`wasm-availability` for "
-"more information."
+"This module does not work or is not available on WebAssembly. See :ref:`wasm-"
+"availability` for more information."
 msgstr ""
 
-msgid "The :mod:`getpass` module provides two functions:"
+msgid "The :mod:`!getpass` module provides two functions:"
 msgstr ""
 
 msgid ""
@@ -44,6 +41,14 @@ msgid ""
 "handler if needed.  *stream* defaults to the controlling terminal (:file:`/"
 "dev/tty`) or if that is unavailable to ``sys.stderr`` (this argument is "
 "ignored on Windows)."
+msgstr ""
+
+msgid ""
+"The *echo_char* argument controls how user input is displayed while typing. "
+"If *echo_char* is ``None`` (default), input remains hidden. Otherwise, "
+"*echo_char* must be a single printable ASCII character and each typed "
+"character is replaced by it. For example, ``echo_char='*'`` will display "
+"asterisks instead of the actual input."
 msgstr ""
 
 msgid ""
@@ -57,6 +62,17 @@ msgid ""
 "you launched IDLE from rather than the idle window itself."
 msgstr ""
 
+msgid ""
+"On Unix systems, when *echo_char* is set, the terminal will be configured to "
+"operate in :manpage:`noncanonical mode "
+"<termios(3)#Canonical_and_noncanonical_mode>`. In particular, this means "
+"that line editing shortcuts such as :kbd:`Ctrl+U` will not work and may "
+"insert unexpected characters into the input."
+msgstr ""
+
+msgid "Added the *echo_char* parameter for keyboard feedback."
+msgstr ""
+
 msgid "A :exc:`UserWarning` subclass issued when password input may be echoed."
 msgstr ""
 
@@ -68,8 +84,11 @@ msgid ""
 "`USER`, :envvar:`!LNAME` and :envvar:`USERNAME`, in order, and returns the "
 "value of the first one which is set to a non-empty string.  If none are set, "
 "the login name from the password database is returned on systems which "
-"support the :mod:`pwd` module, otherwise, an exception is raised."
+"support the :mod:`pwd` module, otherwise, an :exc:`OSError` is raised."
 msgstr ""
 
 msgid "In general, this function should be preferred over :func:`os.getlogin`."
+msgstr ""
+
+msgid "Previously, various exceptions beyond just :exc:`OSError` were raised."
 msgstr ""

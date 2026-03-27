@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Brief Tour of the Standard Library --- Part II"
 msgstr ""
@@ -35,7 +33,6 @@ msgid ""
 "abbreviated displays of large or deeply nested containers::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import reprlib\n"
 ">>> reprlib.repr(set('supercalifragilisticexpialidocious'))\n"
@@ -87,7 +84,6 @@ msgid ""
 "direct way of formatting numbers with group separators::"
 msgstr ""
 
-#, python-format
 msgid ""
 ">>> import locale\n"
 ">>> locale.setlocale(locale.LC_ALL, 'English_United States.1252')\n"
@@ -119,7 +115,6 @@ msgid ""
 "``$``::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> from string import Template\n"
 ">>> t = Template('${village}folk send $$10 to $cause.')\n"
@@ -153,7 +148,6 @@ msgid ""
 "format::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 ">>> import time, os.path\n"
 ">>> photofiles = ['img_1074.jpg', 'img_1076.jpg', 'img_1077.jpg']\n"
@@ -280,7 +274,6 @@ msgid ""
 "stderr``::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "logging.debug('Debugging information')\n"
@@ -354,7 +347,7 @@ msgid ""
 "Traceback (most recent call last):\n"
 "  File \"<stdin>\", line 1, in <module>\n"
 "    d['primary']                # entry was automatically removed\n"
-"  File \"C:/python312/lib/weakref.py\", line 46, in __getitem__\n"
+"  File \"C:/python314/lib/weakref.py\", line 46, in __getitem__\n"
 "    o = self.data[key]()\n"
 "KeyError: 'primary'"
 msgstr ""

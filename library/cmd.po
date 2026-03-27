@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!cmd` --- Support for line-oriented command interpreters"
 msgstr ""
@@ -48,6 +46,14 @@ msgid ""
 msgstr ""
 
 msgid ""
+"The default, ``'tab'``, is treated specially, so that it refers to the :kbd:"
+"`Tab` key on every :data:`readline.backend`. Specifically, if :data:"
+"`readline.backend` is ``editline``, ``Cmd`` will use ``'^I'`` instead of "
+"``'tab'``. Note that other values are not treated this way, and might only "
+"work with a specific backend."
+msgstr ""
+
+msgid ""
 "The optional arguments *stdin* and *stdout* specify the  input and output "
 "file objects that the Cmd instance or subclass  instance will use for input "
 "and output. If not specified, they will default to :data:`sys.stdin` and :"
@@ -58,6 +64,9 @@ msgid ""
 "If you want a given *stdin* to be used, make sure to set the instance's :"
 "attr:`use_rawinput` attribute to ``False``, otherwise *stdin* will be "
 "ignored."
+msgstr ""
+
+msgid "``completekey='tab'`` is replaced by ``'^I'`` for ``editline``."
 msgstr ""
 
 msgid "Cmd Objects"
@@ -241,8 +250,8 @@ msgid "Cmd Example"
 msgstr ""
 
 msgid ""
-"The :mod:`cmd` module is mainly useful for building custom shells that let a "
-"user work with a program interactively."
+"The :mod:`!cmd` module is mainly useful for building custom shells that let "
+"a user work with a program interactively."
 msgstr ""
 
 msgid ""
@@ -265,7 +274,6 @@ msgid ""
 "attr:`~Cmd.cmdqueue` for immediate playback::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import cmd, sys\n"
 "from turtle import *\n"

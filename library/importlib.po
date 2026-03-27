@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!importlib` --- The implementation of :keyword:`!import`"
 msgstr ""
@@ -28,7 +26,7 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
-msgid "The purpose of the :mod:`importlib` package is three-fold."
+msgid "The purpose of the :mod:`!importlib` package is three-fold."
 msgstr ""
 
 msgid ""
@@ -264,7 +262,6 @@ msgid ""
 "if desired::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "try:\n"
 "    cache\n"
@@ -300,14 +297,20 @@ msgid ""
 "class:`~importlib.machinery.ModuleSpec`."
 msgstr ""
 
-msgid ":mod:`importlib.abc` -- Abstract base classes related to import"
+msgid ""
+"This function is not thread-safe. Calling it from multiple threads can "
+"result in unexpected behavior. It's recommended to use the :class:`threading."
+"Lock` or other synchronization primitives for thread-safe module reloading."
+msgstr ""
+
+msgid ":mod:`!importlib.abc` -- Abstract base classes related to import"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/importlib/abc.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`importlib.abc` module contains all of the core abstract base "
+"The :mod:`!importlib.abc` module contains all of the core abstract base "
 "classes used by :keyword:`import`. Some subclasses of the core abstract base "
 "classes are also provided to help in implementing the core ABCs."
 msgstr ""
@@ -435,13 +438,13 @@ msgstr ""
 msgid ":attr:`module.__file__`"
 msgstr ""
 
-msgid ":attr:`module.__cached__`"
+msgid ":attr:`module.__cached__` *(deprecated)*"
 msgstr ""
 
 msgid ":attr:`module.__path__`"
 msgstr ""
 
-msgid ":attr:`module.__package__`"
+msgid ":attr:`module.__package__` *(deprecated)*"
 msgstr ""
 
 msgid ":attr:`module.__loader__` *(deprecated)*"
@@ -475,7 +478,8 @@ msgstr ""
 
 msgid ""
 "This ABC is deprecated in favour of supporting resource loading through :"
-"class:`importlib.resources.abc.TraversableResources`."
+"class:`importlib.resources.abc.TraversableResources`. This class exists for "
+"backwards compatibility only with other ABCs in this module."
 msgstr ""
 
 msgid ""
@@ -696,147 +700,7 @@ msgid ""
 "``__init__``."
 msgstr ""
 
-msgid ""
-"An :term:`abstract base class` to provide the ability to read *resources*."
-msgstr ""
-
-msgid ""
-"From the perspective of this ABC, a *resource* is a binary artifact that is "
-"shipped within a package. Typically this is something like a data file that "
-"lives next to the ``__init__.py`` file of the package. The purpose of this "
-"class is to help abstract out the accessing of such data files so that it "
-"does not matter if the package and its data file(s) are stored e.g. in a zip "
-"file versus on the file system."
-msgstr ""
-
-msgid ""
-"For any of methods of this class, a *resource* argument is expected to be a :"
-"term:`path-like object` which represents conceptually just a file name. This "
-"means that no subdirectory paths should be included in the *resource* "
-"argument. This is because the location of the package the reader is for, "
-"acts as the \"directory\". Hence the metaphor for directories and file names "
-"is packages and resources, respectively. This is also why instances of this "
-"class are expected to directly correlate to a specific package (instead of "
-"potentially representing multiple packages or a module)."
-msgstr ""
-
-msgid ""
-"Loaders that wish to support resource reading are expected to provide a "
-"method called ``get_resource_reader(fullname)`` which returns an object "
-"implementing this ABC's interface. If the module specified by fullname is "
-"not a package, this method should return :const:`None`. An object compatible "
-"with this ABC should only be returned when the specified module is a package."
-msgstr ""
-
-msgid "Use :class:`importlib.resources.abc.TraversableResources` instead."
-msgstr ""
-
-msgid ""
-"Returns an opened, :term:`file-like object` for binary reading of the "
-"*resource*."
-msgstr ""
-
-msgid "If the resource cannot be found, :exc:`FileNotFoundError` is raised."
-msgstr ""
-
-msgid "Returns the file system path to the *resource*."
-msgstr ""
-
-msgid ""
-"If the resource does not concretely exist on the file system, raise :exc:"
-"`FileNotFoundError`."
-msgstr ""
-
-msgid ""
-"Returns ``True`` if the named *name* is considered a resource. :exc:"
-"`FileNotFoundError` is raised if *name* does not exist."
-msgstr ""
-
-msgid ""
-"Returns an :term:`iterable` of strings over the contents of the package. Do "
-"note that it is not required that all names returned by the iterator be "
-"actual resources, e.g. it is acceptable to return names for which :meth:"
-"`is_resource` would be false."
-msgstr ""
-
-msgid ""
-"Allowing non-resource names to be returned is to allow for situations where "
-"how a package and its resources are stored are known a priori and the non-"
-"resource names would be useful. For instance, returning subdirectory names "
-"is allowed so that when it is known that the package and resources are "
-"stored on the file system then those subdirectory names can be used directly."
-msgstr ""
-
-msgid "The abstract method returns an iterable of no items."
-msgstr ""
-
-msgid ""
-"An object with a subset of :class:`pathlib.Path` methods suitable for "
-"traversing directories and opening files."
-msgstr ""
-
-msgid ""
-"For a representation of the object on the file-system, use :meth:`importlib."
-"resources.as_file`."
-msgstr ""
-
-msgid "Use :class:`importlib.resources.abc.Traversable` instead."
-msgstr ""
-
-msgid "Abstract. The base name of this object without any parent references."
-msgstr ""
-
-msgid "Yield ``Traversable`` objects in ``self``."
-msgstr ""
-
-msgid "Return ``True`` if ``self`` is a directory."
-msgstr ""
-
-msgid "Return ``True`` if ``self`` is a file."
-msgstr ""
-
-msgid "Return Traversable child in ``self``."
-msgstr ""
-
-msgid "Return ``Traversable`` child in ``self``."
-msgstr ""
-
-msgid ""
-"*mode* may be 'r' or 'rb' to open as text or binary. Return a handle "
-"suitable for reading (same as :attr:`pathlib.Path.open`)."
-msgstr ""
-
-msgid ""
-"When opening as text, accepts encoding parameters such as those accepted by :"
-"class:`io.TextIOWrapper`."
-msgstr ""
-
-msgid "Read contents of ``self`` as bytes."
-msgstr ""
-
-msgid "Read contents of ``self`` as text."
-msgstr ""
-
-msgid ""
-"An abstract base class for resource readers capable of serving the :meth:"
-"`importlib.resources.files` interface. Subclasses :class:`importlib."
-"resources.abc.ResourceReader` and provides concrete implementations of the :"
-"class:`importlib.resources.abc.ResourceReader`'s abstract methods. "
-"Therefore, any loader supplying :class:`importlib.abc.TraversableResources` "
-"also supplies ResourceReader."
-msgstr ""
-
-msgid ""
-"Loaders that wish to support resource reading are expected to implement this "
-"interface."
-msgstr ""
-
-msgid ""
-"Returns a :class:`importlib.resources.abc.Traversable` object for the loaded "
-"package."
-msgstr ""
-
-msgid ":mod:`importlib.machinery` -- Importers and path hooks"
+msgid ":mod:`!importlib.machinery` -- Importers and path hooks"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/importlib/machinery.py`"
@@ -1193,7 +1057,72 @@ msgid ""
 "and how the module's :attr:`~module.__file__` is populated."
 msgstr ""
 
-msgid ":mod:`importlib.util` -- Utility code for importers"
+msgid ""
+"A specialization of :class:`importlib.machinery.ExtensionFileLoader` that is "
+"able to load extension modules in Framework format."
+msgstr ""
+
+msgid ""
+"For compatibility with the iOS App Store, *all* binary modules in an iOS app "
+"must be dynamic libraries, contained in a framework with appropriate "
+"metadata, stored in the ``Frameworks`` folder of the packaged app. There can "
+"be only a single binary per framework, and there can be no executable binary "
+"material outside the Frameworks folder."
+msgstr ""
+
+msgid ""
+"To accommodate this requirement, when running on iOS, extension module "
+"binaries are *not* packaged as ``.so`` files on ``sys.path``, but as "
+"individual standalone frameworks. To discover those frameworks, this loader "
+"is registered against the ``.fwork`` file extension, with a ``.fwork`` file "
+"acting as a placeholder in the original location of the binary on ``sys."
+"path``. The ``.fwork`` file contains the path of the actual binary in the "
+"``Frameworks`` folder, relative to the app bundle. To allow for resolving a "
+"framework-packaged binary back to the original location, the framework is "
+"expected to contain a ``.origin`` file that contains the location of the ``."
+"fwork`` file, relative to the app bundle."
+msgstr ""
+
+msgid ""
+"For example, consider the case of an import ``from foo.bar import _whiz``, "
+"where ``_whiz`` is implemented with the binary module ``sources/foo/bar/"
+"_whiz.abi3.so``, with ``sources`` being the location registered on ``sys."
+"path``, relative to the application bundle. This module *must* be "
+"distributed as ``Frameworks/foo.bar._whiz.framework/foo.bar._whiz`` "
+"(creating the framework name from the full import path of the module), with "
+"an ``Info.plist`` file in the ``.framework`` directory identifying the "
+"binary as a framework. The ``foo.bar._whiz`` module would be represented in "
+"the original location with a ``sources/foo/bar/_whiz.abi3.fwork`` marker "
+"file, containing the path ``Frameworks/foo.bar._whiz/foo.bar._whiz``. The "
+"framework would also contain ``Frameworks/foo.bar._whiz.framework/foo.bar."
+"_whiz.origin``, containing the path to the ``.fwork`` file."
+msgstr ""
+
+msgid ""
+"When a module is loaded with this loader, the ``__file__`` for the module "
+"will report as the location of the ``.fwork`` file. This allows code to use "
+"the ``__file__`` of a  module as an anchor for file system traversal. "
+"However, the spec origin will reference the location of the *actual* binary "
+"in the ``.framework`` folder."
+msgstr ""
+
+msgid ""
+"The Xcode project building the app is responsible for converting any ``.so`` "
+"files from wherever they exist in the ``PYTHONPATH`` into frameworks in the "
+"``Frameworks`` folder (including stripping extensions from the module file, "
+"the addition of framework metadata, and signing the resulting framework), "
+"and creating the ``.fwork`` and ``.origin`` files. This will usually be done "
+"with a build step in the Xcode project; see the iOS documentation for "
+"details on how to construct this build step."
+msgstr ""
+
+msgid "Availability"
+msgstr ""
+
+msgid "Path to the ``.fwork`` file for the extension module."
+msgstr ""
+
+msgid ":mod:`!importlib.util` -- Utility code for importers"
 msgstr ""
 
 msgid "**Source code:** :source:`Lib/importlib/util.py`"
@@ -1442,7 +1371,6 @@ msgid ""
 "find_spec` will import the parent module. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import importlib.util\n"
 "import sys\n"
@@ -1575,7 +1503,6 @@ msgid ""
 "approximate implementation of :func:`importlib.import_module`::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import importlib.util\n"
 "import sys\n"

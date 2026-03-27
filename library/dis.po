@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!dis` --- Disassembler for Python bytecode"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/dis.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`dis` module supports the analysis of CPython :term:`bytecode` by "
+"The :mod:`!dis` module supports the analysis of CPython :term:`bytecode` by "
 "disassembling it. The CPython bytecode which this module takes as an input "
 "is defined in the file :file:`Include/opcode.h` and used by the compiler and "
 "the interpreter."
@@ -52,8 +50,8 @@ msgstr ""
 msgid ""
 "Some instructions are accompanied by one or more inline cache entries, which "
 "take the form of :opcode:`CACHE` instructions. These instructions are hidden "
-"by default, but can be shown by passing ``show_caches=True`` to any :mod:"
-"`dis` utility. Furthermore, the interpreter now adapts the bytecode to "
+"by default, but can be shown by passing ``show_caches=True`` to any :mod:`!"
+"dis` utility. Furthermore, the interpreter now adapts the bytecode to "
 "specialize it for different runtime conditions. The adaptive bytecode can be "
 "shown by passing ``adaptive=True``."
 msgstr ""
@@ -68,6 +66,20 @@ msgid ""
 "As a consequence, the presence of the :opcode:`CACHE` instructions is "
 "transparent for forward jumps but needs to be taken into account when "
 "reasoning about backward jumps."
+msgstr ""
+
+msgid ""
+"The output shows logical labels rather than instruction offsets for jump "
+"targets and exception handlers. The ``-O`` command line option and the "
+"``show_offsets`` argument were added."
+msgstr ""
+
+msgid ""
+"The :option:`-P <dis --show-positions>` command-line option and the "
+"``show_positions`` argument were added."
+msgstr ""
+
+msgid "The :option:`-S <dis --specialized>` command-line option is added."
 msgstr ""
 
 msgid "Example: Given the function :func:`!myfunc`::"
@@ -85,12 +97,12 @@ msgstr ""
 
 msgid ""
 ">>> dis.dis(myfunc)\n"
-"  2           0 RESUME                   0\n"
+"  2           RESUME                   0\n"
 "\n"
-"  3           2 LOAD_GLOBAL              1 (NULL + len)\n"
-"             12 LOAD_FAST                0 (alist)\n"
-"             14 CALL                     1\n"
-"             22 RETURN_VALUE"
+"  3           LOAD_GLOBAL              1 (len + NULL)\n"
+"              LOAD_FAST_BORROW         0 (alist)\n"
+"              CALL                     1\n"
+"              RETURN_VALUE"
 msgstr ""
 
 msgid "(The \"2\" is a line number)."
@@ -99,10 +111,11 @@ msgstr ""
 msgid "Command-line interface"
 msgstr ""
 
-msgid "The :mod:`dis` module can be invoked as a script from the command line:"
+msgid ""
+"The :mod:`!dis` module can be invoked as a script from the command line:"
 msgstr ""
 
-msgid "python -m dis [-h] [infile]"
+msgid "python -m dis [-h] [-C] [-O] [-P] [-S] [infile]"
 msgstr ""
 
 msgid "The following options are accepted:"
@@ -111,9 +124,21 @@ msgstr ""
 msgid "Display usage and exit."
 msgstr ""
 
+msgid "Show inline caches."
+msgstr ""
+
+msgid "Show offsets of instructions."
+msgstr ""
+
+msgid "Show positions of instructions in the source code."
+msgstr ""
+
+msgid "Show specialized bytecode."
+msgstr ""
+
 msgid ""
 "If :file:`infile` is specified, its disassembled code will be written to "
-"stdout. Otherwise, disassembly is performed on compiled source code recieved "
+"stdout. Otherwise, disassembly is performed on compiled source code received "
 "from stdin."
 msgstr ""
 
@@ -162,6 +187,16 @@ msgid ""
 msgstr ""
 
 msgid ""
+"If *show_offsets* is ``True``, :meth:`.dis` will include instruction offsets "
+"in the output."
+msgstr ""
+
+msgid ""
+"If *show_positions* is ``True``, :meth:`.dis` will include instruction "
+"source code positions in the output."
+msgstr ""
+
+msgid ""
 "Construct a :class:`Bytecode` instance from the given traceback, setting "
 "*current_offset* to the instruction responsible for the exception."
 msgstr ""
@@ -188,6 +223,12 @@ msgstr ""
 msgid "Added the *show_caches* and *adaptive* parameters."
 msgstr ""
 
+msgid "Added the *show_offsets* parameter"
+msgstr ""
+
+msgid "Added the *show_positions* parameter."
+msgstr ""
+
 msgid "Example:"
 msgstr ""
 
@@ -198,7 +239,7 @@ msgid ""
 "...\n"
 "RESUME\n"
 "LOAD_GLOBAL\n"
-"LOAD_FAST\n"
+"LOAD_FAST_BORROW\n"
 "CALL\n"
 "RETURN_VALUE"
 msgstr ""
@@ -207,7 +248,7 @@ msgid "Analysis functions"
 msgstr ""
 
 msgid ""
-"The :mod:`dis` module also defines the following analysis functions that "
+"The :mod:`!dis` module also defines the following analysis functions that "
 "convert the input directly to the desired output. They can be useful if only "
 "a single operation is being performed, so the intermediate analysis object "
 "isn't useful:"
@@ -277,6 +318,9 @@ msgstr ""
 msgid "Implemented recursive disassembling and added *depth* parameter."
 msgstr ""
 
+msgid "Added the *show_offsets* parameter."
+msgstr ""
+
 msgid ""
 "Disassemble the top-of-stack function of a traceback, using the last "
 "traceback if none was passed.  The instruction causing the exception is "
@@ -288,7 +332,10 @@ msgid ""
 "provided.  The output is divided in the following columns:"
 msgstr ""
 
-msgid "the line number, for the first instruction of each line"
+msgid ""
+"the source code location of the instruction. Complete location information "
+"is shown if *show_positions* is true. Otherwise (the default) only the line "
+"number is displayed."
 msgstr ""
 
 msgid "the current instruction, indicated as ``-->``,"
@@ -324,8 +371,14 @@ msgid ""
 "the details of each operation in the supplied code."
 msgstr ""
 
+msgid "The *adaptive* parameter works as it does in :func:`dis`."
+msgstr ""
+
 msgid ""
-"The *show_caches* and *adaptive* parameters work as they do in :func:`dis`."
+"The *show_caches* parameter is deprecated and has no effect. The iterator "
+"generates the :class:`Instruction` instances with the *cache_info* field "
+"populated (regardless of the value of *show_caches*) and it no longer "
+"generates separate items for the cache entries."
 msgstr ""
 
 msgid ""
@@ -345,6 +398,10 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Line numbers can be ``None`` for bytecode that does not map to source lines."
+msgstr ""
+
+msgid ""
 "Detect all offsets in the raw compiled bytecode string *code* which are jump "
 "targets, and return a list of these offsets."
 msgstr ""
@@ -360,6 +417,13 @@ msgid ""
 msgstr ""
 
 msgid "Added *jump* parameter."
+msgstr ""
+
+msgid ""
+"If ``oparg`` is omitted (or ``None``), the stack effect is now returned for "
+"``oparg=0``. Previously this was an error for opcodes that use their arg. It "
+"is also no longer an error to pass an integer ``oparg`` when the ``opcode`` "
+"does not use it; the ``oparg`` in this case is ignored."
 msgstr ""
 
 msgid "Python Bytecode Instructions"
@@ -381,7 +445,20 @@ msgstr ""
 msgid "human readable name for operation"
 msgstr ""
 
+msgid ""
+"numeric code for the base operation if operation is specialized; otherwise "
+"equal to :data:`opcode`"
+msgstr ""
+
+msgid ""
+"human readable name for the base operation if operation is specialized; "
+"otherwise equal to :data:`opname`"
+msgstr ""
+
 msgid "numeric argument to operation (if any), otherwise ``None``"
+msgstr ""
+
+msgid "alias for :data:`arg`"
 msgstr ""
 
 msgid "resolved arg value (if any), otherwise ``None``"
@@ -395,10 +472,30 @@ msgstr ""
 msgid "start index of operation within bytecode sequence"
 msgstr ""
 
-msgid "line started by this opcode (if any), otherwise ``None``"
+msgid ""
+"start index of operation within bytecode sequence, including prefixed "
+"``EXTENDED_ARG`` operations if present; otherwise equal to :data:`offset`"
+msgstr ""
+
+msgid "start index of the cache entries following the operation"
+msgstr ""
+
+msgid "end index of the cache entries following the operation"
+msgstr ""
+
+msgid "``True`` if this opcode starts a source line, otherwise ``False``"
+msgstr ""
+
+msgid ""
+"source line number associated with this opcode (if any), otherwise ``None``"
 msgstr ""
 
 msgid "``True`` if other code jumps to here, otherwise ``False``"
+msgstr ""
+
+msgid ""
+"bytecode index of the jump target if this is a jump operation, otherwise "
+"``None``"
 msgstr ""
 
 msgid ""
@@ -406,7 +503,23 @@ msgid ""
 "covered by this instruction."
 msgstr ""
 
+msgid ""
+"Information about the cache entries of this instruction, as triplets of the "
+"form ``(name, size, data)``, where the ``name`` and ``size`` describe the "
+"cache format and data is the contents of the cache. ``cache_info`` is "
+"``None`` if the instruction does not have caches."
+msgstr ""
+
 msgid "Field ``positions`` is added."
+msgstr ""
+
+msgid "Changed field ``starts_line``."
+msgstr ""
+
+msgid ""
+"Added fields ``start_offset``, ``cache_offset``, ``end_offset``, "
+"``baseopname``, ``baseopcode``, ``jump_target``, ``oparg``, ``line_number`` "
+"and ``cache_info``."
 msgstr ""
 
 msgid ""
@@ -431,6 +544,15 @@ msgid ""
 "generate line tracing events."
 msgstr ""
 
+msgid ""
+"Do nothing code. Used by the interpreter to record :monitoring-event:"
+"`BRANCH_LEFT` and :monitoring-event:`BRANCH_RIGHT` events for :mod:`sys."
+"monitoring`."
+msgstr ""
+
+msgid "Removes the iterator from the top of the stack."
+msgstr ""
+
 msgid "Removes the top-of-stack item::"
 msgstr ""
 
@@ -438,8 +560,8 @@ msgid "STACK.pop()"
 msgstr ""
 
 msgid ""
-"Removes the top two values from the stack. Equivalent to ``POP_TOP``; "
-"``POP_TOP``. Used to clean up at the end of loops, hence the name."
+"Removes the top-of-stack item. Equivalent to ``POP_TOP``. Used to clean up "
+"at the end of loops, hence the name."
 msgstr ""
 
 msgid "Implements ``del STACK[-2]``. Used to clean up when a generator exits."
@@ -494,6 +616,9 @@ msgstr ""
 msgid "Implements ``STACK[-1] = not STACK[-1]``."
 msgstr ""
 
+msgid "This instruction now requires an exact :class:`bool` operand."
+msgstr ""
+
 msgid "Implements ``STACK[-1] = ~STACK[-1]``."
 msgstr ""
 
@@ -503,6 +628,9 @@ msgstr ""
 msgid ""
 "If ``STACK[-1]`` is a :term:`generator iterator` or :term:`coroutine` object "
 "it is left as is.  Otherwise, implements ``STACK[-1] = iter(STACK[-1])``."
+msgstr ""
+
+msgid "Implements ``STACK[-1] = bool(STACK[-1])``."
 msgstr ""
 
 msgid "**Binary and in-place operations**"
@@ -531,13 +659,12 @@ msgid ""
 "STACK.append(lhs op rhs)"
 msgstr ""
 
-msgid "Implements::"
+msgid ""
+"With oparg :``NB_SUBSCR``, implements binary subscript (replaces opcode "
+"``BINARY_SUBSCR``)"
 msgstr ""
 
-msgid ""
-"key = STACK.pop()\n"
-"container = STACK.pop()\n"
-"STACK.append(container[key])"
+msgid "Implements::"
 msgstr ""
 
 msgid ""
@@ -564,7 +691,7 @@ msgid ""
 "end = STACK.pop()\n"
 "start = STACK.pop()\n"
 "container = STACK.pop()\n"
-"values = STACK.pop()\n"
+"value = STACK.pop()\n"
 "container[start:end] = value"
 msgstr ""
 
@@ -621,14 +748,6 @@ msgid ""
 "its ``value`` member.  Otherwise, re-raise ``STACK[-1]``."
 msgstr ""
 
-msgid ""
-"Resolves ``__aenter__`` and ``__aexit__`` from ``STACK[-1]``. Pushes "
-"``__aexit__`` and result of ``__aenter__()`` to the stack::"
-msgstr ""
-
-msgid "STACK.extend((__aexit__, __aenter__())"
-msgstr ""
-
 msgid "**Miscellaneous opcodes**"
 msgstr ""
 
@@ -672,9 +791,6 @@ msgstr ""
 msgid "Returns with ``STACK[-1]`` to the caller of the function."
 msgstr ""
 
-msgid "Returns with ``co_consts[consti]`` to the caller of the function."
-msgstr ""
-
 msgid "Yields ``STACK.pop()`` from a :term:`generator`."
 msgstr ""
 
@@ -684,6 +800,11 @@ msgstr ""
 msgid ""
 "oparg set to be the exception block depth, for efficient closing of "
 "generators."
+msgstr ""
+
+msgid ""
+"oparg is ``1`` if this instruction is part of a yield-from or await, and "
+"``0`` otherwise."
 msgstr ""
 
 msgid ""
@@ -740,21 +861,14 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Pushes :exc:`AssertionError` onto the stack.  Used by the :keyword:`assert` "
-"statement."
+"Pushes a common constant onto the stack. The interpreter contains a "
+"hardcoded list of constants supported by this instruction.  Used by the :"
+"keyword:`assert` statement to load :exc:`AssertionError`."
 msgstr ""
 
 msgid ""
 "Pushes :func:`!builtins.__build_class__` onto the stack.  It is later called "
 "to construct a class."
-msgstr ""
-
-msgid ""
-"This opcode performs several operations before a with block starts.  First, "
-"it loads :meth:`~object.__exit__` from the context manager and pushes it "
-"onto the stack for later use by :opcode:`WITH_EXCEPT_START`.  Then, :meth:"
-"`~object.__enter__` is called. Finally, the result of calling the "
-"``__enter__()`` method is pushed onto the stack."
 msgstr ""
 
 msgid ""
@@ -864,6 +978,10 @@ msgid "Pushes ``co_consts[consti]`` onto the stack."
 msgstr ""
 
 msgid ""
+"Pushes the integer ``i`` onto the stack. ``i`` must be in ``range(256)``"
+msgstr ""
+
+msgid ""
 "Pushes the value associated with ``co_names[namei]`` onto the stack. The "
 "name is looked up within the locals, then the globals, then the builtins."
 msgstr ""
@@ -880,6 +998,52 @@ msgid ""
 "builtins, similar to :opcode:`LOAD_GLOBAL`. This is used for loading global "
 "variables in :ref:`annotation scopes <annotation-scopes>` within class "
 "bodies."
+msgstr ""
+
+msgid ""
+"Constructs a new :class:`~string.templatelib.Template` instance from a tuple "
+"of strings and a tuple of interpolations and pushes the resulting object "
+"onto the stack::"
+msgstr ""
+
+msgid ""
+"interpolations = STACK.pop()\n"
+"strings = STACK.pop()\n"
+"STACK.append(_build_template(strings, interpolations))"
+msgstr ""
+
+msgid ""
+"Constructs a new :class:`~string.templatelib.Interpolation` instance from a "
+"value and its source expression and pushes the resulting object onto the "
+"stack."
+msgstr ""
+
+msgid ""
+"If no conversion or format specification is present, ``format`` is set to "
+"``2``."
+msgstr ""
+
+msgid ""
+"If the low bit of ``format`` is set, it indicates that the interpolation "
+"contains a format specification."
+msgstr ""
+
+msgid ""
+"If ``format >> 2`` is non-zero, it indicates that the interpolation contains "
+"a conversion. The value of ``format >> 2`` is the conversion type (``0`` for "
+"no conversion, ``1`` for ``!s``, ``2`` for ``!r``, and ``3`` for ``!a``)::"
+msgstr ""
+
+msgid ""
+"conversion = format >> 2\n"
+"if format & 1:\n"
+"    format_spec = STACK.pop()\n"
+"else:\n"
+"    format_spec = None\n"
+"expression = STACK.pop()\n"
+"value = STACK.pop()\n"
+"STACK.append(_build_interpolation(value, expression, conversion, "
+"format_spec))"
 msgstr ""
 
 msgid ""
@@ -903,7 +1067,6 @@ msgstr ""
 msgid "Works as :opcode:`BUILD_TUPLE`, but creates a set."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Pushes a new dictionary object onto the stack.  Pops ``2 * count`` items so "
 "that the dictionary holds *count* entries: ``{..., STACK[-4]: STACK[-3], "
@@ -913,12 +1076,6 @@ msgstr ""
 msgid ""
 "The dictionary is created from stack items instead of creating an empty "
 "dictionary pre-sized to hold *count* items."
-msgstr ""
-
-msgid ""
-"The version of :opcode:`BUILD_MAP` specialized for constant keys. Pops the "
-"top element on the stack which contains a tuple of keys, then starting from "
-"``STACK[-2]``, pops *count* values to form values in the built dictionary."
 msgstr ""
 
 msgid ""
@@ -964,8 +1121,9 @@ msgid ""
 "popped. This bytecode distinguishes two cases: if ``STACK[-1]`` has a method "
 "with the correct name, the bytecode pushes the unbound method and "
 "``STACK[-1]``. ``STACK[-1]`` will be used as the first argument (``self``) "
-"by :opcode:`CALL` when calling the unbound method. Otherwise, ``NULL`` and "
-"the object returned by the attribute lookup are pushed."
+"by :opcode:`CALL` or :opcode:`CALL_KW` when calling the unbound method. "
+"Otherwise, ``NULL`` and the object returned by the attribute lookup are "
+"pushed."
 msgstr ""
 
 msgid ""
@@ -979,10 +1137,16 @@ msgid ""
 "self).method()``, ``super(cls, self).attr``)."
 msgstr ""
 
-msgid ""
-"It pops three values from the stack (from top of stack down): - ``self``: "
-"the first argument to the current method -  ``cls``: the class within which "
-"the current method was defined -  the global ``super``"
+msgid "It pops three values from the stack (from top of stack down):"
+msgstr ""
+
+msgid "``self``: the first argument to the current method"
+msgstr ""
+
+msgid "``cls``: the class within which the current method was defined"
+msgstr ""
+
+msgid "the global ``super``"
 msgstr ""
 
 msgid ""
@@ -1003,12 +1167,13 @@ msgstr ""
 
 msgid ""
 "Performs a Boolean operation.  The operation name can be found in "
-"``cmp_op[opname >> 4]``."
+"``cmp_op[opname >> 5]``. If the fifth-lowest bit of ``opname`` is set "
+"(``opname & 16``), the result should be coerced to ``bool``."
 msgstr ""
 
 msgid ""
-"The cmp_op index is now stored in the four-highest bits of oparg instead of "
-"the four-lowest bits of oparg."
+"The fifth-lowest bit of the oparg now indicates a forced conversion to :"
+"class:`bool`."
 msgstr ""
 
 msgid "Performs ``is`` comparison, or ``is not`` if ``invert`` is 1."
@@ -1065,11 +1230,6 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This opcode is a pseudo-instruction, replaced in final bytecode by the "
-"directed versions (forward/backward)."
-msgstr ""
-
-msgid ""
 "If ``STACK[-1]`` is ``None``, increments the bytecode counter by *delta*. "
 "``STACK[-1]`` is popped."
 msgstr ""
@@ -1102,6 +1262,21 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Pushes a borrowed reference to the local ``co_varnames[var_num]`` onto the "
+"stack."
+msgstr ""
+
+msgid ""
+"Pushes references to ``co_varnames[var_nums >> 4]`` and "
+"``co_varnames[var_nums & 15]`` onto the stack."
+msgstr ""
+
+msgid ""
+"Pushes borrowed references to ``co_varnames[var_nums >> 4]`` and "
+"``co_varnames[var_nums & 15]`` onto the stack."
+msgstr ""
+
+msgid ""
 "Pushes a reference to the local ``co_varnames[var_num]`` onto the stack, "
 "raising an :exc:`UnboundLocalError` if the local variable has not been "
 "initialized."
@@ -1116,25 +1291,23 @@ msgstr ""
 msgid "Stores ``STACK.pop()`` into the local ``co_varnames[var_num]``."
 msgstr ""
 
+msgid ""
+"Stores ``STACK[-1]`` into ``co_varnames[var_nums >> 4]`` and ``STACK[-2]`` "
+"into ``co_varnames[var_nums & 15]``."
+msgstr ""
+
+msgid ""
+"Stores ``STACK.pop()`` into the local ``co_varnames[var_nums >> 4]`` and "
+"pushes a reference to the local ``co_varnames[var_nums & 15]`` onto the "
+"stack."
+msgstr ""
+
 msgid "Deletes local ``co_varnames[var_num]``."
 msgstr ""
 
 msgid ""
 "Creates a new cell in slot ``i``.  If that slot is nonempty then that value "
 "is stored into the new cell."
-msgstr ""
-
-msgid ""
-"Pushes a reference to the cell contained in slot ``i`` of the \"fast "
-"locals\" storage.  The name of the variable is ``co_fastlocalnames[i]``."
-msgstr ""
-
-msgid ""
-"Note that ``LOAD_CLOSURE`` is effectively an alias for ``LOAD_FAST``. It "
-"exists to keep bytecode a little more readable."
-msgstr ""
-
-msgid "``i`` is no longer offset by the length of ``co_varnames``."
 msgstr ""
 
 msgid ""
@@ -1150,9 +1323,10 @@ msgid ""
 "Pops a mapping off the stack and looks up the name associated with slot "
 "``i`` of the \"fast locals\" storage in this mapping. If the name is not "
 "found there, loads it from the cell contained in slot ``i``, similar to :"
-"opcode:`LOAD_DEREF`. This is used for loading free variables in class bodies "
-"(which previously used :opcode:`!LOAD_CLASSDEREF`) and in :ref:`annotation "
-"scopes <annotation-scopes>` within class bodies."
+"opcode:`LOAD_DEREF`. This is used for loading :term:`closure variables "
+"<closure variable>` in class bodies (which previously used :opcode:`!"
+"LOAD_CLASSDEREF`) and in :ref:`annotation scopes <annotation-scopes>` within "
+"class bodies."
 msgstr ""
 
 msgid ""
@@ -1166,8 +1340,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Copies the ``n`` free variables from the closure into the frame. Removes the "
-"need for special code on the caller's side when calling closures."
+"Copies the ``n`` :term:`free (closure) variables <closure variable>` from "
+"the closure into the frame. Removes the need for special code on the "
+"caller's side when calling closures."
 msgstr ""
 
 msgid ""
@@ -1188,41 +1363,55 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Calls a callable object with the number of arguments specified by ``argc``, "
-"including the named arguments specified by the preceding :opcode:`KW_NAMES`, "
-"if any. On the stack are (in ascending order), either:"
-msgstr ""
-
-msgid "NULL"
+"Calls a callable object with the number of arguments specified by ``argc``. "
+"On the stack are (in ascending order):"
 msgstr ""
 
 msgid "The callable"
 msgstr ""
 
-msgid "The positional arguments"
-msgstr ""
-
-msgid "The named arguments"
-msgstr ""
-
-msgid "or:"
-msgstr ""
-
-msgid "``self``"
+msgid "``self`` or ``NULL``"
 msgstr ""
 
 msgid "The remaining positional arguments"
 msgstr ""
 
-msgid ""
-"``argc`` is the total of the positional and named arguments, excluding "
-"``self`` when a ``NULL`` is not present."
+msgid "``argc`` is the total of the positional arguments, excluding ``self``."
 msgstr ""
 
 msgid ""
 "``CALL`` pops all arguments and the callable object off the stack, calls the "
 "callable object with those arguments, and pushes the return value returned "
 "by the callable object."
+msgstr ""
+
+msgid "The callable now always appears at the same position on the stack."
+msgstr ""
+
+msgid "Calls with keyword arguments are now handled by :opcode:`CALL_KW`."
+msgstr ""
+
+msgid ""
+"Calls a callable object with the number of arguments specified by ``argc``, "
+"including one or more named arguments. On the stack are (in ascending order):"
+msgstr ""
+
+msgid "The named arguments"
+msgstr ""
+
+msgid "A :class:`tuple` of keyword argument names"
+msgstr ""
+
+msgid ""
+"``argc`` is the total of the positional and named arguments, excluding "
+"``self``. The length of the tuple of keyword argument names is the number of "
+"named arguments."
+msgstr ""
+
+msgid ""
+"``CALL_KW`` pops all arguments, the keyword names, and the callable object "
+"off the stack, calls the callable object with those arguments, and pushes "
+"the return value returned by the callable object."
 msgstr ""
 
 msgid ""
@@ -1238,18 +1427,30 @@ msgstr ""
 
 msgid ""
 "Pushes a ``NULL`` to the stack. Used in the call sequence to match the "
-"``NULL`` pushed by :opcode:`LOAD_METHOD` for non-method calls."
+"``NULL`` pushed by :opcode:`!LOAD_METHOD` for non-method calls."
 msgstr ""
 
 msgid ""
-"Prefixes :opcode:`CALL`. Stores a reference to ``co_consts[consti]`` into an "
-"internal variable for use by :opcode:`CALL`. ``co_consts[consti]`` must be a "
-"tuple of strings."
+"Pushes a new function object on the stack built from the code object at "
+"``STACK[-1]``."
+msgstr ""
+
+msgid "Flag value ``0x04`` is a tuple of strings instead of dictionary"
+msgstr ""
+
+msgid "Qualified name at ``STACK[-1]`` was removed."
 msgstr ""
 
 msgid ""
-"Pushes a new function object on the stack.  From bottom to top, the consumed "
-"stack must consist of values if the argument carries a specified flag value"
+"Extra function attributes on the stack, signaled by oparg flags, were "
+"removed. They now use :opcode:`SET_FUNCTION_ATTRIBUTE`."
+msgstr ""
+
+msgid ""
+"Sets an attribute on a function object. Expects the function at "
+"``STACK[-1]`` and the attribute value to set at ``STACK[-2]``; consumes both "
+"and leaves the function at ``STACK[-1]``. The flag determines which "
+"attribute to set:"
 msgstr ""
 
 msgid ""
@@ -1266,13 +1467,11 @@ msgstr ""
 msgid "``0x08`` a tuple containing cells for free variables, making a closure"
 msgstr ""
 
-msgid "the code associated with the function (at ``STACK[-1]``)"
+msgid "``0x10`` the :term:`annotate function` for the function object"
 msgstr ""
 
-msgid "Flag value ``0x04`` is a tuple of strings instead of dictionary"
-msgstr ""
-
-msgid "Qualified name at ``STACK[-1]`` was removed."
+msgid ""
+"Added ``0x10`` to indicate the annotate function for the function object."
 msgstr ""
 
 msgid ""
@@ -1306,37 +1505,44 @@ msgid ""
 "allowed, forming an argument from two-byte to four-byte."
 msgstr ""
 
-msgid ""
-"Used for implementing formatted literal strings (f-strings).  Pops an "
-"optional *fmt_spec* from the stack, then a required *value*. *flags* is "
-"interpreted as follows:"
-msgstr ""
-
-msgid "``(flags & 0x03) == 0x00``: *value* is formatted as-is."
+msgid "Convert value to a string, depending on ``oparg``::"
 msgstr ""
 
 msgid ""
-"``(flags & 0x03) == 0x01``: call :func:`str` on *value* before formatting it."
+"value = STACK.pop()\n"
+"result = func(value)\n"
+"STACK.append(result)"
+msgstr ""
+
+msgid "``oparg == 1``: call :func:`str` on *value*"
+msgstr ""
+
+msgid "``oparg == 2``: call :func:`repr` on *value*"
+msgstr ""
+
+msgid "``oparg == 3``: call :func:`ascii` on *value*"
+msgstr ""
+
+msgid "Used for implementing formatted string literals (f-strings)."
+msgstr ""
+
+msgid "Formats the value on top of stack::"
 msgstr ""
 
 msgid ""
-"``(flags & 0x03) == 0x02``: call :func:`repr` on *value* before formatting "
-"it."
+"value = STACK.pop()\n"
+"result = value.__format__(\"\")\n"
+"STACK.append(result)"
+msgstr ""
+
+msgid "Formats the given value with the given format spec::"
 msgstr ""
 
 msgid ""
-"``(flags & 0x03) == 0x03``: call :func:`ascii` on *value* before formatting "
-"it."
-msgstr ""
-
-msgid ""
-"``(flags & 0x04) == 0x04``: pop *fmt_spec* from the stack and use it, else "
-"use an empty *fmt_spec*."
-msgstr ""
-
-msgid ""
-"Formatting is performed using :c:func:`PyObject_Format`.  The result is "
-"pushed on the stack."
+"spec = STACK.pop()\n"
+"value = STACK.pop()\n"
+"result = value.__format__(spec)\n"
+"STACK.append(result)"
 msgstr ""
 
 msgid ""
@@ -1355,7 +1561,9 @@ msgstr ""
 msgid "A no-op. Performs internal tracing, debugging and optimization checks."
 msgstr ""
 
-msgid "The ``where`` operand marks where the ``RESUME`` occurs:"
+msgid ""
+"The ``context`` operand consists of two parts. The lowest two bits indicate "
+"where the ``RESUME`` occurs:"
 msgstr ""
 
 msgid ""
@@ -1370,6 +1578,14 @@ msgid "``2`` After a ``yield from`` expression"
 msgstr ""
 
 msgid "``3`` After an ``await`` expression"
+msgstr ""
+
+msgid ""
+"The next bit is ``1`` if the RESUME is at except-depth ``1``, and ``0`` "
+"otherwise."
+msgstr ""
+
+msgid "The oparg value changed to include information about except-depth"
 msgstr ""
 
 msgid ""
@@ -1396,8 +1612,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"If your application uses pseudo instructions, use the :data:`hasarg` "
-"collection instead."
+"If your application uses pseudo instructions or specialized instructions, "
+"use the :data:`hasarg` collection instead."
 msgstr ""
 
 msgid ""
@@ -1406,9 +1622,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Pseudo instructions were added to the :mod:`dis` module, and for them it is "
+"Pseudo instructions were added to the :mod:`!dis` module, and for them it is "
 "not true that comparison with ``HAVE_ARGUMENT`` indicates whether they use "
 "their arg."
+msgstr ""
+
+msgid "Use :data:`hasarg` instead."
 msgstr ""
 
 msgid ""
@@ -1510,7 +1729,7 @@ msgid ""
 "arg2 = STACK.pop()\n"
 "arg1 = STACK.pop()\n"
 "result = intrinsic2(arg1, arg2)\n"
-"STACK.push(result)"
+"STACK.append(result)"
 msgstr ""
 
 msgid "``INTRINSIC_2_INVALID``"
@@ -1538,6 +1757,13 @@ msgid "``INTRINSIC_SET_FUNCTION_TYPE_PARAMS``"
 msgstr ""
 
 msgid "Sets the ``__type_params__`` attribute of a function."
+msgstr ""
+
+msgid ""
+"Performs special method lookup on ``STACK[-1]``. If ``type(STACK[-1])."
+"__xxx__`` is a method, leave ``type(STACK[-1]).__xxx__; STACK[-1]`` on the "
+"stack. If ``type(STACK[-1]).__xxx__`` is not a method, leave ``STACK[-1]."
+"__xxx__; NULL`` on the stack."
 msgstr ""
 
 msgid "**Pseudo-instructions**"
@@ -1581,13 +1807,29 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Works as :opcode:`LOAD_CONST`, but is more efficient for immortal objects."
+msgstr ""
+
+msgid ""
 "Undirected relative jump instructions which are replaced by their directed "
 "(forward/backward) counterparts by the assembler."
 msgstr ""
 
 msgid ""
-"Optimized unbound method lookup. Emitted as a ``LOAD_ATTR`` opcode with a "
-"flag set in the arg."
+"Conditional jumps which do not impact the stack. Replaced by the sequence "
+"``COPY 1``, ``TO_BOOL``, ``POP_JUMP_IF_TRUE/FALSE``."
+msgstr ""
+
+msgid ""
+"Pushes a reference to the cell contained in slot ``i`` of the \"fast "
+"locals\" storage."
+msgstr ""
+
+msgid ""
+"Note that ``LOAD_CLOSURE`` is replaced with ``LOAD_FAST`` in the assembler."
+msgstr ""
+
+msgid "This opcode is now a pseudo-instruction."
 msgstr ""
 
 msgid "Opcode collections"
@@ -1620,19 +1862,17 @@ msgid "Sequence of bytecodes that access a constant."
 msgstr ""
 
 msgid ""
-"Sequence of bytecodes that access a free variable. 'free' in this context "
-"refers to names in the current scope that are referenced by inner scopes or "
-"names in outer scopes that are referenced from this scope.  It does *not* "
-"include references to global or builtin scopes."
+"Sequence of bytecodes that access a :term:`free (closure) variable <closure "
+"variable>`. 'free' in this context refers to names in the current scope that "
+"are referenced by inner scopes or names in outer scopes that are referenced "
+"from this scope.  It does *not* include references to global or builtin "
+"scopes."
 msgstr ""
 
 msgid "Sequence of bytecodes that access an attribute by name."
 msgstr ""
 
-msgid "Sequence of bytecodes that have a relative jump target."
-msgstr ""
-
-msgid "Sequence of bytecodes that have an absolute jump target."
+msgid "Sequence of bytecodes that have a jump target. All jumps are relative."
 msgstr ""
 
 msgid "Sequence of bytecodes that access a local variable."
@@ -1642,6 +1882,18 @@ msgid "Sequence of bytecodes of Boolean operations."
 msgstr ""
 
 msgid "Sequence of bytecodes that set an exception handler."
+msgstr ""
+
+msgid "Sequence of bytecodes that have a relative jump target."
+msgstr ""
+
+msgid "All jumps are now relative. Use :data:`hasjump`."
+msgstr ""
+
+msgid "Sequence of bytecodes that have an absolute jump target."
+msgstr ""
+
+msgid "All jumps are now relative. This list is empty."
 msgstr ""
 
 msgid "built-in function"

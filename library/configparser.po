@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!configparser` --- Configuration file parser"
 msgstr ""
@@ -85,12 +83,11 @@ msgstr ""
 msgid ""
 "The structure of INI files is described `in the following section "
 "<#supported-ini-file-structure>`_.  Essentially, the file consists of "
-"sections, each of which contains keys with values. :mod:`configparser` "
+"sections, each of which contains keys with values. :mod:`!configparser` "
 "classes can read and write such files.  Let's start by creating the above "
 "configuration file programmatically."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> import configparser\n"
 ">>> config = configparser.ConfigParser()\n"
@@ -173,7 +170,6 @@ msgid ""
 "ServerAliveInterval = -1"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> config_override = configparser.ConfigParser()\n"
 ">>> config_override['DEFAULT'] = {'ServerAliveInterval': '-1'}\n"
@@ -315,6 +311,13 @@ msgid ""
 msgstr ""
 
 msgid ""
+"The first section name may be omitted if the parser is configured to allow "
+"an unnamed top level section with ``allow_unnamed_section=True``. In this "
+"case, the keys/values may be retrieved by :const:`UNNAMED_SECTION` as in "
+"``config[UNNAMED_SECTION]``."
+msgstr ""
+
+msgid ""
 "Configuration files may include comments, prefixed by specific characters "
 "(``#`` and ``;`` by default [1]_).  Comments may appear on their own on an "
 "otherwise empty line, possibly indented. [1]_"
@@ -367,6 +370,27 @@ msgid ""
 "        # Did I mention we can indent comments, too?"
 msgstr ""
 
+msgid "Unnamed Sections"
+msgstr ""
+
+msgid ""
+"The name of the first section (or unique) may be omitted and values "
+"retrieved by the :const:`UNNAMED_SECTION` attribute."
+msgstr ""
+
+msgid ""
+">>> config = \"\"\"\n"
+"... option = value\n"
+"...\n"
+"... [  Section 2  ]\n"
+"... another = val\n"
+"... \"\"\"\n"
+">>> unnamed = configparser.ConfigParser(allow_unnamed_section=True)\n"
+">>> unnamed.read_string(config)\n"
+">>> unnamed.get(configparser.UNNAMED_SECTION, 'option')\n"
+"'value'"
+msgstr ""
+
 msgid "Interpolation of values"
 msgstr ""
 
@@ -383,7 +407,6 @@ msgid ""
 "can be provided on initialization."
 msgstr ""
 
-#, python-format
 msgid ""
 "[Paths]\n"
 "home_dir: /Users\n"
@@ -396,7 +419,6 @@ msgid ""
 "gain: 80%%"
 msgstr ""
 
-#, python-format
 msgid ""
 "In the example above, :class:`ConfigParser` with *interpolation* set to "
 "``BasicInterpolation()`` would resolve ``%(home_dir)s`` to the value of "
@@ -406,14 +428,12 @@ msgid ""
 "specific order in the configuration file."
 msgstr ""
 
-#, python-format
 msgid ""
 "With ``interpolation`` set to ``None``, the parser would simply return "
 "``%(my_dir)s/Pictures`` as the value of ``my_pictures`` and ``%(home_dir)s/"
 "lumberjack`` as the value of ``my_dir``."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "An alternative handler for interpolation which implements a more advanced "
 "syntax, used for instance in ``zc.buildout``.  Extended interpolation is "
@@ -428,7 +448,6 @@ msgid ""
 "would look like this with extended interpolation:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "[Paths]\n"
 "home_dir: /Users\n"
@@ -444,7 +463,6 @@ msgstr ""
 msgid "Values from other sections can be fetched as well:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "[Common]\n"
 "home_dir: /Users\n"
@@ -469,8 +487,8 @@ msgstr ""
 
 msgid ""
 "Mapping protocol access is a generic name for functionality that enables "
-"using custom objects as if they were dictionaries.  In case of :mod:"
-"`configparser`, the mapping interface implementation is using the "
+"using custom objects as if they were dictionaries.  In case of :mod:`!"
+"configparser`, the mapping interface implementation is using the "
 "``parser['section']['option']`` notation."
 msgstr ""
 
@@ -483,7 +501,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-":mod:`configparser` objects behave as close to actual dictionaries as "
+":mod:`!configparser` objects behave as close to actual dictionaries as "
 "possible. The mapping interface is complete and adheres to the :class:"
 "`~collections.abc.MutableMapping` ABC. However, there are a few differences "
 "that should be taken into account:"
@@ -549,7 +567,7 @@ msgstr ""
 
 msgid ""
 "There are nearly as many INI format variants as there are applications using "
-"it. :mod:`configparser` goes a long way to provide support for the largest "
+"it. :mod:`!configparser` goes a long way to provide support for the largest "
 "sensible set of INI styles available.  The default functionality is mainly "
 "dictated by historical background and it's very likely that you will want to "
 "customize some of the features."
@@ -596,7 +614,6 @@ msgid ""
 "of the keys will be ordered.  For example:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> parser = configparser.ConfigParser()\n"
 ">>> parser.read_dict({'section1': {'key1': 'value1',\n"
@@ -620,9 +637,9 @@ msgstr ""
 
 msgid ""
 "Some configuration files are known to include settings without values, but "
-"which otherwise conform to the syntax supported by :mod:`configparser`.  The "
-"*allow_no_value* parameter to the constructor can be used to indicate that "
-"such values should be accepted:"
+"which otherwise conform to the syntax supported by :mod:`!configparser`.  "
+"The *allow_no_value* parameter to the constructor can be used to indicate "
+"that such values should be accepted:"
 msgstr ""
 
 msgid ""
@@ -685,7 +702,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"In previous versions of :mod:`configparser` behaviour matched "
+"In previous versions of :mod:`!configparser` behaviour matched "
 "``comment_prefixes=('#',';')`` and ``inline_comment_prefixes=(';',)``."
 msgstr ""
 
@@ -698,7 +715,6 @@ msgid ""
 "values is to interpolate the prefix, for example::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> from configparser import ConfigParser, ExtendedInterpolation\n"
 ">>> parser = ConfigParser(interpolation=ExtendedInterpolation())\n"
@@ -751,7 +767,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"In previous versions of :mod:`configparser` behaviour matched "
+"In previous versions of :mod:`!configparser` behaviour matched "
 "``strict=False``."
 msgstr ""
 
@@ -816,7 +832,6 @@ msgstr ""
 msgid "*converters*, default value: not set"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Config parsers provide option value getters that perform type conversion.  "
 "By default :meth:`~ConfigParser.getint`, :meth:`~ConfigParser.getfloat`, "
@@ -851,7 +866,6 @@ msgid ""
 "strings and their Boolean outcomes. For example:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> custom = configparser.ConfigParser()\n"
 ">>> custom['section1'] = {'funky': 'nope'}\n"
@@ -943,7 +957,7 @@ msgid "Legacy API Examples"
 msgstr ""
 
 msgid ""
-"Mainly because of backwards compatibility concerns, :mod:`configparser` "
+"Mainly because of backwards compatibility concerns, :mod:`!configparser` "
 "provides also a legacy API with explicit ``get``/``set`` methods.  While "
 "there are valid use cases for the methods outlined below, mapping protocol "
 "access is preferred for new projects.  The legacy API is at times more "
@@ -953,7 +967,6 @@ msgstr ""
 msgid "An example of writing to a configuration file::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import configparser\n"
 "\n"
@@ -980,7 +993,6 @@ msgstr ""
 msgid "An example of reading the configuration file again::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import configparser\n"
 "\n"
@@ -1002,7 +1014,6 @@ msgstr ""
 msgid "To get interpolation, use :class:`ConfigParser`::"
 msgstr ""
 
-#, python-format, python-brace-format
 msgid ""
 "import configparser\n"
 "\n"
@@ -1042,7 +1053,6 @@ msgid ""
 "in interpolation if an option used is not defined elsewhere. ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import configparser\n"
 "\n"
@@ -1103,7 +1113,6 @@ msgid ""
 "`dedicated documentation section <#interpolation-of-values>`_."
 msgstr ""
 
-#, python-format
 msgid ""
 "All option names used in interpolation will be passed through the :meth:"
 "`optionxform` method just like any other option name reference.  For "
@@ -1118,6 +1127,12 @@ msgid ""
 "implementing the conversion from string to the desired datatype.  Every "
 "converter gets its own corresponding :meth:`!get*` method on the parser "
 "object and section proxies."
+msgstr ""
+
+msgid ""
+"When *allow_unnamed_section* is ``True`` (default: ``False``), the first "
+"section name can be omitted. See the `\"Unnamed Sections\" section <#unnamed-"
+"sections>`_."
 msgstr ""
 
 msgid "The default *dict_type* is :class:`collections.OrderedDict`."
@@ -1140,6 +1155,14 @@ msgstr ""
 msgid ""
 "The default *dict_type* is :class:`dict`, since it now preserves insertion "
 "order."
+msgstr ""
+
+msgid ""
+"Raise a :exc:`MultilineContinuationError` when *allow_no_value* is ``True``, "
+"and a key without a value is continued with an indented line."
+msgstr ""
+
+msgid "The *allow_unnamed_section* argument was added."
 msgstr ""
 
 msgid "Return a dictionary containing the instance-wide defaults."
@@ -1330,6 +1353,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Raises InvalidWriteError if this would write a representation which cannot "
+"be accurately parsed by a future :meth:`read` call from this parser."
+msgstr ""
+
+msgid ""
 "Comments in the original configuration file are not preserved when writing "
 "the configuration back. What is considered a comment, depends on the given "
 "values for *comment_prefix* and *inline_comment_prefix*."
@@ -1372,6 +1400,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"A special object representing a section name used to reference the unnamed "
+"section (see :ref:`unnamed-sections`)."
+msgstr ""
+
+msgid ""
 "The maximum depth for recursive interpolation for :meth:`~configparser."
 "ConfigParser.get` when the *raw* parameter is false.  This is relevant only "
 "when the default *interpolation* is used."
@@ -1394,14 +1427,22 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Add a section named *section* to the instance.  If a section by the given "
-"name already exists, :exc:`DuplicateSectionError` is raised.  If the "
-"*default section* name is passed, :exc:`ValueError` is raised."
+"Add a section named *section* or :const:`UNNAMED_SECTION` to the instance."
+msgstr ""
+
+msgid ""
+"If the given section already exists, :exc:`DuplicateSectionError` is raised. "
+"If the *default section* name is passed, :exc:`ValueError` is raised. If :"
+"const:`UNNAMED_SECTION` is passed and support is disabled, :exc:"
+"`UnnamedSectionDisabledError` is raised."
 msgstr ""
 
 msgid ""
 "Type of *section* is not checked which lets users create non-string named "
 "sections.  This behaviour is unsupported and may cause internal errors."
+msgstr ""
+
+msgid "Added support for :const:`UNNAMED_SECTION`."
 msgstr ""
 
 msgid ""
@@ -1423,7 +1464,7 @@ msgstr ""
 msgid "Exceptions"
 msgstr ""
 
-msgid "Base class for all other :mod:`configparser` exceptions."
+msgid "Base class for all other :mod:`!configparser` exceptions."
 msgstr ""
 
 msgid "Exception raised when a specified section is not found."
@@ -1484,6 +1525,27 @@ msgstr ""
 msgid ""
 "The ``filename`` attribute and :meth:`!__init__` constructor argument were "
 "removed.  They have been available using the name ``source`` since 3.2."
+msgstr ""
+
+msgid ""
+"Exception raised when a key without a corresponding value is continued with "
+"an indented line."
+msgstr ""
+
+msgid ""
+"Exception raised when attempting to use the :const:`UNNAMED_SECTION` without "
+"enabling it."
+msgstr ""
+
+msgid ""
+"Exception raised when an attempted :meth:`ConfigParser.write` would not be "
+"parsed accurately with a future :meth:`ConfigParser.read` call."
+msgstr ""
+
+msgid ""
+"Ex: Writing a key beginning with the :attr:`ConfigParser.SECTCRE` pattern "
+"would parse as a section header when read. Attempting to write this will "
+"raise this exception."
 msgstr ""
 
 msgid "Footnotes"

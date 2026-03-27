@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!base64` --- Base16, Base32, Base64, Base85 Data Encodings"
 msgstr ""
@@ -27,17 +25,10 @@ msgstr ""
 
 msgid ""
 "This module provides functions for encoding binary data to printable ASCII "
-"characters and decoding such encodings back to binary data. It provides "
-"encoding and decoding functions for the encodings specified in :rfc:`4648`, "
-"which defines the Base16, Base32, and Base64 algorithms, and for the de-"
-"facto standard Ascii85 and Base85 encodings."
-msgstr ""
-
-msgid ""
-"The :rfc:`4648` encodings are suitable for encoding binary data so that it "
-"can be safely sent by email, used as parts of URLs, or included as part of "
-"an HTTP POST request.  The encoding algorithm is not the same as the :"
-"program:`uuencode` program."
+"characters and decoding such encodings back to binary data. This includes "
+"the :ref:`encodings specified in <base64-rfc-4648>` :rfc:`4648` (Base64, "
+"Base32 and Base16) and the non-standard :ref:`Base85 encodings <base64-"
+"base-85>`."
 msgstr ""
 
 msgid ""
@@ -49,12 +40,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The legacy interface does not support decoding from strings, but it does "
-"provide functions for encoding and decoding to and from :term:`file objects "
-"<file object>`.  It only supports the Base64 standard alphabet, and it adds "
-"newlines every 76 characters as per :rfc:`2045`.  Note that if you are "
-"looking for :rfc:`2045` support you probably want to be looking at the :mod:"
-"`email` package instead."
+"The :ref:`legacy interface <base64-legacy>` does not support decoding from "
+"strings, but it does provide functions for encoding and decoding to and "
+"from :term:`file objects <file object>`.  It only supports the Base64 "
+"standard alphabet, and it adds newlines every 76 characters as per :rfc:"
+"`2045`.  Note that if you are looking for :rfc:`2045` support you probably "
+"want to be looking at the :mod:`email` package instead."
 msgstr ""
 
 msgid ""
@@ -68,7 +59,13 @@ msgid ""
 "added."
 msgstr ""
 
-msgid "The modern interface provides:"
+msgid "RFC 4648 Encodings"
+msgstr ""
+
+msgid ""
+"The :rfc:`4648` encodings are suitable for encoding binary data so that it "
+"can be safely sent by email, used as parts of URLs, or included as part of "
+"an HTTP POST request."
 msgstr ""
 
 msgid ""
@@ -202,6 +199,41 @@ msgid ""
 "return the decoded :class:`bytes`."
 msgstr ""
 
+msgid "Base85 Encodings"
+msgstr ""
+
+msgid ""
+"Base85 encoding is not formally specified but rather a de facto standard, "
+"thus different systems perform the encoding differently."
+msgstr ""
+
+msgid ""
+"The :func:`a85encode` and :func:`b85encode` functions in this module are two "
+"implementations of the de facto standard. You should call the function with "
+"the Base85 implementation used by the software you intend to work with."
+msgstr ""
+
+msgid ""
+"The two functions present in this module differ in how they handle the "
+"following:"
+msgstr ""
+
+msgid "Whether to include enclosing ``<~`` and ``~>`` markers"
+msgstr ""
+
+msgid "Whether to include newline characters"
+msgstr ""
+
+msgid "The set of ASCII characters used for encoding"
+msgstr ""
+
+msgid "Handling of null bytes"
+msgstr ""
+
+msgid ""
+"Refer to the documentation of the individual functions for more information."
+msgstr ""
+
 msgid ""
 "Encode the :term:`bytes-like object` *b* using Ascii85 and return the "
 "encoded :class:`bytes`."
@@ -246,10 +278,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-"*ignorechars* should be a :term:`bytes-like object` or ASCII string "
-"containing characters to ignore from the input. This should only contain "
-"whitespace characters, and by default contains all whitespace characters in "
-"ASCII."
+"*ignorechars* should be a byte string containing characters to ignore from "
+"the input. This should only contain whitespace characters, and by default "
+"contains all whitespace characters in ASCII."
 msgstr ""
 
 msgid ""
@@ -268,7 +299,19 @@ msgid ""
 "necessary."
 msgstr ""
 
-msgid "The legacy interface:"
+msgid ""
+"Encode the :term:`bytes-like object` *s* using Z85 (as used in ZeroMQ) and "
+"return the encoded :class:`bytes`.  See `Z85  specification <https://rfc."
+"zeromq.org/spec/32/>`_ for more information."
+msgstr ""
+
+msgid ""
+"Decode the Z85-encoded :term:`bytes-like object` or ASCII string *s* and "
+"return the decoded :class:`bytes`.  See `Z85  specification <https://rfc."
+"zeromq.org/spec/32/>`_ for more information."
+msgstr ""
+
+msgid "Legacy Interface"
 msgstr ""
 
 msgid ""

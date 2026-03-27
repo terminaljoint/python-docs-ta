@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Unicode HOWTO"
 msgstr ""
@@ -307,7 +305,6 @@ msgid ""
 "delta glyph instead of a \\u escape.) ::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> \"\\N{GREEK CAPITAL LETTER DELTA}\"  # Using the character name\n"
 "'\\u0394'\n"
@@ -379,7 +376,6 @@ msgid ""
 "the requested *encoding*."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The *errors* parameter is the same as the parameter of the :meth:`~bytes."
 "decode` method but supports a few more possible handlers. As well as "
@@ -393,7 +389,6 @@ msgstr ""
 msgid "The following example shows the different results::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> u = chr(40960) + 'abcd' + chr(1972)\n"
 ">>> u.encode('utf-8')\n"
@@ -503,7 +498,6 @@ msgid ""
 "and prints the numeric value of one particular character::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import unicodedata\n"
 "\n"
@@ -576,7 +570,6 @@ msgid ""
 "combining characters differently:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import unicodedata\n"
 "\n"
@@ -613,7 +606,6 @@ msgstr ""
 msgid "The Unicode Standard also specifies how to do caseless comparisons::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import unicodedata\n"
 "\n"

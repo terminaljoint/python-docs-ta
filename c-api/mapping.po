@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Mapping Protocol"
 msgstr ""
@@ -47,6 +45,25 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Variant of :c:func:`PyObject_GetItem` which doesn't raise :exc:`KeyError` if "
+"the key is not found."
+msgstr ""
+
+msgid ""
+"If the key is found, return ``1`` and set *\\*result* to a new :term:`strong "
+"reference` to the corresponding value. If the key is not found, return ``0`` "
+"and set *\\*result* to ``NULL``; the :exc:`KeyError` is silenced. If an "
+"error other than :exc:`KeyError` is raised, return ``-1`` and set "
+"*\\*result* to ``NULL``."
+msgstr ""
+
+msgid ""
+"This is the same as :c:func:`PyMapping_GetOptionalItem`, but *key* is "
+"specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than "
+"a :c:expr:`PyObject*`."
+msgstr ""
+
+msgid ""
 "This is the same as :c:func:`PyObject_SetItem`, but *key* is specified as a :"
 "c:expr:`const char*` UTF-8 encoded bytes string, rather than a :c:expr:"
 "`PyObject*`."
@@ -63,13 +80,26 @@ msgstr ""
 
 msgid ""
 "Return ``1`` if the mapping object has the key *key* and ``0`` otherwise. "
+"This is equivalent to the Python expression ``key in o``. On failure, return "
+"``-1``."
+msgstr ""
+
+msgid ""
+"This is the same as :c:func:`PyMapping_HasKeyWithError`, but *key* is "
+"specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than "
+"a :c:expr:`PyObject*`."
+msgstr ""
+
+msgid ""
+"Return ``1`` if the mapping object has the key *key* and ``0`` otherwise. "
 "This is equivalent to the Python expression ``key in o``. This function "
 "always succeeds."
 msgstr ""
 
 msgid ""
-"Exceptions which occur when this calls :meth:`~object.__getitem__` method "
-"are silently ignored. For proper error handling, use :c:func:"
+"Exceptions which occur when this calls the :meth:`~object.__getitem__` "
+"method are silently ignored. For proper error handling, use :c:func:"
+"`PyMapping_HasKeyWithError`, :c:func:`PyMapping_GetOptionalItem` or :c:func:"
 "`PyObject_GetItem()` instead."
 msgstr ""
 
@@ -80,9 +110,11 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Exceptions that occur when this calls :meth:`~object.__getitem__` method or "
-"while creating the temporary :class:`str` object are silently ignored. For "
-"proper error handling, use :c:func:`PyMapping_GetItemString` instead."
+"Exceptions that occur when this calls the :meth:`~object.__getitem__` method "
+"or while creating the temporary :class:`str` object are silently ignored. "
+"For proper error handling, use :c:func:`PyMapping_HasKeyStringWithError`, :c:"
+"func:`PyMapping_GetOptionalItemString` or :c:func:`PyMapping_GetItemString` "
+"instead."
 msgstr ""
 
 msgid ""

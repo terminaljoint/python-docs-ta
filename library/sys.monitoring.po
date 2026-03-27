@@ -1,29 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!sys.monitoring` --- Execution event monitoring"
 msgstr ""
 
 msgid ""
-":mod:`sys.monitoring` is a namespace within the :mod:`sys` module, not an "
+":mod:`!sys.monitoring` is a namespace within the :mod:`sys` module, not an "
 "independent module, so there is no need to ``import sys.monitoring``, simply "
 "``import sys`` and then use ``sys.monitoring``."
 msgstr ""
@@ -35,7 +33,7 @@ msgstr ""
 
 msgid ""
 "As programs execute, events occur that might be of interest to tools that "
-"monitor execution. The :mod:`sys.monitoring` namespace provides means to "
+"monitor execution. The :mod:`!sys.monitoring` namespace provides means to "
 "receive callbacks when events of interest occur."
 msgstr ""
 
@@ -75,14 +73,12 @@ msgid ""
 "0 to 5 inclusive. Raises a :exc:`ValueError` if *tool_id* is in use."
 msgstr ""
 
-msgid "Should be called once a tool no longer requires *tool_id*."
+msgid "Unregister all events and callback functions associated with *tool_id*."
 msgstr ""
 
 msgid ""
-":func:`free_tool_id` will not disable global or local events associated with "
-"*tool_id*, nor will it unregister any callback functions. This function is "
-"only intended to be used to notify the VM that the particular *tool_id* is "
-"no longer in use."
+"Should be called once a tool no longer requires *tool_id*. Will call :func:"
+"`clear_tool_id` before releasing *tool_id*."
 msgstr ""
 
 msgid ""
@@ -102,19 +98,22 @@ msgid ""
 "sys.monitoring.OPTIMIZER_ID = 5"
 msgstr ""
 
-msgid ""
-"There is no obligation to set an ID, nor is there anything preventing a tool "
-"from using an ID even it is already in use. However, tools are encouraged to "
-"use a unique ID and respect other tools."
-msgstr ""
-
 msgid "Events"
 msgstr ""
 
 msgid "The following events are supported:"
 msgstr ""
 
-msgid "A conditional branch is taken (or not)."
+msgid "A conditional branch goes left."
+msgstr ""
+
+msgid ""
+"It is up to the tool to determine how to present \"left\" and \"right\" "
+"branches. There is no guarantee which branch is \"left\" and which is "
+"\"right\", except that it will be consistent for the duration of the program."
+msgstr ""
+
+msgid "A conditional branch goes right."
 msgstr ""
 
 msgid "A call in Python code (event occurs before the call)."
@@ -162,7 +161,10 @@ msgstr ""
 msgid "A Python function is resumed by a ``throw()`` call."
 msgstr ""
 
-msgid "Exit from a Python function during exception unwinding."
+msgid ""
+"Exit from a Python function during exception unwinding. This includes "
+"exceptions raised directly within the function and that are allowed to "
+"continue to propagate."
 msgstr ""
 
 msgid ""
@@ -191,7 +193,7 @@ msgstr ""
 msgid ""
 "These events are attributes of the :mod:`!sys.monitoring.events` namespace. "
 "Each event is represented as a power-of-2 integer constant. To define a set "
-"of events, simply bitwise or the individual events together. For example, to "
+"of events, simply bitwise OR the individual events together. For example, to "
 "specify both :monitoring-event:`PY_RETURN` and :monitoring-event:`PY_START` "
 "events, use the expression ``PY_RETURN | PY_START``."
 msgstr ""
@@ -204,7 +206,7 @@ msgid ""
 "    ..."
 msgstr ""
 
-msgid "Events are divided into three groups:"
+msgid "Setting this event deactivates all events."
 msgstr ""
 
 msgid "Local events"
@@ -240,10 +242,25 @@ msgstr ""
 msgid ":monitoring-event:`JUMP`"
 msgstr ""
 
-msgid ":monitoring-event:`BRANCH`"
+msgid ":monitoring-event:`BRANCH_LEFT`"
+msgstr ""
+
+msgid ":monitoring-event:`BRANCH_RIGHT`"
 msgstr ""
 
 msgid ":monitoring-event:`STOP_ITERATION`"
+msgstr ""
+
+msgid "Deprecated event"
+msgstr ""
+
+msgid "``BRANCH``"
+msgstr ""
+
+msgid ""
+"The ``BRANCH`` event is deprecated in 3.14. Using :monitoring-event:"
+"`BRANCH_LEFT` and :monitoring-event:`BRANCH_RIGHT` events will give much "
+"better performance as they can be disabled independently."
 msgstr ""
 
 msgid "Ancillary events"
@@ -272,7 +289,7 @@ msgstr ""
 
 msgid ""
 "Other events are not necessarily tied to a specific location in the program "
-"and cannot be individually disabled."
+"and cannot be individually disabled via :data:`DISABLE`."
 msgstr ""
 
 msgid "The other events that can be monitored are:"
@@ -308,13 +325,22 @@ msgid ""
 "unlike :monitoring-event:`RAISE`."
 msgstr ""
 
+msgid ""
+"Note that the :monitoring-event:`STOP_ITERATION` event and the :monitoring-"
+"event:`RAISE` event for a :exc:`StopIteration` exception are equivalent, and "
+"are treated as interchangeable when generating events. Implementations will "
+"favor :monitoring-event:`STOP_ITERATION` for performance reasons, but may "
+"generate a :monitoring-event:`RAISE` event with a :exc:`StopIteration`."
+msgstr ""
+
 msgid "Turning events on and off"
 msgstr ""
 
 msgid ""
 "In order to monitor an event, it must be turned on and a corresponding "
 "callback must be registered. Events can be turned on or off by setting the "
-"events either globally or for a particular code object."
+"events either globally and/or for a particular code object. An event will "
+"trigger only once, even if it is turned on both globally and locally."
 msgstr ""
 
 msgid "Setting events globally"
@@ -339,20 +365,20 @@ msgstr ""
 msgid "Per code object events"
 msgstr ""
 
-msgid "Events can also be controlled on a per code object basis."
+msgid ""
+"Events can also be controlled on a per code object basis. The functions "
+"defined below which accept a :class:`types.CodeType` should be prepared to "
+"accept a look-alike object from functions which are not defined in Python "
+"(see :ref:`c-api-monitoring`)."
 msgstr ""
 
-msgid "Returns all the local events for *code*"
+msgid "Returns all the :ref:`local events <monitoring-event-local>` for *code*"
 msgstr ""
 
 msgid ""
-"Activates all the local events for *code* which are set in *event_set*. "
-"Raises a :exc:`ValueError` if *tool_id* is not in use."
-msgstr ""
-
-msgid ""
-"Local events add to global events, but do not mask them. In other words, all "
-"global events will trigger for a code object, regardless of the local events."
+"Activates all the :ref:`local events <monitoring-event-local>` for *code* "
+"which are set in *event_set*. Raises a :exc:`ValueError` if *tool_id* is not "
+"in use."
 msgstr ""
 
 msgid "Disabling events"
@@ -364,9 +390,10 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Local events can be disabled for a specific code location by returning :data:"
-"`sys.monitoring.DISABLE` from a callback function. This does not change "
-"which events are set, or any other code locations for the same event."
+":ref:`Local events <monitoring-event-local>` can be disabled for a specific "
+"code location by returning :data:`sys.monitoring.DISABLE` from a callback "
+"function. This does not change which events are set, or any other code "
+"locations for the same event."
 msgstr ""
 
 msgid ""
@@ -377,14 +404,18 @@ msgid ""
 msgstr ""
 
 msgid ""
+"If :data:`DISABLE` is returned by a callback for a :ref:`global event "
+"<monitoring-event-global>`, :exc:`ValueError` will be raised by the "
+"interpreter in a non-specific location (that is, no traceback will be "
+"provided)."
+msgstr ""
+
+msgid ""
 "Enable all the events that were disabled by :data:`sys.monitoring.DISABLE` "
 "for all tools."
 msgstr ""
 
 msgid "Registering callback functions"
-msgstr ""
-
-msgid "To register a callable for events call"
 msgstr ""
 
 msgid "Registers the callable *func* for the *event* with the given *tool_id*"
@@ -397,6 +428,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Raises an :ref:`auditing event <auditing>` ``sys.monitoring."
+"register_callback`` with argument ``func``."
+msgstr ""
+
+msgid ""
 "Functions can be unregistered by calling ``sys.monitoring."
 "register_callback(tool_id, event, None)``."
 msgstr ""
@@ -405,8 +441,10 @@ msgid "Callback functions can be registered and unregistered at any time."
 msgstr ""
 
 msgid ""
-"Registering or unregistering a callback function will generate a :func:`sys."
-"audit` event."
+"Callbacks are called only once regardless if the event is turned on both "
+"globally and locally. As such, if an event could be turned on for both "
+"global and local events by your code then the callback needs to be written "
+"to handle either trigger."
 msgstr ""
 
 msgid "Callback function arguments"
@@ -419,36 +457,44 @@ msgstr ""
 
 msgid ""
 "When an active event occurs, the registered callback function is called. "
-"Different events will provide the callback function with different "
-"arguments, as follows:"
+"Callback functions returning an object other than :data:`DISABLE` will have "
+"no effect. Different events will provide the callback function with "
+"different arguments, as follows:"
 msgstr ""
 
 msgid ":monitoring-event:`PY_START` and :monitoring-event:`PY_RESUME`::"
 msgstr ""
 
-msgid "func(code: CodeType, instruction_offset: int) -> DISABLE | Any"
+msgid "func(code: CodeType, instruction_offset: int) -> object"
 msgstr ""
 
 msgid ":monitoring-event:`PY_RETURN` and :monitoring-event:`PY_YIELD`::"
 msgstr ""
 
-msgid ""
-"func(code: CodeType, instruction_offset: int, retval: object) -> DISABLE | "
-"Any"
+msgid "func(code: CodeType, instruction_offset: int, retval: object) -> object"
 msgstr ""
 
 msgid ""
 ":monitoring-event:`CALL`, :monitoring-event:`C_RAISE` and :monitoring-event:"
-"`C_RETURN`::"
+"`C_RETURN` (*arg0* can be :data:`MISSING` specifically)::"
 msgstr ""
 
 msgid ""
-"func(code: CodeType, instruction_offset: int, callable: object, arg0: object "
-"| MISSING) -> DISABLE | Any"
+"func(code: CodeType, instruction_offset: int, callable: object, arg0: "
+"object) -> object"
 msgstr ""
 
 msgid ""
-"If there are no arguments, *arg0* is set to :data:`sys.monitoring.MISSING`."
+"*code* represents the code object where the call is being made, while "
+"*callable* is the object that is about to be called (and thus triggered the "
+"event). If there are no arguments, *arg0* is set to :data:`sys.monitoring."
+"MISSING`."
+msgstr ""
+
+msgid ""
+"For instance methods, *callable* will be the function object as found on the "
+"class with *arg0* set to the instance (i.e. the ``self`` argument to the "
+"method)."
 msgstr ""
 
 msgid ""
@@ -459,27 +505,26 @@ msgstr ""
 
 msgid ""
 "func(code: CodeType, instruction_offset: int, exception: BaseException) -> "
-"DISABLE | Any"
+"object"
 msgstr ""
 
 msgid ":monitoring-event:`LINE`::"
 msgstr ""
 
-msgid "func(code: CodeType, line_number: int) -> DISABLE | Any"
+msgid "func(code: CodeType, line_number: int) -> object"
 msgstr ""
 
-msgid ":monitoring-event:`BRANCH` and :monitoring-event:`JUMP`::"
+msgid ""
+":monitoring-event:`BRANCH_LEFT`, :monitoring-event:`BRANCH_RIGHT` and :"
+"monitoring-event:`JUMP`::"
 msgstr ""
 
 msgid ""
 "func(code: CodeType, instruction_offset: int, destination_offset: int) -> "
-"DISABLE | Any"
+"object"
 msgstr ""
 
-msgid ""
-"Note that the *destination_offset* is where the code will next execute. For "
-"an untaken branch this will be the offset of the instruction following the "
-"branch."
+msgid "Note that the *destination_offset* is where the code will next execute."
 msgstr ""
 
 msgid ":monitoring-event:`INSTRUCTION`::"

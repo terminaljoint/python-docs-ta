@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "What's New in Python 2.0"
 msgstr ""
@@ -189,7 +187,6 @@ msgid ""
 "will simply cover the most significant points about the Unicode interfaces."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "In Python source code, Unicode strings are written as ``u\"string\"``.  "
 "Arbitrary Unicode characters can be written using a new escape sequence, :"
@@ -676,7 +673,6 @@ msgid ""
 "submitted by Thomas Wouters."
 msgstr ""
 
-#, python-format
 msgid ""
 "A new format style is available when using the ``%`` operator; '%r' will "
 "insert the :func:`repr` of its argument.  This was also added from symmetry "
@@ -837,12 +833,12 @@ msgid ""
 "The change which will probably break the most code is tightening up the "
 "arguments accepted by some methods.  Some methods would take multiple "
 "arguments and treat them as a tuple, particularly various list methods such "
-"as :meth:`!append` and :meth:`!insert`. In earlier versions of Python, if "
-"``L`` is a list, ``L.append( 1,2 )`` appends the tuple ``(1,2)`` to the "
-"list.  In Python 2.0 this causes a :exc:`TypeError` exception to be raised, "
-"with the message: 'append requires exactly 1 argument; 2 given'.  The fix is "
-"to simply add an extra set of parentheses to pass both values as a tuple:  "
-"``L.append( (1,2) )``."
+"as :meth:`~list.append` and :meth:`~list.insert`. In earlier versions of "
+"Python, if ``L`` is a list, ``L.append( 1,2 )`` appends the tuple ``(1,2)`` "
+"to the list.  In Python 2.0 this causes a :exc:`TypeError` exception to be "
+"raised, with the message: 'append requires exactly 1 argument; 2 given'.  "
+"The fix is to simply add an extra set of parentheses to pass both values as "
+"a tuple:  ``L.append( (1,2) )``."
 msgstr ""
 
 msgid ""
@@ -886,7 +882,6 @@ msgid ""
 "to take advantage of this fact will break in 2.0."
 msgstr ""
 
-#, python-format
 msgid ""
 "Some work has been done to make integers and long integers a bit more "
 "interchangeable.  In 1.5.2, large-file support was added for Solaris, to "
@@ -913,7 +908,6 @@ msgid ""
 "the final digit."
 msgstr ""
 
-#, python-format
 msgid ""
 "Taking the :func:`repr` of a float now uses a different formatting precision "
 "than :func:`str`.  :func:`repr` uses ``%.17g`` format string for C's :func:`!"
@@ -1305,10 +1299,10 @@ msgstr ""
 msgid ""
 "Lots of improvements and bugfixes were made to Python's extensive standard "
 "library; some of the affected modules include :mod:`readline`, :mod:"
-"`ConfigParser <configparser>`, :mod:`cgi`, :mod:`calendar`, :mod:`posix`, :"
-"mod:`readline`, :mod:`!xmllib`, :mod:`aifc`, :mod:`chunk` :mod:`wave`, :mod:"
-"`random`, :mod:`shelve`, and :mod:`nntplib`.  Consult the CVS logs for the "
-"exact patch-by-patch details."
+"`ConfigParser <configparser>`, :mod:`!cgi`, :mod:`calendar`, :mod:`posix`, :"
+"mod:`readline`, :mod:`!xmllib`, :mod:`!aifc`, :mod:`!chunk`, :mod:`wave`, :"
+"mod:`random`, :mod:`shelve`, and :mod:`!nntplib`.  Consult the CVS logs for "
+"the exact patch-by-patch details."
 msgstr ""
 
 msgid ""

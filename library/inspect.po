@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!inspect` --- Inspect live objects"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/inspect.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`inspect` module provides several useful functions to help get "
+"The :mod:`!inspect` module provides several useful functions to help get "
 "information about live objects such as modules, classes, methods, functions, "
 "tracebacks, frame objects, and code objects.  For example, it can help you "
 "examine the contents of a class, retrieve the source code of a method, "
@@ -235,10 +233,37 @@ msgstr ""
 msgid "local namespace seen by this frame"
 msgstr ""
 
+msgid "f_generator"
+msgstr ""
+
+msgid ""
+"returns the generator or coroutine object that owns this frame, or ``None`` "
+"if the frame is of a regular function"
+msgstr ""
+
 msgid "f_trace"
 msgstr ""
 
 msgid "tracing function for this frame, or ``None``"
+msgstr ""
+
+msgid "f_trace_lines"
+msgstr ""
+
+msgid ""
+"indicate whether a tracing event is triggered for each source source line"
+msgstr ""
+
+msgid "f_trace_opcodes"
+msgstr ""
+
+msgid "indicate whether per-opcode events are requested"
+msgstr ""
+
+msgid "clear()"
+msgstr ""
+
+msgid "used to clear all references to local variables"
 msgstr ""
 
 msgid "code"
@@ -349,6 +374,25 @@ msgstr ""
 msgid "tuple of names of arguments and local variables"
 msgstr ""
 
+msgid "co_lines()"
+msgstr ""
+
+msgid "returns an iterator that yields successive bytecode ranges"
+msgstr ""
+
+msgid "co_positions()"
+msgstr ""
+
+msgid ""
+"returns an iterator of source code positions for each bytecode instruction"
+msgstr ""
+
+msgid "replace()"
+msgstr ""
+
+msgid "returns a copy of the code object with new values"
+msgstr ""
+
 msgid "generator"
 msgstr ""
 
@@ -362,6 +406,12 @@ msgid "gi_running"
 msgstr ""
 
 msgid "is the generator running?"
+msgstr ""
+
+msgid "gi_suspended"
+msgstr ""
+
+msgid "is the generator suspended?"
 msgstr ""
 
 msgid "gi_code"
@@ -388,6 +438,9 @@ msgstr ""
 msgid "ag_running"
 msgstr ""
 
+msgid "ag_suspended"
+msgstr ""
+
 msgid "ag_code"
 msgstr ""
 
@@ -404,6 +457,12 @@ msgid "cr_running"
 msgstr ""
 
 msgid "is the coroutine running?"
+msgstr ""
+
+msgid "cr_suspended"
+msgstr ""
+
+msgid "is the coroutine suspended?"
 msgstr ""
 
 msgid "cr_code"
@@ -436,6 +495,18 @@ msgid "Add ``cr_origin`` attribute to coroutines."
 msgstr ""
 
 msgid "Add ``__builtins__`` attribute to functions."
+msgstr ""
+
+msgid "Add ``gi_suspended`` attribute to generators."
+msgstr ""
+
+msgid "Add ``cr_suspended`` attribute to coroutines."
+msgstr ""
+
+msgid "Add ``ag_suspended`` attribute to async generators."
+msgstr ""
+
+msgid "Add ``f_generator`` attribute to frames."
 msgstr ""
 
 msgid ""
@@ -494,6 +565,9 @@ msgstr ""
 msgid "Return ``True`` if the object is a bound method written in Python."
 msgstr ""
 
+msgid "Return ``True`` if the object is a :term:`package`."
+msgstr ""
+
 msgid ""
 "Return ``True`` if the object is a Python function, which includes functions "
 "created by a :term:`lambda` expression."
@@ -505,6 +579,11 @@ msgstr ""
 msgid ""
 "Functions wrapped in :func:`functools.partial` now return ``True`` if the "
 "wrapped function is a Python generator function."
+msgstr ""
+
+msgid ""
+"Functions wrapped in :func:`functools.partialmethod` now return ``True`` if "
+"the wrapped function is a Python generator function."
 msgstr ""
 
 msgid "Return ``True`` if the object is a generator."
@@ -524,6 +603,11 @@ msgstr ""
 
 msgid ""
 "Sync functions marked with :func:`markcoroutinefunction` now return ``True``."
+msgstr ""
+
+msgid ""
+"Functions wrapped in :func:`functools.partialmethod` now return ``True`` if "
+"the wrapped function is a :term:`coroutine function`."
 msgstr ""
 
 msgid ""
@@ -588,6 +672,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+"Functions wrapped in :func:`functools.partialmethod` now return ``True`` if "
+"the wrapped function is a :term:`asynchronous generator` function."
+msgstr ""
+
+msgid ""
 "Return ``True`` if the object is an :term:`asynchronous generator iterator` "
 "created by an :term:`asynchronous generator` function."
 msgstr ""
@@ -631,10 +720,10 @@ msgstr ""
 
 msgid ""
 "This, for example, is true of ``int.__add__``.  An object passing this test "
-"has a :meth:`~object.__get__` method but not a :meth:`~object.__set__` "
-"method, but beyond that the set of attributes varies.  A :attr:`~definition."
-"__name__` attribute is usually sensible, and :attr:`~definition.__doc__` "
-"often is."
+"has a :meth:`~object.__get__` method, but not a :meth:`~object.__set__` "
+"method or a :meth:`~object.__delete__` method.  Beyond that, the set of "
+"attributes varies.  A :attr:`~definition.__name__` attribute is usually "
+"sensible, and :attr:`~definition.__doc__` often is."
 msgstr ""
 
 msgid ""
@@ -642,6 +731,13 @@ msgid ""
 "return ``False`` from the :func:`ismethoddescriptor` test, simply because "
 "the other tests promise more -- you can, e.g., count on having the :attr:"
 "`~method.__func__` attribute (etc) when an object passes :func:`ismethod`."
+msgstr ""
+
+msgid ""
+"This function no longer incorrectly reports objects with :meth:`~object."
+"__get__` and :meth:`~object.__delete__`, but not :meth:`~object.__set__`, as "
+"being method descriptors (such objects are data descriptors, not method "
+"descriptors)."
 msgstr ""
 
 msgid "Return ``True`` if the object is a data descriptor."
@@ -784,24 +880,29 @@ msgid ""
 msgstr ""
 
 msgid ""
-"For objects defined in modules using stringized annotations (``from "
-"__future__ import annotations``), :func:`signature` will attempt to "
-"automatically un-stringize the annotations using :func:`get_annotations`.  "
-"The *globals*, *locals*, and *eval_str* parameters are passed into :func:"
-"`get_annotations` when resolving the annotations; see the documentation for :"
-"func:`get_annotations` for instructions on how to use these parameters."
+"If some of the annotations are strings (e.g., because ``from __future__ "
+"import annotations`` was used), :func:`signature` will attempt to "
+"automatically un-stringize the annotations using :func:`annotationlib."
+"get_annotations`.  The *globals*, *locals*, and *eval_str* parameters are "
+"passed into :func:`!annotationlib.get_annotations` when resolving the "
+"annotations; see the documentation for :func:`!annotationlib."
+"get_annotations` for instructions on how to use these parameters. A member "
+"of the :class:`annotationlib.Format` enum can be passed to the "
+"*annotation_format* parameter to control the format of the returned "
+"annotations. For example, use ``annotation_format=annotationlib.Format."
+"STRING`` to return annotations in string format."
 msgstr ""
 
 msgid ""
 "Raises :exc:`ValueError` if no signature can be provided, and :exc:"
 "`TypeError` if that type of object is not supported.  Also, if the "
 "annotations are stringized, and *eval_str* is not false, the ``eval()`` "
-"call(s) to un-stringize the annotations in :func:`get_annotations` could "
-"potentially raise any kind of exception."
+"call(s) to un-stringize the annotations in :func:`annotationlib."
+"get_annotations` could potentially raise any kind of exception."
 msgstr ""
 
 msgid ""
-"A slash(/) in the signature of a function denotes that the parameters prior "
+"A slash (/) in the signature of a function denotes that the parameters prior "
 "to it are positional-only. For more info, see :ref:`the FAQ entry on "
 "positional-only parameters <faq-positional-only-arguments>`."
 msgstr ""
@@ -813,6 +914,9 @@ msgid ""
 msgstr ""
 
 msgid "The *globals*, *locals*, and *eval_str* parameters were added."
+msgstr ""
+
+msgid "The *annotation_format* parameter was added."
 msgstr ""
 
 msgid ""
@@ -849,7 +953,7 @@ msgstr ""
 
 msgid ""
 ":class:`!Signature` objects are *immutable*.  Use :meth:`Signature.replace` "
-"to make a modified copy."
+"or :func:`copy.replace` to make a modified copy."
 msgstr ""
 
 msgid ":class:`!Signature` objects are now picklable and :term:`hashable`."
@@ -907,6 +1011,31 @@ msgid ""
 msgstr ""
 
 msgid ""
+":class:`Signature` objects are also supported by the generic function :func:"
+"`copy.replace`."
+msgstr ""
+
+msgid "Create a string representation of the :class:`Signature` object."
+msgstr ""
+
+msgid ""
+"If *max_width* is passed, the method will attempt to fit the signature into "
+"lines of at most *max_width* characters. If the signature is longer than "
+"*max_width*, all parameters will be on separate lines."
+msgstr ""
+
+msgid ""
+"If *quote_annotation_strings* is False, :term:`annotations <annotation>` in "
+"the signature are displayed without opening and closing quotation marks if "
+"they are strings. This is useful if the signature was created with the :attr:"
+"`~annotationlib.Format.STRING` format or if ``from __future__ import "
+"annotations`` was used."
+msgstr ""
+
+msgid "The *unquote_annotations* parameter was added."
+msgstr ""
+
+msgid ""
 "Return a :class:`Signature` (or its subclass) object for a given callable "
 "*obj*."
 msgstr ""
@@ -926,8 +1055,8 @@ msgstr ""
 
 msgid ""
 ":class:`!Parameter` objects are *immutable*. Instead of modifying a :class:`!"
-"Parameter` object, you can use :meth:`Parameter.replace` to create a "
-"modified copy."
+"Parameter` object, you can use :meth:`Parameter.replace` or :func:`copy."
+"replace` to create a modified copy."
 msgstr ""
 
 msgid "Parameter objects are now picklable and :term:`hashable`."
@@ -1072,6 +1201,11 @@ msgid ""
 msgstr ""
 
 msgid ""
+":class:`Parameter` objects are also supported by the generic function :func:"
+"`copy.replace`."
+msgstr ""
+
+msgid ""
 "In Python 3.3 :class:`Parameter` objects were allowed to have ``name`` set "
 "to ``None`` if their ``kind`` was set to ``POSITIONAL_ONLY``. This is no "
 "longer permitted."
@@ -1129,7 +1263,6 @@ msgid ""
 "For variable-keyword arguments (``**kwargs``) the default is an empty dict."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> def foo(a, b='ham', *args): pass\n"
 ">>> ba = inspect.signature(foo).bind('spam')\n"
@@ -1214,7 +1347,7 @@ msgid ""
 "This method was previously documented as deprecated in favour of :func:"
 "`signature` in Python 3.5, but that decision has been reversed in order to "
 "restore a clearly supported standard interface for single-source Python 2/3 "
-"code migrating away from the legacy :func:`getargspec` API."
+"code migrating away from the legacy :func:`!getargspec` API."
 msgstr ""
 
 msgid ""
@@ -1253,7 +1386,6 @@ msgid ""
 "example:"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> from inspect import getcallargs\n"
 ">>> def f(a, b=1, *pos, **named):\n"
@@ -1309,84 +1441,18 @@ msgid "Compute the annotations dict for an object."
 msgstr ""
 
 msgid ""
-"``obj`` may be a callable, class, or module. Passing in an object of any "
-"other type raises :exc:`TypeError`."
+"This is an alias for :func:`annotationlib.get_annotations`; see the "
+"documentation of that function for more information."
 msgstr ""
 
 msgid ""
-"Returns a dict.  ``get_annotations()`` returns a new dict every time it's "
-"called; calling it twice on the same object will return two different but "
-"equivalent dicts."
-msgstr ""
-
-msgid "This function handles several details for you:"
+"This function may execute arbitrary code contained in annotations. See :ref:"
+"`annotationlib-security` for more information."
 msgstr ""
 
 msgid ""
-"If ``eval_str`` is true, values of type ``str`` will be un-stringized using :"
-"func:`eval`.  This is intended for use with stringized annotations (``from "
-"__future__ import annotations``)."
-msgstr ""
-
-msgid ""
-"If ``obj`` doesn't have an annotations dict, returns an empty dict.  "
-"(Functions and methods always have an annotations dict; classes, modules, "
-"and other types of callables may not.)"
-msgstr ""
-
-msgid ""
-"Ignores inherited annotations on classes.  If a class doesn't have its own "
-"annotations dict, returns an empty dict."
-msgstr ""
-
-msgid ""
-"All accesses to object members and dict values are done using ``getattr()`` "
-"and ``dict.get()`` for safety."
-msgstr ""
-
-msgid "Always, always, always returns a freshly created dict."
-msgstr ""
-
-msgid ""
-"``eval_str`` controls whether or not values of type ``str`` are replaced "
-"with the result of calling :func:`eval` on those values:"
-msgstr ""
-
-msgid ""
-"If eval_str is true, :func:`eval` is called on values of type ``str``. (Note "
-"that ``get_annotations`` doesn't catch exceptions; if :func:`eval` raises an "
-"exception, it will unwind the stack past the ``get_annotations`` call.)"
-msgstr ""
-
-msgid ""
-"If eval_str is false (the default), values of type ``str`` are unchanged."
-msgstr ""
-
-msgid ""
-"``globals`` and ``locals`` are passed in to :func:`eval`; see the "
-"documentation for :func:`eval` for more information.  If ``globals`` or "
-"``locals`` is ``None``, this function may replace that value with a context-"
-"specific default, contingent on ``type(obj)``:"
-msgstr ""
-
-msgid "If ``obj`` is a module, ``globals`` defaults to ``obj.__dict__``."
-msgstr ""
-
-msgid ""
-"If ``obj`` is a class, ``globals`` defaults to ``sys.modules[obj.__module__]."
-"__dict__`` and ``locals`` defaults to the ``obj`` class namespace."
-msgstr ""
-
-msgid ""
-"If ``obj`` is a callable, ``globals`` defaults to :attr:`obj.__globals__ "
-"<function.__globals__>`, although if ``obj`` is a wrapped function (using :"
-"func:`functools.update_wrapper`) it is first unwrapped."
-msgstr ""
-
-msgid ""
-"Calling ``get_annotations`` is best practice for accessing the annotations "
-"dict of any object.  See :ref:`annotations-howto` for more information on "
-"annotations best practices."
+"This function is now an alias for :func:`annotationlib.get_annotations`. "
+"Calling it as ``inspect.get_annotations`` will continue to work."
 msgstr ""
 
 msgid "The interpreter stack"
@@ -1785,10 +1851,19 @@ msgid ""
 msgstr ""
 
 msgid ""
+"The flag is set when there is a docstring for the code object in the source "
+"code. If set, it will be the first item in :attr:`~codeobject.co_consts`."
+msgstr ""
+
+msgid ""
+"The flag is set when the code object is a function defined in class scope."
+msgstr ""
+
+msgid ""
 "The flags are specific to CPython, and may not be defined in other Python "
 "implementations.  Furthermore, the flags are an implementation detail, and "
 "can be removed or deprecated in future Python releases. It's recommended to "
-"use public APIs from the :mod:`inspect` module for any introspection needs."
+"use public APIs from the :mod:`!inspect` module for any introspection needs."
 msgstr ""
 
 msgid "Buffer flags"
@@ -1803,11 +1878,11 @@ msgstr ""
 msgid "The meaning of the flags is explained at :ref:`buffer-request-types`."
 msgstr ""
 
-msgid "Command Line Interface"
+msgid "Command-line interface"
 msgstr ""
 
 msgid ""
-"The :mod:`inspect` module also provides a basic introspection capability "
+"The :mod:`!inspect` module also provides a basic introspection capability "
 "from the command line."
 msgstr ""
 

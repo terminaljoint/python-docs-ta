@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "What's New in Python 2.5"
 msgstr ""
@@ -203,7 +201,6 @@ msgstr ""
 msgid "Here's a small but realistic example::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import functools\n"
 "\n"
@@ -291,7 +288,6 @@ msgid ""
 "download the required packages. ::"
 msgstr ""
 
-#, python-format
 msgid ""
 "VERSION = '1.0'\n"
 "setup(name='PyPackage',\n"
@@ -1260,7 +1256,6 @@ msgid ""
 "returns zero for any missing key::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "class zerodict (dict):\n"
 "    def __missing__ (self, key):\n"
@@ -1501,14 +1496,12 @@ msgid ""
 "meth:`!read\\*` method. (Implemented by Thomas Wouters.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "The :mod:`struct` module now compiles structure format  strings into an "
-"internal representation and caches this representation, yielding a "
-"20% speedup. (Contributed by Bob Ippolito at the NeedForSpeed sprint.)"
+"internal representation and caches this representation, yielding a 20% "
+"speedup. (Contributed by Bob Ippolito at the NeedForSpeed sprint.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "The :mod:`re` module got a 1 or 2% speedup by switching to  Python's "
 "allocator functions instead of the system's  :c:func:`malloc` and :c:func:"
@@ -1532,7 +1525,6 @@ msgid ""
 "Neal Norwitz.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "Python's built-in exceptions are now new-style classes, a change that speeds "
 "up instantiation considerably.  Exception handling in Python 2.5 is "
@@ -1558,7 +1550,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The :mod:`audioop` module now supports the a-LAW encoding, and the code for "
+"The :mod:`!audioop` module now supports the a-LAW encoding, and the code for "
 "u-LAW encoding has been improved.  (Contributed by Lars Immisch.)"
 msgstr ""
 
@@ -1605,7 +1597,6 @@ msgstr ""
 msgid "Printing ``index`` results in the following output::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "defaultdict(<type 'list'>, {'c': ['cammin', 'che'], 'e': ['era'],\n"
 "        'd': ['del', 'di', 'diritta'], 'm': ['mezzo', 'mi'],\n"
@@ -1679,12 +1670,11 @@ msgid ""
 "and :func:`time.strftime`::"
 msgstr ""
 
-#, python-format
 msgid ""
-"from datetime import datetime\n"
+"import datetime as dt\n"
 "\n"
-"ts = datetime.strptime('10:13:15 2006-03-07',\n"
-"                       '%H:%M:%S %Y-%m-%d')"
+"ts = dt.datetime.strptime('10:13:15 2006-03-07',\n"
+"                          '%H:%M:%S %Y-%m-%d')"
 msgstr ""
 
 msgid ""
@@ -1768,7 +1758,6 @@ msgid ""
 "and two new functions were added, :func:`format_string` and :func:`currency`."
 msgstr ""
 
-#, python-format
 msgid ""
 "The :func:`format` function's *val* parameter could previously be a string "
 "as long as no more than one %char specifier appeared; now the parameter must "
@@ -1778,7 +1767,6 @@ msgid ""
 "of three digits."
 msgstr ""
 
-#, python-format
 msgid ""
 "To format strings with multiple %char specifiers, use the new :func:"
 "`format_string` function that works like :func:`format` but also supports "
@@ -1821,15 +1809,15 @@ msgid ""
 msgstr ""
 
 msgid ""
-"New module: the :mod:`msilib` module allows creating Microsoft Installer :"
+"New module: the :mod:`!msilib` module allows creating Microsoft Installer :"
 "file:`.msi` files and CAB files.  Some support for reading the :file:`.msi` "
 "database is also included. (Contributed by Martin von Löwis.)"
 msgstr ""
 
 msgid ""
-"The :mod:`nis` module now supports accessing domains other than the system "
-"default domain by supplying a *domain* argument to the :func:`nis.match` "
-"and :func:`nis.maps` functions. (Contributed by Ben Bell.)"
+"The :mod:`!nis` module now supports accessing domains other than the system "
+"default domain by supplying a *domain* argument to the :func:`!nis.match` "
+"and :func:`!nis.maps` functions. (Contributed by Ben Bell.)"
 msgstr ""
 
 msgid ""
@@ -1980,7 +1968,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"New module: the :mod:`spwd` module provides functions for accessing the "
+"New module: the :mod:`!spwd` module provides functions for accessing the "
 "shadow password database on systems that support  shadow passwords."
 msgstr ""
 
@@ -2209,7 +2197,6 @@ msgid ""
 "usage::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "import ctypes\n"
 "\n"
@@ -2562,7 +2549,6 @@ msgid ""
 "attack."
 msgstr ""
 
-#, python-format
 msgid ""
 "Instead, use the DB-API's parameter substitution.  Put ``?`` as a "
 "placeholder wherever you want to use a value, and then provide a tuple of "
@@ -2571,7 +2557,6 @@ msgid ""
 "``:1``.) For example::"
 msgstr ""
 
-#, python-format
 msgid ""
 "# Never do this -- insecure!\n"
 "symbol = 'IBM'\n"
@@ -2800,15 +2785,14 @@ msgstr ""
 
 msgid ""
 "Two new macros can be used to indicate C functions that are local to the "
-"current file so that a faster calling convention can be used. "
-"``Py_LOCAL(type)`` declares the function as returning a value of the "
-"specified *type* and uses a fast-calling qualifier. "
-"``Py_LOCAL_INLINE(type)`` does the same thing and also requests the function "
-"be inlined.  If macro :c:macro:`!PY_LOCAL_AGGRESSIVE` is defined before :"
-"file:`python.h` is included, a set of more aggressive optimizations are "
-"enabled for the module; you should benchmark the results to find out if "
-"these optimizations actually make the code faster.  (Contributed by Fredrik "
-"Lundh at the NeedForSpeed sprint.)"
+"current file so that a faster calling convention can be used. :c:macro:"
+"`Py_LOCAL` declares the function as returning a value of the specified "
+"*type* and uses a fast-calling qualifier. :c:macro:`Py_LOCAL_INLINE` does "
+"the same thing and also requests the function be inlined.  If macro :c:macro:"
+"`!PY_LOCAL_AGGRESSIVE` is defined before :file:`python.h` is included, a set "
+"of more aggressive optimizations are enabled for the module; you should "
+"benchmark the results to find out if these optimizations actually make the "
+"code faster.  (Contributed by Fredrik Lundh at the NeedForSpeed sprint.)"
 msgstr ""
 
 msgid ""
@@ -2898,7 +2882,6 @@ msgid ""
 "characters."
 msgstr ""
 
-#, python-format
 msgid ""
 "Library: the :mod:`locale` module's  :func:`format` function's would "
 "previously  accept any string as long as no more than one %char specifier "

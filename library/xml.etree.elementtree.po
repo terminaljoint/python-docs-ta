@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:02+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!xml.etree.ElementTree` --- The ElementTree XML API"
 msgstr ""
@@ -26,7 +24,7 @@ msgid "**Source code:** :source:`Lib/xml/etree/ElementTree.py`"
 msgstr ""
 
 msgid ""
-"The :mod:`xml.etree.ElementTree` module implements a simple and efficient "
+"The :mod:`!xml.etree.ElementTree` module implements a simple and efficient "
 "API for parsing and creating XML data."
 msgstr ""
 
@@ -37,16 +35,15 @@ msgid "The :mod:`!xml.etree.cElementTree` module is deprecated."
 msgstr ""
 
 msgid ""
-"The :mod:`xml.etree.ElementTree` module is not secure against maliciously "
-"constructed data.  If you need to parse untrusted or unauthenticated data "
-"see :ref:`xml-vulnerabilities`."
+"If you need to parse untrusted or unauthenticated data, see :ref:`xml-"
+"security`."
 msgstr ""
 
 msgid "Tutorial"
 msgstr ""
 
 msgid ""
-"This is a short tutorial for using :mod:`xml.etree.ElementTree` (``ET`` in "
+"This is a short tutorial for using :mod:`!xml.etree.ElementTree` (``ET`` in "
 "short).  The goal is to demonstrate some of the building blocks and basic "
 "concepts of the module."
 msgstr ""
@@ -124,7 +121,6 @@ msgid ""
 "As an :class:`Element`, ``root`` has a tag and a dictionary of attributes::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> root.tag\n"
 "'data'\n"
@@ -135,7 +131,6 @@ msgstr ""
 msgid "It also has children nodes over which we can iterate::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> for child in root:\n"
 "...     print(child.tag, child.attrib)\n"
@@ -228,7 +223,6 @@ msgid ""
 "example, :meth:`Element.iter`::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 ">>> for neighbor in root.iter('neighbor'):\n"
 "...     print(neighbor.attrib)\n"
@@ -382,7 +376,6 @@ msgstr ""
 msgid "Parsing XML with Namespaces"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "If the XML input has `namespaces <https://en.wikipedia.org/wiki/"
 "XML_namespace>`__, tags and attributes with prefixes in the form ``prefix:"
@@ -421,7 +414,6 @@ msgid ""
 "`~Element.findall`::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "root = fromstring(xml_text)\n"
 "for actor in root.findall('{http://people.example.com}actor'):\n"
@@ -436,7 +428,6 @@ msgid ""
 "with your own prefixes and use those in the search functions::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "ns = {'real_person': 'http://people.example.com',\n"
 "      'role': 'http://characters.example.com'}\n"
@@ -502,13 +493,11 @@ msgid ""
 "root.findall(\".//neighbor[2]\")"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "For XML with namespaces, use the usual qualified ``{namespace}tag`` "
 "notation::"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "# All dublin-core \"title\" tags in the document\n"
 "root.findall(\".//{http://purl.org/dc/elements/1.1/}title\")"
@@ -526,7 +515,6 @@ msgstr ""
 msgid "``tag``"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Selects all child elements with the given tag. For example, ``spam`` selects "
 "all child elements named ``spam``, and ``spam/egg`` selects all "
@@ -701,7 +689,6 @@ msgstr ""
 msgid "(default: false)"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "*rewrite_prefixes*: set to true to replace namespace prefixes by "
 "\"n{number}\""
@@ -802,7 +789,8 @@ msgid ""
 "the default :class:`TreeBuilder` as a target. Returns an :term:`iterator` "
 "providing ``(event, elem)`` pairs; it has a ``root`` attribute that "
 "references the root element of the resulting XML tree once *source* is fully "
-"read."
+"read. The iterator has the :meth:`!close` method that closes the internal "
+"file object if *source* is a filename."
 msgstr ""
 
 msgid ""
@@ -827,6 +815,9 @@ msgid "The *parser* argument."
 msgstr ""
 
 msgid "The ``comment`` and ``pi`` events were added."
+msgstr ""
+
+msgid "Added the :meth:`!close` method."
 msgstr ""
 
 msgid ""
@@ -936,7 +927,6 @@ msgid ""
 "element trees, based on information in the tree."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "Here's an example that demonstrates use of the XInclude module. To include "
 "an XML document in the current document, use the ``{http://www.w3.org/2001/"
@@ -959,7 +949,7 @@ msgstr ""
 
 msgid ""
 "To process this file, load it as usual, and pass the root element to the :"
-"mod:`xml.etree.ElementTree` module:"
+"mod:`!xml.etree.ElementTree` module:"
 msgstr ""
 
 msgid ""
@@ -971,7 +961,6 @@ msgid ""
 "ElementInclude.include(root)"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "The ElementInclude module replaces the ``{http://www.w3.org/2001/XInclude}"
 "include`` element with the root element from the **source.xml** document. "
@@ -989,7 +978,6 @@ msgid ""
 "attribute is required."
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "To include a text document, use the ``{http://www.w3.org/2001/XInclude}"
 "include`` element, and set the **parse** attribute to \"text\":"
@@ -1376,7 +1364,6 @@ msgstr ""
 msgid "QName Objects"
 msgstr ""
 
-#, python-brace-format
 msgid ""
 "QName wrapper.  This can be used to wrap a QName attribute value, in order "
 "to get proper namespace handling on output.  *text_or_uri* is a string "

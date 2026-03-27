@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Logging HOWTO"
 msgstr ""
@@ -51,10 +49,10 @@ msgstr ""
 
 msgid ""
 "You can access logging functionality by creating a logger via ``logger = "
-"getLogger(__name__)``, and then calling the logger's :meth:`~Logger.debug`, :"
-"meth:`~Logger.info`, :meth:`~Logger.warning`, :meth:`~Logger.error` and :"
-"meth:`~Logger.critical` methods. To determine when to use logging, and to "
-"see which logger methods to use when, see the table below. It states, for "
+"logging.getLogger(__name__)``, and then calling the logger's :meth:`~Logger."
+"debug`, :meth:`~Logger.info`, :meth:`~Logger.warning`, :meth:`~Logger.error` "
+"and :meth:`~Logger.critical` methods. To determine when to use logging, and "
+"to see which logger methods to use when, see the table below. It states, for "
 "each of a set of common tasks, the best tool to use for that task."
 msgstr ""
 
@@ -162,9 +160,9 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The default level is ``WARNING``, which means that only events of this level "
-"and above will be tracked, unless the logging package is configured to do "
-"otherwise."
+"The default level is ``WARNING``, which means that only events of this "
+"severity and higher will be tracked, unless the logging package is "
+"configured to do otherwise."
 msgstr ""
 
 msgid ""
@@ -202,7 +200,7 @@ msgstr ""
 msgid ""
 "Notice that in this example, we use functions directly on the ``logging`` "
 "module, like ``logging.debug``, rather than creating a logger and calling "
-"functions on it. These functions operation on the root logger, but can be "
+"functions on it. These functions operate on the root logger, but can be "
 "useful as they will call :func:`~logging.basicConfig` for you if it has not "
 "been called yet, like in this example.  In larger programs you'll usually "
 "want to control the logging configuration explicitly however - so for that "
@@ -278,7 +276,6 @@ msgid ""
 "the following example::"
 msgstr ""
 
-#, python-format
 msgid ""
 "# assuming loglevel is bound to the string value obtained from the\n"
 "# command line argument. Convert to upper case to allow the user to\n"
@@ -320,7 +317,6 @@ msgid ""
 "and append the variable data as arguments. For example::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "logging.warning('%s before you %s', 'Look', 'leap!')"
@@ -332,7 +328,6 @@ msgstr ""
 msgid "WARNING:root:Look before you leap!"
 msgstr ""
 
-#, python-format
 msgid ""
 "As you can see, merging of variable data into the event description message "
 "uses the old, %-style of string formatting. This is for backwards "
@@ -350,7 +345,6 @@ msgid ""
 "the format you want to use::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "logging.basicConfig(format='%(levelname)s:%(message)s', level=logging."
@@ -381,13 +375,11 @@ msgstr ""
 msgid "Displaying the date/time in messages"
 msgstr ""
 
-#, python-format
 msgid ""
 "To display the date and time of an event, you would place '%(asctime)s' in "
 "your format string::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "logging.basicConfig(format='%(asctime)s %(message)s')\n"
@@ -406,7 +398,6 @@ msgid ""
 "provide a *datefmt* argument to ``basicConfig``, as in this example::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:"
@@ -439,8 +430,8 @@ msgstr ""
 msgid ""
 "If your logging needs are simple, then use the above examples to incorporate "
 "logging into your own scripts, and if you run into problems or don't "
-"understand something, please post a question on the comp.lang.python Usenet "
-"group (available at https://groups.google.com/g/comp.lang.python) and you "
+"understand something, please post a question in the Help category of the "
+"`Python discussion forum <https://discuss.python.org/c/help/7>`_ and you "
 "should receive help before too long."
 msgstr ""
 
@@ -600,7 +591,6 @@ msgid ""
 "With the logger object configured, the following methods create log messages:"
 msgstr ""
 
-#, python-format
 msgid ""
 ":meth:`Logger.debug`, :meth:`Logger.info`, :meth:`Logger.warning`, :meth:"
 "`Logger.error`, and :meth:`Logger.critical` all create log records with a "
@@ -728,7 +718,6 @@ msgid ""
 "message.  If there is no date format string, the default date format is:"
 msgstr ""
 
-#, python-format
 msgid "%Y-%m-%d %H:%M:%S"
 msgstr ""
 
@@ -756,7 +745,6 @@ msgid ""
 "that order::"
 msgstr ""
 
-#, python-format
 msgid "'%(asctime)s - %(levelname)s - %(message)s'"
 msgstr ""
 
@@ -797,7 +785,6 @@ msgid ""
 "console handler, and a simple formatter using Python code::"
 msgstr ""
 
-#, python-format
 msgid ""
 "import logging\n"
 "\n"
@@ -866,7 +853,6 @@ msgstr ""
 msgid "Here is the logging.conf file:"
 msgstr ""
 
-#, python-format
 msgid ""
 "[loggers]\n"
 "keys=root,simpleExample\n"
@@ -963,7 +949,6 @@ msgid ""
 "new dictionary-based approach:"
 msgstr ""
 
-#, python-format
 msgid ""
 "version: 1\n"
 "formatters:\n"
@@ -1282,7 +1267,6 @@ msgid ""
 "module, :mod:`logging.config`, for configuration functionality.)"
 msgstr ""
 
-#, python-format
 msgid ""
 "Logged messages are formatted for presentation through instances of the :"
 "class:`Formatter` class. They are initialized with a format string suitable "
@@ -1369,7 +1353,6 @@ msgid ""
 "code like this::"
 msgstr ""
 
-#, python-format
 msgid ""
 "if logger.isEnabledFor(logging.DEBUG):\n"
 "    logger.debug('Message with %s, %s', expensive_func1(),\n"

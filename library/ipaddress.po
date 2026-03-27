@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ":mod:`!ipaddress` --- IPv4/IPv6 manipulation library"
 msgstr ""
@@ -26,8 +24,8 @@ msgid "**Source code:** :source:`Lib/ipaddress.py`"
 msgstr ""
 
 msgid ""
-":mod:`ipaddress` provides the capabilities to create, manipulate and operate "
-"on IPv4 and IPv6 addresses and networks."
+":mod:`!ipaddress` provides the capabilities to create, manipulate and "
+"operate on IPv4 and IPv6 addresses and networks."
 msgstr ""
 
 msgid ""
@@ -47,7 +45,7 @@ msgid "Convenience factory functions"
 msgstr ""
 
 msgid ""
-"The :mod:`ipaddress` module provides factory functions to conveniently "
+"The :mod:`!ipaddress` module provides factory functions to conveniently "
 "create IP addresses, networks and interfaces:"
 msgstr ""
 
@@ -135,6 +133,9 @@ msgid ""
 msgstr ""
 
 msgid "The appropriate version number: ``4`` for IPv4, ``6`` for IPv6."
+msgstr ""
+
+msgid "Made available on the class."
 msgstr ""
 
 msgid ""
@@ -255,7 +256,22 @@ msgid ""
 "`2373` (for IPv6)."
 msgstr ""
 
-msgid "``True`` if the address is otherwise IETF reserved."
+msgid ""
+"``True`` if the address is noted as reserved by the IETF. For IPv4, this is "
+"only ``240.0.0.0/4``, the ``Reserved`` address block. For IPv6, this is all "
+"addresses `allocated <iana-ipv6-address-space_>`__ as ``Reserved by IETF`` "
+"for future use."
+msgstr ""
+
+msgid ""
+"For IPv4, ``is_reserved`` is not related to the address block value of the "
+"``Reserved-by-Protocol`` column in iana-ipv4-special-registry_."
+msgstr ""
+
+msgid ""
+"For IPv6, ``fec0::/10`` a former Site-Local scoped address prefix is "
+"currently excluded from that list (see :attr:`~IPv6Address.is_site_local` & :"
+"rfc:`3879`)."
 msgstr ""
 
 msgid ""
@@ -265,6 +281,11 @@ msgstr ""
 
 msgid ""
 "``True`` if the address is reserved for link-local usage.  See :RFC:`3927`."
+msgstr ""
+
+msgid ""
+":class:`IPv4Address` object representing the IPv4-mapped IPv6 address. See :"
+"RFC:`4291`."
 msgstr ""
 
 msgid ""
@@ -295,7 +316,6 @@ msgid ""
 "to ``\"::abc:7:def\"``."
 msgstr ""
 
-#, python-format
 msgid ""
 "Optionally, the string may also have a scope zone ID, expressed with a "
 "suffix ``%scope_id``. If present, the scope ID must be non-empty, and may "
@@ -515,9 +535,9 @@ msgstr ""
 msgid ""
 "A two-tuple of an address description and a netmask, where the address "
 "description is either a string, a 32-bits integer, a 4-bytes packed integer, "
-"or an existing IPv4Address object; and the netmask is either an integer "
-"representing the prefix length (e.g. ``24``) or a string representing the "
-"prefix mask (e.g. ``255.255.255.0``)."
+"or an existing :class:`IPv4Address` object; and the netmask is either an "
+"integer representing the prefix length (e.g. ``24``) or a string "
+"representing the prefix mask (e.g. ``255.255.255.0``)."
 msgstr ""
 
 msgid ""
@@ -673,8 +693,8 @@ msgstr ""
 msgid ""
 "A two-tuple of an address description and a netmask, where the address "
 "description is either a string, a 128-bits integer, a 16-bytes packed "
-"integer, or an existing IPv6Address object; and the netmask is an integer "
-"representing the prefix length."
+"integer, or an existing :class:`IPv6Address` object; and the netmask is an "
+"integer representing the prefix length."
 msgstr ""
 
 msgid ""
@@ -696,8 +716,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"These attribute is true for the network as a whole if it is true for both "
-"the network address and the broadcast address."
+"This attribute is true for the network as a whole if it is true for both the "
+"network address and the broadcast address."
 msgstr ""
 
 msgid ""
@@ -888,7 +908,7 @@ msgstr ""
 
 msgid ""
 "doesn't make sense.  There are some times however, where you may wish to "
-"have :mod:`ipaddress` sort these anyway.  If you need to do this, you can "
+"have :mod:`!ipaddress` sort these anyway.  If you need to do this, you can "
 "use this function as the *key* argument to :func:`sorted`."
 msgstr ""
 

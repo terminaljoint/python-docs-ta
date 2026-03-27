@@ -1,23 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2001-2026, Python Software Foundation
+# Copyright (C) 2001 Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.12\n"
+"Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-24 09:04+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ta\n"
-"Language-Team: ta <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"PO-Revision-Date: 2025-09-16 00:00+0000\n"
+"Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Language: ta\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Parsing arguments and building values"
 msgstr ""
@@ -51,6 +49,13 @@ msgid ""
 msgstr ""
 
 msgid "Strings and buffers"
+msgstr ""
+
+msgid ""
+"On Python 3.12 and older, the macro :c:macro:`!PY_SSIZE_T_CLEAN` must be "
+"defined before including :file:`Python.h` to use all ``#`` variants of "
+"formats (``s#``, ``y#``, etc.) explained below. This is not necessary on "
+"Python 3.13 and later."
 msgstr ""
 
 msgid ""
@@ -98,14 +103,6 @@ msgid ""
 "Besides this ``bf_releasebuffer`` requirement, there is no check to verify "
 "whether the input object is immutable (e.g. whether it would honor a request "
 "for a writable buffer, or whether another thread can mutate the data)."
-msgstr ""
-
-msgid ""
-"For all ``#`` variants of formats (``s#``, ``y#``, etc.), the macro :c:macro:"
-"`PY_SSIZE_T_CLEAN` must be defined before including :file:`Python.h`. On "
-"Python 3.9 and older, the type of the length argument is :c:type:"
-"`Py_ssize_t` if the :c:macro:`PY_SSIZE_T_CLEAN` macro is defined, or int "
-"otherwise."
 msgstr ""
 
 msgid "``s`` (:class:`str`) [const char \\*]"
@@ -249,7 +246,7 @@ msgstr ""
 msgid ""
 "This format accepts any object which implements the read-write buffer "
 "interface. It fills a :c:type:`Py_buffer` structure provided by the caller. "
-"The buffer may contain embedded null bytes. The caller have to call :c:func:"
+"The buffer may contain embedded null bytes. The caller has to call :c:func:"
 "`PyBuffer_Release` when it is done with the buffer."
 msgstr ""
 
@@ -428,6 +425,9 @@ msgid ""
 "checking."
 msgstr ""
 
+msgid "Use :meth:`~object.__index__` if available."
+msgstr ""
+
 msgid "``L`` (:class:`int`) [long long]"
 msgstr ""
 
@@ -558,13 +558,31 @@ msgid ""
 "how Python tests values for truth."
 msgstr ""
 
-msgid "``(items)`` (:class:`tuple`) [*matching-items*]"
+msgid "``(items)`` (sequence) [*matching-items*]"
 msgstr ""
 
 msgid ""
-"The object must be a Python sequence whose length is the number of format "
-"units in *items*.  The C arguments must correspond to the individual format "
-"units in *items*.  Format units for sequences may be nested."
+"The object must be a Python sequence (except :class:`str`, :class:`bytes` "
+"or :class:`bytearray`) whose length is the number of format units in "
+"*items*.  The C arguments must correspond to the individual format units in "
+"*items*.  Format units for sequences may be nested."
+msgstr ""
+
+msgid ""
+"If *items* contains format units which store a :ref:`borrowed buffer <c-arg-"
+"borrowed-buffer>` (``s``, ``s#``, ``z``, ``z#``, ``y``, or ``y#``) or a :"
+"term:`borrowed reference` (``S``, ``Y``, ``U``, ``O``, or ``O!``), the "
+"object must be a Python tuple. The *converter* for the ``O&`` format unit in "
+"*items* must not store a borrowed buffer or a borrowed reference."
+msgstr ""
+
+msgid ""
+":class:`str` and :class:`bytearray` objects no longer accepted as a sequence."
+msgstr ""
+
+msgid ""
+"Non-tuple sequences are deprecated if *items* contains format units which "
+"store a borrowed buffer or a borrowed reference."
 msgstr ""
 
 msgid ""
@@ -651,15 +669,28 @@ msgstr ""
 
 msgid ""
 "Parse the parameters of a function that takes both positional and keyword "
-"parameters into local variables.  The *keywords* argument is a ``NULL``-"
-"terminated array of keyword parameter names.  Empty names denote :ref:"
-"`positional-only parameters <positional-only_parameter>`. Returns true on "
-"success; on failure, it returns false and raises the appropriate exception."
+"parameters into local variables. The *keywords* argument is a ``NULL``-"
+"terminated array of keyword parameter names specified as null-terminated "
+"ASCII or UTF-8 encoded C strings. Empty names denote :ref:`positional-only "
+"parameters <positional-only_parameter>`. Returns true on success; on "
+"failure, it returns false and raises the appropriate exception."
+msgstr ""
+
+msgid ""
+"The *keywords* parameter declaration is :c:expr:`char * const *` in C and :c:"
+"expr:`const char * const *` in C++. This can be overridden with the :c:macro:"
+"`PY_CXX_CONST` macro."
 msgstr ""
 
 msgid ""
 "Added support for :ref:`positional-only parameters <positional-"
 "only_parameter>`."
+msgstr ""
+
+msgid ""
+"The *keywords* parameter has now type :c:expr:`char * const *` in C and :c:"
+"expr:`const char * const *` in C++, instead of :c:expr:`char **`. Added "
+"support for non-ASCII keyword parameter names."
 msgstr ""
 
 msgid ""
@@ -674,13 +705,25 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Function used to deconstruct the argument lists of \"old-style\" functions "
-"--- these are functions which use the :const:`METH_OLDARGS` parameter "
-"parsing method, which has been removed in Python 3.  This is not recommended "
-"for use in parameter parsing in new code, and most code in the standard "
-"interpreter has been modified to no longer use this for that purpose.  It "
-"does remain a convenient way to decompose other tuples, however, and may "
-"continue to be used for that purpose."
+"Parse the parameter of a function that takes a single positional parameter "
+"into a local variable.  Returns true on success; on failure, it returns "
+"false and raises the appropriate exception."
+msgstr ""
+
+msgid "Example::"
+msgstr ""
+
+msgid ""
+"// Function using METH_O calling convention\n"
+"static PyObject*\n"
+"my_function(PyObject *module, PyObject *arg)\n"
+"{\n"
+"    int value;\n"
+"    if (!PyArg_Parse(arg, \"i:my_function\", &value)) {\n"
+"        return NULL;\n"
+"    }\n"
+"    // ... use value ...\n"
+"}"
 msgstr ""
 
 msgid ""
@@ -726,6 +769,14 @@ msgid ""
 msgstr ""
 
 msgid "PyArg_ParseTuple(args, \"O|O:ref\", &object, &callback)"
+msgstr ""
+
+msgid ""
+"The value to be inserted, if any, before :c:expr:`char * const *` in the "
+"*keywords* parameter declaration of :c:func:`PyArg_ParseTupleAndKeywords` "
+"and :c:func:`PyArg_VaParseTupleAndKeywords`. Default empty for C and "
+"``const`` for C++ (:c:expr:`const char * const *`). To override, define it "
+"to the desired value before including :file:`Python.h`."
 msgstr ""
 
 msgid "Building values"
@@ -874,6 +925,16 @@ msgstr ""
 msgid "Convert a C :c:type:`Py_ssize_t` to a Python integer."
 msgstr ""
 
+msgid "Convert a C :c:expr:`int` to a Python :class:`bool` object."
+msgstr ""
+
+msgid ""
+"Be aware that this format requires an ``int`` argument. Unlike most other "
+"contexts in C, variadic arguments are not coerced to a suitable type "
+"automatically. You can convert another type (for example, a pointer or a "
+"float) to a suitable ``int`` value using ``(x) ? 1 : 0`` or ``!!x``."
+msgstr ""
+
 msgid "``c`` (:class:`bytes` of length 1) [char]"
 msgstr ""
 
@@ -933,6 +994,9 @@ msgid ""
 "``NULL`` if an error occurred."
 msgstr ""
 
+msgid "``(items)`` (:class:`tuple`) [*matching-items*]"
+msgstr ""
+
 msgid ""
 "Convert a sequence of C values to a Python tuple with the same number of "
 "items."
@@ -946,7 +1010,6 @@ msgid ""
 "items."
 msgstr ""
 
-#, python-brace-format
 msgid "``{items}`` (:class:`dict`) [*matching-items*]"
 msgstr ""
 
