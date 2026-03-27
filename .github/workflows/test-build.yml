@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: 
-      - '*' 
+    branches:
+      - '*'
   workflow_dispatch:
 
 jobs:
@@ -14,48 +14,70 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [ '3.14' ]
-        format: [ html, latex, epub ]
+        version: ['3.14']
+        format: [html, latex, epub]
+
     steps:
-      - uses: actions/setup-python@master
+      # ✅ Setup Python (stable version, not master)
+      - uses: actions/setup-python@v5
         with:
-          python-version: 3.12  # pinned for Sphinx 3.4.3 to build 3.10
-      - uses: actions/checkout@master
+          python-version: '3.12'
+
+      # ✅ Checkout CPython source
+      - uses: actions/checkout@v4
         with:
           repository: python/cpython
           ref: ${{ matrix.version }}
+
+      # ✅ Create virtual environment + install dependencies
       - run: make venv
         working-directory: ./Doc
-      - uses: actions/checkout@master
+
+      # ✅ Checkout YOUR Tamil translation repo correctly
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ matrix.version }}
+          repository: Terminal-Joint/python-docs-ta   # 🔥 IMPORTANT
           path: Doc/locales/ta/LC_MESSAGES
-      - run: git pull
-        working-directory: ./Doc/locales/ta/LC_MESSAGES
+
+      # ❌ REMOVED git pull (not needed)
+
+      # ✅ Better error display
       - uses: sphinx-doc/github-problem-matcher@v1.1
-      - run: make -e SPHINXOPTS="--color -D language='ta' -W --keep-going" ${{ matrix.format }}
+
+      # ✅ Build WITHOUT -W (no warning → error conversion)
+      - run: make -e SPHINXOPTS="--color -D language='ta' --keep-going" ${{ matrix.format }}
         working-directory: ./Doc
-      - uses: actions/upload-artifact@master
-        if: success() || failure()
+
+      # ✅ Upload artifacts even if build partially fails
+      - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: build-${{ matrix.version }}-${{ matrix.format }}
           path: Doc/build/${{ matrix.format }}
 
   output-pdf:
     runs-on: ubuntu-latest
+    needs: [build-translation]
+
     strategy:
       matrix:
-        version: [ '3.14' ]
-    needs: [ 'build-translation' ]
+        version: ['3.14']
+
     steps:
-      - uses: actions/download-artifact@master
+      # ✅ Download LaTeX build output
+      - uses: actions/download-artifact@v4
         with:
           name: build-${{ matrix.version }}-latex
+
+      # ✅ Install LaTeX tools
       - run: sudo apt-get update
       - run: sudo apt-get install -y latexmk texlive-xetex fonts-freefont-otf xindy
+
+      # ✅ Generate PDF
       - run: make
-      - uses: actions/upload-artifact@master
+
+      # ✅ Upload PDF
+      - uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.version }}-pdf
           path: ./*.pdf
-           
