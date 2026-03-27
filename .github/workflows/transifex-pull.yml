@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 
-jobs:
+jobs: 
   update-translation:
     runs-on: ubuntu-latest
     strategy:
