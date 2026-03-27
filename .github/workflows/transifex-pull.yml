@@ -4,111 +4,57 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
-
 permissions:
   contents: write
 
 jobs:
   update-translation:
     runs-on: ubuntu-latest
-
     strategy:
+      fail-fast: false
       matrix:
-        version: ['3.14']
-
+        version: [ '3.14' ]
     steps:
-      # Cancel previous runs
-      - uses: styfle/cancel-workflow-action@0.12.1
+      - uses: styfle/cancel-workflow-action@main
         with:
           access_token: ${{ secrets.GITHUB_TOKEN }}
-
-      # 🔥 USE PYTHON 3.10 (CRITICAL FIX)
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@master
         with:
-          python-version: '3.10'
-
-      # Install dependencies
+          python-version: 3
       - name: Install Dependencies
         run: |
-          sudo apt-get update
           sudo apt-get install -y gettext
-
-          python -m pip install --upgrade pip
-          python -m pip install setuptools
-          python -m pip install requests cogapp polib sphinx-intl blurb six transifex-client
-
-      # Verify tx
-      - name: Verify tx
-        run: |
-          which tx
-          tx --version
-
-      # Checkout repo
-      - uses: actions/checkout@v4
+          pip install requests cogapp polib transifex-python sphinx-intl blurb six
+          curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+        working-directory: /usr/local/bin
+      - uses: actions/checkout@master
         with:
           ref: ${{ matrix.version }}
           fetch-depth: 0
-
-      # Download helper script
-      - name: Download util
-        run: |
-          curl -O https://raw.githubusercontent.com/python-docs-translations/transifex-automations/master/sample-workflows/transifex-util.py
-          chmod +x transifex-util.py
-
-      # Configure Transifex
-      - name: Configure Transifex
-        run: |
-          ./transifex-util.py recreate_tx_config \
-            --language ta \
-            --project-slug python-newest \
-            --version ${{ matrix.version }}
+      - run: curl -O https://raw.githubusercontent.com/python-docs-translations/transifex-automations/master/sample-workflows/transifex-util.py
+      - run: chmod +x transifex-util.py
+      - run: ./transifex-util.py recreate_tx_config --language ta --project-slug python-newest --version ${{ matrix.version }}
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
-
-      # Fetch translations
-      - name: Fetch translations
-        run: |
-          ./transifex-util.py fetch \
-            --language ta \
-            --project-slug python-newest \
-            --version ${{ matrix.version }}
+      - run: ./transifex-util.py fetch --language ta --project-slug python-newest --version ${{ matrix.version }}
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
-
-      # Cleanup
-      - name: Cleanup obsolete files
+      - run: ./transifex-util.py delete_obsolete_files --language ta --project-slug python-newest --version ${{ matrix.version }}
+      - name: Set up Git
         run: |
-          ./transifex-util.py delete_obsolete_files \
-            --language ta \
-            --project-slug python-newest \
-            --version ${{ matrix.version }}
-
-      # Setup Git
-      - name: Setup Git
+          git config --local user.email github-actions@github.com
+          git config --local user.name "GitHub Action's update-translation job"
+      - name: Filter files
         run: |
-          git config --local user.email "github-actions@github.com"
-          git config --local user.name "Transifex Bot"
-
-      # Detect changes
-      - name: Check changes
-        run: |
-          if ! git diff -I'^"POT-Creation-Date: ' \
-                        -I'^"Language-Team: ' \
-                        -I'^# ' \
-                        -I'^"Last-Translator: ' \
-                        --exit-code; then
-            echo "SIGNIFICANT_CHANGES=1" >> $GITHUB_ENV
-          fi
-
-      # Commit
-      - name: Commit
+          ! git diff -I'^"POT-Creation-Date: ' \
+                     -I'^"Language-Team: ' \
+                     -I'^# ' -I'^"Last-Translator: ' \
+                     --exit-code \
+            && echo "SIGNIFICANT_CHANGES=1" >> $GITHUB_ENV || exit 0
+      - run: git add . ':!transifex-util.py'
+      - run: git commit -m 'Update translation from Transifex'
         if: env.SIGNIFICANT_CHANGES
-        run: |
-          git add . ':!transifex-util.py'
-          git commit -m "Update Tamil translations from Transifex"
-
-      # Push
-      - uses: ad-m/github-push-action@v0.8.0
+      - uses: ad-m/github-push-action@master
         if: env.SIGNIFICANT_CHANGES
         with:
           branch: ${{ matrix.version }}
