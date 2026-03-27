@@ -13,37 +13,41 @@ jobs:
     strategy:
       matrix:
         version: ['3.14']
-        format: [html, epub]   # ❌ REMOVED latex
+        format: [html, epub]
 
     steps:
+      # Python
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
+      # CPython source
       - uses: actions/checkout@v4
         with:
           repository: python/cpython
           ref: ${{ matrix.version }}
 
+      # Build env
       - run: make venv
         working-directory: ./Doc
 
+      # Tamil translations
       - uses: actions/checkout@v4
         with:
           repository: Terminal-Joint/python-docs-ta
           path: Doc/locales/ta/LC_MESSAGES
 
-      # 🔥 FORCE disable strict mode
-      - name: Disable warning-as-error completely
+      # Disable strict warnings (CRITICAL)
+      - name: Disable strict mode
         run: |
           sed -i "s/-W//g" Doc/Makefile
           sed -i "s/warningiserror = True/warningiserror = False/g" Doc/conf.py || true
 
-      - uses: sphinx-doc/github-problem-matcher@v1.1
-
+      # Build docs
       - run: make -e SPHINXOPTS="--color -D language='ta' --keep-going" ${{ matrix.format }}
         working-directory: ./Doc
 
+      # Upload
       - uses: actions/upload-artifact@v4
         if: always()
         with:
