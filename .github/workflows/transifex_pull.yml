@@ -1,0 +1,31 @@
+name: Pull Translations
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Transifex client
+        run: pip install transifex-client
+
+      - name: Pull translations
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
+        run: |
+          tx pull -a
+
+      - name: Commit and push if changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Auto pull translations" || echo "No changes"
+          git push
