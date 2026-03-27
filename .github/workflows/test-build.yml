@@ -11,6 +11,7 @@ on:
 jobs:
   build-translation:
     runs-on: ubuntu-latest
+
     strategy:
       fail-fast: false
       matrix:
@@ -18,7 +19,7 @@ jobs:
         format: [html, latex, epub]
 
     steps:
-      # ✅ Setup Python (stable version, not master)
+      # ✅ Setup Python
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -29,26 +30,26 @@ jobs:
           repository: python/cpython
           ref: ${{ matrix.version }}
 
-      # ✅ Create virtual environment + install dependencies
+      # ✅ Setup venv and install dependencies
       - run: make venv
         working-directory: ./Doc
 
-      # ✅ Checkout YOUR Tamil translation repo correctly
+      # ✅ Checkout YOUR Tamil repo correctly
       - uses: actions/checkout@v4
         with:
-          repository: Terminal-Joint/python-docs-ta   # 🔥 IMPORTANT
+          repository: Terminal-Joint/python-docs-ta
           path: Doc/locales/ta/LC_MESSAGES
 
-      # ❌ REMOVED git pull (not needed)
+      # ✅ Debug: show any inherited SPHINXOPTS
+      - run: echo "Before override: $SPHINXOPTS"
 
-      # ✅ Better error display
-      - uses: sphinx-doc/github-problem-matcher@v1.1
-
-      # ✅ Build WITHOUT -W (no warning → error conversion)
-      - run: make -e SPHINXOPTS="--color -D language='ta' --keep-going" ${{ matrix.format }}
+      # ✅ HARD RESET SPHINXOPTS (kills -W from anywhere)
+      - run: |
+          unset SPHINXOPTS
+          make ${{ matrix.format }} SPHINXOPTS="-D language='ta'"
         working-directory: ./Doc
 
-      # ✅ Upload artifacts even if build partially fails
+      # ✅ Upload artifacts always
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -64,7 +65,7 @@ jobs:
         version: ['3.14']
 
     steps:
-      # ✅ Download LaTeX build output
+      # ✅ Download LaTeX output
       - uses: actions/download-artifact@v4
         with:
           name: build-${{ matrix.version }}-latex
@@ -73,7 +74,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install -y latexmk texlive-xetex fonts-freefont-otf xindy
 
-      # ✅ Generate PDF
+      # ✅ Build PDF
       - run: make
 
       # ✅ Upload PDF
