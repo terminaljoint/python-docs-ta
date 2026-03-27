@@ -1,9 +1,20 @@
 [main]
 host = https://www.transifex.com
 
-[python-doc.python-newest]
+[python-doc.python-newest.tutorial]
+file_filter = 3.14/tutorial.po
+source_file = 3.14/tutorial.po
 source_lang = en
 type = PO
 
-file_filter = <lang>/**.po
-source_file = **.po
+[python-doc.python-newest.library]
+file_filter = 3.14/library.po
+source_file = 3.14/library.po
+source_lang = en
+type = PO
+
+[python-doc.python-newest.c-api--abstract]
+file_filter = 3.14/c-api/abstract.po
+source_file = 3.14/c-api/abstract.po
+source_lang = en
+type = PO
