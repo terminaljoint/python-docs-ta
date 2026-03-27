@@ -39,7 +39,13 @@ jobs:
       - name: Install Transifex CLI
         run: |
           curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          - name: Verify tx installation
+            run: |
+              which tx
+              tx --version
 
+          
       # ✅ Checkout YOUR repo
       - uses: actions/checkout@v4
         with:
