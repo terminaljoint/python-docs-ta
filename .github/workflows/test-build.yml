@@ -29,9 +29,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           ref: ${{ matrix.version }}
-          path: Doc/locales/XX/LC_MESSAGES
+          path: Doc/locales/ta/LC_MESSAGES
       - run: git pull
-        working-directory: ./Doc/locales/XX/LC_MESSAGES
+        working-directory: ./Doc/locales/ta/LC_MESSAGES
       - uses: sphinx-doc/github-problem-matcher@v1.1
       - run: make -e SPHINXOPTS="--color -D language='XX' -W --keep-going" ${{ matrix.format }}
         working-directory: ./Doc
