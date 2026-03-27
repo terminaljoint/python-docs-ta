@@ -2,31 +2,31 @@
 host = https://www.transifex.com
 
 [python-doc.python-newest.c-api--abstract]
-file_filter = locales/ta/LC_MESSAGES/c-api/abstract.po
-source_file = locales/en/LC_MESSAGES/c-api/abstract.po
+file_filter = c-api/abstract.po
+source_file = c-api/abstract.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.tutorial]
-file_filter = locales/ta/LC_MESSAGES/tutorial.po
-source_file = locales/en/LC_MESSAGES/tutorial.po
+file_filter = tutorial.po
+source_file = tutorial.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.library]
-file_filter = locales/ta/LC_MESSAGES/library.po
-source_file = locales/en/LC_MESSAGES/library.po
+file_filter = library.po
+source_file = library.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.faq]
-file_filter = locales/ta/LC_MESSAGES/faq.po
-source_file = locales/en/LC_MESSAGES/faq.po
+file_filter = faq.po
+source_file = faq.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.using]
-file_filter = locales/ta/LC_MESSAGES/using.po
-source_file = locales/en/LC_MESSAGES/using.po
+file_filter = using.po
+source_file = using.po
 source_lang = en
 type = PO
