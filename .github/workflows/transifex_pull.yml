@@ -30,7 +30,7 @@ jobs:
 
       - name: Pull translations from Transifex
         run: |
-          tx pull -a
+          tx pull --all --force
 
       - name: Commit and push changes
         run: |
