@@ -17,40 +17,45 @@ jobs:
         version: ['3.14']
 
     steps:
+      # Cancel previous runs
       - uses: styfle/cancel-workflow-action@0.12.1
         with:
           access_token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 🔥 USE PYTHON 3.10 (CRITICAL FIX)
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.10'
 
-      # 🔥 FINAL FIX USING pipx
+      # Install dependencies
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gettext pipx
-          pipx ensurepath
+          sudo apt-get install -y gettext
 
-          pipx install transifex-client
+          python -m pip install --upgrade pip
+          python -m pip install setuptools
+          python -m pip install requests cogapp polib sphinx-intl blurb six transifex-client
 
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
+      # Verify tx
       - name: Verify tx
         run: |
           which tx
           tx --version
 
+      # Checkout repo
       - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.version }}
           fetch-depth: 0
 
+      # Download helper script
       - name: Download util
         run: |
           curl -O https://raw.githubusercontent.com/python-docs-translations/transifex-automations/master/sample-workflows/transifex-util.py
           chmod +x transifex-util.py
 
+      # Configure Transifex
       - name: Configure Transifex
         run: |
           ./transifex-util.py recreate_tx_config \
@@ -60,6 +65,7 @@ jobs:
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
+      # Fetch translations
       - name: Fetch translations
         run: |
           ./transifex-util.py fetch \
@@ -69,6 +75,7 @@ jobs:
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
+      # Cleanup
       - name: Cleanup obsolete files
         run: |
           ./transifex-util.py delete_obsolete_files \
@@ -76,11 +83,13 @@ jobs:
             --project-slug python-newest \
             --version ${{ matrix.version }}
 
+      # Setup Git
       - name: Setup Git
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "Transifex Bot"
 
+      # Detect changes
       - name: Check changes
         run: |
           if ! git diff -I'^"POT-Creation-Date: ' \
@@ -91,12 +100,14 @@ jobs:
             echo "SIGNIFICANT_CHANGES=1" >> $GITHUB_ENV
           fi
 
+      # Commit
       - name: Commit
         if: env.SIGNIFICANT_CHANGES
         run: |
           git add . ':!transifex-util.py'
           git commit -m "Update Tamil translations from Transifex"
 
+      # Push
       - uses: ad-m/github-push-action@v0.8.0
         if: env.SIGNIFICANT_CHANGES
         with:
