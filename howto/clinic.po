@@ -19,13 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../howto/clinic.rst:8
 msgid "Argument Clinic How-To"
 msgstr ""
 
-#: ../../howto/clinic.rst:13
 msgid ""
-"The Argument Clinic How-TO has been moved to the `Python Developer's "
-"Guide <https://devguide.python.org/development-tools/clinic/>`__."
+"The Argument Clinic How-TO has been moved to the `Python Developer's Guide "
+"<https://devguide.python.org/development-tools/clinic/>`__."
 msgstr ""
-

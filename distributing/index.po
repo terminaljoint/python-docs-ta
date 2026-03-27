@@ -19,14 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../distributing/index.rst:10
 msgid "Distributing Python Modules"
 msgstr ""
 
-#: ../../distributing/index.rst:14
 msgid ""
 "Information and guidance on distributing Python modules and packages has "
 "been moved to the `Python Packaging User Guide`_, and the tutorial on "
 "`packaging Python projects`_."
 msgstr ""
-

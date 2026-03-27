@@ -19,15 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/archiving.rst:5
 msgid "Data Compression and Archiving"
 msgstr ""
 
-#: ../../library/archiving.rst:7
 msgid ""
 "The modules described in this chapter support data compression with the "
 "zlib, gzip, bzip2 and lzma algorithms, and the creation of ZIP- and tar-"
-"format archives.  See also :ref:`archiving-operations` provided by the "
-":mod:`shutil` module."
+"format archives.  See also :ref:`archiving-operations` provided by the :mod:"
+"`shutil` module."
 msgstr ""
-

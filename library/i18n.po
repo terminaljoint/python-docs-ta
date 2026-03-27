@@ -19,19 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/i18n.rst:5
 msgid "Internationalization"
 msgstr ""
 
-#: ../../library/i18n.rst:7
 msgid ""
 "The modules described in this chapter help you write software that is "
-"independent of language and locale by providing mechanisms for selecting "
-"a language to be used in  program messages or by tailoring output to "
-"match local conventions."
+"independent of language and locale by providing mechanisms for selecting a "
+"language to be used in  program messages or by tailoring output to match "
+"local conventions."
 msgstr ""
 
-#: ../../library/i18n.rst:12
 msgid "The list of modules described in this chapter is:"
 msgstr ""
-

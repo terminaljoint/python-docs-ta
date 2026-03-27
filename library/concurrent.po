@@ -19,15 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/concurrent.rst:2
 msgid "The :mod:`!concurrent` package"
 msgstr ""
 
-#: ../../library/concurrent.rst:4
 msgid "Currently, there is only one module in this package:"
 msgstr ""
 
-#: ../../library/concurrent.rst:6
 msgid ":mod:`concurrent.futures` -- Launching parallel tasks"
 msgstr ""
-

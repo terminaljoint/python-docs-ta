@@ -19,13 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../c-api/objimpl.rst:7
 msgid "Object Implementation Support"
 msgstr ""
 
-#: ../../c-api/objimpl.rst:9
 msgid ""
-"This chapter describes the functions, types, and macros used when "
-"defining new object types."
+"This chapter describes the functions, types, and macros used when defining "
+"new object types."
 msgstr ""
-

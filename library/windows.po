@@ -19,13 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/windows.rst:5
 msgid "MS Windows Specific Services"
 msgstr ""
 
-#: ../../library/windows.rst:7
 msgid ""
 "This chapter describes modules that are only available on MS Windows "
 "platforms."
 msgstr ""
-

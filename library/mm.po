@@ -19,14 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/mm.rst:5
 msgid "Multimedia Services"
 msgstr ""
 
-#: ../../library/mm.rst:7
 msgid ""
 "The modules described in this chapter implement various algorithms or "
 "interfaces that are mainly useful for multimedia applications.  They are "
 "available at the discretion of the installation.  Here's an overview:"
 msgstr ""
-

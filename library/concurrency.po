@@ -19,20 +19,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/concurrency.rst:5
 msgid "Concurrent Execution"
 msgstr ""
 
-#: ../../library/concurrency.rst:7
 msgid ""
 "The modules described in this chapter provide support for concurrent "
-"execution of code. The appropriate choice of tool will depend on the task"
-" to be executed (CPU bound vs IO bound) and preferred style of "
-"development (event driven cooperative multitasking vs preemptive "
-"multitasking). Here's an overview:"
+"execution of code. The appropriate choice of tool will depend on the task to "
+"be executed (CPU bound vs IO bound) and preferred style of development "
+"(event driven cooperative multitasking vs preemptive multitasking). Here's "
+"an overview:"
 msgstr ""
 
-#: ../../library/concurrency.rst:27
 msgid "The following are support modules for some of the above services:"
 msgstr ""
-

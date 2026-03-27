@@ -19,14 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../using/index.rst:5
 msgid "Python Setup and Usage"
 msgstr ""
 
-#: ../../using/index.rst:8
 msgid ""
 "This part of the documentation is devoted to general information on the "
-"setup of the Python environment on different platforms, the invocation of"
-" the interpreter and things that make working with Python easier."
+"setup of the Python environment on different platforms, the invocation of "
+"the interpreter and things that make working with Python easier."
 msgstr ""
-

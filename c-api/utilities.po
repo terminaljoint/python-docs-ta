@@ -19,15 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../c-api/utilities.rst:7
 msgid "Utilities"
 msgstr ""
 
-#: ../../c-api/utilities.rst:9
 msgid ""
-"The functions in this chapter perform various utility tasks, ranging from"
-" helping C code be more portable across platforms, using Python modules "
-"from C, and parsing function arguments and constructing Python values "
-"from C values."
+"The functions in this chapter perform various utility tasks, ranging from "
+"helping C code be more portable across platforms, using Python modules from "
+"C, and parsing function arguments and constructing Python values from C "
+"values."
 msgstr ""
-

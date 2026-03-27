@@ -19,18 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../library/functional.rst:3
 msgid "Functional Programming Modules"
 msgstr ""
 
-#: ../../library/functional.rst:5
 msgid ""
 "The modules described in this chapter provide functions and classes that "
-"support a functional programming style, and general operations on "
-"callables."
+"support a functional programming style, and general operations on callables."
 msgstr ""
 
-#: ../../library/functional.rst:8
 msgid "The following modules are documented in this chapter:"
 msgstr ""
-

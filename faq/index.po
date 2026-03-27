@@ -19,7 +19,5 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../faq/index.rst:5
 msgid "Python Frequently Asked Questions"
 msgstr ""
-
