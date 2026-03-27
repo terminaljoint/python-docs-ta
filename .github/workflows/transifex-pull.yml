@@ -17,48 +17,49 @@ jobs:
         version: ['3.14']
 
     steps:
-      # Cancel previous runs
+      # ✅ Cancel previous runs
       - uses: styfle/cancel-workflow-action@0.12.1
         with:
           access_token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Python
+      # ✅ Setup Python
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # Install dependencies
+      # ✅ Install dependencies
       - name: Install Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y gettext
-          pip install requests cogapp polib transifex-python sphinx-intl blurb six
+          python -m pip install --upgrade pip
+          python -m pip install requests cogapp polib sphinx-intl blurb six transifex-client
 
-      # 🔥 FIXED Transifex CLI install (IMPORTANT)
-      - name: Install Transifex CLI
+      # 🔥 GUARANTEED tx FIX
+      - name: Fix PATH for tx
         run: |
-          curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          echo "$(python -m site --user-base)/bin" >> $GITHUB_PATH
 
-      # Debug (optional but smart)
-      - name: Verify tx
+      # ✅ VERIFY tx (CRITICAL)
+      - name: Verify tx installation
         run: |
+          echo "PATH=$PATH"
           which tx
           tx --version
 
-      # Checkout your repo
+      # ✅ Checkout your repo
       - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.version }}
           fetch-depth: 0
 
-      # Get helper script
-      - name: Download util script
+      # ✅ Download helper script
+      - name: Download transifex util
         run: |
           curl -O https://raw.githubusercontent.com/python-docs-translations/transifex-automations/master/sample-workflows/transifex-util.py
           chmod +x transifex-util.py
 
-      # Create config
+      # ✅ Create config
       - name: Configure Transifex
         run: |
           ./transifex-util.py recreate_tx_config \
@@ -68,7 +69,7 @@ jobs:
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
-      # Fetch translations
+      # ✅ Fetch translations
       - name: Fetch translations
         run: |
           ./transifex-util.py fetch \
@@ -78,22 +79,22 @@ jobs:
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
-      # Cleanup
-      - name: Delete obsolete files
+      # ✅ Remove obsolete files
+      - name: Cleanup obsolete files
         run: |
           ./transifex-util.py delete_obsolete_files \
             --language ta \
             --project-slug python-newest \
             --version ${{ matrix.version }}
 
-      # Git setup
+      # ✅ Setup Git
       - name: Setup Git
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "Transifex Bot"
 
-      # Detect meaningful changes
-      - name: Check changes
+      # ✅ Detect meaningful changes
+      - name: Check for changes
         run: |
           if ! git diff -I'^"POT-Creation-Date: ' \
                         -I'^"Language-Team: ' \
@@ -103,14 +104,14 @@ jobs:
             echo "SIGNIFICANT_CHANGES=1" >> $GITHUB_ENV
           fi
 
-      # Commit
-      - name: Commit
+      # ✅ Commit changes
+      - name: Commit changes
         if: env.SIGNIFICANT_CHANGES
         run: |
           git add . ':!transifex-util.py'
           git commit -m "Update Tamil translations from Transifex"
 
-      # Push
+      # ✅ Push changes
       - uses: ad-m/github-push-action@v0.8.0
         if: env.SIGNIFICANT_CHANGES
         with:
