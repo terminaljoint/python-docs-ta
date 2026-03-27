@@ -2,31 +2,31 @@
 host = https://www.transifex.com
 
 [python-doc.python-newest.c-api--abstract]
-file_filter = c-api/abstract.po
+file_filter = <lang>/c-api/abstract.po
 source_file = c-api/abstract.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.tutorial]
-file_filter = tutorial.po
+file_filter = <lang>/tutorial.po
 source_file = tutorial.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.library]
-file_filter = library.po
+file_filter = <lang>/library.po
 source_file = library.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.faq]
-file_filter = faq.po
+file_filter = <lang>/faq.po
 source_file = faq.po
 source_lang = en
 type = PO
 
 [python-doc.python-newest.using]
-file_filter = using.po
+file_filter = <lang>/using.po
 source_file = using.po
 source_lang = en
 type = PO
