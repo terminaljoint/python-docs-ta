@@ -19,37 +19,35 @@ jobs:
         format: [html, latex, epub]
 
     steps:
-      # ✅ Setup Python
+      # ✅ Python setup
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # ✅ Checkout CPython source
+      # ✅ CPython source
       - uses: actions/checkout@v4
         with:
           repository: python/cpython
           ref: ${{ matrix.version }}
 
-      # ✅ Setup venv and install dependencies
+      # ✅ Build env
       - run: make venv
         working-directory: ./Doc
 
-      # ✅ Checkout YOUR Tamil repo correctly
+      # ✅ Tamil translations
       - uses: actions/checkout@v4
         with:
           repository: Terminal-Joint/python-docs-ta
           path: Doc/locales/ta/LC_MESSAGES
 
-      # ✅ Debug: show any inherited SPHINXOPTS
-      - run: echo "Before override: $SPHINXOPTS"
+      # ✅ Sphinx error formatter
+      - uses: sphinx-doc/github-problem-matcher@v1.1
 
-      # ✅ HARD RESET SPHINXOPTS (kills -W from anywhere)
-      - run: |
-          unset SPHINXOPTS
-          make ${{ matrix.format }} SPHINXOPTS="-D language='ta'"
+      # ✅ CORRECT BUILD (NO -W, BUT KEEP EVERYTHING ELSE)
+      - run: make -e SPHINXOPTS="--color -D language='ta' --keep-going" ${{ matrix.format }}
         working-directory: ./Doc
 
-      # ✅ Upload artifacts always
+      # ✅ Upload output
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -65,19 +63,15 @@ jobs:
         version: ['3.14']
 
     steps:
-      # ✅ Download LaTeX output
       - uses: actions/download-artifact@v4
         with:
           name: build-${{ matrix.version }}-latex
 
-      # ✅ Install LaTeX tools
       - run: sudo apt-get update
       - run: sudo apt-get install -y latexmk texlive-xetex fonts-freefont-otf xindy
 
-      # ✅ Build PDF
       - run: make
 
-      # ✅ Upload PDF
       - uses: actions/upload-artifact@v4
         with:
           name: build-${{ matrix.version }}-pdf
