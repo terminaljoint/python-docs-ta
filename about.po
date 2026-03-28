@@ -38,12 +38,14 @@ msgid ""
 msgstr ""
 
 msgid "Many thanks go to:"
-msgstr ""
+msgstr "மிக்க நன்றிகள்"
 
 msgid ""
 "Fred L. Drake, Jr., the creator of the original Python documentation toolset "
 "and author of much of the content;"
 msgstr ""
+"முதலாவது பைத்தான் ஆவணமாக்கல் கருவித் தொகுப்பை உருவாக்கியவரும், அதன் பெரும்பாலான "
+"உள்ளடக்கங்களை எழுதியவருமான ஃப்ரெட் எல். டிரேக் ஜூனியர்;"
 
 msgid ""
 "the `Docutils <https://docutils.sourceforge.io/>`_ project for creating "
@@ -56,7 +58,7 @@ msgid ""
 msgstr ""
 
 msgid "Contributors to the Python documentation"
-msgstr ""
+msgstr "பைத்தான் ஆவணமாக்கலில் பங்களித்தவர்கள்"
 
 msgid ""
 "Many people have contributed to the Python language, the Python standard "
