@@ -7,8 +7,8 @@
 # Murugan Santhosh, 2026
 #
 #, fuzzy
-msgid ""
-msgstr ""
+# msgid ""
+# msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-25 14:54+0000\n"
