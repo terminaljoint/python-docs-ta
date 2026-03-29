@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Abstract Objects Layer"
-msgstr "சுருக்க பொருள் அடுக்கு "
+msgstr "சுருக்க பொருள் அடுக்கு"
 
 msgid ""
 "The functions in this chapter interact with Python objects regardless of "
