@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "The Python Tutorial"
-msgstr "பைத்தான் பயிற்சி"
+msgstr "பைத்தான் பயிற்சி "
 
 msgid ""
 "This tutorial is designed for *programmers* that are new to the Python "

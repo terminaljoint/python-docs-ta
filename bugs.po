@@ -44,7 +44,7 @@ msgstr ""
 "<contributing-to-python>`."
 
 msgid "Documentation bugs"
-msgstr "ஆவணப்படுத்தல் பிழைகள்"
+msgstr "ஆவணப்படுத்தல் பிழைகள் "
 
 msgid ""
 "If you find a bug in this documentation or would like to propose an "
