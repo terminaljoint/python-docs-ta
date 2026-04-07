@@ -29,7 +29,7 @@ msgid ""
 "The Python interpreter has a number of functions and types built into it "
 "that are always available.  They are listed here in alphabetical order."
 msgstr ""
-"Python இன்டர்பிரெட்டரில் \"Interpreter\" எப்போதும் பயன்படுத்தக்கூடிய வகையில் பல "
+"Python இன்டர்பிரெட்டரில் \(Interpreter\) எப்போதும் பயன்படுத்தக்கூடிய வகையில் பல "
 "செயல்பாடுகள் \"Functions\" மற்றும் வகைகள் \"Types\" உள்ளமைக்கப்பட்டுள்ளன. அவை இங்கே "
 "அகரவரிசையில் பட்டியலிடப்பட்டுள்ளன"
 
