@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the Python package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Hari, 2026
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"POT-Creation-Date: 2026-04-05 14:30+0000\n"
 "PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Last-Translator: Hari, 2026\n"
 "Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,121 +33,121 @@ msgid "**A**"
 msgstr ""
 
 msgid ":func:`abs`"
-msgstr ""
+msgstr ":func:`abs`"
 
 msgid ":func:`aiter`"
-msgstr ""
+msgstr ":func:`aiter`"
 
 msgid ":func:`all`"
-msgstr ""
+msgstr ":func:`all`"
 
 msgid ":func:`anext`"
-msgstr ""
+msgstr ":func:`anext`"
 
 msgid ":func:`any`"
-msgstr ""
+msgstr ":func:`any`"
 
 msgid ":func:`ascii`"
-msgstr ""
+msgstr ":func:`ascii`"
 
 msgid "**B**"
-msgstr ""
+msgstr "**B**"
 
 msgid ":func:`bin`"
-msgstr ""
+msgstr ":func:`bin`"
 
 msgid ":func:`bool`"
-msgstr ""
+msgstr ":func:`bool`"
 
 msgid ":func:`breakpoint`"
-msgstr ""
+msgstr ":func:`breakpoint`"
 
 msgid "|func-bytearray|_"
-msgstr ""
+msgstr "|func-bytearray|_"
 
 msgid "|func-bytes|_"
-msgstr ""
+msgstr "|func-bytes|_"
 
 msgid "**C**"
 msgstr ""
 
 msgid ":func:`callable`"
-msgstr ""
+msgstr ":func:`callable`"
 
 msgid ":func:`chr`"
-msgstr ""
+msgstr ":func:`chr`"
 
 msgid ":func:`classmethod`"
-msgstr ""
+msgstr ":func:`classmethod`"
 
 msgid ":func:`compile`"
-msgstr ""
+msgstr ":func:`compile`"
 
 msgid ":func:`complex`"
-msgstr ""
+msgstr ":func:`complex`"
 
 msgid "**D**"
 msgstr ""
 
 msgid ":func:`delattr`"
-msgstr ""
+msgstr ":func:`delattr`"
 
 msgid "|func-dict|_"
-msgstr ""
+msgstr "|func-dict|_"
 
 msgid ":func:`dir`"
-msgstr ""
+msgstr ":func:`dir`"
 
 msgid ":func:`divmod`"
-msgstr ""
+msgstr ":func:`divmod`"
 
 msgid "**E**"
 msgstr ""
 
 msgid ":func:`enumerate`"
-msgstr ""
+msgstr ":func:`enumerate`"
 
 msgid ":func:`eval`"
-msgstr ""
+msgstr ":func:`eval`"
 
 msgid ":func:`exec`"
-msgstr ""
+msgstr ":func:`exec`"
 
 msgid "**F**"
 msgstr ""
 
 msgid ":func:`filter`"
-msgstr ""
+msgstr ":func:`filter`"
 
 msgid ":func:`float`"
-msgstr ""
+msgstr ":func:`float`"
 
 msgid ":func:`format`"
-msgstr ""
+msgstr ":func:`format`"
 
 msgid "|func-frozenset|_"
-msgstr ""
+msgstr "|func-frozenset|_"
 
 msgid "**G**"
 msgstr ""
 
 msgid ":func:`getattr`"
-msgstr ""
+msgstr ":func:`getattr`"
 
 msgid ":func:`globals`"
-msgstr ""
+msgstr ":func:`globals`"
 
 msgid "**H**"
 msgstr ""
 
 msgid ":func:`hasattr`"
-msgstr ""
+msgstr ":func:`hasattr`"
 
 msgid ":func:`hash`"
-msgstr ""
+msgstr ":func:`hash`"
 
 msgid ":func:`help`"
-msgstr ""
+msgstr ":func:`help`"
 
 msgid ":func:`hex`"
 msgstr ""

@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the Python package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Hari, 2026
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-25 14:54+0000\n"
+"POT-Creation-Date: 2026-04-05 14:30+0000\n"
 "PO-Revision-Date: 2025-09-16 00:01+0000\n"
+"Last-Translator: Hari, 2026\n"
 "Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -371,7 +375,7 @@ msgid "absolute value or magnitude of *x*"
 msgstr ""
 
 msgid ":func:`abs`"
-msgstr ""
+msgstr ":func:`abs`"
 
 msgid "``int(x)``"
 msgstr ""
@@ -395,7 +399,7 @@ msgid "\\(4)\\(6)"
 msgstr ""
 
 msgid ":func:`float`"
-msgstr ""
+msgstr ":func:`float`"
 
 msgid "``complex(re, im)``"
 msgstr ""
@@ -409,7 +413,7 @@ msgid "\\(6)"
 msgstr ""
 
 msgid ":func:`complex`"
-msgstr ""
+msgstr ":func:`complex`"
 
 msgid "``c.conjugate()``"
 msgstr ""
@@ -424,7 +428,7 @@ msgid "the pair ``(x // y, x % y)``"
 msgstr ""
 
 msgid ":func:`divmod`"
-msgstr ""
+msgstr ":func:`divmod`"
 
 msgid "``pow(x, y)``"
 msgstr ""
