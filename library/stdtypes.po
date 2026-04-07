@@ -387,7 +387,7 @@ msgid "\\(3)\\(6)"
 msgstr ""
 
 msgid ":func:`int`"
-msgstr ""
+msgstr ":func:`int`"
 
 msgid "``float(x)``"
 msgstr ""
