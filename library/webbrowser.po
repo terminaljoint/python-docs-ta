@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.14\n"
+"Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-05 15:48+0000\n"
+"POT-Creation-Date: 2026-05-08 18:34+0000\n"
 "PO-Revision-Date: 2025-09-16 00:02+0000\n"
 "Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
@@ -246,10 +246,10 @@ msgstr ""
 msgid "\\(2)"
 msgstr ""
 
-msgid "``'macosx'``"
+msgid "``'macos'``"
 msgstr ""
 
-msgid "``MacOSXOSAScript('default')``"
+msgid "``MacOS('default')``"
 msgstr ""
 
 msgid "\\(3)"
@@ -258,19 +258,22 @@ msgstr ""
 msgid "``'safari'``"
 msgstr ""
 
-msgid "``MacOSXOSAScript('safari')``"
+msgid "``MacOS('safari')``"
+msgstr ""
+
+msgid "``'chrome'``"
+msgstr ""
+
+msgid "``MacOS('google chrome')``"
+msgstr ""
+
+msgid "``MacOS('firefox')``"
 msgstr ""
 
 msgid "``'google-chrome'``"
 msgstr ""
 
 msgid "``Chrome('google-chrome')``"
-msgstr ""
-
-msgid "``'chrome'``"
-msgstr ""
-
-msgid "``Chrome('chrome')``"
 msgstr ""
 
 msgid "``'chromium'``"
@@ -331,6 +334,20 @@ msgid ""
 msgstr ""
 
 msgid "Support for iOS has been added."
+msgstr ""
+
+msgid ""
+":class:`!MacOS` has been added as a replacement for :class:`!"
+"MacOSXOSAScript`, opening browsers via :program:`/usr/bin/open` instead of :"
+"program:`osascript`."
+msgstr ""
+
+msgid ""
+":class:`!MacOSXOSAScript` is deprecated in favour of :class:`!MacOS`. Using :"
+"program:`/usr/bin/open` instead of :program:`osascript` is a security and "
+"usability improvement: :program:`osascript` may be blocked on managed "
+"systems due to its abuse potential as a general-purpose scripting "
+"interpreter."
 msgstr ""
 
 msgid "Here are some simple examples::"

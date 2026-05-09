@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.14\n"
+"Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 14:43+0000\n"
+"POT-Creation-Date: 2026-05-08 18:34+0000\n"
 "PO-Revision-Date: 2025-09-16 00:00+0000\n"
 "Last-Translator: Murugan Santhosh, 2026\n"
 "Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
@@ -112,17 +112,13 @@ msgstr "பைத்தான் ஆவணப்படுத்துதலு�
 
 msgid ""
 "`Documentation Translations <https://devguide.python.org/documentation/"
-"translating/>`_"
+"translations/translating/#translation-coordinators>`_"
 msgstr ""
-"`ஆவணங்கள் மொழிபெயர்ப்புகள் <https://devguide.python.org/documentation/translating/"
-">`_"
 
 msgid ""
-"A list of GitHub pages for documentation translation and their primary "
-"contacts."
+"A list of GitHub pages for documentation translation and their coordination "
+"teams."
 msgstr ""
-"ஆவணப்படுத்தல் மொழிபெயர்ப்பிற்கான GitHub பக்கங்கள் மற்றும் அவற்றின் முதன்மைத் தொடர்புகளின் "
-"பட்டியல்."
 
 msgid "Using the Python issue tracker"
 msgstr "பைத்தான் சிக்கல் கண்காணிப்பானைப் பயன்படுத்துதல்"

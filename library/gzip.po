@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Python 3.14\n"
+"Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-05 15:48+0000\n"
+"POT-Creation-Date: 2026-05-08 18:34+0000\n"
 "PO-Revision-Date: 2025-09-16 00:01+0000\n"
 "Language-Team: Tamil (https://app.transifex.com/python-doc/teams/5390/ta/)\n"
 "MIME-Version: 1.0\n"
@@ -97,6 +97,12 @@ msgid "Added support for the ``'x'``, ``'xb'`` and ``'xt'`` modes."
 msgstr ""
 
 msgid "Accepts a :term:`path-like object`."
+msgstr ""
+
+msgid ""
+"The default compression level was reduced to 6 (down from 9). It is the "
+"default level used by most compression tools and a better tradeoff between "
+"speed and performance."
 msgstr ""
 
 msgid ""
